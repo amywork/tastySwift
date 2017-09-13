@@ -10,7 +10,7 @@ import Foundation
 
 class CreditCalculation {
     
-    func scoreAvgCal(student: Student) -> Int {
+    func studentScoreAvg(student: Student) -> Int {
         let avgScore = avgSubjectScores(subjects: student.subjects)
         student.totalScore = avgScore
         return student.totalScore
@@ -22,9 +22,8 @@ class CreditCalculation {
         for sbj in subjects {
             totalScore += sbj.score
         }
-        
-        totalScore /= subjects.count
-        return totalScore
+
+        let avgScore: Int = totalScore / subjects.count
+        return avgScore
     }
-    
 }

@@ -14,29 +14,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         super.viewDidLoad()
         
-        let cal = CreditCalculation()
         
-        // 과목마다 Score를 지정하면, 학생별로 과목 인스턴스를 계속 생성해야 되나요?
-        let math = Subject(name: "Math")
-        math.setScore(score: 95)
-        
-        let english = Subject(name: "English")
-        english.setScore(score: 92)
-        
-        let computer = Subject(name: "Computer")
-        computer.setScore(score: 93)
-        
-        let s1 = Student(name: "Younari", id: 2011111050)
-        s1.setSubjects(subjects: [math, english, computer])
-        
-        var test = cal.scoreAvgCal(student: s1)
-        print(test)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        // Dispose of any resources that can be recreated.
-        super.didReceiveMemoryWarning()
-        
-    }
-}
+        var math = Subject(name: "Math", score: 94)
+        var english = Subject(name: "English", score: 93)
+        var computer = Subject(name: "Computer", score: 97)
+        var steve: Student = Student(name: "Steve", id: 2011111050)
+        steve.setSubjects(subjects: [math, english, computer])
 
+        let cal = CreditCalculation()
+        var avgSteve = cal.studentScoreAvg(student: steve)
+        print(avgSteve)
+    }
+
+}

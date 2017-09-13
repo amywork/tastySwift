@@ -44,6 +44,7 @@
 		DDCD3FC51F67D3A9002D5362 /* etc */ = {
 			isa = PBXGroup;
 			children = (
+				DDE6CB741F667FF100A3E72A /* AppDelegate.swift */,
 				DDE6CB801F667FF100A3E72A /* Info.plist */,
 				DDE6CB7B1F667FF100A3E72A /* Assets.xcassets */,
 			);
@@ -70,10 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				DDCD3FC51F67D3A9002D5362 /* etc */,
-				DDE6CB741F667FF100A3E72A /* AppDelegate.swift */,
-				DD38E3BD1F67D10100B17F8B /* CreditCalculation.swift */,
 				DDDFC7B21F67B9A40075FBB7 /* Subject.swift */,
 				DD38E3B91F67CEA900B17F8B /* Student.swift */,
+				DD38E3BD1F67D10100B17F8B /* CreditCalculation.swift */,
 				DDE6CB761F667FF100A3E72A /* ViewController.swift */,
 				DDE6CB781F667FF100A3E72A /* Main.storyboard */,
 				DDE6CB7D1F667FF100A3E72A /* LaunchScreen.storyboard */,
