@@ -44,6 +44,6 @@ class CreditCalculation {
         }
         return Double(totalScore)/Double(subjects.count)
     }
-
-
+    
+    
 }
