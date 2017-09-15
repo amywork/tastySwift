@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     }
     
     var displayText: String = "0"
+    
     var numbers: [Int] = []
     var signs: Int = 1
     var tmp: Int = 0
-    var inputValue: Bool = false
     
     
     // 숫자 입력시 displayText가 출력됨
@@ -61,7 +61,6 @@ class ViewController: UIViewController {
                 if numbers.isEmpty {
                     numbers.append(Int(displayText)!)
                     tmp = numbers.last!
-                    signs = 1
                 }else {
                     calculate()
                 }
@@ -74,7 +73,6 @@ class ViewController: UIViewController {
                 if numbers.isEmpty {
                     numbers.append(Int(displayText)!)
                     tmp = numbers.last!
-                    signs = 2
                 }else {
                     calculate()
                 }
@@ -88,7 +86,6 @@ class ViewController: UIViewController {
                 if numbers.isEmpty {
                     numbers.append(Int(displayText)!)
                     tmp = numbers.last!
-                    signs = 3
                 }else {
                     calculate()
                 }
@@ -102,7 +99,6 @@ class ViewController: UIViewController {
                 if numbers.isEmpty {
                     numbers.append(Int(displayText)!)
                     tmp = numbers.last!
-                    signs = 4
                 }else {
                     calculate()
                 }
@@ -114,16 +110,16 @@ class ViewController: UIViewController {
             }else if sign.titleLabel!.text == "=" {
                 
                 calculate()
-                displayLabel.text = String(tmp)
                 numbers = []
                 tmp = 0
                 displayText = ""
+                
             }
             
         }
         
     }
-    
+ 
     
     @IBAction func btnResetClick(btn: UIButton) {
         displayText = "0"
