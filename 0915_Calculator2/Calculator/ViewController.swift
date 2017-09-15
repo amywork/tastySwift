@@ -55,10 +55,10 @@ class ViewController: UIViewController {
     // 03. 연산 기호 눌렸을 때의 기능 정의
     /*
     3-1. displayText != nil일 때만 operation 함수 실행
-    3-2. 눌려진 연산기호가 = 일 경우엔 최종 값을 출력하고 초기화한다.
-    3-3. 일단 기존 기호를 가지고 연산 이후에 연산기호 바꾸기
+    3-2. 눌려진 연산기호가 = 일 경우엔 최종 값을 출력.
+    3-3. 일단 기존 기호를 가지고 연산한 뒤에 입력된 연산 기호로 change
     3-4. 연산 완료 후에는 displayText 초기화
-    3-5. 연산할
+    3-5. = 을 누르고 해당 값에 또 연산할 수 있음
  	*/
     @IBAction func operation(signBtn: UIButton) {
         if displayText != nil {
