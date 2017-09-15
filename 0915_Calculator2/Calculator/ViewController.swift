@@ -16,10 +16,10 @@ class ViewController: UIViewController {
     }
     
     // 변수 정의
-    // 01. 라벨에 출력될 값을 결정할 displayText
+    // 01. 라벨에 출력될 값을 결정할 displayText, 최초 nil
     var displayText: String? = nil
     
-    // 02. 연산 기호를 저장해둘 operatorSign
+    // 02. 연산 기호를 저장해둘 operatorSign, 최초 nil
     var operatorSign: String? = nil
     
     // 03. 연산을 기다리는 값과 현재 인풋된 값을 구분하는 변수
@@ -27,25 +27,25 @@ class ViewController: UIViewController {
     var secondNum: Int = 0
     
     // 함수 정의
-    // 01. 전시(displayLabel.text)될 숫자를 출력해주는 함수
+    // 01. 전시(displayLabel.text)될 숫자 만드는 함수
     @IBAction func btnNumberClick(numBtn: UIButton) {
         
-        // 전시된 숫자가 0이라는 것은 최초 실행의 경우이므로, 이때는 입력된 숫자 스트링 = displayText
-        if displayLabel.text == "0" {
+        // 최초 실행의 경우는 입력된 숫자 스트링을 displayText에 대입
+        if displayText == nil {
             displayText = (numBtn.titleLabel?.text)!
-        // 그 외의 경우 입력된 숫자 스트링을 displayText에 계속 덧붙임
+        // 최초 실행이 아닌 경우는 입력된 숫자 스트링을 displayText에 더하기 연산
         }else {
-            displayText += (numBtn.titleLabel!.text)!
+            displayText? += (numBtn.titleLabel?.text)!
         }
-        // 최종으로 라벨에는 displayText 전시
+        // 라벨에는 displayText 전시
         displayLabel.text = displayText
     }
     
     
-    // 02. 리셋(AC)버튼 클릭 시 리셋해주는 함수
+    // 02. 리셋(AC)버튼 클릭 시 모든것을 기본값으로 리셋해주는 함수
     @IBAction func btnResetClick(resetBtn: UIButton) {
+        displayLabel.text = "0"
         displayText = nil
-        displayLabel.text = displayText
         firstNum = 0
         secondNum = 0
         operatorSign = nil
@@ -53,34 +53,38 @@ class ViewController: UIViewController {
 
     
     // 03. 연산 기호 눌렸을 때의 기능 정의
-    /* displayText가 비어있지 않을 때만 prevOperation 함수 실행한다.
-     눌려진 연산기호가 = 일 경우엔 최종 값을 출력하고 초기화한다.
+    /*
+    3-1. displayText != nil일 때만 operation 함수 실행
+    3-2. 눌려진 연산기호가 = 일 경우엔 최종 값을 출력하고 초기화한다.
+    3-3. 일단 기존 기호를 가지고 연산 이후에 연산기호 바꾸기
+    3-4. 연산 완료 후에는 displayText 초기화
+    3-5. 연산할
  	*/
     @IBAction func operation(signBtn: UIButton) {
-        if !(displayText.isEmpty) {
+        if displayText != nil {
             Operation()
             operatorSign = signBtn.titleLabel!.text!
-            displayText = ""
+            displayText = nil
             if signBtn.titleLabel!.text! == "=" {
                 displayLabel.text = String(firstNum)
-                firstNum = 0
-                secondNum = 0
-                operatorSign = nil
             }
+        }else {
+            operatorSign = signBtn.titleLabel!.text!
         }
     }
 
     
-    // 04. 함수 내에서 쓰일 내부 연산자 prevOperation
+    // 04. 함수 내에서 쓰일 내부 연산 함수 Operation
     /* 
-     4-1. prevNum=0 일 경우는, 최초 연산 시점이기 때문에, prevNum에 현재 displayText에 저장된 숫자를 집어넣는다.
-     4-2. prevNum에 값이 있다면, 연산을 기다리는 displayText가 존재한다는 뜻으로, 연산 기호에 맞추어 연산을 해준다.
+     4-1. operatorSign == nil, 최초 연산 시점, firstNum에 현재 displayText에 저장된 숫자를 대입
+     4-2. firstNum에 값이 있다면, 연산을 기다리는 displayText가 존재한다는 뜻으로, 연산 기호에 맞춰 연산을 해준다.
      */
+    
     private func Operation() {
-        if (operatorSign?.isEmpty)! {
-            firstNum = Int(displayText)!
+        if operatorSign == nil {
+            firstNum = Int(displayText!)!
         }else {
-            secondNum = Int(displayText)!
+            secondNum = Int(displayText!)!
             if operatorSign == "+" {
                 firstNum += secondNum
                 displayLabel.text = String(firstNum)
@@ -95,11 +99,8 @@ class ViewController: UIViewController {
                 displayLabel.text = String(firstNum)
             }
         }
+        secondNum = 0
     }
-    
-    
-
-
-
 
 }
+
