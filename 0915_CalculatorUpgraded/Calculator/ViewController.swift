@@ -87,19 +87,15 @@ class ViewController: UIViewController {
             secondNum = Int(displayText!)!
             if operatorSign == "+" {
                 firstNum += secondNum
-                displayLabel.text = String(firstNum)
             }else if operatorSign == "-" {
                 firstNum -= secondNum
-                displayLabel.text = String(firstNum)
             }else if operatorSign == "x" {
                 firstNum *= secondNum
-                displayLabel.text = String(firstNum)
             }else if operatorSign == "÷" {
                 firstNum /= secondNum
-                displayLabel.text = String(firstNum)
             }
+            displayLabel.text = String(firstNum)
         }
-        secondNum = 0
     }
 
 }
