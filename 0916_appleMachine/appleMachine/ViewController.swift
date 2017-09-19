@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     // viewDidLoad시 초기화
+    @IBOutlet weak var productName: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayLabel.text = "0원"
@@ -20,7 +24,6 @@ class ViewController: UIViewController {
     // 잔액을 보여주는 UILable
     @IBOutlet weak var displayLabel: UILabel!
     
-
     // 구매 성공 또는 실패를 나타내는 노티피케이션 UILabel
     @IBOutlet var notification: UILabel!
     
