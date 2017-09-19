@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // viewDidLoad시 초기화
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +19,13 @@ class ViewController: UIViewController {
  
     // 잔액을 보여주는 UILable
     @IBOutlet weak var displayLabel: UILabel!
+    
 
     // 구매 성공 또는 실패를 나타내는 노티피케이션 UILabel
     @IBOutlet var notification: UILabel!
     
-  
     // 충전 또는 구매에 의해 변하는 잔액 변수
     var chargeValue: Int = 0
-    
-
     
     // 금액 충전 버튼(btnCharge) : UIbutton
     // 3종류: 10만원, 30만원, 50만원 *Int 태그 사용
@@ -37,7 +35,6 @@ class ViewController: UIViewController {
         displayLabel.text = String(chargeValue) + "원"
         displayLabel.tag = chargeValue
     }
-    
     
     // 물건 구매 버튼(btnBuy) : UIButton
     // 4가지 종류: 5만원, 10만원, 20만원, 30만원 *Int 태그 사용

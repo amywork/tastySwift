@@ -35,7 +35,7 @@ class Student {
         }
         // 동시에 GradePoint의 합과 Grade를 업데이트 한다.
         getTotalGradePoints()
-        gradepointToGrade()
+        gradepointToGrade(totalGradePoint)
     }
     
     
@@ -48,20 +48,24 @@ class Student {
     }
     
     
-    func gradepointToGrade() {
-        if totalGradePoint >= 4.0 {
+    func gradepointToGrade(_: Double) -> String {
+        switch totalGradePoint {
+        case 4.0...4.5:
             totalGrade = "A+"
-        }else if totalGradePoint >= 3.5 {
-            totalGrade = "A+"
-        }else if totalGradePoint >= 3.0 {
+        case 3.5..<4.0:
+            totalGrade = "A"
+        case 3.0..<3.5:
             totalGrade = "B+"
-        }else if totalGradePoint >= 2.5 {
+        case 2.5..<3.0:
             totalGrade = "B"
-        }else if totalGradePoint >= 2.0 {
+        case 2.0..<2.5:
             totalGrade = "C+"
-        }else if totalGradePoint >= 1.5 {
+        case 1.5..<2.0:
             totalGrade = "C"
+        default:
+            totalGrade = "F"
         }
+        return totalGrade
     }
 }
 
