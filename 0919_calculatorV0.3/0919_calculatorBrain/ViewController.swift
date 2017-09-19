@@ -14,11 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     @IBOutlet weak var display: UILabel!
     
     var isUserTyping: Bool = false
 
-    // When user touch Digits
+    // When user touch Digits - get the digits from keyboard.
     @IBAction func touchDigit(_ sender: UIButton) {
         
         guard let digit = sender.currentTitle else {return}
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // Computed properties
+    // display Value
     var displayValue: Double {
         get {
             return Double(display.text!)!
@@ -41,20 +42,19 @@ class ViewController: UIViewController {
         }
     }
     
-    var brain: CalculatorBrain = CalculatorBrain()
+    
+    private var brain: CalculatorBrain = CalculatorBrain()
     
     
     // 연산하기
-    @IBAction func operation(_ sender: UIButton) {
+    @IBAction func performOperation(_ sender: UIButton) {
         if isUserTyping {
             brain.setOperand(displayValue)
             isUserTyping = false
         }
-        
         if let mathSymbol = sender.currentTitle {
             brain.performOperation(mathSymbol)
         }
-        
         if let result = brain.result {
             displayValue = result
         }
