@@ -8,19 +8,16 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
-    
-    // viewDidLoad시 초기화
-    @IBOutlet weak var productName: UILabel!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         displayLabel.text = "0원"
         notification.text = nil
     }
- 
+    
     // 잔액을 보여주는 UILable
     @IBOutlet weak var displayLabel: UILabel!
     
@@ -31,21 +28,46 @@ class ViewController: UIViewController {
     var chargeValue: Int = 0
     
     // 금액 충전 버튼(btnCharge) : UIbutton
-    // 3종류: 10만원, 30만원, 50만원 *Int 태그 사용
-    // 기능: btnCharge 클릭 시 chargeValue에 금액 추가, displayLabel 값 변경
     @IBAction func chargePoints(btnCharge: UIButton) {
         chargeValue += Int(btnCharge.tag)
         displayLabel.text = String(chargeValue) + "원"
         displayLabel.tag = chargeValue
     }
     
+    
+    enum Product {
+        case iphoneX, Airpod, Watch3, WatchBand
+        init?(type: String) {
+            switch type {
+            case "iphoneX":
+                self = .iphoneX
+            case "Airpod":
+                self = .Airpod
+            case "Watch3":
+                self = .Watch3
+            case "WatchBand":
+                self = .WatchBand
+            default:
+                return nil
+            }
+        }
+    }
+    
+    
     // 물건 구매 버튼(btnBuy) : UIButton
-    // 4가지 종류: 5만원, 10만원, 20만원, 30만원 *Int 태그 사용
-    // 01. 잔액 >= 물건 금액 -> 구매 완료 노티피케이션, 잔액 -= 물건금액
-    // 02. 잔액 < 물건 금액 -> 구매 실패, 잔액 충전 노티피케이션
     @IBAction func buyItem(btnBuy: UIButton) {
         if chargeValue >= Int(btnBuy.tag) {
-            notification.text = "구매가 성공적으로 완료되었습니다!"
+            let product : Product = Product(type: btnBuy.currentTitle!)!
+            switch product {
+            case .iphoneX:
+                notification.text = "iphoneX 구매가 완료되었습니다!"
+            case .Airpod:
+                notification.text = "Airpod 구매가 완료되었습니다!"
+            case .Watch3:
+                notification.text = "Watch3 구매가 완료되었습니다!"
+            case .WatchBand:
+                notification.text = "Watch Band 구매가 완료되었습니다!"
+            }
             chargeValue -= btnBuy.tag
             displayLabel.text = String(chargeValue) + "원"
         }else {
