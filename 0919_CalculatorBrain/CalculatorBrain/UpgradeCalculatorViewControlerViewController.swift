@@ -55,6 +55,7 @@ class UpgradeCalculatorViewControler: UIViewController {
         guard let symbol = sender.currentTitle else { return }
         calModel.perfomrOperation(mathSymbol: symbol)
         
+        
         if calModel.returnValue != nil {
             displayValue = calModel.returnValue!
         }
