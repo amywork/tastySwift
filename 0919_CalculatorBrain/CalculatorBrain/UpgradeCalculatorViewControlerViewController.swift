@@ -14,7 +14,7 @@ class UpgradeCalculatorViewControler: UIViewController {
     @IBOutlet weak var displayLB: UILabel!
 
     //MARK: - IBAction
-    //숫자 입력받는 거 OK
+    //숫자 입력받기 OK
     var isTyping: Bool = false
     @IBAction func digit(_ sender: UIButton) {
         let currentDigit = sender.currentTitle!
@@ -31,10 +31,10 @@ class UpgradeCalculatorViewControler: UIViewController {
     // 리셋
     @IBAction func resetHandler(_ sender: UIButton) {
         isTyping = false
-        displayLB.text = "0"
+        displayValue = 0
     }
     
-    // 숫자 임시값
+    // 여기저기 왔다갔다 할 디스플레이 값
     var displayValue: Double {
         get {
             return Double(displayLB.text!)!
@@ -54,6 +54,10 @@ class UpgradeCalculatorViewControler: UIViewController {
         
         guard let symbol = sender.currentTitle else { return }
         calModel.perfomrOperation(mathSymbol: symbol)
+        
+        if calModel.returnValue != nil {
+            displayValue = calModel.returnValue!
+        }
     }
 
 }
