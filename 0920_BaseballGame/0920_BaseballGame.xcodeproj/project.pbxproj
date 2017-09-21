@@ -12,6 +12,7 @@
 		DD898DFC1F7348280093DADD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD898DFA1F7348280093DADD /* Main.storyboard */; };
 		DD898DFE1F7348280093DADD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD898DFD1F7348280093DADD /* Assets.xcassets */; };
 		DD898E011F7348280093DADD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD898DFF1F7348280093DADD /* LaunchScreen.storyboard */; };
+		DD898E0A1F7361410093DADD /* CompareClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD898E091F7361410093DADD /* CompareClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DD898DFD1F7348280093DADD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD898E001F7348280093DADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD898E021F7348280093DADD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD898E091F7361410093DADD /* CompareClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				DD898E081F734E160093DADD /* Supported File */,
 				DD898DF81F7348280093DADD /* ViewController.swift */,
+				DD898E091F7361410093DADD /* CompareClass.swift */,
 				DD898DFA1F7348280093DADD /* Main.storyboard */,
 			);
 			path = 0920_BaseballGame;
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD898E0A1F7361410093DADD /* CompareClass.swift in Sources */,
 				DD898DF91F7348280093DADD /* ViewController.swift in Sources */,
 				DD898DF71F7348280093DADD /* AppDelegate.swift in Sources */,
 			);
