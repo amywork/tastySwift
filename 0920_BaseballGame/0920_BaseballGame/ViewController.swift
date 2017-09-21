@@ -60,6 +60,8 @@ class ViewController: UIViewController {
                 let lastIndex = selectedNumberList!.count - 1
                 let inputLabel = displayLabelList![lastIndex]
                 inputLabel.text = "\(selectedNum)"
+            }else {
+                scoreLabel.text = "중복 숫자 불가 🤡"
             }
         }
     }
@@ -91,7 +93,6 @@ class ViewController: UIViewController {
             }
             
         }
-        
         historyLabel.text = historyStr
         resetProperty()
     }
