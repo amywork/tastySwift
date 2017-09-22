@@ -71,22 +71,13 @@ class ViewController: UIViewController {
     
     @IBAction func btnCheck(_ sender: UIButton) {
         if isRunning && selectedNumberList!.count == displayLabelList!.count {
-            
             // History 라벨에 결과 축적을 위해 이전값을 Str으로 변환하는 작업
-            for i in 0..<3 {
-                displayLabelStr += "\(selectedNumberList![i])"
-            }
-            
-            // Brain, 계산을 부탁해
-            let result = brain.compareCheck(arr1: selectedNumberList!, arr2: randomNumberList!)
-
-            // Brain, 결과 스트링을 부탁해
-            let finalStr = brain.tupleToString(tuple: (result.s, result.b), myStr: displayLabelStr)
-            
+            for i in 0..<3 { displayLabelStr += "\(selectedNumberList![i])" }
+            // Brain, 연산 처리를 부탁해
+            let finalStr = brain.finalSetting(arr1: selectedNumberList!, arr2: randomNumberList!, myStr: displayLabelStr)
             scoreLabel.text = finalStr.SL
             historyStr += finalStr.HL
             historyLabel.text = historyStr
-
         }
         resetProperty()
     }
