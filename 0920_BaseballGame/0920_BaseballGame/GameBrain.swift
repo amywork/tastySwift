@@ -4,11 +4,14 @@
 ////
 ////  Created by 김기윤 on 21/09/2017.
 ////  Copyright © 2017 younari. All rights reserved.
-
+////  기본 기능 구현 (2017.09.20)
+////  View에서 Model 분리 (2017.09.21)
+////  Enum, Property Observer가 들어갈만한 곳은 없을지 리팩토링 (2017.09.21)
 
 import Foundation
 class GameBrain {
 
+    
     // A. 두개의 비교 대상 배열을 받아서, (strike, ball) tuple로 리턴.
     func compareCheck(arr1: [Int], arr2: [Int]) -> (s: Int,b: Int) {
         var strike: Int = 0

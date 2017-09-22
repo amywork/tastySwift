@@ -15,12 +15,16 @@ class ViewController: UIViewController {
     private var isRunning: Bool = false
     private var displayLabelList: [UILabel]?
     private var selectedNumberList: [Int]?
-    var numStrike: Int = 0
-    var numBall: Int = 0
-    var randomNumberList: [Int]?
-    var historyStr: String = ""
-    var displayLabelStr: String = ""
-
+    private var randomNumberList: [Int]?
+    private var historyStr: String = ""
+    private var displayLabelStr: String {
+        get {
+            var str: String = ""
+            for i in 0..<3 { str += "\(selectedNumberList![i])" }
+            return str
+        }
+    }
+    
     //Mark - 01. UILabel
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var displayLabel01: UILabel!
@@ -67,13 +71,11 @@ class ViewController: UIViewController {
     //Mark - 06. UIButton: btnCheck, btnCancel, btnReplay
     
     //6-1. 게임 Brain 모델 의 instance 생성
-    var brain: GameBrain = GameBrain()
+    let brain: GameBrain = GameBrain()
     
     @IBAction func btnCheck(_ sender: UIButton) {
         if isRunning && selectedNumberList!.count == displayLabelList!.count {
-            // History 라벨에 결과 축적을 위해 이전값을 Str으로 변환하는 작업
-            for i in 0..<3 { displayLabelStr += "\(selectedNumberList![i])" }
-            // Brain, 연산 처리를 부탁해
+            // Brain, 연산완료후 최종 String 반환
             let finalStr = brain.finalSetting(arr1: selectedNumberList!, arr2: randomNumberList!, myStr: displayLabelStr)
             scoreLabel.text = finalStr.SL
             historyStr += finalStr.HL
@@ -85,9 +87,6 @@ class ViewController: UIViewController {
     //초기화 Method
     func resetProperty() {
         selectedNumberList = []
-        displayLabelStr = ""
-        numStrike = 0
-        numBall = 0
         for label in displayLabelList! {
             label.text = "-"
         }
