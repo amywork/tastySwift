@@ -60,8 +60,8 @@
 			children = (
 				DD898E081F734E160093DADD /* Supported File */,
 				DD898DF81F7348280093DADD /* ViewController.swift */,
-				DD898E091F7361410093DADD /* GameBrain.swift */,
 				DDBF36201F74D4AE0099AC41 /* SmartBrain.swift */,
+				DD898E091F7361410093DADD /* GameBrain.swift */,
 				DD898DFA1F7348280093DADD /* Main.storyboard */,
 			);
 			path = 0920_BaseballGame;

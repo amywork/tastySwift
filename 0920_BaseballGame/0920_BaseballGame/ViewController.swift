@@ -69,12 +69,12 @@ class ViewController: UIViewController {
     
     //Mark - 06. 연산: btnCheck - UIButton
     //6-1. 게임 Brain 모델 의 instance 생성
-    let brain: GameBrain = GameBrain()
+    let brain: SmartBrain = SmartBrain()
     
     @IBAction func btnCheck(_ sender: UIButton) {
         if isRunning && selectedNumberList!.count == displayLabelList!.count {
             // Brain, 연산완료후 최종 String 반환
-            let finalStr = brain.finalSetting(arr1: selectedNumberList!, arr2: randomNumberList!, myStr: displayLabelStr)
+            let finalStr = brain.compareCheck(arr1: selectedNumberList!, arr2: randomNumberList!, myStr: displayLabelStr)
             scoreLabel.text = finalStr.SL
             historyStr += finalStr.HL
             historyLabel.text = historyStr
