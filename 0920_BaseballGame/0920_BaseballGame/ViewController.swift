@@ -71,7 +71,8 @@ class ViewController: UIViewController {
     
     @IBAction func btnCheck(_ sender: UIButton) {
         if isRunning && selectedNumberList!.count == displayLabelList!.count {
-        
+            
+            // History 라벨에 결과 축적을 위해 이전값을 Str으로 변환하는 작업
             for i in 0..<3 {
                 displayLabelStr += "\(selectedNumberList![i])"
             }
@@ -90,7 +91,6 @@ class ViewController: UIViewController {
         resetProperty()
     }
     
-
     //초기화 Method
     func resetProperty() {
         selectedNumberList = []
