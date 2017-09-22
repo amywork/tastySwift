@@ -11,6 +11,15 @@
 import Foundation
 class GameBrain {
     
+    
+    // Enum을 사용할 수 있을까...일단 보류
+    enum checkCase {
+        case strike
+        case ball
+        case out
+    }
+    
+    
     // A. 두개의 비교 대상 배열을 받아서, (strike, ball) tuple로 리턴.
     private func compareCheck(arr1: [Int], arr2: [Int]) -> (s: Int,b: Int) {
         var strike: Int = 0
