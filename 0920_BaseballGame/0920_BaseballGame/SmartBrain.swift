@@ -6,11 +6,21 @@
 ////  Copyright © 2017 younari. All rights reserved.
 ////  기본 기능 구현 (2017.09.20)
 ////  View에서 Model 분리 (2017.09.21)
+////  Enum, Property Observer가 들어갈만한 곳은 없을지 리팩토링 (2017.09.21)
 
 import Foundation
-class GameBrain {
-
-    // A. 두개의 비교 대상 배열을 받아서, (strike, ball) tuple로 리턴.
+class SmartBrain {
+    
+    // SmartBrain은 GameBrain보다 진화된 단계로 구성중이지만 아직 작성하지 못했습니다..
+    // Enum, Property Observer가 들어갈만한 곳은 없을지
+    // Strike 및 Ball의 케이스를 담고있는 Enum
+    enum CheckCase {
+        case S(Int)
+        case B(Int)
+    }
+    
+    
+    // A. 두개의 비교 대상 배열을 받아서, (strike, ball) tuple을 리턴하는 함수
     private func compareCheck(arr1: [Int], arr2: [Int]) -> (s: Int,b: Int) {
         var strike: Int = 0
         var ball: Int = 0
@@ -21,7 +31,7 @@ class GameBrain {
                 ball += 1
             }
         }
-        return (s: strike,b: ball)
+        return (strike, ball)
     }
     
     // B. (Strike,Ball) 튜플을 받아서 전시할 문자 (스코어라벨,히스토리라벨) 튜플로 바꿔주는 함수
@@ -37,7 +47,7 @@ class GameBrain {
         }else {
             displayStr = "S: \(result.s), B:  \(result.b)"
         }
-    
+        
         historyStr = myStr + " ➜ " + displayStr + "\n"
         return (SL: displayStr,HL: historyStr)
     }
@@ -48,7 +58,7 @@ class GameBrain {
         let returnResult = tupleToString(tuple: compareResult, myStr: myStr)
         return returnResult
     }
-
+    
     // 랜덤의 3자리 Int 생성 함수
     func makeRandomList() -> [Int] {
         var randomNumberList: [Int] = []
