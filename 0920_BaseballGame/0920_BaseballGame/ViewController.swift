@@ -4,12 +4,11 @@
 //
 //  Created by 김기윤 on 21/09/2017.
 //  Copyright © 2017 younari. All rights reserved.
-//
+//  ViewController는 최대한 UI 관련된 일만 하게끔 처리해주세요.
 
 import UIKit
 
 class ViewController: UIViewController {
-
 
     //Mark - 00. Property
     private var isRunning: Bool = false
@@ -43,9 +42,9 @@ class ViewController: UIViewController {
         resetProperty()
         isRunning = true
         randomNumberList = brain.makeRandomList()
+        scoreLabel.text = "시작해볼까요 👻"
         historyStr = ""
         historyLabel.text = ""
-        scoreLabel.text = ""
     }
     
     //Mark - 04. Clear Button (숫자 지우기)
@@ -63,13 +62,12 @@ class ViewController: UIViewController {
                 let inputLabel = displayLabelList![lastIndex]
                 inputLabel.text = "\(selectedNum)"
             }else {
-                scoreLabel.text = "중복 숫자 불가 🤡"
+                scoreLabel.text = "숫자 중복은 안돼요 🤡"
             }
         }
     }
     
-    //Mark - 06. UIButton: btnCheck, btnCancel, btnReplay
-    
+    //Mark - 06. 연산: btnCheck - UIButton
     //6-1. 게임 Brain 모델 의 instance 생성
     let brain: GameBrain = GameBrain()
     
