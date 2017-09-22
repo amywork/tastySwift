@@ -5,8 +5,8 @@
 ////  Created by 김기윤 on 21/09/2017.
 ////  Copyright © 2017 younari. All rights reserved.
 ////  기본 기능 구현 (2017.09.20)
-////  View에서 Model 분리 (2017.09.21)
-////  Enum을 활용한 Brain 입니다.
+////  1차 Brain : View에서 Model 분리 (2017.09.21)
+////  2차 Brain : Enum을 활용한 Brain 입니다. (2017.09.21)
 
 import Foundation
 class SmartBrain {
@@ -39,8 +39,15 @@ class SmartBrain {
             caseCheck = PickCase.ballAndStrike(strike: strike, ball: ball)
         }
         
-        var displayStr: String = ""
-        var historyStr: String = ""
+
+        
+        // Property Observer
+        var historyStr: String?
+        var displayStr: String = "" {
+            didSet {
+                historyStr = myStr + " ➜ " + displayStr + "\n"
+            }
+        }
         
         switch caseCheck {
         case .out:
@@ -51,8 +58,7 @@ class SmartBrain {
             displayStr = "YES👌🏻👏🏻♥️"
         }
         
-        historyStr = myStr + " ➜ " + displayStr + "\n"
-        return (SL: displayStr, HL: historyStr)
+        return (SL: displayStr, HL: historyStr!)
     }
     
     // 랜덤의 3자리 Int 생성 함수

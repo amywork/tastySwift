@@ -5,7 +5,7 @@
 ////  Created by 김기윤 on 21/09/2017.
 ////  Copyright © 2017 younari. All rights reserved.
 ////  기본 기능 구현 (2017.09.20)
-////  View에서 Model 분리 (2017.09.21)
+////  1차 Brain : View에서 Model 분리 (2017.09.21)
 
 import Foundation
 class GameBrain {
