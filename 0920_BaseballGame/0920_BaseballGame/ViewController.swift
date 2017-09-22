@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var numBall: Int = 0
     var randomNumberList: [Int]?
     var historyStr: String = ""
+    var displayLabelStr: String = ""
 
     //Mark - 01. UILabel
     @IBOutlet weak var scoreLabel: UILabel!
@@ -33,10 +34,7 @@ class ViewController: UIViewController {
         displayLabelList = [displayLabel01,displayLabel02,displayLabel03]
     }
     
-    //게임 Brain 모델 의 instance 생성
-    var brain: GameBrain = GameBrain()
-    
-    //Mark - 03. Start button Click : 시작
+    //Mark - 03. Start button : 시작
     @IBAction func btnReplay(_ sender: UIButton) {
         resetProperty()
         isRunning = true
@@ -66,34 +64,29 @@ class ViewController: UIViewController {
         }
     }
     
-    
     //Mark - 06. UIButton: btnCheck, btnCancel, btnReplay
+    
+    //6-1. 게임 Brain 모델 의 instance 생성
+    var brain: GameBrain = GameBrain()
+    
     @IBAction func btnCheck(_ sender: UIButton) {
         if isRunning && selectedNumberList!.count == displayLabelList!.count {
         
-            // Brain, 계산을 부탁해
-            let result = brain.compareCheck(arr1: selectedNumberList!, arr2: randomNumberList!)
-
-            
-            //scoreLabel, history에 전시
-            var displayLabelStr: String = ""
             for i in 0..<3 {
                 displayLabelStr += "\(selectedNumberList![i])"
             }
             
-            if result.s + result.b == 0 {
-                scoreLabel.text = "3 Out!"
-                historyStr += displayLabelStr + " : 3 Out! \n"
-            }else if result.s == 3 {
-                scoreLabel.text = "YES👌🏻👏🏻♥️"
-                historyStr += displayLabelStr + " YES👌🏻👏🏻♥️"
-            }else {
-                scoreLabel.text = "S: \(result.s), B:  \(result.b)"
-                historyStr += displayLabelStr + " S: \(result.s), B:  \(result.b) \n"
-            }
+            // Brain, 계산을 부탁해
+            let result = brain.compareCheck(arr1: selectedNumberList!, arr2: randomNumberList!)
+
+            // Brain, 결과 스트링을 부탁해
+            let finalStr = brain.tupleToString(tuple: (result.s, result.b), myStr: displayLabelStr)
             
+            scoreLabel.text = finalStr.SL
+            historyStr += finalStr.HL
+            historyLabel.text = historyStr
+
         }
-        historyLabel.text = historyStr
         resetProperty()
     }
     
@@ -101,6 +94,7 @@ class ViewController: UIViewController {
     //초기화 Method
     func resetProperty() {
         selectedNumberList = []
+        displayLabelStr = ""
         numStrike = 0
         numBall = 0
         for label in displayLabelList! {
