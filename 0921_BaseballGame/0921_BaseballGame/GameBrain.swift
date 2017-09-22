@@ -9,7 +9,7 @@
 
 import Foundation
 class GameBrain {
-
+    
     // A. 두개의 비교 대상 배열을 받아서, (strike, ball) tuple로 리턴.
     private func compareCheck(arr1: [Int], arr2: [Int]) -> (s: Int,b: Int) {
         var strike: Int = 0
@@ -37,7 +37,7 @@ class GameBrain {
         }else {
             displayStr = "S: \(result.s), B:  \(result.b)"
         }
-    
+        
         historyStr = myStr + " ➜ " + displayStr + "\n"
         return (SL: displayStr,HL: historyStr)
     }
@@ -48,7 +48,7 @@ class GameBrain {
         let returnResult = tupleToString(tuple: compareResult, myStr: myStr)
         return returnResult
     }
-
+    
     // 랜덤의 3자리 Int 생성 함수
     func makeRandomList() -> [Int] {
         var randomNumberList: [Int] = []

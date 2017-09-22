@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  0920_BaseballGame
+//  0921_BaseballGame
 //
-//  Created by 김기윤 on 21/09/2017.
-//  Copyright © 2017 younari. All rights reserved.
+//  Created by Kimkeeyun on 22/09/2017.
+//  Copyright © 2017 yunari.me. All rights reserved.
 //
 
 import UIKit

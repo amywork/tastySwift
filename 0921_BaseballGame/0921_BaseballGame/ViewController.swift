@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     //Mark - 00. Property
     private var isRunning: Bool = false
     private var displayLabelList: [UILabel]?
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayLabel02: UILabel!
     @IBOutlet weak var displayLabel03: UILabel!
     @IBOutlet weak var historyLabel: UITextView!
-  
+    
     // Mark - 02. ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     @IBAction func btnCancel(_ sender: UIButton) {
         resetProperty()
     }
-
+    
     //Mark - 05. UIButton: btnNumber click
     @IBAction func btnNumClick(_ sender: UIButton) {
         if isRunning {
@@ -89,5 +89,5 @@ class ViewController: UIViewController {
             label.text = "-"
         }
     }
-
+    
 }

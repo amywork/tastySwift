@@ -11,13 +11,22 @@
 import Foundation
 class SmartBrain {
     
-    // Strike 및 Ball의 케이스를 담고있는 Enum
     private enum PickCase {
-        case allStrike //"YES👌🏻👏🏻♥️"
-        case ballAndStrike(strike: Int, ball: Int) //"S: \(strike), B:  \(ball)"
-        case out //"3 Out 💩"
+        case allStrike
+        case ballAndStrike(strike: Int, ball: Int)
+        case out
+        func printString() -> String {
+            switch self {
+            case .out:
+                return "3 Out 💩"
+            case .ballAndStrike(strike: let s, ball: let b):
+                return "S: \(s), B: \(b)"
+            case .allStrike:
+                return "YES👌🏻👏🏻♥️"
+            }
+        }
     }
-
+    
     func compareCheck(arr1: [Int], arr2: [Int], myStr: String) -> (SL: String, HL: String) {
         var strike: Int = 0
         var ball: Int = 0
@@ -31,16 +40,6 @@ class SmartBrain {
             }
         }
         
-        if strike + ball == 0 {
-            caseCheck = PickCase.out
-        }else if strike == 3 {
-            caseCheck = PickCase.allStrike
-        }else {
-            caseCheck = PickCase.ballAndStrike(strike: strike, ball: ball)
-        }
-        
-
-        
         // Property Observer
         var historyStr: String?
         var displayStr: String = "" {
@@ -49,13 +48,12 @@ class SmartBrain {
             }
         }
         
-        switch caseCheck {
-        case .out:
-            displayStr = "3 Out 💩"
-        case .ballAndStrike:
-            displayStr = "S: \(strike), B:  \(ball)"
-        case .allStrike:
-            displayStr = "YES👌🏻👏🏻♥️"
+        if strike + ball == 0 {
+            displayStr = PickCase.out.printString()
+        }else if strike == 3 {
+            displayStr = PickCase.allStrike.printString()
+        }else {
+            displayStr = PickCase.ballAndStrike(strike: strike, ball: ball).printString()
         }
         
         return (SL: displayStr, HL: historyStr!)
