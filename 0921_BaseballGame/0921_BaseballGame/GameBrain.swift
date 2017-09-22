@@ -6,6 +6,7 @@
 ////  Copyright © 2017 younari. All rights reserved.
 ////  기본 기능 구현 (2017.09.20)
 ////  1차 Brain : View에서 Model 분리 (2017.09.21)
+////  1차 모델로, 현재 사용되는 클래스는 아닙니다.
 
 import Foundation
 class GameBrain {

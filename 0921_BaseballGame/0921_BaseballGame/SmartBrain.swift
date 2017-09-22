@@ -15,19 +15,19 @@ class SmartBrain {
         case allStrike
         case ballAndStrike(strike: Int, ball: Int)
         case out
-        func printString() -> String {
+        func printString() -> String { // 라벨 출력 용도의 메소드
             switch self {
             case .out:
                 return "3 Out 💩"
             case .ballAndStrike(strike: let s, ball: let b):
-                return "S: \(s), B: \(b)"
+                return "\(s) Strike, \(b) Ball"
             case .allStrike:
-                return "YES👌🏻👏🏻♥️"
+                return "정답이에요👌🏻👏🏻♥️"
             }
         }
     }
     
-    func compareCheck(arr1: [Int], arr2: [Int], myStr: String) -> (SL: String, HL: String) {
+    func compareCheck(arr1: [Int], arr2: [Int], inputStr: String) -> (SL: String, HL: String) {
         var strike: Int = 0
         var ball: Int = 0
         var caseCheck: PickCase
@@ -44,7 +44,7 @@ class SmartBrain {
         var historyStr: String?
         var displayStr: String = "" {
             didSet {
-                historyStr = myStr + " ➜ " + displayStr + "\n"
+                historyStr = inputStr + " 👉🏻 " + displayStr + "\n"
             }
         }
         
