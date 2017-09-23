@@ -4,10 +4,9 @@
 //
 //  Created by 김기윤 on 20/09/2017.
 //  Copyright © 2017 younari. All rights reserved.
-//
+//  Unary Function 해결하기
 
 import UIKit
-
 class UpgradeCalculatorViewControler: UIViewController {
 
     //MARK: - UI Property
@@ -32,6 +31,7 @@ class UpgradeCalculatorViewControler: UIViewController {
         displayValue = 0.0
         isTyping = false
         calModel.setNumber(displayNum: displayValue)
+        calModel.operand = nil
     }
     
     // 전시된 값을 get 하거나 set하는 displayValue
@@ -54,10 +54,10 @@ class UpgradeCalculatorViewControler: UIViewController {
         
         guard let symbol = sender.currentTitle else { return }
         calModel.perfomrOperation(mathSymbol: symbol)
-
-        if calModel.returnValue != nil {
+        if symbol == "=" {
             displayValue = calModel.returnValue!
+        }else {
+            displayValue = calModel.operand!
         }
     }
-
 }

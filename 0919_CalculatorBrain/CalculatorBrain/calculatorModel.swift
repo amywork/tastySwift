@@ -50,17 +50,17 @@ class CalculatorModel {
             switch operationCase {
             case .unary(let function):
                 if leftNumber != nil {
-                    leftNumber = function(leftNumber!)
+                    returnValue = function(leftNumber!)
                 }
-            case .binary(let binaryFunction):
+            case .binary(let binaryFunc):
             if leftNumber != nil && operand == nil {
                 operand = leftNumber!
-                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunction)
+                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
             }else if leftNumber != nil && operand != nil {
-                operand! += leftNumber!
-                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunction)
+                operand! = waitingBinary!.doBinaryOp(with: leftNumber!)
+                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
             }else if operand != nil && leftNumber == nil {
-                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunction)
+                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
             }
             leftNumber = nil
             case .equal:
@@ -82,14 +82,12 @@ class CalculatorModel {
     // 바이너리 연산 값 구하기
     private func getResult() {
         if waitingBinary != nil && leftNumber != nil {
-            leftNumber = waitingBinary!.doBinaryOp(with: leftNumber!)
+            returnValue = waitingBinary!.doBinaryOp(with: leftNumber!)
         }
     }
     
     // 뷰콘트롤러에 넘겨줄 연산 완료된 값
-    var returnValue: Double? {
-        return leftNumber
-    }
+    var returnValue: Double?
     
     
 }
