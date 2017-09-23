@@ -4,7 +4,6 @@
 //
 //  Created by 김기윤 on 20/09/2017.
 //  Copyright © 2017 younari. All rights reserved.
-//  Unary Function 해결하기
 
 import UIKit
 class UpgradeCalculatorViewControler: UIViewController {
@@ -54,10 +53,12 @@ class UpgradeCalculatorViewControler: UIViewController {
         
         guard let symbol = sender.currentTitle else { return }
         calModel.perfomrOperation(mathSymbol: symbol)
+        
         if symbol == "=" {
             displayValue = calModel.returnValue!
         }else {
             displayValue = calModel.operand!
         }
+        
     }
 }

@@ -18,7 +18,6 @@ class CalculatorModel {
         case equal
     }
 
-    
     // 연산 기호 : 연산 타입 딕셔너리 생성
     private var operDic: [String:OperatoinCase] = [
         "+": .binary({(num1, num2) -> Double in return num1 + num2}),
@@ -31,7 +30,6 @@ class CalculatorModel {
         "=": .equal
     ]
 
-    
     // 연산을 기다리는 옵셔널 Double 변수 생성
     var leftNumber: Double? 
     
@@ -45,32 +43,37 @@ class CalculatorModel {
     
     // 연산 클릭시 연산 수행
     var operand: Double?
-    func perfomrOperation(mathSymbol: String) {
+        func perfomrOperation(mathSymbol: String) {
         if let operationCase = operDic[mathSymbol] {
             switch operationCase {
+                
             case .unary(let function):
-                if leftNumber != nil {
-                    returnValue = function(leftNumber!)
+                if leftNumber != nil && operand == nil {
+                    operand = function(leftNumber!)
+                }else if leftNumber != nil && operand != nil {
+                    operand = function(operand!)
                 }
+                
             case .binary(let binaryFunc):
-            if leftNumber != nil && operand == nil {
-                operand = leftNumber!
-                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
-            }else if leftNumber != nil && operand != nil {
-                operand! = waitingBinary!.doBinaryOp(with: leftNumber!)
-                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
-            }else if operand != nil && leftNumber == nil {
-                waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
-            }
-            leftNumber = nil
+                if leftNumber != nil && operand == nil {
+                    operand = leftNumber!
+                    waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
+                }else if leftNumber != nil && operand != nil {
+                    operand! = waitingBinary!.doBinaryOp(with: leftNumber!)
+                    waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
+                }else if operand != nil && leftNumber == nil {
+                    waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
+                }
+                leftNumber = nil
+                
             case .equal:
                 getResult()
                 operand = nil
             }
-    	}
+        }
     }
     
-    // 바이너리 값 저장하고 있을 스트럭트
+    // Binary 연산을 저장하고 있을 Struct
     private struct WaitingBinary {
         let firstNum: Double
         let waitingFunc: (Double,Double) -> Double
@@ -79,15 +82,12 @@ class CalculatorModel {
         }
     }
 
-    // 바이너리 연산 값 구하기
+    // Binary 연산의 결과값 구하기 (Equal 연산)
+    var returnValue: Double? // ViewController에 넘겨줄 연산 완료 값
     private func getResult() {
         if waitingBinary != nil && leftNumber != nil {
             returnValue = waitingBinary!.doBinaryOp(with: leftNumber!)
         }
     }
-    
-    // 뷰콘트롤러에 넘겨줄 연산 완료된 값
-    var returnValue: Double?
-    
     
 }
