@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  0925_BaseballGame
+//  0925_BallGame
 //
 //  Created by Kimkeeyun on 24/09/2017.
 //  Copyright © 2017 yunari.me. All rights reserved.
