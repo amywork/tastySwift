@@ -282,7 +282,7 @@
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
 				INFOPLIST_FILE = 0925_BaseballGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yunari.me.-925-BaseballGame";
+				PRODUCT_BUNDLE_IDENTIFIER = younari.CalculatorBrain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -295,7 +295,7 @@
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
 				INFOPLIST_FILE = 0925_BaseballGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yunari.me.-925-BaseballGame";
+				PRODUCT_BUNDLE_IDENTIFIER = younari.CalculatorBrain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
