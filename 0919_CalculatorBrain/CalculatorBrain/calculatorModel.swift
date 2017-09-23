@@ -68,7 +68,6 @@ class CalculatorModel {
                 
             case .equal:
                 getResult()
-                operand = nil
             }
         }
     }
