@@ -18,7 +18,6 @@ class UpgradeCalculatorViewControler: UIViewController {
     var isTyping: Bool = false
     @IBAction func digit(_ sender: UIButton) {
         let currentDigit = sender.currentTitle!
-        
         if isTyping {
             let textCurrentlyInDisplay = displayLB!.text!
             displayLB!.text = textCurrentlyInDisplay + currentDigit
@@ -30,11 +29,12 @@ class UpgradeCalculatorViewControler: UIViewController {
     
     // 리셋
     @IBAction func resetHandler(_ sender: UIButton) {
+        displayValue = 0.0
         isTyping = false
-        displayValue = 0
+        calModel.setNumber(displayNum: displayValue)
     }
     
-    // 여기저기 왔다갔다 할 디스플레이 값
+    // 전시된 값을 get 하거나 set하는 displayValue
     var displayValue: Double {
         get {
             return Double(displayLB.text!)!
@@ -44,18 +44,17 @@ class UpgradeCalculatorViewControler: UIViewController {
         }
     }
     
-    // 연산 모델 호출!
+    // operation
     var calModel = CalculatorModel()
-
-    // operation 버튼을 눌렀을 때 생기는 일
     @IBAction func operation(_ sender: UIButton) {
-        isTyping = false
-        calModel.setNumber(displayNum: displayValue)
+        if isTyping { // check
+            calModel.setNumber(displayNum: displayValue)
+            isTyping = false
+        }
         
         guard let symbol = sender.currentTitle else { return }
         calModel.perfomrOperation(mathSymbol: symbol)
-        
-        
+
         if calModel.returnValue != nil {
             displayValue = calModel.returnValue!
         }
