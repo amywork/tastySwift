@@ -60,9 +60,9 @@
 			children = (
 				4B682FCF1F7547780012E3F1 /* Supports */,
 				4B682FBF1F75476F0012E3F1 /* ViewController.swift */,
+				4B1069131F7547D100766EDF /* Main.storyboard */,
 				4B1069181F75480F00766EDF /* SmartBrain.swift */,
 				4B1069161F7547FE00766EDF /* GameBrain.swift */,
-				4B1069131F7547D100766EDF /* Main.storyboard */,
 			);
 			path = 0921_BaseballGame;
 			sourceTree = "<group>";
