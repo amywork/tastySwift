@@ -320,6 +320,7 @@
 				4B75EF881F76AE9700CD6E7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
