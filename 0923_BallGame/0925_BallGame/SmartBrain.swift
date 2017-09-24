@@ -9,8 +9,9 @@
 ////  2차 Brain : Enum을 활용한 Brain (2017.09.21)
 
 import Foundation
-class Brain {
+class GameBrain {
 
+    
     private enum PickCase {
         case allStrike
         case ballAndStrike(strike: Int, ball: Int)
