@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		4B0DA46D1F76C7DF00002791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */; };
 		4B0DA46F1F76C7DF00002791 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA46E1F76C7DF00002791 /* ViewController.swift */; };
-		4B0DA4721F76C7DF00002791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0DA4701F76C7DF00002791 /* Main.storyboard */; };
 		4B0DA4741F76C7DF00002791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0DA4731F76C7DF00002791 /* Assets.xcassets */; };
 		4B0DA4771F76C7DF00002791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0DA4751F76C7DF00002791 /* LaunchScreen.storyboard */; };
 		4B0DA4811F76C85500002791 /* SmartBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA4801F76C85500002791 /* SmartBrain.swift */; };
+		4B974CDC1F7756B10050C08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B974CDB1F7756B10050C08B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B0DA4691F76C7DF00002791 /* 0925_BallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0925_BallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/YUNA.K/Downloads/tastySwift/0925_BballGame/0925_BallGame/AppDelegate.swift; sourceTree = "<absolute>"; };
 		4B0DA46E1F76C7DF00002791 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = /Users/YUNA.K/Downloads/tastySwift/0925_BballGame/0925_BallGame/ViewController.swift; sourceTree = "<absolute>"; };
-		4B0DA4711F76C7DF00002791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B0DA4731F76C7DF00002791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B0DA4761F76C7DF00002791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B0DA4781F76C7DF00002791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B0DA4801F76C85500002791 /* SmartBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartBrain.swift; path = /Users/YUNA.K/Downloads/tastySwift/0925_BballGame/0925_BallGame/SmartBrain.swift; sourceTree = "<absolute>"; };
+		4B974CDB1F7756B10050C08B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */,
 				4B0DA46E1F76C7DF00002791 /* ViewController.swift */,
 				4B0DA4801F76C85500002791 /* SmartBrain.swift */,
-				4B0DA4701F76C7DF00002791 /* Main.storyboard */,
+				4B974CDB1F7756B10050C08B /* Main.storyboard */,
 				4B0DA4751F76C7DF00002791 /* LaunchScreen.storyboard */,
 			);
 			path = 0925_BallGame;
@@ -127,9 +127,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B974CDC1F7756B10050C08B /* Main.storyboard in Resources */,
 				4B0DA4771F76C7DF00002791 /* LaunchScreen.storyboard in Resources */,
 				4B0DA4741F76C7DF00002791 /* Assets.xcassets in Resources */,
-				4B0DA4721F76C7DF00002791 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,14 +149,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4B0DA4701F76C7DF00002791 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B0DA4711F76C7DF00002791 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4B0DA4751F76C7DF00002791 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
