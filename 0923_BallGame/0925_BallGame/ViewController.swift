@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                 let inputLabel = displayLabelList![lastIndex]
                 inputLabel.text = "\(selectedNum)"
             }else if selectedNumberList!.count >= displayLabelList!.count {
-                scoreLabel.text = "이제 Check 버튼을 눌러주세요!"
+                scoreLabel.text = "Check 버튼을 눌러주세요!"
             }else if selectedNumberList!.contains(selectedNum) {
                 scoreLabel.text = "숫자 중복은 안돼요 🤡"
             }
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             historyLabel.text = historyStr
             resetProperty()
         }else if isRunning && selectedNumberList!.count < displayLabelList!.count {
-            scoreLabel.text = "숫자를 모두 선택하세요"
+            scoreLabel.text = "숫자 3개를 모두 고르세요"
         }else if !isRunning {
             scoreLabel.text = "play 버튼을 눌러주세요"
         }
