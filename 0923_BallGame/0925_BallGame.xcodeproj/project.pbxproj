@@ -11,7 +11,6 @@
 		4B0DA46F1F76C7DF00002791 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA46E1F76C7DF00002791 /* ViewController.swift */; };
 		4B0DA4741F76C7DF00002791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0DA4731F76C7DF00002791 /* Assets.xcassets */; };
 		4B0DA4811F76C85500002791 /* SmartBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA4801F76C85500002791 /* SmartBrain.swift */; };
-		4B974CDC1F7756B10050C08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B974CDB1F7756B10050C08B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +20,8 @@
 		4B0DA4731F76C7DF00002791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B0DA4781F76C7DF00002791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B0DA4801F76C85500002791 /* SmartBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartBrain.swift; path = 0925_BallGame/SmartBrain.swift; sourceTree = SOURCE_ROOT; };
-		4B6A55001F779DDC009B10B1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4B974CDB1F7756B10050C08B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = 0925_BallGame/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		4B1F9F8F1F779E62002288C7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../../../../../../../../../Users/YUNA.K/Downloads/tastySwift/0923_BallGame/0925_BallGame/Assets.xcassets/LaunchScreen.storyboard; sourceTree = SDKROOT; };
+		4B1F9F901F779E68002288C7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../../../../../Users/YUNA.K/Downloads/tastySwift/0923_BallGame/0925_BallGame/Assets.xcassets/Main.storyboard; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +66,8 @@
 				4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */,
 				4B0DA46E1F76C7DF00002791 /* ViewController.swift */,
 				4B0DA4801F76C85500002791 /* SmartBrain.swift */,
-				4B6A55001F779DDC009B10B1 /* LaunchScreen.storyboard */,
-				4B974CDB1F7756B10050C08B /* Main.storyboard */,
+				4B1F9F901F779E68002288C7 /* Main.storyboard */,
+				4B1F9F8F1F779E62002288C7 /* LaunchScreen.storyboard */,
 			);
 			name = BaseballSource;
 			sourceTree = "<group>";
@@ -142,7 +141,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B974CDC1F7756B10050C08B /* Main.storyboard in Resources */,
 				4B0DA4741F76C7DF00002791 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
