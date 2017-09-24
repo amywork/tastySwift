@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:0925_BallGame.xcodeproj">
+      location = "self:CalculatorBrain.xcodeproj">
    </FileRef>
 </Workspace>

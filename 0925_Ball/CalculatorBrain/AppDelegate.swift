@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  0925_BallGame
+//  CalculatorBrain
 //
-//  Created by Kimkeeyun on 24/09/2017.
-//  Copyright © 2017 yunari.me. All rights reserved.
+//  Created by 김기윤 on 20/09/2017.
+//  Copyright © 2017 younari. All rights reserved.
 //
 
 import UIKit
