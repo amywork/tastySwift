@@ -17,12 +17,12 @@
 
 /* Begin PBXFileReference section */
 		4B0DA4691F76C7DF00002791 /* 0925_BallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0925_BallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/YUNA.K/Downloads/tastySwift/0925_BballGame/0925_BallGame/AppDelegate.swift; sourceTree = "<absolute>"; };
-		4B0DA46E1F76C7DF00002791 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = /Users/YUNA.K/Downloads/tastySwift/0925_BballGame/0925_BallGame/ViewController.swift; sourceTree = "<absolute>"; };
+		4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = 0925_BallGame/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		4B0DA46E1F76C7DF00002791 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B0DA4731F76C7DF00002791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B0DA4761F76C7DF00002791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B0DA4781F76C7DF00002791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B0DA4801F76C85500002791 /* SmartBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartBrain.swift; path = /Users/YUNA.K/Downloads/tastySwift/0925_BballGame/0925_BallGame/SmartBrain.swift; sourceTree = "<absolute>"; };
+		4B0DA4801F76C85500002791 /* SmartBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartBrain.swift; sourceTree = "<group>"; };
 		4B974CDB1F7756B10050C08B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,15 +56,31 @@
 		4B0DA46B1F76C7DF00002791 /* 0925_BallGame */ = {
 			isa = PBXGroup;
 			children = (
-				4B0DA4731F76C7DF00002791 /* Assets.xcassets */,
-				4B0DA4781F76C7DF00002791 /* Info.plist */,
+				4B974CDE1F775DE10050C08B /* Supports */,
+				4B974CDD1F775DCF0050C08B /* BaseballSource */,
+			);
+			path = 0925_BallGame;
+			sourceTree = "<group>";
+		};
+		4B974CDD1F775DCF0050C08B /* BaseballSource */ = {
+			isa = PBXGroup;
+			children = (
 				4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */,
 				4B0DA46E1F76C7DF00002791 /* ViewController.swift */,
 				4B0DA4801F76C85500002791 /* SmartBrain.swift */,
 				4B974CDB1F7756B10050C08B /* Main.storyboard */,
 				4B0DA4751F76C7DF00002791 /* LaunchScreen.storyboard */,
 			);
-			path = 0925_BallGame;
+			name = BaseballSource;
+			sourceTree = "<group>";
+		};
+		4B974CDE1F775DE10050C08B /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				4B0DA4731F76C7DF00002791 /* Assets.xcassets */,
+				4B0DA4781F76C7DF00002791 /* Info.plist */,
+			);
+			name = Supports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
