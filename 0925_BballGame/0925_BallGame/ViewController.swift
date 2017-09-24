@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     //Mark - 05. UIButton: btnNum click
     @IBAction func btnNumClick(_ sender: UIButton) {
         if isRunning {
-            let selectedNum = sender.tag
+            guard let selectedNum = Int(sender.currentTitle!) else { return }
             if selectedNumberList!.count < displayLabelList!.count && !selectedNumberList!.contains(selectedNum) {
                 selectedNumberList?.append(selectedNum)
                 let lastIndex = selectedNumberList!.count - 1
