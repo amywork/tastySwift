@@ -10,7 +10,6 @@
 		4B0DA46D1F76C7DF00002791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */; };
 		4B0DA46F1F76C7DF00002791 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA46E1F76C7DF00002791 /* ViewController.swift */; };
 		4B0DA4741F76C7DF00002791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0DA4731F76C7DF00002791 /* Assets.xcassets */; };
-		4B0DA4771F76C7DF00002791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0DA4751F76C7DF00002791 /* LaunchScreen.storyboard */; };
 		4B0DA4811F76C85500002791 /* SmartBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA4801F76C85500002791 /* SmartBrain.swift */; };
 		4B974CDC1F7756B10050C08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B974CDB1F7756B10050C08B /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,10 +19,10 @@
 		4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = 0925_BallGame/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		4B0DA46E1F76C7DF00002791 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = 0925_BallGame/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		4B0DA4731F76C7DF00002791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B0DA4761F76C7DF00002791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B0DA4781F76C7DF00002791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B0DA4801F76C85500002791 /* SmartBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartBrain.swift; path = 0925_BallGame/SmartBrain.swift; sourceTree = SOURCE_ROOT; };
 		4B974CDB1F7756B10050C08B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = 0925_BallGame/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		4B9A40181F77C5DB002E38A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +68,7 @@
 				4B0DA46E1F76C7DF00002791 /* ViewController.swift */,
 				4B0DA4801F76C85500002791 /* SmartBrain.swift */,
 				4B974CDB1F7756B10050C08B /* Main.storyboard */,
-				4B0DA4751F76C7DF00002791 /* LaunchScreen.storyboard */,
+				4B9A40181F77C5DB002E38A3 /* LaunchScreen.storyboard */,
 			);
 			name = BaseballSource;
 			sourceTree = "<group>";
@@ -144,7 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B974CDC1F7756B10050C08B /* Main.storyboard in Resources */,
-				4B0DA4771F76C7DF00002791 /* LaunchScreen.storyboard in Resources */,
 				4B0DA4741F76C7DF00002791 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,18 +161,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4B0DA4751F76C7DF00002791 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B0DA4761F76C7DF00002791 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = 0925_BallGame;
-			sourceTree = SOURCE_ROOT;
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4B0DA4791F76C7DF00002791 /* Debug */ = {
