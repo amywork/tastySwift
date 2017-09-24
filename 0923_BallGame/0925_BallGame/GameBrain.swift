@@ -11,19 +11,18 @@
 import Foundation
 class GameBrain {
 
-    
-    private enum PickCase {
+    private enum AllCase {
         case allStrike
         case ballAndStrike(strike: Int, ball: Int)
         case out
-        func printString() -> String { // 라벨 출력 용도의 메소드
+        func printString() -> String {
             switch self {
             case .out:
                 return "3 Out 💩"
             case .ballAndStrike(strike: let s, ball: let b):
                 return "\(s) Strike, \(b) Ball"
             case .allStrike:
-                return "정답이에요👌🏻👏🏻♥️"
+                return "정답입니다👌🏻👏🏻♥️"
             }
         }
     }
@@ -31,7 +30,7 @@ class GameBrain {
     func compareCheck(arr1: [Int], arr2: [Int], inputStr: String) -> (SL: String, HL: String) {
         var strike: Int = 0
         var ball: Int = 0
-        var caseCheck: PickCase
+        var caseCheck: AllCase
         
         for i in 0..<arr1.count {
             if arr1[i] == arr2[i] {
@@ -50,11 +49,11 @@ class GameBrain {
         }
         
         if strike + ball == 0 {
-            displayStr = PickCase.out.printString()
+            displayStr = AllCase.out.printString()
         }else if strike == 3 {
-            displayStr = PickCase.allStrike.printString()
+            displayStr = AllCase.allStrike.printString()
         }else {
-            displayStr = PickCase.ballAndStrike(strike: strike, ball: ball).printString()
+            displayStr = AllCase.ballAndStrike(strike: strike, ball: ball).printString()
         }
         
         return (SL: displayStr, HL: historyStr!)

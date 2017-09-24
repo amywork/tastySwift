@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         }
     }
 
-    //Mark - 06. 연산: GameBrain 모델을 통한 btnCheck 연산
+    //Mark - 06. GameBrain 모델을 통한 btnCheck 연산
     let brain: GameBrain = GameBrain()
     @IBAction func btnCheck(_ sender: UIButton) {
         if isRunning && selectedNumberList!.count == displayLabelList!.count {
