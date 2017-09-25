@@ -12,6 +12,7 @@
 		4B0DA4741F76C7DF00002791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0DA4731F76C7DF00002791 /* Assets.xcassets */; };
 		4B0DA4811F76C85500002791 /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0DA4801F76C85500002791 /* GameBrain.swift */; };
 		4BC6653C1F77DEC3005B1BB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6653A1F77DE30005B1BB6 /* Main.storyboard */; };
+		DDC65CDD1F7890DF00C46F88 /* InterfaceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC65CDC1F7890DF00C46F88 /* InterfaceGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		4B0DA4801F76C85500002791 /* GameBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBrain.swift; path = 0925_BallGame/GameBrain.swift; sourceTree = SOURCE_ROOT; };
 		4BC665391F77DE30005B1BB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC6653B1F77DE30005B1BB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDC65CDC1F7890DF00C46F88 /* InterfaceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				4B0DA46C1F76C7DF00002791 /* AppDelegate.swift */,
 				4B0DA46E1F76C7DF00002791 /* ViewController.swift */,
+				DDC65CDC1F7890DF00C46F88 /* InterfaceGenerator.swift */,
 				4B0DA4801F76C85500002791 /* GameBrain.swift */,
 				4BC665381F77DE30005B1BB6 /* LaunchScreen.storyboard */,
 				4BC6653A1F77DE30005B1BB6 /* Main.storyboard */,
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0DA46F1F76C7DF00002791 /* ViewController.swift in Sources */,
+				DDC65CDD1F7890DF00C46F88 /* InterfaceGenerator.swift in Sources */,
 				4B0DA4811F76C85500002791 /* GameBrain.swift in Sources */,
 				4B0DA46D1F76C7DF00002791 /* AppDelegate.swift in Sources */,
 			);
