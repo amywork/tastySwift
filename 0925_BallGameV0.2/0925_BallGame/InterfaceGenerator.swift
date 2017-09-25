@@ -5,6 +5,7 @@
 //  Created by 김기윤 on 25/09/2017.
 //  Copyright © 2017 yunari.me. All rights reserved.
 //
+
 import UIKit
 import Foundation
 class InterfaceGenerator {
@@ -74,7 +75,6 @@ class InterfaceGenerator {
             scoreLB.text = "play 버튼을 눌러주세요"
         }
     }
-    
 
 }
 
