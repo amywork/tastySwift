@@ -30,7 +30,13 @@ class GameBrain {
     func compareCheck(arr1: [Int], arr2: [Int], inputStr: String) -> (SL: String, HL: String) {
         var strike: Int = 0
         var ball: Int = 0
-        var caseCheck: AllCase
+        var checkCase: AllCase
+        var historyStr: String?
+        var displayStr: String = "" {
+            didSet {
+                historyStr = inputStr + " 👉🏻 " + displayStr + "\n"
+            }
+        }
         
         for i in 0..<arr1.count {
             if arr1[i] == arr2[i] {
@@ -40,24 +46,24 @@ class GameBrain {
             }
         }
         
-        // Property Observer
-        var historyStr: String?
-        var displayStr: String = "" {
-            didSet {
-                historyStr = inputStr + " 👉🏻 " + displayStr + "\n"
-            }
-        }
-        
-        if strike + ball == 0 {
-            displayStr = AllCase.out.printString()
-        }else if strike == 3 {
-            displayStr = AllCase.allStrike.printString()
+        if strike + ball == 0 { checkCase = .out }
+        else if strike == 3 { checkCase = .allStrike
         }else {
-            displayStr = AllCase.ballAndStrike(strike: strike, ball: ball).printString()
+            checkCase = .ballAndStrike(strike: strike, ball: ball)
+        }
+
+        switch checkCase {
+        case .allStrike:
+            displayStr = AllCase.allStrike.printString()
+        case .ballAndStrike(strike: let S, ball: let B):
+            displayStr = AllCase.ballAndStrike(strike: S, ball: B).printString()
+        case .out:
+            displayStr = AllCase.out.printString()
         }
         
         return (SL: displayStr, HL: historyStr!)
     }
+    
     
     // 랜덤의 3자리 Int 생성 함수
     func makeRandomList() -> [Int] {
