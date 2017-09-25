@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 class InterfaceGenerator {
-    var brain = GameBrain()
+    private var brain = GameBrain()
     var displayLabelList: Array<UILabel> = []
     var isRunning: Bool = false
     var selectedNumberList: [Int] = []
