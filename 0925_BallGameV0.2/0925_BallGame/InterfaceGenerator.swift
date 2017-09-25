@@ -7,7 +7,6 @@
 //
 import UIKit
 import Foundation
-
 class InterfaceGenerator {
     private var brain = GameBrain()
     var displayLabelList: Array<UILabel> = []

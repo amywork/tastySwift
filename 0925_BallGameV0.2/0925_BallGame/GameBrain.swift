@@ -47,10 +47,8 @@ class GameBrain {
         }
         
         if strike + ball == 0 { checkCase = .out }
-        else if strike == 3 { checkCase = .allStrike
-        }else {
-            checkCase = .ballAndStrike(strike: strike, ball: ball)
-        }
+        else if strike == 3 { checkCase = .allStrike }
+        else { checkCase = .ballAndStrike(strike: strike, ball: ball) }
 
         switch checkCase {
         case .allStrike:
@@ -63,7 +61,6 @@ class GameBrain {
         
         return (SL: displayStr, HL: historyStr!)
     }
-    
     
     // 랜덤의 3자리 Int 생성 함수
     func makeRandomList() -> [Int] {

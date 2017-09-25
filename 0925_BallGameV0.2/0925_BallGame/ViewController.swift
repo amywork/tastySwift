@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     // Mark - 02. ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        generator.displayLabelList = [displayLabel01,displayLabel02,displayLabel03] // LB 초기화
+        generator.displayLabelList = [displayLabel01,displayLabel02,displayLabel03]
     }
     
     //Mark - 03. Start button : 시작
