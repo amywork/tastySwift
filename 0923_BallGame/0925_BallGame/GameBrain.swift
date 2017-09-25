@@ -6,7 +6,7 @@
 ////  Copyright © 2017 younari. All rights reserved.
 ////  기본 기능 구현 (2017.09.20)
 ////  1차 Brain : View에서 Model 분리 (2017.09.21)
-////  2차 Brain : Enum을 활용한 Brain (2017.09.21)
+////  2차 Brain : Enum, Observer 등 활용 (2017.09.21)
 
 import Foundation
 class GameBrain {
