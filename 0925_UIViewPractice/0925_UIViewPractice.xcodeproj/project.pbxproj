@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B42172B1F7939B50085829F /* fritzHansen_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B4217271F7938F80085829F /* fritzHansen_01.jpg */; };
+		4B42172C1F7939B80085829F /* fritzHansen_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B4217281F7938F80085829F /* fritzHansen_02.jpg */; };
+		4B42172D1F7939C00085829F /* fritzHansen_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B4217291F7938F90085829F /* fritzHansen_03.jpg */; };
+		4B42172E1F7939C20085829F /* fritzHansen_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B42172A1F7938F90085829F /* fritzHansen_04.jpg */; };
 		DD1ADCE61F78F52C0069A7E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1ADCE51F78F52C0069A7E6 /* AppDelegate.swift */; };
 		DD1ADCE81F78F52C0069A7E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1ADCE71F78F52C0069A7E6 /* ViewController.swift */; };
 		DD1ADCEB1F78F52C0069A7E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1ADCE91F78F52C0069A7E6 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B4217271F7938F80085829F /* fritzHansen_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fritzHansen_01.jpg; sourceTree = "<group>"; };
+		4B4217281F7938F80085829F /* fritzHansen_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fritzHansen_02.jpg; sourceTree = "<group>"; };
+		4B4217291F7938F90085829F /* fritzHansen_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fritzHansen_03.jpg; sourceTree = "<group>"; };
+		4B42172A1F7938F90085829F /* fritzHansen_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fritzHansen_04.jpg; sourceTree = "<group>"; };
 		DD1ADCE21F78F52C0069A7E6 /* 0925_UIViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0925_UIViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1ADCE51F78F52C0069A7E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD1ADCE71F78F52C0069A7E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,10 @@
 				DD1ADCE91F78F52C0069A7E6 /* Main.storyboard */,
 				DD1ADCEE1F78F52C0069A7E6 /* LaunchScreen.storyboard */,
 				DD1ADCF11F78F52C0069A7E6 /* Info.plist */,
+				4B4217271F7938F80085829F /* fritzHansen_01.jpg */,
+				4B4217281F7938F80085829F /* fritzHansen_02.jpg */,
+				4B4217291F7938F90085829F /* fritzHansen_03.jpg */,
+				4B42172A1F7938F90085829F /* fritzHansen_04.jpg */,
 			);
 			path = 0925_UIViewPractice;
 			sourceTree = "<group>";
@@ -123,7 +135,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B42172E1F7939C20085829F /* fritzHansen_04.jpg in Resources */,
 				DD1ADCF01F78F52C0069A7E6 /* LaunchScreen.storyboard in Resources */,
+				4B42172C1F7939B80085829F /* fritzHansen_02.jpg in Resources */,
+				4B42172B1F7939B50085829F /* fritzHansen_01.jpg in Resources */,
+				4B42172D1F7939C00085829F /* fritzHansen_03.jpg in Resources */,
 				DD1ADCED1F78F52C0069A7E6 /* Assets.xcassets in Resources */,
 				DD1ADCEB1F78F52C0069A7E6 /* Main.storyboard in Resources */,
 			);
