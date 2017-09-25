@@ -23,7 +23,7 @@ class InterfaceGenerator {
         }
     }
     
-    func play() {
+    func play(scoreLB: UILabel, historyLB: UITextView) {
         isRunning = true
         selectedNumberList = []
         historyStr = ""
@@ -31,6 +31,8 @@ class InterfaceGenerator {
         for label in displayLabelList {
             label.text = "-"
         }
+        scoreLB.text = "시작해볼까요?👻"
+        historyLB.text = ""
     }
     
     func delete() {

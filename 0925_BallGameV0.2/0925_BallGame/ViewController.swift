@@ -28,9 +28,7 @@ class ViewController: UIViewController {
     
     //Mark - 03. Start button : 시작
     @IBAction func btnReplay(_ sender: UIButton) {
-        generator.play()
-        scoreLabel.text = "시작해볼까요?👻"
-        historyLabel.text = ""
+        generator.play(scoreLB: scoreLabel, historyLB: historyLabel)
     }
     
     //Mark - 04. Clear Button (숫자 지우기)
