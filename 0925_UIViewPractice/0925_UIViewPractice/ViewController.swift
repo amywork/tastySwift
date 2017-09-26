@@ -13,12 +13,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var contentTitleLabel: UILabel = UILabel()
     var messageLabel = UILabel()
     var sendMsgTxtField = UITextField()
-    
+    var titleCase = TitleCase.on
+    enum TitleCase {
+        case on
+        case off
+    }
+    var logoAnimatedCase = LogoAnimateCase.on
+    enum LogoAnimateCase {
+        case on
+        case off
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gnbView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 58))
+        let gnbView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 60))
         self.view.addSubview(gnbView)
         
         let magazineFooterView: UIView = UIView()
@@ -26,38 +35,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
         magazineFooterView.backgroundColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.9)
         magazineFooterView.frame = CGRect(x: 0, y:view.frame.size.height-100, width: view.frame.size.width, height: 100)
         
-        
         // MARK -- Generate Kinfolk Logo
         logoLabel = UILabel(frame: CGRect(x: 16, y: 36, width: self.view.frame.width-32, height: 20))
         // MARK -- addSubview의 위치는 상관 없으나, 그래도 변수 선언하고 바로 추가하기
         gnbView.addSubview(logoLabel)
         
-        logoLabel.text = "Kinfolk"
+        logoLabel.text = "Kinfolk Magazine"
         logoLabel.textAlignment = .left
         logoLabel.font = UIFont.systemFont(ofSize: 16) // UIFont.font는 Instance
         logoLabel.textColor = UIColor.darkGray // logoLabel.shadowColor = UIColor.darkGray
         
-		// Q.MARK -- font Weight
+		// MARK -- font Weight
         //UIFont.Weight : ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
         logoLabel.font = UIFont.boldSystemFont(ofSize: 16)
         logoLabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.heavy)
-	    // Q.MARK -- Custom Font type은 어떻게 설정하나요?
+	    // Q.MARK -- Custom Font type
 		// logoLabel.font = UIFont(name: "Font Name", size: 16)
         
    
         // MARK -- Generate Magazine Contents Module
         let contentModuleView: UIView = UIView()
         self.view.addSubview(contentModuleView)
-        contentModuleView.frame = CGRect(x: 0, y: 58, width: self.view.frame.width, height: 534)
+        contentModuleView.frame = CGRect(x: 0, y: 60, width: self.view.frame.width, height: 534)
         contentModuleView.backgroundColor = UIColor.lightGray
         contentModuleView.alpha = 1
         
-        // MARK -- subview clipping?
+        // MARK -- subview clipping
         contentModuleView.clipsToBounds = false
         contentModuleView.autoresizesSubviews = true
         
-        
-        // MARK -- Generate Magazine Contents Top & Bottom Background Module View
+        // MARK -- Generate Module Background Contents Top & Bottom View
         let contentModuleHalfTopView: UIView = UIView()
         contentModuleView.addSubview(contentModuleHalfTopView)
         contentModuleHalfTopView.backgroundColor = UIColor.white
@@ -72,15 +79,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let contentImageView: UIImageView = UIImageView()
         contentModuleView.addSubview(contentImageView)
         
-        // MARK -- 상위뷰 표현 어떻게? -- 상위뷰의 이름을 쓰기
+        // MARK -- 상위뷰 표현 -- 상위뷰의 이름을 쓰기
 	    contentImageView.frame = CGRect(x: 8, y: 8, width: 359, height: 359)
         contentImageView.image = UIImage(named: "fritzHansen_04.jpg")  // UIImageView.image (image는 instance)
         contentImageView.contentMode = UIViewContentMode.scaleAspectFill // contentMode (UIView의 속성)
         
-        //Q.MARK -- image가 isHighlighted (눌렀을 때)
+        // MARK -- image가 isHighlighted (눌렀을 때)
         contentImageView.isHighlighted = true
         contentImageView.highlightedImage = UIImage(named: "fritzHansen_02.jpg")
-        contentImageView.isUserInteractionEnabled = true
+        contentImageView.isUserInteractionEnabled = true // default value of this property to false.
         
         // MARK -- Generate Magazine Contents Module > ImageView > contentTitleLabel
         contentModuleView.addSubview(contentTitleLabel)
@@ -88,7 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         contentTitleLabel.text = "Magazine Title"
         contentTitleLabel.font = UIFont.boldSystemFont(ofSize: 26)
         
-        //Q.MARK -- Behavior -- isHighlighted (눌렀을 때) && isEnabled (인터렉션)
+        // MARK -- Behavior -- isHighlighted (눌렀을 때) && isEnabled (인터렉션)
         contentTitleLabel.isUserInteractionEnabled = true // default is false
         contentTitleLabel.isHighlighted = true
         contentTitleLabel.highlightedTextColor = UIColor.white
@@ -96,73 +103,59 @@ class ViewController: UIViewController, UITextFieldDelegate {
         contentTitleLabel.isHidden = false // default false
         contentTitleLabel.isOpaque = true
         
-        // MARK -- Generate Magazine Contents Module > ImageView > contentTitleLabel > contentSummaryLabel
+        // MARK -- Generate Magazine Contents Module -> contentSummaryLabel
         let contentSummaryLabel: UILabel = UILabel()
         contentModuleView.addSubview(contentSummaryLabel)
-        contentSummaryLabel.frame = CGRect(x: 16, y: contentImageView.frame.height + contentTitleLabel.frame.height, width: self.view.frame.width-32, height: 110)
-        //MARK -- UILabel.attributedText : lineBreakMode, textAlignment, lines
-        //Q.MARK -- Attributed String : NSAttributedStringKey
+        contentSummaryLabel.frame = CGRect(x: 16, y: contentImageView.frame.height + contentTitleLabel.frame.height + 16, width: self.view.frame.width-32, height: 110)
+        
+        // MARK -- UILabel.attributedText : lineBreakMode, textAlignment, lines
+        // MARK -- Attributed String : NSAttributedStringKey
         let stringValue = "Introducing The Kinfolk Entrepreneur! Our latest book meets over 40 international entrepreneurs who offer tips, advice and inspiration for anyone hoping to forge their own professional path. Available to order at kinfolk.com/entrepreneur. Published by @artisan_books."
         let attrString = NSMutableAttributedString(string: stringValue)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 3 // change line spacing between paragraph
-        paragraphStyle.minimumLineHeight = 0 // change line spacing between each line
+        paragraphStyle.lineSpacing = 5 // change line spacing between paragraph
+        paragraphStyle.minimumLineHeight = 5 // change line spacing between each line
+        
         attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: stringValue.characters.count))
-//        attrString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.orange, range: NSRange.init(location: 10, length: 20))
+        
+        attrString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.orange, range: NSRange.init(location: 11, length: 26))
         contentSummaryLabel.attributedText = attrString
         
-        //Q.MARK -- attrubutedText
-        contentSummaryLabel.lineBreakMode = .byTruncatingTail
-        // byTruncatingTail is default
+        // MARK -- lineBreakMode // byTruncatingTail is default
         //byCharWrapping, byClipping, byTruncatingHead, byWordWrapping, byTruncatingMiddle
+        contentSummaryLabel.lineBreakMode = .byTruncatingTail
         contentSummaryLabel.allowsDefaultTighteningForTruncation = false // The default is false.
         contentSummaryLabel.textAlignment = .left
-        contentSummaryLabel.numberOfLines = 3
+        contentSummaryLabel.numberOfLines = 0
         contentSummaryLabel.isEnabled = false // This property determines only how the label is drawn. Disabled text is dimmed somewhat to indicate it is not active. This property is set to true by default.
     
-        //Q.MARK -- adjustsFontSizeToFitWidth == AutoShrink
+        // MARK -- adjustsFontSizeToFitWidth == AutoShrink
         contentSummaryLabel.adjustsFontSizeToFitWidth = true
-        contentSummaryLabel.minimumScaleFactor = 6
-        
+        contentSummaryLabel.minimumScaleFactor = 12
         /*Normally, the label text is drawn with the font you specify in the font property.
          If this property is set to true, and the text in the text property exceeds the label’s bounding rectangle, the label reduces the font size until the string fits or the minimum font scale is reached. The default value for this property is false. If you change it to true, be sure that you also set an appropriate minimum font scale by modifying the minimumScaleFactor property.*/
         
-        //Q.MARK -- semantic: Unspecified(default), playback, spatial, force left to right
+        // MARK -- semantic: Unspecified(default), playback, spatial, force left to right
         contentSummaryLabel.semanticContentAttribute = .spatial
     
-    
         //MARK -- Content Read Buttom
-        let contentReadBtn: UIButton = UIButton(type: UIButtonType.system)// init 할 때만 type 선정 가능, 기본은 custom type
-        contentModuleView.addSubview(contentReadBtn)
-        contentReadBtn.setTitle("Read More", for: UIControlState.normal) // 버튼 내용
-        contentReadBtn.setTitleColor(UIColor.black, for: UIControlState.normal) // 버튼 내용
-        contentReadBtn.backgroundColor = #colorLiteral(red: 1, green: 0.7122342587, blue: 0, alpha: 1)
-        contentReadBtn.frame = CGRect(x: contentModuleView.frame.width-116, y: contentImageView.frame.height, width: 100, height: 30)
-        contentReadBtn.addTarget(self, action: #selector(ViewController.contentReadBtnClick), for: UIControlEvents.touchUpInside)
+        let readMoreBtn: UIButton = UIButton(type: .custom)
+        // init 할 때만 type 선정 가능, 기본은 custom type -- .systme, .custom,...
+        contentModuleView.addSubview(readMoreBtn)
+        readMoreBtn.setTitle("Read More", for: UIControlState.normal) // 버튼 내용
+        readMoreBtn.setTitleColor(UIColor.black, for: .normal) // 버튼 내용
+        readMoreBtn.backgroundColor = #colorLiteral(red: 1, green: 0.7122342587, blue: 0, alpha: 1)
+        readMoreBtn.frame = CGRect(x: contentModuleView.frame.width-116, y: contentImageView.frame.height, width: 100, height: 30)
+        readMoreBtn.addTarget(self, action: #selector(ViewController.handleTitleChange), for: UIControlEvents.touchUpInside)
         
-        let homeBtn: UIButton = UIButton(type: UIButtonType.system)
-        gnbView.addSubview(homeBtn)
-        homeBtn.setTitle("Home", for: UIControlState.normal)
-        homeBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
-        homeBtn.backgroundColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
-        homeBtn.frame = CGRect(x: gnbView.frame.width-116, y: view.frame.origin.y+36, width: 100, height: 20)
-        homeBtn.addTarget(self, action: #selector(ViewController.goHome), for: UIControlEvents.touchUpInside)
-        
-        
-        // MARK -- UIButton, UIControl Test
-        let btn: UIButton = UIButton(type: .custom) // Default: Custom
-        magazineFooterView.addSubview(btn)
-        btn.setTitle("normal", for: .normal) // btn.setTitle
-        btn.setTitleColor(.black, for: .normal)
-        btn.setTitle("highlight", for: .highlighted)
-        btn.setTitleColor(.black, for: .highlighted)//
-        btn.setTitle("selected", for: .selected) // btn.setTitleColor
-        btn.setTitleColor(.black, for: .selected)
-        btn.addTarget(self, action: #selector(ViewController.btnClick), for: .touchUpInside) // self = ViewController, addTarget
-        btn.backgroundColor = .white
-        btn.frame = CGRect(x: magazineFooterView.frame.width/2-50, y: magazineFooterView.frame.height-50, width: 100, height: 20)
-        
-        
+        //MARK -- Hello Button
+        let logoAnimateBtn: UIButton = UIButton(type: UIButtonType.system)
+        gnbView.addSubview(logoAnimateBtn)
+        logoAnimateBtn.backgroundColor = UIColor.clear
+        logoAnimateBtn.frame = CGRect(x: 16, y: 36, width: self.view.frame.width-32, height: 20)
+        logoAnimateBtn.addTarget(self, action: #selector(ViewController.goHome), for: UIControlEvents.touchUpInside)
+
+
         // UITextField 는 1줄 입력이 default
         sendMsgTxtField = UITextField(frame: CGRect(x: 0, y: view.frame.size.height-50, width: view.frame.size.width, height: 50 ))
         self.view.addSubview(sendMsgTxtField)
@@ -183,12 +176,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         OKButton.setTitleColor(.white, for: .normal)
         OKButton.addTarget(self, action: #selector(ViewController.handlerOkBtn), for: .touchUpInside)
         
+        
         // Label
         messageLabel = UILabel(frame: CGRect(x: 0, y: view.frame.size.height-80, width: contentModuleView.frame.size.width, height: 30))
         messageLabel.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
         view.addSubview(messageLabel)
+
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -201,23 +196,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sendMsgTxtField.text = ""
     }
     
-    // MARK -- btnClick Selected
-    @objc func btnClick(_ sender: UIButton) {
-        if sender.isSelected {
-            sender.isSelected = false
-        }else {
-            sender.isSelected = true
-        }
-    }
-    
-    // MARK -- Read Button Click Enum Cases
-    var titleCase = titleChangeCase.on
-    enum titleChangeCase {
-        case on
-        case off
-    }
-    
-    @objc func contentReadBtnClick(_ sender: UIButton) {
+    @objc func handleTitleChange(_ sender: UIButton) {
         switch titleCase {
         case .on:
         contentTitleLabel.text = "Want to read more?"
@@ -228,21 +207,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //MARK -- Home Button Click Enum Cases
-    var logoSizeCase = LogoSize.on
-    enum LogoSize {
-        case on
-        case off
-    }
-    
     @objc func goHome(_ sender: UIButton) {
-        switch logoSizeCase {
+        switch logoAnimatedCase {
         case .on:
             logoLabel.text = "Kinfolk is Good"
-            logoSizeCase = .off
+            logoAnimatedCase = .off
         case .off:
-            logoLabel.text = "Kinfolk"
-            logoSizeCase = .on
+            logoLabel.text = "Kinfolk Magazine"
+            logoAnimatedCase = .on
         }
     }
 

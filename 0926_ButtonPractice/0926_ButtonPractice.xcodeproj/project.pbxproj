@@ -54,11 +54,11 @@
 		DD624F371F7A222F00A30F6D /* 0926_ButtonPractice */ = {
 			isa = PBXGroup;
 			children = (
-				DD624F381F7A222F00A30F6D /* AppDelegate.swift */,
-				DD624F3A1F7A222F00A30F6D /* ViewController.swift */,
-				DD624F3C1F7A222F00A30F6D /* Main.storyboard */,
 				DD624F3F1F7A222F00A30F6D /* Assets.xcassets */,
 				DD624F411F7A222F00A30F6D /* LaunchScreen.storyboard */,
+				DD624F3C1F7A222F00A30F6D /* Main.storyboard */,
+				DD624F381F7A222F00A30F6D /* AppDelegate.swift */,
+				DD624F3A1F7A222F00A30F6D /* ViewController.swift */,
 				DD624F441F7A222F00A30F6D /* Info.plist */,
 			);
 			path = 0926_ButtonPractice;

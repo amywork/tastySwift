@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             let width = self.view.frame.size.width/3
             let height = self.view.frame.size.height/3
             btn.frame = CGRect(x: CGFloat(column)*width, y: CGFloat(row)*height, width: width, height: height)
-            btn.addTarget(self, action: #selector(ViewController.switchColor), for: .touchUpInside)
+            btn.addTarget(self, action: #selector(ViewController.onClickBtn), for: .touchUpInside)
         }
     }
     
@@ -62,6 +62,25 @@ class ViewController: UIViewController {
             sender.backgroundColor = #colorLiteral(red: 0.9818221927, green: 0.1470750272, blue: 1, alpha: 1)
         }
     }
+    
+    @objc func onClickBtn(_ sender: UIButton) {
+        let index = sender.tag
+        let isEvenNum: Bool = isEvenNumber(num: index)
+        
+        for btn in btnArr {
+            let subBtnisEven =  isEvenNumber(num: btn.tag)
+            if isEvenNum == subBtnisEven && !btn.isSelected
+            {
+                btn.backgroundColor = .yellow
+                btn.isSelected = true
+            }else if  isEvenNum == subBtnisEven && btn.isSelected
+            {
+                btn.backgroundColor = .blue
+                btn.isSelected = false
+            }
+        }
+    }
+
 
     @objc func switchColor(_ sender: UIButton) {
         for btn in btnArr {
@@ -90,21 +109,13 @@ class ViewController: UIViewController {
         makeBtnLayout(btnArr: btnArr)
     }
 
-
 }
 
 
     
 
 
-//    func addMonoColorFunc() {
-//        if oddTileArr != nil {
-//            for tile in oddTileArr! {
-//                tile.addTarget(self, action: #selector(ViewController.changeMonoColor(_:)), for: .touchUpInside)
-//            }
-//        }
-//    }
-//
+
 //    var colorOnOff = ColorOnOff.on
 //    enum ColorOnOff {
 //        case on

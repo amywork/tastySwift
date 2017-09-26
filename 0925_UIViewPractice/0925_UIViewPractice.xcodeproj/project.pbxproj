@@ -32,15 +32,6 @@
 		DD1ADCEF1F78F52C0069A7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD1ADCF11F78F52C0069A7E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD624F201F79EF2000A30F6D /* ContentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModule.swift; sourceTree = "<group>"; };
-		DD624F231F79F62900A30F6D /* AsapCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Bold.ttf"; sourceTree = "<group>"; };
-		DD624F241F79F62900A30F6D /* AsapCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
-		DD624F251F79F62900A30F6D /* AsapCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Italic.ttf"; sourceTree = "<group>"; };
-		DD624F261F79F62900A30F6D /* AsapCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Medium.ttf"; sourceTree = "<group>"; };
-		DD624F271F79F62900A30F6D /* AsapCondensed-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-MediumItalic.ttf"; sourceTree = "<group>"; };
-		DD624F281F79F62900A30F6D /* AsapCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-Regular.ttf"; sourceTree = "<group>"; };
-		DD624F291F79F62900A30F6D /* AsapCondensed-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-SemiBold.ttf"; sourceTree = "<group>"; };
-		DD624F2A1F79F62900A30F6D /* AsapCondensed-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AsapCondensed-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		DD624F2B1F79F62900A30F6D /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,26 +75,8 @@
 				4B4217281F7938F80085829F /* fritzHansen_02.jpg */,
 				4B4217291F7938F90085829F /* fritzHansen_03.jpg */,
 				4B42172A1F7938F90085829F /* fritzHansen_04.jpg */,
-				DD624F221F79F62900A30F6D /* Asap_Condensed */,
 			);
 			path = 0925_UIViewPractice;
-			sourceTree = "<group>";
-		};
-		DD624F221F79F62900A30F6D /* Asap_Condensed */ = {
-			isa = PBXGroup;
-			children = (
-				DD624F231F79F62900A30F6D /* AsapCondensed-Bold.ttf */,
-				DD624F241F79F62900A30F6D /* AsapCondensed-BoldItalic.ttf */,
-				DD624F251F79F62900A30F6D /* AsapCondensed-Italic.ttf */,
-				DD624F261F79F62900A30F6D /* AsapCondensed-Medium.ttf */,
-				DD624F271F79F62900A30F6D /* AsapCondensed-MediumItalic.ttf */,
-				DD624F281F79F62900A30F6D /* AsapCondensed-Regular.ttf */,
-				DD624F291F79F62900A30F6D /* AsapCondensed-SemiBold.ttf */,
-				DD624F2A1F79F62900A30F6D /* AsapCondensed-SemiBoldItalic.ttf */,
-				DD624F2B1F79F62900A30F6D /* OFL.txt */,
-			);
-			name = Asap_Condensed;
-			path = ../../0926_InterfaceBuilding/Asap_Condensed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
