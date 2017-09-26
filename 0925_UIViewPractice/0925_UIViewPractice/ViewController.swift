@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         //UIFont.Weight : ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
         logoLabel.font = UIFont.boldSystemFont(ofSize: 16)
         logoLabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.heavy)
-	    // Q.MARK -- Custom Font type은 어떻게 설정하나요?, 예를 들어 구글 폰트 임베드 하고 싶을 때?
+	    // Q.MARK -- Custom Font type은 어떻게 설정하나요?
 		// logoLabel.font = UIFont(name: "Font Name", size: 16)
         
    
