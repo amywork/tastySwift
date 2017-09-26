@@ -6,11 +6,15 @@
 //  Copyright © 2017 younari. All rights reserved.
 
 import UIKit
-
-class ViewController: UIViewController {
+// protocol 추가
+class ViewController: UIViewController, UITextFieldDelegate {
 
     var logoLabel: UILabel = UILabel()
     var contentTitleLabel: UILabel = UILabel()
+    var messageLabel = UILabel()
+    var sendMsgTxtField = UITextField()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,13 +96,10 @@ class ViewController: UIViewController {
         contentTitleLabel.isHidden = false // default false
         contentTitleLabel.isOpaque = true
         
-        
         // MARK -- Generate Magazine Contents Module > ImageView > contentTitleLabel > contentSummaryLabel
         let contentSummaryLabel: UILabel = UILabel()
         contentModuleView.addSubview(contentSummaryLabel)
-        contentSummaryLabel.frame = CGRect(x: 16, y: 402, width: self.view.frame.width-32, height: 110)
-        contentSummaryLabel.text = "Introducing The Kinfolk Entrepreneur! Our latest book meets over 40 international entrepreneurs who offer tips, advice and inspiration for anyone hoping to forge their own professional path. Available to order at kinfolk.com/entrepreneur. Published by @artisan_books."
-        
+        contentSummaryLabel.frame = CGRect(x: 16, y: contentImageView.frame.height + contentTitleLabel.frame.height, width: self.view.frame.width-32, height: 110)
         //MARK -- UILabel.attributedText : lineBreakMode, textAlignment, lines
         //Q.MARK -- Attributed String : NSAttributedStringKey
         let stringValue = "Introducing The Kinfolk Entrepreneur! Our latest book meets over 40 international entrepreneurs who offer tips, advice and inspiration for anyone hoping to forge their own professional path. Available to order at kinfolk.com/entrepreneur. Published by @artisan_books."
@@ -107,6 +108,7 @@ class ViewController: UIViewController {
         paragraphStyle.lineSpacing = 3 // change line spacing between paragraph
         paragraphStyle.minimumLineHeight = 0 // change line spacing between each line
         attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: stringValue.characters.count))
+//        attrString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.orange, range: NSRange.init(location: 10, length: 20))
         contentSummaryLabel.attributedText = attrString
         
         //Q.MARK -- attrubutedText
@@ -115,7 +117,7 @@ class ViewController: UIViewController {
         //byCharWrapping, byClipping, byTruncatingHead, byWordWrapping, byTruncatingMiddle
         contentSummaryLabel.allowsDefaultTighteningForTruncation = false // The default is false.
         contentSummaryLabel.textAlignment = .left
-        contentSummaryLabel.numberOfLines = 6
+        contentSummaryLabel.numberOfLines = 3
         contentSummaryLabel.isEnabled = false // This property determines only how the label is drawn. Disabled text is dimmed somewhat to indicate it is not active. This property is set to true by default.
     
         //Q.MARK -- adjustsFontSizeToFitWidth == AutoShrink
@@ -135,9 +137,8 @@ class ViewController: UIViewController {
         contentReadBtn.setTitle("Read More", for: UIControlState.normal) // 버튼 내용
         contentReadBtn.setTitleColor(UIColor.black, for: UIControlState.normal) // 버튼 내용
         contentReadBtn.backgroundColor = #colorLiteral(red: 1, green: 0.7122342587, blue: 0, alpha: 1)
-        contentReadBtn.frame = CGRect(x: contentModuleView.frame.width-116, y: contentModuleView.frame.height-15, width: 100, height: 30)
-        contentReadBtn.addTarget(self, action: #selector(ViewController.contentReadBtnClick(_:)), for: UIControlEvents.touchUpInside)
-        
+        contentReadBtn.frame = CGRect(x: contentModuleView.frame.width-116, y: contentImageView.frame.height, width: 100, height: 30)
+        contentReadBtn.addTarget(self, action: #selector(ViewController.contentReadBtnClick), for: UIControlEvents.touchUpInside)
         
         let homeBtn: UIButton = UIButton(type: UIButtonType.system)
         gnbView.addSubview(homeBtn)
@@ -147,6 +148,66 @@ class ViewController: UIViewController {
         homeBtn.frame = CGRect(x: gnbView.frame.width-116, y: view.frame.origin.y+36, width: 100, height: 20)
         homeBtn.addTarget(self, action: #selector(ViewController.goHome), for: UIControlEvents.touchUpInside)
         
+        
+        // MARK -- UIButton, UIControl Test
+        let btn: UIButton = UIButton(type: .custom) // Default: Custom
+        magazineFooterView.addSubview(btn)
+        btn.setTitle("normal", for: .normal) // btn.setTitle
+        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("highlight", for: .highlighted)
+        btn.setTitleColor(.black, for: .highlighted)//
+        btn.setTitle("selected", for: .selected) // btn.setTitleColor
+        btn.setTitleColor(.black, for: .selected)
+        btn.addTarget(self, action: #selector(ViewController.btnClick), for: .touchUpInside) // self = ViewController, addTarget
+        btn.backgroundColor = .white
+        btn.frame = CGRect(x: magazineFooterView.frame.width/2-50, y: magazineFooterView.frame.height-50, width: 100, height: 20)
+        
+        
+        // UITextField 는 1줄 입력이 default
+        sendMsgTxtField = UITextField(frame: CGRect(x: 0, y: view.frame.size.height-50, width: view.frame.size.width, height: 50 ))
+        self.view.addSubview(sendMsgTxtField)
+        sendMsgTxtField.borderStyle = .line
+        sendMsgTxtField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        sendMsgTxtField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        sendMsgTxtField.placeholder = "Kinfolk에게 의견을 보내주세요😊"
+        /****UITextfield Protocol 채택 및 delegate 사용*****/
+        sendMsgTxtField.delegate = self
+        
+        
+        // OKButton
+        let OKButton = UIButton(type: .system)
+        self.view.addSubview(OKButton)
+        OKButton.frame = CGRect(x: view.frame.size.width-80, y: view.frame.size.height-50, width: 80, height: 50)
+        OKButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        OKButton.setTitle("OK", for: .normal)
+        OKButton.setTitleColor(.white, for: .normal)
+        OKButton.addTarget(self, action: #selector(ViewController.handlerOkBtn), for: .touchUpInside)
+        
+        // Label
+        messageLabel = UILabel(frame: CGRect(x: 0, y: view.frame.size.height-80, width: contentModuleView.frame.size.width, height: 30))
+        messageLabel.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        messageLabel.textColor = .white
+        messageLabel.numberOfLines = 0
+        view.addSubview(messageLabel)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        sendMsgTxtField.resignFirstResponder() // 키보드를 내리는 아이
+        return true
+    }
+    
+    @objc func handlerOkBtn(_ sender : UIButton) {
+        messageLabel.text = sendMsgTxtField.text
+        sendMsgTxtField.text = ""
+    }
+    
+    // MARK -- btnClick Selected
+    @objc func btnClick(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+        }else {
+            sender.isSelected = true
+        }
     }
     
     // MARK -- Read Button Click Enum Cases
@@ -183,7 +244,6 @@ class ViewController: UIViewController {
             logoLabel.text = "Kinfolk"
             logoSizeCase = .on
         }
-        
     }
 
 }
