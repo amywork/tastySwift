@@ -6,7 +6,7 @@
 //  Copyright © 2017 younari. All rights reserved.
 
 import UIKit
-// protocol 추가
+// protocol 추가 : UITextFieldDelegate
 class ViewController: UIViewController, UITextFieldDelegate {
 
     var logoLabel: UILabel = UILabel()
