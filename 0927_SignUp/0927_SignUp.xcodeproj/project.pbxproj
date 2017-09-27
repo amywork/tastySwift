@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD34734B1F7B7C48008B335D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34734A1F7B7C48008B335D /* MainViewController.swift */; };
 		DD66AE911F7B360200B55A2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66AE901F7B360200B55A2E /* AppDelegate.swift */; };
 		DD66AE961F7B360200B55A2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD66AE941F7B360200B55A2E /* Main.storyboard */; };
 		DD66AE981F7B360200B55A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD66AE971F7B360200B55A2E /* Assets.xcassets */; };
@@ -14,9 +15,11 @@
 		DD66AEA31F7B3AFB00B55A2E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66AEA21F7B3AFB00B55A2E /* RoundButton.swift */; };
 		DD66AEA51F7B3D1300B55A2E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66AEA41F7B3D1300B55A2E /* SignInViewController.swift */; };
 		DD66AEA71F7B4C3D00B55A2E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66AEA61F7B4C3D00B55A2E /* SignUpViewController.swift */; };
+		DD66AEAC1F7B6F5400B55A2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66AEAB1F7B6F5400B55A2E /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD34734A1F7B7C48008B335D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD66AE8D1F7B360200B55A2E /* 0927_SignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0927_SignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD66AE901F7B360200B55A2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD66AE951F7B360200B55A2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		DD66AEA21F7B3AFB00B55A2E /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		DD66AEA41F7B3D1300B55A2E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		DD66AEA61F7B4C3D00B55A2E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DD66AEAB1F7B6F5400B55A2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +73,11 @@
 		DD66AEA81F7B4C4F00B55A2E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DD66AEA21F7B3AFB00B55A2E /* RoundButton.swift */,
+				DD66AEAB1F7B6F5400B55A2E /* UserModel.swift */,
 				DD66AEA41F7B3D1300B55A2E /* SignInViewController.swift */,
 				DD66AEA61F7B4C3D00B55A2E /* SignUpViewController.swift */,
+				DD34734A1F7B7C48008B335D /* MainViewController.swift */,
+				DD66AEA21F7B3AFB00B55A2E /* RoundButton.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -169,6 +175,8 @@
 				DD66AEA31F7B3AFB00B55A2E /* RoundButton.swift in Sources */,
 				DD66AE911F7B360200B55A2E /* AppDelegate.swift in Sources */,
 				DD66AEA71F7B4C3D00B55A2E /* SignUpViewController.swift in Sources */,
+				DD34734B1F7B7C48008B335D /* MainViewController.swift in Sources */,
+				DD66AEAC1F7B6F5400B55A2E /* UserModel.swift in Sources */,
 				DD66AEA51F7B3D1300B55A2E /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

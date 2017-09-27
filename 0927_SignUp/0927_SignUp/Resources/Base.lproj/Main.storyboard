@@ -68,7 +68,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="didTapLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cgb-I4-jKN"/>
                                     <segue destination="jaZ-Qb-gXK" kind="presentation" id="fMS-hW-3cF"/>
                                 </connections>
                             </button>
@@ -177,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcu-0d-HFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="134"/>
+            <point key="canvasLocation" x="791" y="134"/>
         </scene>
     </scenes>
     <resources>
