@@ -6,7 +6,7 @@
 - iOS APP 개발 School, 2017.09 ~ 2017.12 (16weeks)
 
 ## 로그인, 회원가입 페이지 구현하기
-- [로그인, 회원가입 페이지 구현하기] (https://younari.github.io/2017-09-27/SignUpSignIn)
+- [로그인, 회원가입 페이지 구현하기](https://younari.github.io/2017-09-27/SignUpSignIn)
 
 ## Calculatore 계산기 만들기
 ### Refactoring 5회, 09/12 ~ 09/20
