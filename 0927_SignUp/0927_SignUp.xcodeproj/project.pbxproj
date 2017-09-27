@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BCDDE011F7BC358007FB135 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDDE001F7BC358007FB135 /* TextField.swift */; };
 		DD34734B1F7B7C48008B335D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD34734A1F7B7C48008B335D /* MainViewController.swift */; };
 		DD66AE911F7B360200B55A2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66AE901F7B360200B55A2E /* AppDelegate.swift */; };
 		DD66AE961F7B360200B55A2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD66AE941F7B360200B55A2E /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BCDDE001F7BC358007FB135 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		DD34734A1F7B7C48008B335D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD66AE8D1F7B360200B55A2E /* 0927_SignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0927_SignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD66AE901F7B360200B55A2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				DD66AEA61F7B4C3D00B55A2E /* SignUpViewController.swift */,
 				DD34734A1F7B7C48008B335D /* MainViewController.swift */,
 				DD66AEA21F7B3AFB00B55A2E /* RoundButton.swift */,
+				4BCDDE001F7BC358007FB135 /* TextField.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				DD66AEA31F7B3AFB00B55A2E /* RoundButton.swift in Sources */,
 				DD66AE911F7B360200B55A2E /* AppDelegate.swift in Sources */,
 				DD66AEA71F7B4C3D00B55A2E /* SignUpViewController.swift in Sources */,
+				4BCDDE011F7BC358007FB135 /* TextField.swift in Sources */,
 				DD34734B1F7B7C48008B335D /* MainViewController.swift in Sources */,
 				DD66AEAC1F7B6F5400B55A2E /* UserModel.swift in Sources */,
 				DD66AEA51F7B3D1300B55A2E /* SignInViewController.swift in Sources */,
