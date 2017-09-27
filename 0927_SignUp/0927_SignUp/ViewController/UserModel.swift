@@ -21,7 +21,8 @@ final class UserModel {
        User(username: "penomeco", password: "0101")
     ]
     
-    func findUser(name: String, pwd: String) -> Bool {
+    // hasUser 검사 method
+    func hasUser(name: String, pwd: String) -> Bool {
         for user in model {
             if user.username == name && user.password == pwd {
                 return true
@@ -29,13 +30,13 @@ final class UserModel {
         }
         return false
     }
-    
+        
+    // newUser 추가 method
     func addUser(name: String, pwd: String) {
         let newUser = User(username: name, password: pwd)
         model.append(newUser)
     }
 
 }
-
 
 
