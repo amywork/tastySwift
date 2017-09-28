@@ -52,11 +52,6 @@ class SignUpViewController: UIViewController {
         }else if password.isFirstResponder {
             conformPwd.becomeFirstResponder()
         }
-//        if sender === username { // username에는 메모리 주소가 들어있음, 인스턴스 비교는 ===
-//            password.becomeFirstResponder()
-//        }else if sender == password {
-//            conformPwd.becomeFirstResponder()
-//        }
     }
     
 }

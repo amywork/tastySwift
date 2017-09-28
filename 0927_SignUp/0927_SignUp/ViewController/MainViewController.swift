@@ -23,7 +23,6 @@ class MainViewController: UIViewController {
         exploreImg.alpha = 0.6
         exploreImg.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         exploreImg.contentMode = .scaleToFill
-        
         dimmedImg.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         dimmedImg.backgroundColor = .black
         dimmedImg.alpha = 0.3

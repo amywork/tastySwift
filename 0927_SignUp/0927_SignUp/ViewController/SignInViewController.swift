@@ -60,13 +60,6 @@ class SignInViewController: UIViewController {
             })
         }
     }
-            
-// usernameTextField.backgroundColor = #colorLiteral(red: 1, green: 0.1857388616, blue: 0.5733950138, alpha: 1)
-// passwordTextField.backgroundColor = #colorLiteral(red: 1, green: 0.1857388616, blue: 0.5733950138, alpha: 1)
-// 실패하였을 경우 Textfield의 background에 붉은색
-//    passwordTextField.text = nil
-//    usernameTextField.text = nil
-    
 
     @objc func didEndOnExit(_ sender: UITextField) {
         if usernameTextField.isFirstResponder {
