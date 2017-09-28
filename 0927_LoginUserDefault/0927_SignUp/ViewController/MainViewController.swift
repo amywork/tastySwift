@@ -8,12 +8,17 @@
 
 import UIKit
 class MainViewController: UIViewController {
-    var exploreLabel = UILabel()
-    var exploreImg = UIImageView()
-    var dimmedImg = UIView()
+    
+    var exploreLabel: UILabel!
+    var exploreImg: UIImageView!
+    var dimmedImg: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        exploreLabel = UILabel()
+        exploreImg = UIImageView()
+        dimmedImg = UIView()
         exploreLabel.frame = CGRect(x: 0, y: 160, width: self.view.frame.size.width, height: 60)
         exploreLabel.textColor = .white
         exploreLabel.text = "Explore"

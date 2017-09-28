@@ -41,9 +41,23 @@ class SignInViewController: UIViewController {
         // let loginSuccess: Bool = userModel.findUser(name: username, pwd: password)
         let loginSuccess: Bool = findUser(name: username, password: password)
         if loginSuccess {
-            print("로그인 성공")
-            let main = MainViewController()
-            self.present(main, animated: true, completion: main.viewDidLoad)
+            
+            // Alert 인스턴스를 만들기 -> Action 만들기
+            let alertController = UIAlertController(title: "로그인 성공", message: "로그인 성공하였습니다 ☺️", preferredStyle: .alert) // .actionSheet
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (input: UIAlertAction) -> Void in
+                let main = MainViewController()
+                self.present(main, animated: true, completion: nil)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            // self 는 뷰콘트롤러 ***** alert는 콘트롤러에서 만들기
+            self.present(alertController, animated: true, completion: nil)
+ 
         }else {
             UIView.animate(withDuration: 0.1, animations: {
                 self.usernameTextField.frame.origin.x -= 10
@@ -73,10 +87,8 @@ class SignInViewController: UIViewController {
     
     
     func findUser(name: String, password: String) -> Bool {
-        // ID가 유효한지, PWD가 유효한지
         // array 끄집어냄
         guard let userList: [[String:String]] = UserDefaults.standard.array(forKey: "UserList") as? [[String : String]] else { return false }
-        
         UserDefaults.standard.object(forKey: "UserList")
         for userData in userList {
             let memberID: String = userData["ID"]!
@@ -85,14 +97,6 @@ class SignInViewController: UIViewController {
                 return true
             }
         }
-//        guard let memberID = UserDefaults.standard.string(forKey: "ID") else { return false }
-//        if name == memberID {
-//            guard let memberPWD = UserDefaults.standard.string(forKey: "PWD") else { return false }
-//            if password == memberPWD {
-//                return true
-//            }
-//            return false
-//        }
         return false
     }
 

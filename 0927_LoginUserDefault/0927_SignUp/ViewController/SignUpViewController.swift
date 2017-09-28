@@ -9,7 +9,27 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    
+    override func loadView() {
+        super.loadView()
+        print("SignUpViewController loadView")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("SignUpViewController viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print("SignUpViewController viewDidAppear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        print("SignUpViewController viewWillDisappear")
+    }
+    
     /*****Property*****/
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -25,9 +45,8 @@ class SignUpViewController: UIViewController {
         guard let conformPwd = conformPwd.text else { return }
         if password == conformPwd {
             // didTaskClosure?(username,password)
-            // Plist에 파일 넣기 // 싱글톤 패턴 배우면 요렇게 쓰는 이유를 알게됨.
-            // 영구적으로 저장함
-            // userData 는 dictionary
+            // Plist에 파일 넣기, 영구적으로 저장함
+            // userData는 dictionary
             // userList는 dictionary를 담고 있는 배열
             var userList: [[String:String]]
             if let tempList = UserDefaults.standard.array(forKey: "UserList") as? [[String:String]] {
@@ -38,9 +57,7 @@ class SignUpViewController: UIViewController {
             let userData: [String:String] = ["ID":username, "PWD":password]
             userList.append(userData)
             UserDefaults.standard.set(userList, forKey: "UserList")
-//  UserDefaults.standard.set(username, forKey: "ID")
-//  UserDefaults.standard.set(password, forKey: "PWD")
-//  UserDefaults.standard 싱글톤으로 여러가지 소스파일에서 모두 함 수 있도록 함
+        // UserDefaults.standard 싱글톤으로 여러가지 소스파일에서 모두 함 수 있도록 함
             dismiss(animated: true, completion: nil) // 화면 내리기
         }else {
             print("failed")
@@ -55,6 +72,7 @@ class SignUpViewController: UIViewController {
     /*****ViewDidLoad*****/
     /*****Return Key addTarget*****/
     override func viewDidLoad() {
+        print("SignUpViewController viewDidLoad")
         super.viewDidLoad()
         username.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         password.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
