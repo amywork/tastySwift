@@ -24,7 +24,23 @@ class SignUpViewController: UIViewController {
         guard let password = password.text else { return }
         guard let conformPwd = conformPwd.text else { return }
         if password == conformPwd {
-            didTaskClosure?(username,password)
+            // didTaskClosure?(username,password)
+            // Plist에 파일 넣기 // 싱글톤 패턴 배우면 요렇게 쓰는 이유를 알게됨.
+            // 영구적으로 저장함
+            // userData 는 dictionary
+            // userList는 dictionary를 담고 있는 배열
+            var userList: [[String:String]]
+            if let tempList = UserDefaults.standard.array(forKey: "UserList") as? [[String:String]] {
+                userList = tempList
+            }else {
+                userList = []
+            }
+            let userData: [String:String] = ["ID":username, "PWD":password]
+            userList.append(userData)
+            UserDefaults.standard.set(userList, forKey: "UserList")
+//  UserDefaults.standard.set(username, forKey: "ID")
+//  UserDefaults.standard.set(password, forKey: "PWD")
+//  UserDefaults.standard 싱글톤으로 여러가지 소스파일에서 모두 함 수 있도록 함
             dismiss(animated: true, completion: nil) // 화면 내리기
         }else {
             print("failed")

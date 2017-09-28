@@ -37,7 +37,9 @@ class SignInViewController: UIViewController {
     @IBAction func didTapLoginButton(_ sender: RoundButton) {
         guard let username = usernameTextField.text, !username.isEmpty else { return } // 예외 처리 : Textfield가 빈문자열이 아니고, nil이 아닐 때
         guard let password = passwordTextField.text, !password.isEmpty else { return }
-        let loginSuccess: Bool = userModel.findUser(name: username, pwd: password)
+        // Plist로 유저 검사
+        // let loginSuccess: Bool = userModel.findUser(name: username, pwd: password)
+        let loginSuccess: Bool = findUser(name: username, password: password)
         if loginSuccess {
             print("로그인 성공")
             let main = MainViewController()
@@ -67,6 +69,31 @@ class SignInViewController: UIViewController {
         }else if passwordTextField.isFirstResponder {
             loginButton.becomeFirstResponder()
         }
+    }
+    
+    
+    func findUser(name: String, password: String) -> Bool {
+        // ID가 유효한지, PWD가 유효한지
+        // array 끄집어냄
+        guard let userList: [[String:String]] = UserDefaults.standard.array(forKey: "UserList") as? [[String : String]] else { return false }
+        
+        UserDefaults.standard.object(forKey: "UserList")
+        for userData in userList {
+            let memberID: String = userData["ID"]!
+            let memberPWD: String = userData["PWD"]!
+            if name == memberID && password == memberPWD {
+                return true
+            }
+        }
+//        guard let memberID = UserDefaults.standard.string(forKey: "ID") else { return false }
+//        if name == memberID {
+//            guard let memberPWD = UserDefaults.standard.string(forKey: "PWD") else { return false }
+//            if password == memberPWD {
+//                return true
+//            }
+//            return false
+//        }
+        return false
     }
 
     /*****Segue, 할일을 하기 직전에 클로저를 담아서 보내줘 : prepare*****/
