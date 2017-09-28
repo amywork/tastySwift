@@ -40,8 +40,8 @@ class SignInViewController: UIViewController {
         let loginSuccess: Bool = userModel.findUser(name: username, pwd: password)
         if loginSuccess {
             print("로그인 성공")
-            let main = MainViewController() // main으로 넘어가기
-            self.present(main, animated: true, completion: nil) // present
+            let main = MainViewController()
+            self.present(main, animated: true, completion: main.viewDidLoad)
         }else {
             UIView.animate(withDuration: 0.1, animations: {
                 self.usernameTextField.frame.origin.x -= 10
