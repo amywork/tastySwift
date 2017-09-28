@@ -8,24 +8,13 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-
     var userModel = UserModel()
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: RoundButton!
     
-    func designTextField(_ textField: UITextField) {
-        textField.layer.cornerRadius = 3
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-        textField.layer.borderWidth = 1/UIScreen.main.scale // 딱 1px
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TextField 의 디자인을 만들어주는 함수 실행
-        designTextField(usernameTextField)
-        designTextField(passwordTextField)
-        
         // Keyboard 내리기
         // addTarget은 UIResponder를 상속받은 클래스에게 모두 있다.
         usernameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
@@ -42,20 +31,21 @@ class SignInViewController: UIViewController {
         let loginSuccess: Bool = findUser(name: username, password: password)
         if loginSuccess {
             
-            // Alert 인스턴스를 만들기 -> Action 만들기
+            // 01. UIAlertController의 인스턴스를 만든다.
             let alertController = UIAlertController(title: "로그인 성공", message: "로그인 성공하였습니다 ☺️", preferredStyle: .alert) // .actionSheet
             
+            // 02. UIAlertController에 추가할 Action인 UIAlertAction을 만든다.
             let okAction = UIAlertAction(title: "OK", style: .default, handler: { (input: UIAlertAction) -> Void in
                 let main = MainViewController()
                 self.present(main, animated: true, completion: nil)
             })
-            
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
+            // 03. UIAlertController에 UIAlertAction을 추가한다.
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             
-            // self 는 뷰콘트롤러 ***** alert는 콘트롤러에서 만들기
+            // 04. UIAlertController를 self(뷰콘트롤러)에 최종적으로 추가한다.
             self.present(alertController, animated: true, completion: nil)
  
         }else {
@@ -85,9 +75,7 @@ class SignInViewController: UIViewController {
         }
     }
     
-    
     func findUser(name: String, password: String) -> Bool {
-        // array 끄집어냄
         guard let userList: [[String:String]] = UserDefaults.standard.array(forKey: "UserList") as? [[String : String]] else { return false }
         UserDefaults.standard.object(forKey: "UserList")
         for userData in userList {
@@ -99,17 +87,21 @@ class SignInViewController: UIViewController {
         }
         return false
     }
-
-    /*****Segue, 할일을 하기 직전에 클로저를 담아서 보내줘 : prepare*****/
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // segue.destination은 UIViewController의 상속을 받은 Down캐스팅(형변환)이기 때문에 안전하게 옵셔널 체이닝
-        // segue.source 는 previous ViewController인 SignInViewController
-        if let nextViewController = segue.destination as? SignUpViewController {
-           // SignUpViewController의 didTaskClosure에 클로저를 만들어서 담아 보낸다.
-            nextViewController.didTaskClosure = {
-                (name: String, password: String) -> Void in return
-                self.userModel.addUser(name: name, pwd: password)
-            }
-        }
-	}
+    
+    
 }
+
+//    /*****Segue, 할일을 하기 직전에 클로저를 담아서 보내줘 : prepare*****/
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // segue.destination은 UIViewController의 상속을 받은 Down캐스팅(형변환)이기 때문에 안전하게 옵셔널 체이닝
+//        // segue.source 는 previous ViewController인 SignInViewController
+//        if let nextViewController = segue.destination as? SignUpViewController {
+//           // SignUpViewController의 didTaskClosure에 클로저를 만들어서 담아 보낸다.
+//            nextViewController.didTaskClosure = {
+//                (name: String, password: String) -> Void in return
+//                self.userModel.addUser(name: name, pwd: password)
+//            }
+//        }
+//    }
+//}
+

@@ -73,11 +73,11 @@
 		DD66AEA81F7B4C4F00B55A2E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DD66AEAB1F7B6F5400B55A2E /* UserModel.swift */,
 				DD66AEA41F7B3D1300B55A2E /* SignInViewController.swift */,
 				DD66AEA61F7B4C3D00B55A2E /* SignUpViewController.swift */,
 				DD34734A1F7B7C48008B335D /* MainViewController.swift */,
 				DD66AEA21F7B3AFB00B55A2E /* RoundButton.swift */,
+				DD66AEAB1F7B6F5400B55A2E /* UserModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
