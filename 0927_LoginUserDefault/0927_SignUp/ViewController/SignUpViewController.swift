@@ -20,6 +20,16 @@ class SignUpViewController: UIViewController {
         print("SignUpViewController viewWillAppear")
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("SignUpViewController viewWillLayoutSubviews")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("SignUpViewController viewDidLayoutSubviews")
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         print("SignUpViewController viewDidAppear")
@@ -29,17 +39,7 @@ class SignUpViewController: UIViewController {
         super.viewWillDisappear(true)
         print("SignUpViewController viewWillDisappear")
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        print("SignUpViewController viewDidLayoutSubviews")
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        print("SignUpViewController viewWillLayoutSubviews")
-    }
-    
+ 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         print("SignUpViewController viewDidDisappear")
@@ -79,7 +79,11 @@ class SignUpViewController: UIViewController {
             // Alert
             let signUpSuccessAlert = UIAlertController(title: "SignUp", message: "회원가입이 완료되었습니다😉", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-                (alert) in let signInViewController = SignInViewController()
+                (alert) in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                
+//                let signInViewController = SignInViewController()
                 self.present(signInViewController, animated: true, completion: nil)}
             )
             

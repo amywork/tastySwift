@@ -8,6 +8,14 @@
 import UIKit
 
 class SignInViewController: UIViewController {
+    
+    
+    override func loadView() {
+        super.loadView()
+        print("SignInViewController loadView")
+    }
+    
+    
     var userModel = UserModel()
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -15,8 +23,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("SignInViewController viewDidLoad")
         // Keyboard 내리기
-        // addTarget은 UIResponder를 상속받은 클래스에게 모두 있다.
         usernameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         passwordTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         loginButton.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
