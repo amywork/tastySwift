@@ -7,8 +7,7 @@
 //
 
 import UIKit
-class ViewController: UIViewController, UIScrollViewDelegate {
-
+class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     var list:[Int]!
     //viewDidLoad는 거의 1번만 불리나, 메모리워닝 나면 또불림
     override func viewDidLoad() {
@@ -21,6 +20,40 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         createView()
         updateLayout()
     }
+    
+    func makeTableView() {
+        let tableView: UITableView = UITableView(frame: CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height), style: .plain)
+        view.addSubview(tableView)
+        //tableView의 2가지 포인트:
+        //dataSource: tableView의 구성품들에 대한 정보를 뷰콘트롤러에게 받겠다.
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    
+    let dataList: [String] = ["1", "2", "3"]
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return dataList.count // row의 갯수는 10개, section은 default - 1개
+    }
+    
+    // 이 아래 함수가 row의 갯수만큼 불리면서 tableView에게 cell을 보내준다.
+    // 내가 알고싶은 indexPath의 cell UI 좀 줘!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //IndexPath에는 section과 row가 들어있음
+        //여기에서는 주로 데이터만 바꿔주는 역할!
+        let section = indexPath.section
+        let cell = UITableViewCell()
+//        switch section {
+//        case 0:
+//        case 1:
+//        }
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 
     //Reference Counting 에 대한 내용은 추후 진행
     //weak var : 변수의 소유자를 1명에게 몰아주기 위함, 세입자
@@ -37,7 +70,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         gateView.tag = 2 // 뷰의 구분을 위해 쓰는 아이
         return gateView
     }()
-    
     
     let closure = { (input: Int) -> Int in return input + 1 }
     
@@ -97,5 +129,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @objc func btnAction(_sender: UIButton) {
         
     }
+    
+    
+    
 }
 
