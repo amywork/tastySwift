@@ -56,11 +56,11 @@
 		4B31EC901F7FA22300D721B2 /* 0930_ExploreTableView */ = {
 			isa = PBXGroup;
 			children = (
+				4B31EC981F7FA22300D721B2 /* Assets.xcassets */,
 				4B31EC911F7FA22300D721B2 /* AppDelegate.swift */,
 				4B31ECA31F7FA2EA00D721B2 /* ExploreCell.swift */,
 				4B31EC931F7FA22300D721B2 /* ViewController.swift */,
 				4B31EC951F7FA22300D721B2 /* Main.storyboard */,
-				4B31EC981F7FA22300D721B2 /* Assets.xcassets */,
 				4B31EC9A1F7FA22300D721B2 /* LaunchScreen.storyboard */,
 				4B31EC9D1F7FA22300D721B2 /* Info.plist */,
 			);
