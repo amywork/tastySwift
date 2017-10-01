@@ -93,8 +93,14 @@ class SignUpViewController: UIViewController {
         }else {
             // Alert
             let signUpFailedAlert = UIAlertController(title: "SignUp", message: "패스워드가 일치하지 않습니다☹️", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "닫기", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "닫기", style: .default){
+                (action: UIAlertAction) -> Void in return
+                if let tf = signUpFailedAlert.textFields?.first {
+                    //code
+                }
+            }
             signUpFailedAlert.addAction(cancelAction)
+            signUpFailedAlert.addTextField(configurationHandler: { textField in textField.placeholder = "의견을 보내주세요!🙃"})
             self.present(signUpFailedAlert, animated: true, completion: nil)
         }
     }
