@@ -113,6 +113,7 @@ class SkullView: UIView {
     }
     
     
+    
     // 자주쓰는 거리
     private struct Ratios {
         static let skullRadiusToEyeOffset: CGFloat = 5
