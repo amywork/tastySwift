@@ -1,12 +1,15 @@
 //
-//  ViewController.swift
+//  BlockScrollViewController.swift
 //  0928_UIScrollTable
 //
-//  Created by 김기윤 on 28/09/2017.
+//  Created by Kimkeeyun on 03/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
+
 import UIKit
-class ViewController: UIViewController {
+
+class BlockScrollViewController: UIViewController {
+
     var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,7 @@ class ViewController: UIViewController {
         
         // UISwitch
         let colorSwitcher: UISwitch = UISwitch(frame: CGRect(x: 10, y: view.frame.size.height-36, width: 20, height: 20))
-        colorSwitcher.addTarget(self, action: #selector(ViewController.colorChange), for: .valueChanged)
+        colorSwitcher.addTarget(self, action: #selector(BlockScrollViewController.colorChange), for: .valueChanged)
         self.view.addSubview(colorSwitcher)
     }
     

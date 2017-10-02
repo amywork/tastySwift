@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B45C12E1F828C3C007F8C61 /* BlockScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45C12D1F828C3C007F8C61 /* BlockScrollViewController.swift */; };
 		DD133AA51F7C929000E22266 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD133AA41F7C929000E22266 /* AppDelegate.swift */; };
-		DD133AA71F7C929000E22266 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD133AA61F7C929000E22266 /* ViewController.swift */; };
+		DD133AA71F7C929000E22266 /* CardScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD133AA61F7C929000E22266 /* CardScrollViewController.swift */; };
 		DD133AAA1F7C929000E22266 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD133AA81F7C929000E22266 /* Main.storyboard */; };
 		DD133AAC1F7C929000E22266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD133AAB1F7C929000E22266 /* Assets.xcassets */; };
 		DD133AAF1F7C929000E22266 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD133AAD1F7C929000E22266 /* LaunchScreen.storyboard */; };
-		DD133AB71F7C9F2900E22266 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD133AB61F7C9F2900E22266 /* File.swift */; };
+		DD133AB71F7C9F2900E22266 /* GradationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD133AB61F7C9F2900E22266 /* GradationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B45C12D1F828C3C007F8C61 /* BlockScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockScrollViewController.swift; sourceTree = "<group>"; };
 		DD133AA11F7C929000E22266 /* 0928_UIScrollTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0928_UIScrollTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD133AA41F7C929000E22266 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD133AA61F7C929000E22266 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD133AA61F7C929000E22266 /* CardScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScrollViewController.swift; sourceTree = "<group>"; };
 		DD133AA91F7C929000E22266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD133AAB1F7C929000E22266 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD133AAE1F7C929000E22266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD133AB01F7C929000E22266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD133AB61F7C9F2900E22266 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		DD133AB61F7C9F2900E22266 /* GradationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				DD133AAB1F7C929000E22266 /* Assets.xcassets */,
 				DD133AA41F7C929000E22266 /* AppDelegate.swift */,
-				DD133AA61F7C929000E22266 /* ViewController.swift */,
-				DD133AB61F7C9F2900E22266 /* File.swift */,
+				DD133AA61F7C929000E22266 /* CardScrollViewController.swift */,
+				DD133AB61F7C9F2900E22266 /* GradationViewController.swift */,
+				4B45C12D1F828C3C007F8C61 /* BlockScrollViewController.swift */,
 				DD133AA81F7C929000E22266 /* Main.storyboard */,
 				DD133AAD1F7C929000E22266 /* LaunchScreen.storyboard */,
 				DD133AB01F7C929000E22266 /* Info.plist */,
@@ -139,9 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD133AA71F7C929000E22266 /* ViewController.swift in Sources */,
-				DD133AB71F7C9F2900E22266 /* File.swift in Sources */,
+				DD133AA71F7C929000E22266 /* CardScrollViewController.swift in Sources */,
+				DD133AB71F7C9F2900E22266 /* GradationViewController.swift in Sources */,
 				DD133AA51F7C929000E22266 /* AppDelegate.swift in Sources */,
+				4B45C12E1F828C3C007F8C61 /* BlockScrollViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

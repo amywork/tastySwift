@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UIScrollViewDelegate {
+class GradationViewController: UIViewController, UIScrollViewDelegate {
     
     var scrollView: UIScrollView!
     var subView: UIView = UIView()
