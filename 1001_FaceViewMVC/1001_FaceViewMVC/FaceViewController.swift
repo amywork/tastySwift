@@ -9,19 +9,19 @@
 import UIKit
 class FaceViewController: VCLLoggingViewController {
    
-    @IBOutlet weak var skullView: FaceView! {
+    @IBOutlet weak var faceView: FaceView! {
         didSet {
-            let handler = #selector(skullView.changeScale(byReactingTo:))
-            let pinchRecognizer = UIPinchGestureRecognizer(target: skullView, action: handler)
-            skullView.addGestureRecognizer(pinchRecognizer)
+            let handler = #selector(FaceView.changeScale(byReactingTo:))
+            let pinchRecognizer = UIPinchGestureRecognizer(target: faceView, action: handler)
+            faceView.addGestureRecognizer(pinchRecognizer)
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.toggleEyes(byReactingTo:)))
-            skullView.addGestureRecognizer(tapRecognizer)
+            faceView.addGestureRecognizer(tapRecognizer)
             let swipeUpRecognizer = UISwipeGestureRecognizer(target:self, action: #selector(increaseHappiness))
             swipeUpRecognizer.direction = .up
-            skullView.addGestureRecognizer(swipeUpRecognizer)
+            faceView.addGestureRecognizer(swipeUpRecognizer)
             let swipeDownRecognizer = UISwipeGestureRecognizer(target:self, action: #selector(decreaseHappiness))
             swipeDownRecognizer.direction = .down
-            skullView.addGestureRecognizer(swipeDownRecognizer)
+            faceView.addGestureRecognizer(swipeDownRecognizer)
             updateUI()
         }
     }
@@ -53,13 +53,13 @@ class FaceViewController: VCLLoggingViewController {
     func updateUI() {
         switch expression.eyes {
         case .open:
-            skullView?.eyesOpen = true
+            faceView?.eyesOpen = true
         case .closed:
-            skullView?.eyesOpen = false
+            faceView?.eyesOpen = false
         case .squinting:
-            skullView?.eyesOpen = false
+            faceView?.eyesOpen = false
         }
-        skullView?.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
+        faceView?.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
     }
     
     private let mouthCurvatures = [

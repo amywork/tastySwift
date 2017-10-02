@@ -46,7 +46,7 @@
 		4B31ECA51F80693E00D721B2 = {
 			isa = PBXGroup;
 			children = (
-				4B31ECB01F80693E00D721B2 /* 1001_UITestStanford */,
+				4B31ECB01F80693E00D721B2 /* 1001_FaceViewMVC */,
 				4B31ECAF1F80693E00D721B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,19 +59,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B31ECB01F80693E00D721B2 /* 1001_UITestStanford */ = {
+		4B31ECB01F80693E00D721B2 /* 1001_FaceViewMVC */ = {
 			isa = PBXGroup;
 			children = (
-				4B31ECBD1F80693E00D721B2 /* Info.plist */,
 				4B31ECC51F806FD500D721B2 /* Supporting */,
 				4B0A11B91F81FFC800063619 /* VCLLoggingViewController.swift */,
 				4B0A11B71F81E9FA00063619 /* EmotionsViewController.swift */,
 				4B31ECB31F80693E00D721B2 /* FaceViewController.swift */,
 				4B44CCD21F80C5EE001C4CBE /* FacialExpression.swift */,
 				4B31ECC31F806E4400D721B2 /* FaceView.swift */,
+				4B31ECBD1F80693E00D721B2 /* Info.plist */,
 				4B31ECB51F80693E00D721B2 /* Main.storyboard */,
 			);
-			path = 1001_UITestStanford;
+			path = 1001_FaceViewMVC;
 			sourceTree = "<group>";
 		};
 		4B31ECC51F806FD500D721B2 /* Supporting */ = {
@@ -120,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4B31ECA91F80693E00D721B2 /* Build configuration list for PBXProject "1001_UITestStanford" */;
+			buildConfigurationList = 4B31ECA91F80693E00D721B2 /* Build configuration list for PBXProject "1001_FaceViewMVC" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -300,7 +300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = 1001_UITestStanford/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/1001_FaceViewMVC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yunari.me.-001-UITestStanford";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -315,7 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = 1001_UITestStanford/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/1001_FaceViewMVC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yunari.me.-001-UITestStanford";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -327,7 +327,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B31ECA91F80693E00D721B2 /* Build configuration list for PBXProject "1001_UITestStanford" */ = {
+		4B31ECA91F80693E00D721B2 /* Build configuration list for PBXProject "1001_FaceViewMVC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B31ECBE1F80693E00D721B2 /* Debug */,

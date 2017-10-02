@@ -7,10 +7,8 @@
 //
 
 import UIKit
-
 class EmotionsViewController: VCLLoggingViewController
 {
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var destinationViewController = segue.destination
         if let navigationController = destinationViewController as? UINavigationController {

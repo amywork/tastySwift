@@ -60,7 +60,7 @@ class VCLLoggingViewController : UIViewController
         super.viewDidAppear(animated)
         logVCL("viewDidAppear(animated = \(animated))")
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         logVCL("viewWillDisappear(animated = \(animated))")

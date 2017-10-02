@@ -48,7 +48,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bnk-hN-LjP"/>
                     <connections>
-                        <outlet property="skullView" destination="RAU-K1-rnO" id="s37-7A-qm5"/>
+                        <outlet property="FaceView" destination="RAU-K1-rnO" id="s37-7A-qm5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
