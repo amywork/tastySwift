@@ -7,7 +7,7 @@
 
 import UIKit
 // protocol 추가 : UITextFieldDelegate
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITextInputTraits {
 
     var logoLabel: UILabel = UILabel()
     var contentTitleLabel: UILabel = UILabel()
@@ -165,6 +165,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sendMsgTxtField.placeholder = "Kinfolk에게 의견을 보내주세요😊"
         /****UITextfield Protocol 채택 및 delegate 사용*****/
         sendMsgTxtField.delegate = self
+        sendMsgTxtField.adjustsFontSizeToFitWidth = true
+        sendMsgTxtField.minimumFontSize = 6
+        sendMsgTxtField.clearsOnBeginEditing = true
         
         
         // OKButton
