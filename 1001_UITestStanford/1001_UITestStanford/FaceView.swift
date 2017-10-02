@@ -8,7 +8,7 @@
 
 import UIKit
 @IBDesignable 
-class SkullView: UIView {
+class FaceView: UIView {
 
     // Public API
     @IBInspectable

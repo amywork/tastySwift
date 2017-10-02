@@ -7,9 +7,9 @@
 //
 
 import UIKit
-class ViewController: UIViewController {
+class FaceViewController: VCLLoggingViewController {
    
-    @IBOutlet weak var skullView: SkullView! {
+    @IBOutlet weak var skullView: FaceView! {
         didSet {
             let handler = #selector(skullView.changeScale(byReactingTo:))
             let pinchRecognizer = UIPinchGestureRecognizer(target: skullView, action: handler)
@@ -74,8 +74,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         var titleLabel: UILabel?
         titleLabel = UILabel()
-        titleLabel?.frame = CGRect(x: 16, y: 100, width: view.bounds.size.width, height: 100)
-        titleLabel?.text = "Face Kit"
+        titleLabel?.frame = CGRect(x: 0, y: 150, width: view.bounds.size.width, height: 100)
+        titleLabel?.text = "Today"
+        titleLabel?.textAlignment = .center
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         view.addSubview(titleLabel!)
     }
