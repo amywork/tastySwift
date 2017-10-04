@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
     override func viewDidLoad() {
@@ -17,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self // UITableViewDelegate 선언
         
         // class 로서 tableView에 등록
-        tableView.register(menuCell.self, forCellReuseIdentifier: "menuCell")
+        tableView.register(Cell.self, forCellReuseIdentifier: "Cell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         // UITableViewCell.self : class이름.self = 클래스 자체
         // dequeueReusableCell 얘가 UI를 만들 수 있도록 등록하는 과정
@@ -29,12 +28,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 2
     }
     
-    // 테이블뷰에서 Required 함수 2개는 꼭 챙기자.
+    // 테이블뷰에서 Required method 2개는 꼭 챙기자.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menu.count
     }
     
-    //dequeueReusableCell에 reuse할게 없으면 menuCell에서 cell을 인스턴스로 만든다.
+    //dequeueReusableCell에 reuse할게 없으면 Cell에서 cell을 인스턴스로 만든다.
     //index를 찾아서 cell을 만들어주는 method
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //tableView cell을 만들어서 이름을 집어넣고, 아래는 custom cell을 만들어서 이미지를 넣는 방식
@@ -43,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.textLabel?.text = "〰️👋🏻 \(menu[indexPath.row])"
             return cell
         }else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! menuCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Cell
             //dequeue: que라는 자료구조에서 재사용 cell 데이터를 끄집어내는 것
             cell.setImageName(name: menu[indexPath.row])
             return cell

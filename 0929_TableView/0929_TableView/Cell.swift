@@ -8,7 +8,7 @@
 
 import UIKit
 
-class menuCell: UITableViewCell {
+class Cell: UITableViewCell {
     
     // 클래스를 만드는 두가지 방법: Class 파일에 선언 or Stroyboard 를 통함(Nib)
     // ViewController는 viewDidLoad()가 진입점, storyBoard는 awakeFromNib
