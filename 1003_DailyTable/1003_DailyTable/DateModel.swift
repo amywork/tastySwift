@@ -13,7 +13,6 @@ class DateModel {
 
     var title: String
     var detail: String
-    
     var color: UIColor?
     
     init?(title: String, detail: String, color: UIColor) {

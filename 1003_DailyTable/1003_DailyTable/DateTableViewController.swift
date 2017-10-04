@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
 class DateTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     
     var days = [DateModel]()
     @IBOutlet weak var tableView: UITableView!
@@ -59,10 +57,17 @@ class DateTableViewController: UIViewController, UITableViewDelegate, UITableVie
             fatalError("Unable to instantiate")
         }
         
-        days += [date1, date2, date3, date4]
+        guard let date5 = DateModel(title: "heathceramics", detail: "@playmountaineast is showing he work of GO Koyama in the Boiler Room at Heath until October 22nd. Don't miss it!", color: #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)) else {
+            fatalError("Unable to instantiate")
+        }
+        
+        guard let date6 = DateModel(title: "heathceramics", detail: "@playmountaineast is showing he work of GO Koyama in the Boiler Room at Heath until October 22nd. Don't miss it!", color: #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)) else {
+            fatalError("Unable to instantiate")
+        }
+        
+        days += [date1, date2, date3, date4, date5, date6]
         
     }
-    
-    
+
 }
 
