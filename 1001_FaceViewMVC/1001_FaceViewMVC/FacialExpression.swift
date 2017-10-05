@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 struct FacialExpression {
     let eyes: Eyes
     let mouth: Mouth

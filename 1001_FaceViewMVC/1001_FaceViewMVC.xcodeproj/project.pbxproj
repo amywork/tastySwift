@@ -64,9 +64,9 @@
 			children = (
 				4B31ECC51F806FD500D721B2 /* Supporting */,
 				4B0A11B91F81FFC800063619 /* VCLLoggingViewController.swift */,
+				4B44CCD21F80C5EE001C4CBE /* FacialExpression.swift */,
 				4B0A11B71F81E9FA00063619 /* EmotionsViewController.swift */,
 				4B31ECB31F80693E00D721B2 /* FaceViewController.swift */,
-				4B44CCD21F80C5EE001C4CBE /* FacialExpression.swift */,
 				4B31ECC31F806E4400D721B2 /* FaceView.swift */,
 				4B31ECBD1F80693E00D721B2 /* Info.plist */,
 				4B31ECB51F80693E00D721B2 /* Main.storyboard */,
