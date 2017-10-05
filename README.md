@@ -8,18 +8,18 @@
 - [스위프트 Optional](https://younari.github.io/2017-09-19/Optionals)
 - [스위프트 Closure](https://younari.github.io/2017-09-19/Closure)
 - [스위프트 Tupe](https://younari.github.io/2017-09-18/TupleType)
-- [스위프트 Function v0.2](https://younari.github.io/2017-09-14/functionSwift)
+- [스위프트 Function v0.2](https://younari.github.io/2017-09-14/Function)
 - [스위프트 Function v0.1](https://younari.github.io/2017-09-09/Function)
 - [스위프트 Switch](https://younari.github.io/2017-09-18/SwitchCase)
 - [스위프트 Property](https://younari.github.io/2017-09-18/Property)
 - [스위프트 Type](https://younari.github.io/2017-09-14/swiftTypes)
-- [스위프트 Class 접근제어](https://younari.github.io/2017-09-14/PrivatePublicClass)
-- [스위프트 Array](https://younari.github.io/2017-09-12/ArraySample)
+- [스위프트 Class](https://younari.github.io/2017-09-14/Class)
+- [스위프트 Array](https://younari.github.io/2017-09-14/Array)
 
 ## 스위프트 간단 프로젝트
-- [클래스 구현 시나리오 그려보기](https://younari.github.io/2017-09-13/gradeClass)
-- [은행 계좌 클래스 만들어보기](https://younari.github.io/2017-09-13/BankAccountClass)
-- [배열 속 Int간의 크기 비교하기](https://younari.github.io/2017-09-09/IntArray)
+- [클래스 만들기 연습 v0.1](https://younari.github.io/2017-09-13/ClassV01)
+- [클래스 만들기 연습 v0.2](https://younari.github.io/2017-09-13/ClassV02)
+- [Int와 Array](https://younari.github.io/2017-09-09/IntArray)
 - [다양한 단위 변환 함수 만들기](https://younari.github.io/2017-09-08/UnitFunc)
 - [두 변수를 교환하는 SWAP](https://younari.github.io/2017-09-08/SWAP)
 
@@ -36,18 +36,20 @@
 
 ## iOS Design Pattern
 - [iOS Design Pattern](https://younari.github.io/2017-09-16/iOSDesignPattern)
-- [Helpful Resources](https://younari.github.io/2017-09-16/HelpfulResources)
-- [Apple Events 2017](https://younari.github.io/2017-09-14/AppleEvents2017)
 - [스탠포드 iOS 강의노트 L1~3](https://younari.github.io/2017-09-16/StanfordSwift01)
 - [스탠포드 iOS 강의노트 L4](https://younari.github.io/2017-09-16/StanfordSwift02)
 - [스탠포드 iOS 강의노트 L5](https://younari.github.io/2017-09-16/StanfordSwift03)
 - [스탠포드 iOS 강의노트 L6~7](https://younari.github.io/2017-09-16/StanfordSwift04)
 
+## Apple
+- [Helpful Resources](https://younari.github.io/2017-09-12/HelpfulResources)
+- [Apple Events 2017](https://younari.github.io/2017-09-12/AppleEvents2017)
+
 
 # 03. Algorithm and Data Structure
 ## 알고리즘
 - [알고리즘 기초](https://younari.github.io/2017-09-07/Algorithm)
-- [연속으로 중복된 숫자 제거하기](https://younari.github.io/2017-09-12/RepeatedNumber)
+- [연속으로 중복된 숫자 제거하기](https://younari.github.io/2017-09-11/RepeatedNumber)
 - [Collatz의 추측, Harshad 수](https://younari.github.io/2017-09-11/collatzHarshad)
 - [소수를 판별하는 함수](https://younari.github.io/2017-09-11/PrimeNumber)
 - [요일을 구하는 함수](https://younari.github.io/2017-09-10/Calendar)
@@ -61,7 +63,7 @@
 ## 프로그래밍 기초
 - [프로그래밍 기초 용어](https://younari.github.io/2017-09-05/Program)
 - [Backend 기초 용어](https://younari.github.io/2017-09-06/Backend)
-- [객체 지향 프로그래밍](https://younari.github.io/2017-09-14/Object)
+- [객체 지향 프로그래밍](https://younari.github.io/2017-09-13/Object)
 
 # 04. Demo Projects
 ## 로그인, 회원가입 페이지 구현하기
