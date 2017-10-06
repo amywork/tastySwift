@@ -46,7 +46,7 @@ class UpgradeCalculatorViewControler: UIViewController {
     // operation
     var calModel = CalculatorModel()
     @IBAction func operation(_ sender: UIButton) {
-        if isTyping { // check
+        if isTyping {
             calModel.setNumber(displayNum: displayValue)
             isTyping = false
         }

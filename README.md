@@ -19,20 +19,20 @@
 ## 스위프트 간단 프로젝트
 - [클래스 만들기 연습 v0.1](https://younari.github.io/2017-09-13/ClassV01)
 - [클래스 만들기 연습 v0.2](https://younari.github.io/2017-09-13/ClassV02)
-- [Int와 Array](https://younari.github.io/2017-09-09/IntArray)
 - [다양한 단위 변환 함수 만들기](https://younari.github.io/2017-09-08/UnitFunc)
 - [두 변수를 교환하는 SWAP](https://younari.github.io/2017-09-08/SWAP)
+- [입력받은 숫자를 배열로 만들기](https://younari.github.io/2017-09-09/IntArray)
+- [UIButton, UILabel을 활용한 인터렉션 만들기](https://younari.github.io/2017-09-26/UIButtonSampleCode)
+
 
 # 02. iOS Platform Guide
 ## iOS User Interface
-- [iOS UI Basic v0.1](https://younari.github.io/2017-09-25/iOSUIGuide)
-- [스토리보드로 UI 구현하기](https://younari.github.io/2017-09-17/StoryBoardBasic)
+- [iOS UI Basic](https://younari.github.io/2017-09-25/iOSUIGuide)
 - [Frame Based UI](https://github.com/younari/tastySwift/tree/master/0929_UIViewReview)
-- [UIButton, UILabel을 활용한 스위치 코드 만들기](https://younari.github.io/2017-09-26/UIButtonSampleCode)
-- [스위프트 Alert Controller](https://younari.github.io/2017-09-27/AlertController)
-- [Scroll View & Sitch](https://younari.github.io/2017-09-27/ScrollView)
-- [Table View](https://younari.github.io/2017-09-30/UITableView)
-- [Table View로 상품 리스트 만들기](https://github.com/younari/tastySwift/tree/master/0930_ProductTableView)
+- [스토리보드로 UI 구현하기](https://younari.github.io/2017-09-17/StoryBoardBasic)
+- [스위프트 AlertController](https://younari.github.io/2017-09-27/AlertController)
+- [스위프트 ScrollView & Switch](https://younari.github.io/2017-09-27/ScrollView)
+- [스위프트 TableView](https://younari.github.io/2017-09-30/UITableView)
 
 ## iOS Design Pattern
 - [iOS Design Pattern](https://younari.github.io/2017-09-16/iOSDesignPattern)
@@ -59,6 +59,9 @@
 - [자릿수를 판별하는 함수](https://younari.github.io/2017-09-11/CountOfdigit)
 - [하노이의 탑](https://younari.github.io/2017-09-11/HanoiTower)
 - [팩토리얼, 피보나치 수열](https://younari.github.io/2017-09-11/FactorialPibonacci)
+- [최대공약수와 최소공배수](https://younari.github.io/2017-09-11/GCDLCD)
+- [제곱수 구하기](https://younari.github.io/2017-09-11/Power)
+- [배열의 최대값과 최소값](https://younari.github.io/2017-09-09/MinMax)
 
 ## 프로그래밍 기초
 - [프로그래밍 기초 용어](https://younari.github.io/2017-09-05/Program)

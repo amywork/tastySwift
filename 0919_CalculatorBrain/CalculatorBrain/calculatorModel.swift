@@ -20,11 +20,10 @@ class CalculatorModel {
 
     // 연산 기호 : 연산 타입 딕셔너리 생성
     private var operDic: [String:OperatoinCase] = [
-        "+": .binary({(num1, num2) -> Double in return num1 + num2}),
-        "-": .binary({(num1, num2) -> Double in return num1 - num2}),
-        "*": .binary({(num1, num2) -> Double in return num1 * num2}),
-        "/": .binary({(num1, num2) -> Double in return num1 / num2}),
-        "cos": .unary(cos),
+        "+": .binary({$0 + $1}),
+        "-": .binary({$0 - $1}),
+        "*": .binary({$0 * $1}),
+        "/": .binary({$0 / $1}), //({(num1, num2) -> Double in return num1 / num2}),
         "√": .unary(sqrt),
         "±": .unary({(num1: Double) -> Double in return -num1}),
         "=": .equal
@@ -43,14 +42,15 @@ class CalculatorModel {
     
     // 연산 클릭시 연산 수행
     var operand: Double?
-        func perfomrOperation(mathSymbol: String) {
+    
+    func perfomrOperation(mathSymbol: String) {
         if let operationCase = operDic[mathSymbol] {
             switch operationCase {
                 
             case .unary(let function):
                 if leftNumber != nil && operand == nil {
                     operand = function(leftNumber!)
-                }else if leftNumber != nil && operand != nil {
+                }else if operand != nil { // leftNumber != nil &&
                     operand = function(operand!)
                 }
                 
@@ -58,16 +58,20 @@ class CalculatorModel {
                 if leftNumber != nil && operand == nil {
                     operand = leftNumber!
                     waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
-                }else if leftNumber != nil && operand != nil {
+                }else if leftNumber != nil && operand != nil && waitingBinary != nil {
                     operand! = waitingBinary!.doBinaryOp(with: leftNumber!)
                     waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
                 }else if operand != nil && leftNumber == nil {
+                    waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
+                }else if leftNumber != nil && operand != nil && waitingBinary == nil {
                     waitingBinary = WaitingBinary(firstNum: operand!, waitingFunc: binaryFunc)
                 }
                 leftNumber = nil
                 
             case .equal:
                 getResult()
+                operand = returnValue
+                leftNumber = nil
             }
         }
     }
