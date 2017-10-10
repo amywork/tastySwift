@@ -34,6 +34,11 @@ class SegueTestViewController: UIViewController {
         }
     }
     
+    @IBAction func dismissCompletion(_ sender: UIStoryboardSegue) {
+        // tableView를 reload 한다던가 등등의 작업을 해줍니다.
+        // 아무 작업을 해주지 않으면 원래 그상태로의 화면이 남아있습니다.
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.placeholder = "Type Something :)"
