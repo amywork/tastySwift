@@ -64,7 +64,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 }
     
-//    // Header - 섹션의 Header에는 얘를 들면 ㄱ,ㄴ,ㄷ 같은 것들을 넣을 수 있음.
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        return UITableView
 //    }
