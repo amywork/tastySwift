@@ -6,7 +6,7 @@ class DestinationViewController: UIViewController {
         super.viewDidLoad()
         
         let closeBtn = UIButton(type: .system)
-        closeBtn.frame = CGRect(x: view.bounds.size.width-32, y: 30, width: 16, height: 16)
+        closeBtn.frame = CGRect(x: view.bounds.size.width-46, y: 30, width: 30, height: 30)
         closeBtn.backgroundColor = .white
         
         view.addSubview(closeBtn)

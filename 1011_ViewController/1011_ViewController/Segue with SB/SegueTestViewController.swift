@@ -7,16 +7,17 @@
 //
 
 import UIKit
-
 class SegueTestViewController: UIViewController {
 
     var isAbleToNext: Bool = true
+    
+    // 스위치 액션에 대한 Bool 값
     @IBAction func ableToNext(_ sender: UISwitch) {
         isAbleToNext = sender.isOn
     }
     
+    // Segue를 실행해야할지 말지에 대한 결정
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
         if identifier == "nextDestination" {
             return isAbleToNext
         }else {
@@ -29,9 +30,5 @@ class SegueTestViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 }
