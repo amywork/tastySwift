@@ -35,10 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // cell 클릭 후
-        // 스토리보드를 통한 인스턴스 생성 할 것
+        // 스토리보드를 통해 UI를 만들어놓은 ViewController의 인스턴스를 생성하여 present
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondVC2 = storyboard.instantiateViewController(withIdentifier: "ScondViewController") as? SecondViewController
-
+        let secondVC = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController
+        present(secondVC!, animated: true, completion: nil)
     }
     
 }
