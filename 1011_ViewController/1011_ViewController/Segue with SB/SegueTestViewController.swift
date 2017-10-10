@@ -10,6 +10,7 @@ import UIKit
 class SegueTestViewController: UIViewController {
 
     var isAbleToNext: Bool = true
+    @IBOutlet weak var textField: UITextField!
     
     // 스위치 액션에 대한 Bool 값
     @IBAction func ableToNext(_ sender: UISwitch) {
@@ -25,9 +26,17 @@ class SegueTestViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "nextDestination" {
+            let destionationVC = segue.destination as? DestinationViewController
+            let nextStr = textField.text ?? "nothing to send"
+            destionationVC?.takeMessage(nextStr) // String 전달
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textField.placeholder = "Type Something :)"
         // Do any additional setup after loading the view.
     }
     
