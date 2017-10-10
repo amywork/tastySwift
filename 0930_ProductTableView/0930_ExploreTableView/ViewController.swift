@@ -43,7 +43,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let productCell = tableView.dequeueReusableCell(withIdentifier: "ExploreCell", for: indexPath) as! ExploreCell
         productCell.setImgName(name: imgList[indexPath.row])
         productCell.itemDecoView?.backgroundColor = indexColor[indexPath.row]
-        
         return productCell
     }
     

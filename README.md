@@ -22,20 +22,21 @@
 - [다양한 단위 변환 함수 만들기](https://younari.github.io/2017-09-08/UnitFunc)
 - [두 변수를 교환하는 SWAP](https://younari.github.io/2017-09-08/SWAP)
 - [입력받은 숫자를 배열로 만들기](https://younari.github.io/2017-09-09/IntArray)
-- [UIButton, UILabel을 활용한 인터렉션 만들기](https://younari.github.io/2017-09-26/UIButtonSampleCode)
 
 
 # 02. iOS Platform Guide
 ## iOS User Interface
-- [iOS UI Basic](https://younari.github.io/2017-09-25/iOSUIGuide)
+- [iOS Design Pattern](https://younari.github.io/2017-09-25/iOSDesignPattern)
+- [iOS UI Overview](https://younari.github.io/2017-09-26/iOSUIOverView)
+- [iOS UI View Controller](https://younari.github.io/2017-09-26/iOSViewController)
+- [스토리보드로 UI 구현하기](https://younari.github.io/2017-09-26/StoryBoardBasic)
 - [Frame Based UI](https://github.com/younari/tastySwift/tree/master/0929_UIViewReview)
-- [스토리보드로 UI 구현하기](https://younari.github.io/2017-09-17/StoryBoardBasic)
+- [스위프트 UI Button](https://younari.github.io/2017-09-27/UIButtonSampleCode)
 - [스위프트 AlertController](https://younari.github.io/2017-09-27/AlertController)
 - [스위프트 ScrollView & Switch](https://younari.github.io/2017-09-27/ScrollView)
 - [스위프트 TableView](https://younari.github.io/2017-09-30/UITableView)
 
-## iOS Design Pattern
-- [iOS Design Pattern](https://younari.github.io/2017-09-16/iOSDesignPattern)
+## Stanford iOS Lecture
 - [스탠포드 iOS 강의노트 L1~3](https://younari.github.io/2017-09-16/StanfordSwift01)
 - [스탠포드 iOS 강의노트 L4](https://younari.github.io/2017-09-16/StanfordSwift02)
 - [스탠포드 iOS 강의노트 L5](https://younari.github.io/2017-09-16/StanfordSwift03)
@@ -70,8 +71,8 @@
 
 # 04. Demo Projects
 ## 로그인, 회원가입 페이지 구현하기
-- [로그인, 회원가입 페이지 구현하기 v0.2](https://younari.github.io/2017-09-28/SignUpSignInV02)
-- [로그인, 회원가입 페이지 구현하기 v0.1](https://younari.github.io/2017-09-28/SignUpSignInV01)
+- [로그인, 회원가입 페이지 구현하기 v0.2](https://younari.github.io/2017-09-24/SignUpSignInV02)
+- [로그인, 회원가입 페이지 구현하기 v0.1](https://younari.github.io/2017-09-24/SignUpSignInV01)
 
 ## Calculator 계산기 만들기
 ### Refactoring 5회, 09/12 ~ 09/20
