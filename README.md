@@ -28,7 +28,7 @@
 ## iOS User Interface
 - [iOS Design Pattern](https://younari.github.io/2017-09-25/iOSDesignPattern)
 - [iOS UI Overview](https://younari.github.io/2017-09-26/iOSUIOverView)
-- [iOS UI View Controller](https://younari.github.io/2017-09-26/iOSViewController)
+- [iOS UI View Controller](https://younari.github.io/2017-10-10/iOSViewController)
 - [스토리보드로 UI 구현하기](https://younari.github.io/2017-09-26/StoryBoardBasic)
 - [Frame Based UI](https://github.com/younari/tastySwift/tree/master/0929_UIViewReview)
 - [스위프트 UI Button](https://younari.github.io/2017-09-27/UIButtonSampleCode)
