@@ -34,11 +34,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // cell 클릭 후
         // 스토리보드를 통해 UI를 만들어놓은 ViewController의 인스턴스를 생성하여 present
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController
-        present(secondVC!, animated: true, completion: nil)
+        var secondVC = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        // 위 두 줄을 줄여서 아래와 같이 한 줄 표기도 가능함
+        secondVC = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        present(secondVC, animated: true, completion: nil)
     }
     
 }
