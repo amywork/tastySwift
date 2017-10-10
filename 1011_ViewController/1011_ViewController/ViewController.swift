@@ -7,19 +7,40 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let tableView: UITableView = UITableView(frame: view.bounds, style: .plain)
+        tableView.dataSource = self // UITableViewDataSource 선언
+        tableView.delegate = self // UITableViewDelegate 선언
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        view.addSubview(tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        cell.textLabel?.text = "👋🏻"
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // let cell: menuCell = tableView.cellForRow(at: indexPath) as! menuCell
+        return 250
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // cell 클릭 후
+        // 스토리보드를 통한 인스턴스 생성 할 것
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC2 = storyboard.instantiateViewController(withIdentifier: "ScondViewController") as? SecondViewController
 
-
+    }
+    
 }
+
 

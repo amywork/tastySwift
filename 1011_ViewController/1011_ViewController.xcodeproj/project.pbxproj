@@ -12,6 +12,7 @@
 		DDC1C5061F8C90E6007027E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC1C5041F8C90E6007027E7 /* Main.storyboard */; };
 		DDC1C5081F8C90E6007027E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC1C5071F8C90E6007027E7 /* Assets.xcassets */; };
 		DDC1C50B1F8C90E6007027E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC1C5091F8C90E6007027E7 /* LaunchScreen.storyboard */; };
+		DDC1C5131F8C99C6007027E7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC1C5121F8C99C6007027E7 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DDC1C5071F8C90E6007027E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDC1C50A1F8C90E6007027E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDC1C50C1F8C90E6007027E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDC1C5121F8C99C6007027E7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				DDC1C5071F8C90E6007027E7 /* Assets.xcassets */,
 				DDC1C5001F8C90E6007027E7 /* AppDelegate.swift */,
 				DDC1C5021F8C90E6007027E7 /* ViewController.swift */,
+				DDC1C5121F8C99C6007027E7 /* SecondViewController.swift */,
 				DDC1C5041F8C90E6007027E7 /* Main.storyboard */,
 				DDC1C5091F8C90E6007027E7 /* LaunchScreen.storyboard */,
 				DDC1C50C1F8C90E6007027E7 /* Info.plist */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC1C5131F8C99C6007027E7 /* SecondViewController.swift in Sources */,
 				DDC1C5031F8C90E6007027E7 /* ViewController.swift in Sources */,
 				DDC1C5011F8C90E6007027E7 /* AppDelegate.swift in Sources */,
 			);
