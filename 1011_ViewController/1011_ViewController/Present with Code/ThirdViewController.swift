@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ThirdViewController.swift
 //  1011_ViewController
 //
 //  Created by 김기윤 on 10/10/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
