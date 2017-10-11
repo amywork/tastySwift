@@ -12,14 +12,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .blue
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC: itemDetailViewController = segue.destination as! itemDetailViewController
+        nextVC.labelStr = "Text changed succesfully"
     }
-
-
+    
+    // 내가 속한 navigationController에게 push와 pop을 요청한다.
+    func pushAction() {
+        let storyboard = self.storyboard
+        let nextVC: itemDetailViewController = storyboard?.instantiateViewController(withIdentifier: "itemDetailViewController") as! itemDetailViewController
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    func popAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
-

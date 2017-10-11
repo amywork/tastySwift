@@ -12,6 +12,7 @@
 		DD7EB7A91F8DADFE00B7719A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7EB7A71F8DADFE00B7719A /* Main.storyboard */; };
 		DD7EB7AB1F8DADFE00B7719A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7EB7AA1F8DADFE00B7719A /* Assets.xcassets */; };
 		DD7EB7AE1F8DADFE00B7719A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7EB7AC1F8DADFE00B7719A /* LaunchScreen.storyboard */; };
+		DD7EB7B61F8DCCAD00B7719A /* itemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EB7B51F8DCCAD00B7719A /* itemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DD7EB7AA1F8DADFE00B7719A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD7EB7AD1F8DADFE00B7719A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD7EB7AF1F8DADFE00B7719A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7EB7B51F8DCCAD00B7719A /* itemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				DD7EB7AA1F8DADFE00B7719A /* Assets.xcassets */,
 				DD7EB7A31F8DADFE00B7719A /* AppDelegate.swift */,
 				DD7EB7A51F8DADFE00B7719A /* ViewController.swift */,
+				DD7EB7B51F8DCCAD00B7719A /* itemDetailViewController.swift */,
 				DD7EB7A71F8DADFE00B7719A /* Main.storyboard */,
 				DD7EB7AC1F8DADFE00B7719A /* LaunchScreen.storyboard */,
 				DD7EB7AF1F8DADFE00B7719A /* Info.plist */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7EB7A61F8DADFE00B7719A /* ViewController.swift in Sources */,
+				DD7EB7B61F8DCCAD00B7719A /* itemDetailViewController.swift in Sources */,
 				DD7EB7A41F8DADFE00B7719A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
