@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class itemDetailViewController: UIViewController {
+class SecondViewController : UIViewController {
 
     var labelStr: String?
     @IBOutlet weak var itemLabel: UILabel!
@@ -15,6 +15,10 @@ class itemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         itemLabel.text = labelStr
+        self.navigationItem.title = "itemDetail"
     }
+    
+    let popBtn: UIButton = UIButton()
+    
 
 }

@@ -14,15 +14,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let nextBtn = UIButton()
+        nextBtn.setTitle("🙃👉🏻", for: .normal)
+        nextBtn.addTarget(self, action: #selector(nextBtnHandler), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextBtn)
+    }
+    
+    @objc func nextBtnHandler(){
+        pushSecond()
+    }
+    
+    func pushSecond() {
+        let nextVC: SecondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC: itemDetailViewController = segue.destination as! itemDetailViewController
+        let nextVC: SecondViewController = segue.destination as! SecondViewController
         nextVC.labelStr = "Text changed succesfully"
     }
     
     @IBAction func pushHandler(_ sender: Any) {
-        let nextVC: itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "itemDetailViewController") as! itemDetailViewController
+        let nextVC: SecondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
