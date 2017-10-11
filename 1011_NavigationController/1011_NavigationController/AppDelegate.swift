@@ -22,20 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // let rootVC: ViewController = storyboard.instantiateInitialViewController() as! ViewController
         
         // 02. ViewController()의 인스턴스를 바로 만들어서 rootViewController로 설정할 수도 있다.
-        let rootVC2 = ViewController()
-        rootVC2.view.backgroundColor = .red
+        let rootVC = ViewController()
+        rootVC.view.backgroundColor = .red
         
-        // 03. main 스토리보드를 통해 ViewController의 인스턴스를 만든다.
+        // 03. main 스토리보드를 통해 ViewController의 인스턴스를 만들고, UINavigationController에 rootViewController로 추가한다.
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let rootVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let naviController = UINavigationController(rootViewController: rootVC)
+        let navRootVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let naviController = UINavigationController(rootViewController: navRootVC)
         
-        // 04. tabbar가 window의 root
-        let tabbar = UITabBarController()
-        tabbar.viewControllers = [rootVC2, naviController]
+        // 04. window의 rootViewController로 tabBarController를 설정한다.
+        let tabBarController = UITabBarController()
+        // 05. tabBarController에 viewController들을 array로 담는다.
+        tabBarController.viewControllers = [rootVC, naviController]
         
-        // UINavigationController의 인스턴스를 만들 때 무조건 rootViewController 설정해야 한다.
-        window?.rootViewController = tabbar
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         return true
