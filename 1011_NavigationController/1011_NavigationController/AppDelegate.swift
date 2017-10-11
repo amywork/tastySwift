@@ -12,16 +12,39 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // 스토리보드와의 연결을 끊어놨기 때문에, 현재 UIApplication과 AppDelegate만 있는 상태로, UIWindow부터 새로 만들어야 한다.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // 01. instantiateInitialViewController() : initial로 설정된 뷰콘트롤러가 있을 경우 바로 인스턴스
+        // let rootVC: ViewController = storyboard.instantiateInitialViewController() as! ViewController
+        
+        // 02. ViewController()의 인스턴스를 바로 만들어서 rootViewController로 설정할 수도 있다.
+        let rootVC2 = ViewController()
+        rootVC2.view.backgroundColor = .red
+        
+        // 03. main 스토리보드를 통해 ViewController의 인스턴스를 만든다.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let naviController = UINavigationController(rootViewController: rootVC)
+        
+        // 04. tabbar가 window의 root
+        let tabbar = UITabBarController()
+        tabbar.viewControllers = [rootVC2, naviController]
+        
+        // UINavigationController의 인스턴스를 만들 때 무조건 rootViewController 설정해야 한다.
+        window?.rootViewController = tabbar
+        window?.makeKeyAndVisible()
+        
         return true
     }
+    
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
