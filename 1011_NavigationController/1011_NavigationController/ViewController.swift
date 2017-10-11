@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
         let nextBtn = UIButton()
         nextBtn.setTitle("🙃👉🏻", for: .normal)
-        nextBtn.addTarget(self, action: #selector(nextBtnHandler), for: .touchUpInside)
+        nextBtn.addTarget(self, action: #selector(nextBtnHandler), for: .touchUpInside)        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextBtn)
     }
     
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         pushSecond()
     }
     
-    func pushSecond() {
+    private func pushSecond() {
         let nextVC: SecondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
