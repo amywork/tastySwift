@@ -21,10 +21,8 @@ class ViewController: UIViewController {
         nextVC.labelStr = "Text changed succesfully"
     }
     
-    // 내가 속한 navigationController에게 push와 pop을 요청한다.
-    func pushAction() {
-        let storyboard = self.storyboard
-        let nextVC: itemDetailViewController = storyboard?.instantiateViewController(withIdentifier: "itemDetailViewController") as! itemDetailViewController
+    @IBAction func pushHandler(_ sender: Any) {
+        let nextVC: itemDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "itemDetailViewController") as! itemDetailViewController
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
