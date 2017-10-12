@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  0928_delegateTest
+//  1012_AutoLayout
 //
-//  Created by 김기윤 on 28/09/2017.
+//  Created by 김기윤 on 12/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
 

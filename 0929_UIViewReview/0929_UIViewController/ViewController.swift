@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
         createView()
         updateLayout()
     }
-    
+
     func makeTableView() {
         let tableView: UITableView = UITableView(frame: CGRect(x:0, y:0, width: view.frame.size.width, height: view.frame.size.height), style: .plain)
         view.addSubview(tableView)
@@ -29,14 +29,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    
+
+
     let dataList: [String] = ["1", "2", "3"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return dataList.count // row의 갯수는 10개, section은 default - 1개
     }
-    
+
     // 이 아래 함수가 row의 갯수만큼 불리면서 tableView에게 cell을 보내준다.
     // 내가 알고싶은 indexPath의 cell UI 좀 줘!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //IndexPath에는 section과 row가 들어있음
@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
+
 
     //Reference Counting 에 대한 내용은 추후 진행
     //weak var : 변수의 소유자를 1명에게 몰아주기 위함, 세입자
@@ -61,7 +61,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
     weak var mainTitle:UILabel!
     weak var scrollArea:UIScrollView!
     weak var btn:UIButton!
-    
+
     //클로저로서 한 번만 실행하고 그 값을 gateView2변수가 갖고있는 형태
     let gateView2: UIView = {
         let gateView: UIView = UIView()
@@ -70,14 +70,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
         gateView.tag = 2 // 뷰의 구분을 위해 쓰는 아이
         return gateView
     }()
-    
+
     let closure = { (input: Int) -> Int in return input + 1 }
-    
+
     func createView() {
         //gateView
         view.addSubview(gateView2)
         self.gateView = gateView2
-        
+
         //mainTitle Label
         let mainTitle: UILabel = UILabel()
         self.view.addSubview(mainTitle)
@@ -90,8 +90,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
         mainTitle.font = UIFont.boldSystemFont(ofSize: 17)
         mainTitle.tag = 17
         self.mainTitle = mainTitle
-        
-        
+
+
         //UIButton, type은 init 할 때만 지정할 수 있음! // type default는 커스텀
         //buttonType은 get만 있는 read Only 읽기 전용이다.
         //UIControl은 상태(normal, selected)가 존재하기 때문에, 타이틀을 입력할 때 상태도 함께 입력해야 한다.
@@ -105,7 +105,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
         btn.addTarget(self, action: #selector(self.btnAction(_sender:)), for: .touchUpInside)
         view.addSubview(btn)
         self.btn = btn
-        
+
         let scrollArea: UIScrollView = UIScrollView()
         view.addSubview(scrollArea)
         scrollArea.delegate = self
@@ -125,10 +125,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSou
         scrollArea.frame = CGRect(x: 16, y: gateView.frame.size.height + 16, width: screenWidthModule, height: viewHeight)
         scrollArea.contentSize = CGSize(width: scrollArea.frame.width*10, height: scrollArea.frame.size.height)
     }
-    
+
     @objc func btnAction(_sender: UIButton) {
-        
+
     }
-    
+
 }
+
 
