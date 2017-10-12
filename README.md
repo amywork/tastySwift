@@ -25,13 +25,15 @@
 
 
 # 02. iOS Platform Guide
-## iOS User Interface
+## iOS Interface
 - [iOS Design Pattern](https://younari.github.io/2017-09-25/iOSDesignPattern)
+- [iOS Delegate Pattern](https://younari.github.io/2017-10-12/Delegate)
 - [iOS UI Overview](https://younari.github.io/2017-09-26/iOSUIOverView)
 - [iOS UI View Controller](https://younari.github.io/2017-10-10/iOSViewController)
-- [스토리보드로 UI 구현하기](https://younari.github.io/2017-09-26/StoryBoardBasic)
-- [Frame Based UI](https://github.com/younari/tastySwift/tree/master/0929_UIViewReview)
-- [스위프트 UI Button](https://younari.github.io/2017-09-27/UIButtonSampleCode)
+- [iOS Container View Controller](https://younari.github.io/2017-10-11/ContainerController)
+- [iOS StoryBoard](https://younari.github.io/2017-09-26/StoryBoardBasic)
+- [iOS Frame Based UI](https://github.com/younari/tastySwift/tree/master/0929_UIViewReview)
+- [스위프트 UI Button](https://younari.github.io/2017-09-27/UIButton)
 - [스위프트 AlertController](https://younari.github.io/2017-09-27/AlertController)
 - [스위프트 ScrollView & Switch](https://younari.github.io/2017-09-27/ScrollView)
 - [스위프트 TableView](https://younari.github.io/2017-09-30/UITableView)
