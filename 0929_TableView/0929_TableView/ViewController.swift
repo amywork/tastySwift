@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let tableView: UITableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self // UITableViewDataSource 선언
         tableView.delegate = self // UITableViewDelegate 선언
-        
         // class 로서 tableView에 등록
         tableView.register(Cell.self, forCellReuseIdentifier: "Cell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")

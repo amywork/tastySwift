@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  1011_DelegateProtocol
+//  1012_DelegateProtocol
 //
-//  Created by 김기윤 on 11/10/2017.
+//  Created by 김기윤 on 12/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
 
