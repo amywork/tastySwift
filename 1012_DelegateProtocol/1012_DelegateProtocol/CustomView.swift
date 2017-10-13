@@ -27,7 +27,6 @@ class CustomView: UIView {
         switchBtn.isOn = false
         imageView.contentMode = UIViewContentMode.center
     }
-    
 }
 
 protocol CustomViewDelegate {
