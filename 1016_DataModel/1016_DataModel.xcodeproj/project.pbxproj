@@ -14,6 +14,10 @@
 		DD26D6B81F9450800090E5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD26D6B61F9450800090E5BE /* LaunchScreen.storyboard */; };
 		DD26D6C01F945C0F0090E5BE /* SomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6BF1F945C0F0090E5BE /* SomeView.swift */; };
 		DD26D6C21F9490C70090E5BE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C11F9490C70090E5BE /* UserModel.swift */; };
+		DD26D6C41F9497480090E5BE /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C31F9497480090E5BE /* AlbumInfo.swift */; };
+		DD26D6C61F94975A0090E5BE /* SongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C51F94975A0090E5BE /* SongData.swift */; };
+		DD26D6C81F9497750090E5BE /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C71F9497750090E5BE /* AlbumModel.swift */; };
+		DDB3C2541F949D55008C630D /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB3C2531F949D55008C630D /* EventData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		DD26D6B91F9450800090E5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD26D6BF1F945C0F0090E5BE /* SomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeView.swift; sourceTree = "<group>"; };
 		DD26D6C11F9490C70090E5BE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DD26D6C31F9497480090E5BE /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
+		DD26D6C51F94975A0090E5BE /* SongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongData.swift; sourceTree = "<group>"; };
+		DD26D6C71F9497750090E5BE /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		DDB3C2531F949D55008C630D /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,52 @@
 		DD26D6AC1F9450800090E5BE /* 1016_DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				DD26D6CB1F9497C60090E5BE /* UserInterface */,
+				DD26D6CA1F9497B90090E5BE /* UserModel */,
+				DD26D6CC1F9497DA0090E5BE /* AlbumModel */,
+				DD26D6C91F9497A50090E5BE /* SupportingFiles */,
+			);
+			path = 1016_DataModel;
+			sourceTree = "<group>";
+		};
+		DD26D6C91F9497A50090E5BE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				DD26D6AD1F9450800090E5BE /* AppDelegate.swift */,
-				DD26D6AF1F9450800090E5BE /* ViewController.swift */,
-				DD26D6C11F9490C70090E5BE /* UserModel.swift */,
-				DD26D6BF1F945C0F0090E5BE /* SomeView.swift */,
-				DD26D6B11F9450800090E5BE /* Main.storyboard */,
 				DD26D6B41F9450800090E5BE /* Assets.xcassets */,
 				DD26D6B61F9450800090E5BE /* LaunchScreen.storyboard */,
 				DD26D6B91F9450800090E5BE /* Info.plist */,
 			);
-			path = 1016_DataModel;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		DD26D6CA1F9497B90090E5BE /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD26D6AF1F9450800090E5BE /* ViewController.swift */,
+				DDB3C2531F949D55008C630D /* EventData.swift */,
+				DD26D6C11F9490C70090E5BE /* UserModel.swift */,
+			);
+			path = UserModel;
+			sourceTree = "<group>";
+		};
+		DD26D6CB1F9497C60090E5BE /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				DD26D6BF1F945C0F0090E5BE /* SomeView.swift */,
+				DD26D6B11F9450800090E5BE /* Main.storyboard */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		DD26D6CC1F9497DA0090E5BE /* AlbumModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD26D6C71F9497750090E5BE /* AlbumModel.swift */,
+				DD26D6C31F9497480090E5BE /* AlbumInfo.swift */,
+				DD26D6C51F94975A0090E5BE /* SongData.swift */,
+			);
+			path = AlbumModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,10 +186,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD26D6C81F9497750090E5BE /* AlbumModel.swift in Sources */,
 				DD26D6B01F9450800090E5BE /* ViewController.swift in Sources */,
+				DDB3C2541F949D55008C630D /* EventData.swift in Sources */,
 				DD26D6AE1F9450800090E5BE /* AppDelegate.swift in Sources */,
+				DD26D6C61F94975A0090E5BE /* SongData.swift in Sources */,
 				DD26D6C21F9490C70090E5BE /* UserModel.swift in Sources */,
 				DD26D6C01F945C0F0090E5BE /* SomeView.swift in Sources */,
+				DD26D6C41F9497480090E5BE /* AlbumInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = 1016_DataModel/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/1016_DataModel/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-016-DataModel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,7 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = 1016_DataModel/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/1016_DataModel/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-016-DataModel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
