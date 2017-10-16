@@ -77,8 +77,8 @@
 		DD26D6C91F9497A50090E5BE /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				DD26D6AD1F9450800090E5BE /* AppDelegate.swift */,
 				DD26D6B41F9450800090E5BE /* Assets.xcassets */,
+				DD26D6AD1F9450800090E5BE /* AppDelegate.swift */,
 				DD26D6B61F9450800090E5BE /* LaunchScreen.storyboard */,
 				DD26D6B91F9450800090E5BE /* Info.plist */,
 			);

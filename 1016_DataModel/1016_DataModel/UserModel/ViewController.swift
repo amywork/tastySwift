@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     var eventList: [EventData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // List안에 실제 데이터가 있다고 가정함
+
+        // List안에 실데이터가 있다고 가정함
         let List = [["String":"String"],["String":"String"]]
         
         for eventDic in List {
