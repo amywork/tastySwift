@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygB-N1-nKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="950"/>
+            <point key="canvasLocation" x="1065" y="1048"/>
         </scene>
         <!--Cassini View Controller-->
         <scene sceneID="RM9-vN-I80">
@@ -104,7 +104,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpl-tO-QoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346" y="-5"/>
+            <point key="canvasLocation" x="-494" y="219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sYr-R0-WVL">
@@ -122,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1d1-gw-ewU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-248"/>
+            <point key="canvasLocation" x="398" y="-18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z3A-LS-E4m">
@@ -140,10 +140,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUN-ki-DZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="950"/>
+            <point key="canvasLocation" x="321" y="1049"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gGo-xS-OZ6"/>
+        <segue reference="xao-R1-CWT"/>
     </inferredMetricsTieBreakers>
 </document>
