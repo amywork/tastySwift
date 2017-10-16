@@ -27,7 +27,6 @@ class SignInViewController: UIViewController {
         // Keyboard 내리기
         usernameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         passwordTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
-        loginButton.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
     }
 
     // SignIn 버튼을 눌렀을 때
