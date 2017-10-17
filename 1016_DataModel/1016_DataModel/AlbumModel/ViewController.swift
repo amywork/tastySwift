@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let albumTelevision:Dictionary<String,Any> =
         ["albumInfo":["albumTitle":"Television",
                       "artist":"지코(ZICO)",
-                      "genre":"hiphop"],
+                      "genre":"국내 hiphop"],
          "songList":[["songTitle":"천재",
                       "trackNum":1,
                       "artist":"지코(ZICO)",
@@ -53,7 +53,6 @@ class ViewController: UIViewController {
             ]
     ]
     
-    var songs: [String:Any] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,13 +61,19 @@ class ViewController: UIViewController {
                 let second = zicoTelevisionAlbum.songList[0].playTime
                 return secondToTime(second: second)
             }
-            var songTitle: String = zicoTelevisionAlbum.songList[0].songTitle
-            
-            for song in zicoTelevisionAlbum.songList {
-                songs.append(song)
-            }
         }
-	    
+        
+        if let path = Bundle.main.path(forResource: "UserPlist", ofType: "plist"),
+            let dic = NSDictionary(contentsOfFile: path) as? [String:String] {
+            let userDataModel = UserModel(userDic: dic)
+        }
+        
+        if let imagePath = Bundle.main.path(forResource: "UserImage", ofType: "PNG") {
+            let imgae = UIImage(contentsOfFile: imagePath)
+        }
+        
+        UserDefaults.standard.set("ZICO", forKey: "userID")
+
     }
 
     private func secondToTime(second: Int) -> String {

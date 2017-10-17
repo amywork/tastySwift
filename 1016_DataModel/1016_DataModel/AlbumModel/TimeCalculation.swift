@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Calculation {
+class TimeCalculation {
     
     var seconds: Int = 0
     
