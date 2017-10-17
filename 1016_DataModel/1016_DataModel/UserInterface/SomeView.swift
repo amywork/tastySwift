@@ -11,6 +11,7 @@ class SomeView: UIView {
 
     // SomeView의 프로퍼티
     var name:String
+    var age:Int
     
     // SomeView의 부모 class가 요구하는 required initializer
     required init?(coder aDecoder: NSCoder) {
@@ -19,10 +20,17 @@ class SomeView: UIView {
     
     // designated initializer
     override init(frame: CGRect) {
-        // SomeView의 프로퍼티를 초기화하는 동시에,
-        self.name = ""
         // 상속을 받았으므로 부모 클래스의 Designated initializer를 호출하며 frame 초기화
+        self.name = ""
+        self.age = 0
         super.init(frame: frame)
+    }
+    
+    // convenience initializer: frame,name,age 값을 받으면서 초기화 하기 위함
+    convenience init(frame: CGRect, name: String, age: Int) {
+        self.init(frame: frame)
+        self.age = age
+        self.name = name
     }
     
     // convenience initializer: name 값을 받으면서 초기화 하기 위함

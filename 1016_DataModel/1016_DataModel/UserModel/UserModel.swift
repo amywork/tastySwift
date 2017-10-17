@@ -4,7 +4,8 @@
 //
 //  Created by 김기윤 on 16/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
-//
+//  Data를 담는 애들은 Struct : Int, Double, Array, Dictionary 등
+//  담은 Data를 활용하는 애들은 Class : 주로 UI와 관련된 UIView, CGRect 등
 
 import Foundation
 struct UserModel {

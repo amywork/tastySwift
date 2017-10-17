@@ -8,19 +8,17 @@
 
 import Foundation
 struct AlbumModel {
- 
     var albumInfo: AlbumInfo
     var songList: [SongData] = []
     
     init?(dataDic: [String:Any]) {
-        guard let albumInfo = dataDic["albumInfo"] as? [String:Any] else { return }
-        self.albumInfo = AlbumInfo(dataDic: albumInfo)!
+        guard let albumInfoDic = dataDic["albumInfo"] as? [String:Any] else { return nil }
+        self.albumInfo = AlbumInfo(dataDic: albumInfoDic)!
         
-        guard let songLists = dataDic["songList"] as? [[String:Any]] else { return }
-        for song in songLists {
-            songList.append(SongData(dataDic: song))!
+        guard let songDicArr = dataDic["songList"] as? [[String:Any]] else { return nil }
+        for songDic in songDicArr {
+            songList.append(SongData(dataDic: songDic)!)
         }
-  
     }
-    
 }
+

@@ -14,6 +14,7 @@ struct SongData {
     var artist: String
     var writer: String
     var playURL: String
+
     
     init?(dataDic:[String:Any]) {
         guard let songTitle = dataDic["songTitle"] as? String else { return nil }
