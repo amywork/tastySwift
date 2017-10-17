@@ -16,7 +16,12 @@
 - [스위프트 Class](https://younari.github.io/2017-09-14/Class)
 - [스위프트 Array](https://younari.github.io/2017-09-14/Array)
 
-## 스위프트 간단 프로젝트
+## 스위프트로 데이터 다루기
+- [서버와의 데이터 연동시 Data Control](https://younari.github.io/2017-10-16/DataControl)
+- [Data Model, Structure와 Class](https://younari.github.io/2017-10-15/DataModel)
+- [Singleton Pattern](https://younari.github.io/2017-10-12/SingletonPattern)
+
+## 스위프트 간단 실습
 - [클래스 만들기 연습 v0.1](https://younari.github.io/2017-09-13/ClassV01)
 - [클래스 만들기 연습 v0.2](https://younari.github.io/2017-09-13/ClassV02)
 - [다양한 단위 변환 함수 만들기](https://younari.github.io/2017-09-08/UnitFunc)
@@ -95,3 +100,6 @@
 - [Baseball 게임 만들기 v0.3](https://younari.github.io/2017-09-22/BaseballGameV0.3)
 - [Baseball 게임 만들기 v0.4](https://younari.github.io/2017-09-22/BaseballGameV0.4)
 - [Baseball 게임 만들기 v0.5](https://younari.github.io/2017-09-23/BaseballGameV0.5)
+
+# 05. Insights
+- [API Lists](https://younari.github.io/2017-10-17/APILists)

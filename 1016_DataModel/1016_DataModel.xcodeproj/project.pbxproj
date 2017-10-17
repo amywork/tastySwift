@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BD4BE9D1F96390900F8261C /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4BE9C1F96390900F8261C /* MusicInfo.swift */; };
 		DD26D6AE1F9450800090E5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6AD1F9450800090E5BE /* AppDelegate.swift */; };
 		DD26D6B01F9450800090E5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6AF1F9450800090E5BE /* ViewController.swift */; };
 		DD26D6B31F9450800090E5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD26D6B11F9450800090E5BE /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BD4BE9C1F96390900F8261C /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
 		DD26D6AA1F9450800090E5BE /* 1016_DataModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1016_DataModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD26D6AD1F9450800090E5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD26D6AF1F9450800090E5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				DD81675A1F95CB1900A80891 /* PlayLists.swift */,
 				DD81675C1F95CC5800A80891 /* LikeInfo.swift */,
+				4BD4BE9C1F96390900F8261C /* MusicInfo.swift */,
 			);
 			path = APIModel;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				DDB3C2541F949D55008C630D /* EventData.swift in Sources */,
 				DD26D6AE1F9450800090E5BE /* AppDelegate.swift in Sources */,
 				DD81675B1F95CB1900A80891 /* PlayLists.swift in Sources */,
+				4BD4BE9D1F96390900F8261C /* MusicInfo.swift in Sources */,
 				DD26D6C61F94975A0090E5BE /* SongData.swift in Sources */,
 				DD26D6C21F9490C70090E5BE /* UserModel.swift in Sources */,
 				DD26D6C01F945C0F0090E5BE /* SomeView.swift in Sources */,
