@@ -22,19 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-F2-Huo">
-                                <rect key="frame" x="32" y="451.33333333333326" width="331.33333333333331" height="220.66666666666674"/>
+                                <rect key="frame" x="0.0" y="451.33333333333326" width="0.0" height="220.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X5O-8N-SFW">
-                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="69.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="69.666666666666686"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDs-RB-IId">
-                                                <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="61.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="61.333333333333314"/>
                                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maW-bR-1bz">
-                                                <rect key="frame" x="0.0" y="69.000000000000057" width="331.33333333333331" height="0.33333333333325754"/>
+                                                <rect key="frame" x="0.0" y="69.333333333333314" width="0.0" height="0.33333333333337123"/>
                                                 <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
@@ -44,16 +44,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fiy-md-13m">
-                                        <rect key="frame" x="0.0" y="75.333333333333314" width="331.33333333333331" height="69.666666666666742"/>
+                                        <rect key="frame" x="0.0" y="75.666666666666686" width="0.0" height="69.333333333333371"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Password" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPR-Eu-5BF">
-                                                <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="68.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="68"/>
                                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5T-LP-7Fr">
-                                                <rect key="frame" x="0.0" y="68.333333333333371" width="331.33333333333331" height="1.3333333333333712"/>
+                                                <rect key="frame" x="0.0" y="68" width="0.0" height="1.3333333333333712"/>
                                                 <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
@@ -63,10 +63,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-7B-4Qd">
-                                        <rect key="frame" x="0.0" y="151.00000000000006" width="331.33333333333331" height="69.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="151.00000000000006" width="0.0" height="69.666666666666629"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwH-B1-JdV" customClass="RoundButton" customModule="_927_SignUp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.66666666666666" height="69.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="69.666666666666629"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <state key="normal" title="Sign up">
@@ -82,7 +82,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ak-aY-MPe" customClass="RoundButton" customModule="_927_SignUp" customModuleProvider="target">
-                                                <rect key="frame" x="167.66666666666669" y="0.0" width="163.66666666666669" height="69.666666666666629"/>
+                                                <rect key="frame" x="169" y="0.0" width="0.0" height="69.666666666666629"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <state key="normal" title="Sign in">
@@ -102,13 +102,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KGR-tK-FzP">
-                                <rect key="frame" x="32" y="198.66666666666669" width="248.33333333333331" height="220.66666666666669"/>
+                                <rect key="frame" x="0.0" y="198.66666666666669" width="0.0" height="220.66666666666669"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlh-fj-rbG">
-                                        <rect key="frame" x="0.0" y="0.0" width="248.33333333333331" height="110.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="111.00000000000003"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cashbot" translatesAutoresizingMaskIntoConstraints="NO" id="lI6-Zy-5E3">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="110.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="111.00000000000003"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -119,7 +119,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track your subscriptions" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="rwO-em-pHP">
-                                        <rect key="frame" x="0.0" y="109.66666666666666" width="248.33333333333331" height="111"/>
+                                        <rect key="frame" x="0.0" y="110.00000000000003" width="0.0" height="110.66666666666663"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
