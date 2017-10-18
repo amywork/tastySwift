@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81676E1F96E8FE00A80891 /* AppDelegate.swift */; };
+		DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167721F96E8FE00A80891 /* Main.storyboard */; };
+		DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167771F96E8FE00A80891 /* LaunchScreen.storyboard */; };
+		DD8167861F96E99B00A80891 /* GateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167851F96E99B00A80891 /* GateViewController.swift */; };
+		DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8167871F96ECA000A80891 /* Assets.xcassets */; };
+		DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167891F96EE7100A80891 /* RoundButton.swift */; };
+		DD81678D1F96F1E600A80891 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81678C1F96F1E600A80891 /* SignInViewController.swift */; };
+		DD81678F1F96F1F000A80891 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81678E1F96F1F000A80891 /* SingUpViewController.swift */; };
+		DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167901F96FC1C00A80891 /* ShadowView.swift */; };
+		DD8167931F97014400A80891 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167921F97014400A80891 /* CustomTextField.swift */; };
+		DD8167951F9731E900A80891 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8167941F9731E900A80891 /* UserData.plist */; };
+		DD8167971F97334800A80891 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167961F97334800A80891 /* User.swift */; };
+		DD81679A1F97351100A80891 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* UserService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DD81676B1F96E8FE00A80891 /* 1018_Fanxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1018_Fanxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD81676E1F96E8FE00A80891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD8167731F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD8167781F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD81677A1F96E8FE00A80891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD8167851F96E99B00A80891 /* GateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateViewController.swift; sourceTree = "<group>"; };
+		DD8167871F96ECA000A80891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD8167891F96EE7100A80891 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		DD81678C1F96F1E600A80891 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DD81678E1F96F1F000A80891 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		DD8167901F96FC1C00A80891 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		DD8167921F97014400A80891 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DD8167941F9731E900A80891 /* UserData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
+		DD8167961F97334800A80891 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD8167991F97351100A80891 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD8167681F96E8FE00A80891 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD8167621F96E8FE00A80891 = {
+			isa = PBXGroup;
+			children = (
+				DD81676D1F96E8FE00A80891 /* 1018_Fanxy */,
+				DD81676C1F96E8FE00A80891 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD81676C1F96E8FE00A80891 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD81676B1F96E8FE00A80891 /* 1018_Fanxy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD81676D1F96E8FE00A80891 /* 1018_Fanxy */ = {
+			isa = PBXGroup;
+			children = (
+				DD81677A1F96E8FE00A80891 /* Info.plist */,
+				DD8167941F9731E900A80891 /* UserData.plist */,
+				DD81679B1F97351D00A80891 /* Service */,
+				DD8167981F97334E00A80891 /* Model */,
+				DD81678B1F96EEC500A80891 /* View */,
+				DD8167801F96E91000A80891 /* Appdelegate */,
+				DD8167811F96E91700A80891 /* ViewControllers */,
+				DD8167821F96E92500A80891 /* Resources */,
+			);
+			path = 1018_Fanxy;
+			sourceTree = "<group>";
+		};
+		DD8167801F96E91000A80891 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DD81676E1F96E8FE00A80891 /* AppDelegate.swift */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		DD8167811F96E91700A80891 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD8167851F96E99B00A80891 /* GateViewController.swift */,
+				DD81678C1F96F1E600A80891 /* SignInViewController.swift */,
+				DD81678E1F96F1F000A80891 /* SingUpViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DD8167821F96E92500A80891 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD8167871F96ECA000A80891 /* Assets.xcassets */,
+				DD8167721F96E8FE00A80891 /* Main.storyboard */,
+				DD8167771F96E8FE00A80891 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD81678B1F96EEC500A80891 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD8167891F96EE7100A80891 /* RoundButton.swift */,
+				DD8167901F96FC1C00A80891 /* ShadowView.swift */,
+				DD8167921F97014400A80891 /* CustomTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD8167981F97334E00A80891 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD8167961F97334800A80891 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD81679B1F97351D00A80891 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DD8167991F97351100A80891 /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD81676A1F96E8FE00A80891 /* 1018_Fanxy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD81677D1F96E8FE00A80891 /* Build configuration list for PBXNativeTarget "1018_Fanxy" */;
+			buildPhases = (
+				DD8167671F96E8FE00A80891 /* Sources */,
+				DD8167681F96E8FE00A80891 /* Frameworks */,
+				DD8167691F96E8FE00A80891 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 1018_Fanxy;
+			productName = 1018_Fanxy;
+			productReference = DD81676B1F96E8FE00A80891 /* 1018_Fanxy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD8167631F96E8FE00A80891 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = younari;
+				TargetAttributes = {
+					DD81676A1F96E8FE00A80891 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DD8167661F96E8FE00A80891 /* Build configuration list for PBXProject "1018_Fanxy" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD8167621F96E8FE00A80891;
+			productRefGroup = DD81676C1F96E8FE00A80891 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD81676A1F96E8FE00A80891 /* 1018_Fanxy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD8167691F96E8FE00A80891 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */,
+				DD8167951F9731E900A80891 /* UserData.plist in Resources */,
+				DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */,
+				DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD8167671F96E8FE00A80891 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD8167931F97014400A80891 /* CustomTextField.swift in Sources */,
+				DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */,
+				DD81679A1F97351100A80891 /* UserService.swift in Sources */,
+				DD81678D1F96F1E600A80891 /* SignInViewController.swift in Sources */,
+				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
+				DD8167971F97334800A80891 /* User.swift in Sources */,
+				DD81678F1F96F1F000A80891 /* SingUpViewController.swift in Sources */,
+				DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */,
+				DD8167861F96E99B00A80891 /* GateViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DD8167721F96E8FE00A80891 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD8167731F96E8FE00A80891 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD8167771F96E8FE00A80891 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD8167781F96E8FE00A80891 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD81677B1F96E8FE00A80891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD81677C1F96E8FE00A80891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD81677E1F96E8FE00A80891 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6W2L5AWAU;
+				INFOPLIST_FILE = 1018_Fanxy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "younari.-018-Fanxy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD81677F1F96E8FE00A80891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6W2L5AWAU;
+				INFOPLIST_FILE = 1018_Fanxy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "younari.-018-Fanxy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD8167661F96E8FE00A80891 /* Build configuration list for PBXProject "1018_Fanxy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD81677B1F96E8FE00A80891 /* Debug */,
+				DD81677C1F96E8FE00A80891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD81677D1F96E8FE00A80891 /* Build configuration list for PBXNativeTarget "1018_Fanxy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD81677E1F96E8FE00A80891 /* Debug */,
+				DD81677F1F96E8FE00A80891 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD8167631F96E8FE00A80891 /* Project object */;
+}
