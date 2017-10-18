@@ -11,31 +11,28 @@ import Foundation
 
 struct UserService {
     
+    static var sharedInstance: UserService = UserService()
     var model: Users?
-    
     var documentDirectory: URL {
         get {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         }
     }
     
-    static var sharedInstance: UserService = UserService()
-    
     init() {
-        // PList에서 정보를 가져와서 Model에 넣는다.
+        // plist -> Model
         loadData()
     }
 
     mutating func loadData() {
-        // Document Folder까지의 경로
+        // documentDirectory까지의 경로
         let dataURL = documentDirectory.appendingPathComponent("UserData.plist")
 
         let dataStrPath = dataURL.path
         print(dataStrPath)
         if !FileManager.default.fileExists(atPath: dataStrPath) {
             guard let plistURL = Bundle.main.url(forResource: "UserData", withExtension: "plist") else { return }
-            // 오류를 던질 수 있으므로 try! (에러 무시)
-            try! FileManager.default.copyItem(at: plistURL, to: dataURL)
+            try! FileManager.default.copyItem(at: plistURL, to: dataURL) // 오류를 던질 수 있으므로 try! (에러 무시)
         }
         
         let propertyDecoder = PropertyListDecoder()

@@ -5,7 +5,7 @@ class CustomTextField: UITextField {
 
     // 여기서는 추가적인 작업을 할 필요는 없기 때문에 required init을 안해줘도 됩니다.
 
-    //leftViewRect의 목적은 CGRect를 반환하는 것, super 안불러도 OK
+    // leftViewRect의 목적은 CGRect를 반환하는 것, super 안불러도 OK
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         
         let leftViewWidth = self.bounds.size.height / 3

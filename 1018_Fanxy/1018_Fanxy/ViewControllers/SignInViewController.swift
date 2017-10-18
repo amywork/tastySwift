@@ -27,18 +27,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
         userNameTextField.configureAttributedString(
             string: "아이디를 입력해주세요",
-            range: NSRange(location: 0, length: 3),
-            stringColor: UIColor.black.withAlphaComponent(0.5)
+            range: NSRange(location: 0, length: 10),
+            stringColor: .lightGray
         )
         
-        let placeHolderStr = NSAttributedString(string: "비밀번호를 입력해주세요", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red.withAlphaComponent(0.2)])
+        let placeHolderStr = NSAttributedString(string: "비밀번호를 입력해주세요", attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightGray])
         passwordTextField.attributedPlaceholder = placeHolderStr
         
         
         // NotificationCenter (default: singleton)
         // Keyboard가 올라왔을 때 화면의 스크롤뷰 UIEdge도 올려주기
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
     }
