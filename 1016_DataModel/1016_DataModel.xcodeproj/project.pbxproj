@@ -24,7 +24,6 @@
 		DD81675D1F95CC5800A80891 /* LikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81675C1F95CC5800A80891 /* LikeInfo.swift */; };
 		DD81675F1F95EE0100A80891 /* UserPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD81675E1F95EE0100A80891 /* UserPlist.plist */; };
 		DDA0EFE41F9871160016901A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD26D6B91F9450800090E5BE /* Info.plist */; };
-		DDA0EFE81F9877BE0016901A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EFE71F9877BE0016901A /* SettingViewController.swift */; };
 		DDB3C2541F949D55008C630D /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB3C2531F949D55008C630D /* EventData.swift */; };
 		DDE2E5A81F95AF3100AA62FF /* TimeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE2E5A71F95AF3100AA62FF /* TimeCalculation.swift */; };
 /* End PBXBuildFile section */
@@ -48,7 +47,6 @@
 		DD81675A1F95CB1900A80891 /* PlayLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLists.swift; sourceTree = "<group>"; };
 		DD81675C1F95CC5800A80891 /* LikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeInfo.swift; sourceTree = "<group>"; };
 		DD81675E1F95EE0100A80891 /* UserPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserPlist.plist; sourceTree = "<group>"; };
-		DDA0EFE71F9877BE0016901A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DDB3C2531F949D55008C630D /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		DDE2E5A71F95AF3100AA62FF /* TimeCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCalculation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				DD26D6AF1F9450800090E5BE /* ViewController.swift */,
-				DDA0EFE71F9877BE0016901A /* SettingViewController.swift */,
 				DD00852B1F986D24008DB1F5 /* AlbumViewController.swift */,
 				DDE2E5A71F95AF3100AA62FF /* TimeCalculation.swift */,
 				DD26D6C71F9497750090E5BE /* AlbumModel.swift */,
@@ -226,7 +223,6 @@
 				DDE2E5A81F95AF3100AA62FF /* TimeCalculation.swift in Sources */,
 				DD26D6B01F9450800090E5BE /* ViewController.swift in Sources */,
 				DDB3C2541F949D55008C630D /* EventData.swift in Sources */,
-				DDA0EFE81F9877BE0016901A /* SettingViewController.swift in Sources */,
 				DD26D6AE1F9450800090E5BE /* AppDelegate.swift in Sources */,
 				DD00852C1F986D24008DB1F5 /* AlbumViewController.swift in Sources */,
 				DD81675B1F95CB1900A80891 /* PlayLists.swift in Sources */,

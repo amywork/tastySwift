@@ -9,7 +9,6 @@ class ShadowView: UIView {
         self.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         self.layer.shadowOffset = CGSize(width: 2, height: 2)
         self.layer.shadowOpacity = 0.5
-        
     }
-    
+
 }
