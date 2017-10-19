@@ -8,7 +8,6 @@ class GateViewController: UIViewController {
 
     }
     
-    
     @IBAction func unwidnToGateViewController(segue: UIStoryboardSegue) {
         
     }

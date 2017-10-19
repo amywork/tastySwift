@@ -28,10 +28,7 @@ class SecondViewController : UIViewController {
         popBtn.addTarget(self, action: #selector(popBtnHandler), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: popBtn)
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.camera, target: self, action: nil)
-        
-        
-        let image = UIImage(named: "Icon")
-        let iconImage = UIImageView(image: image)
+
         let homeBtn = UIButton()
         homeBtn.setTitle("Back", for: .normal)
         homeBtn.addTarget(self, action: #selector(popBtnHandler), for: .touchUpInside)

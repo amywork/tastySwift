@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BD4BE9D1F96390900F8261C /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD4BE9C1F96390900F8261C /* MusicInfo.swift */; };
 		DD00852A1F983A2E008DB1F5 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0085291F983A2E008DB1F5 /* DataCenter.swift */; };
+		DD00852C1F986D24008DB1F5 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00852B1F986D24008DB1F5 /* AlbumViewController.swift */; };
 		DD26D6AE1F9450800090E5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6AD1F9450800090E5BE /* AppDelegate.swift */; };
 		DD26D6B01F9450800090E5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6AF1F9450800090E5BE /* ViewController.swift */; };
 		DD26D6B31F9450800090E5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD26D6B11F9450800090E5BE /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		DD81675B1F95CB1900A80891 /* PlayLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81675A1F95CB1900A80891 /* PlayLists.swift */; };
 		DD81675D1F95CC5800A80891 /* LikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81675C1F95CC5800A80891 /* LikeInfo.swift */; };
 		DD81675F1F95EE0100A80891 /* UserPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD81675E1F95EE0100A80891 /* UserPlist.plist */; };
+		DDA0EFE41F9871160016901A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD26D6B91F9450800090E5BE /* Info.plist */; };
+		DDA0EFE81F9877BE0016901A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EFE71F9877BE0016901A /* SettingViewController.swift */; };
 		DDB3C2541F949D55008C630D /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB3C2531F949D55008C630D /* EventData.swift */; };
 		DDE2E5A81F95AF3100AA62FF /* TimeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE2E5A71F95AF3100AA62FF /* TimeCalculation.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +32,7 @@
 /* Begin PBXFileReference section */
 		4BD4BE9C1F96390900F8261C /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
 		DD0085291F983A2E008DB1F5 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		DD00852B1F986D24008DB1F5 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		DD26D6AA1F9450800090E5BE /* 1016_DataModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1016_DataModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD26D6AD1F9450800090E5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD26D6AF1F9450800090E5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +48,7 @@
 		DD81675A1F95CB1900A80891 /* PlayLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLists.swift; sourceTree = "<group>"; };
 		DD81675C1F95CC5800A80891 /* LikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeInfo.swift; sourceTree = "<group>"; };
 		DD81675E1F95EE0100A80891 /* UserPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserPlist.plist; sourceTree = "<group>"; };
+		DDA0EFE71F9877BE0016901A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DDB3C2531F949D55008C630D /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		DDE2E5A71F95AF3100AA62FF /* TimeCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCalculation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +98,7 @@
 				DD26D6B41F9450800090E5BE /* Assets.xcassets */,
 				DD26D6AD1F9450800090E5BE /* AppDelegate.swift */,
 				DD26D6B61F9450800090E5BE /* LaunchScreen.storyboard */,
+				DD26D6B11F9450800090E5BE /* Main.storyboard */,
 				DD26D6B91F9450800090E5BE /* Info.plist */,
 				DD81675E1F95EE0100A80891 /* UserPlist.plist */,
 			);
@@ -113,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				DD26D6BF1F945C0F0090E5BE /* SomeView.swift */,
-				DD26D6B11F9450800090E5BE /* Main.storyboard */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -122,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				DD26D6AF1F9450800090E5BE /* ViewController.swift */,
+				DDA0EFE71F9877BE0016901A /* SettingViewController.swift */,
+				DD00852B1F986D24008DB1F5 /* AlbumViewController.swift */,
 				DDE2E5A71F95AF3100AA62FF /* TimeCalculation.swift */,
 				DD26D6C71F9497750090E5BE /* AlbumModel.swift */,
 				DD26D6C31F9497480090E5BE /* AlbumInfo.swift */,
@@ -202,6 +209,7 @@
 				DD81675F1F95EE0100A80891 /* UserPlist.plist in Resources */,
 				DD26D6B81F9450800090E5BE /* LaunchScreen.storyboard in Resources */,
 				DD26D6B51F9450800090E5BE /* Assets.xcassets in Resources */,
+				DDA0EFE41F9871160016901A /* Info.plist in Resources */,
 				DD26D6B31F9450800090E5BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +226,9 @@
 				DDE2E5A81F95AF3100AA62FF /* TimeCalculation.swift in Sources */,
 				DD26D6B01F9450800090E5BE /* ViewController.swift in Sources */,
 				DDB3C2541F949D55008C630D /* EventData.swift in Sources */,
+				DDA0EFE81F9877BE0016901A /* SettingViewController.swift in Sources */,
 				DD26D6AE1F9450800090E5BE /* AppDelegate.swift in Sources */,
+				DD00852C1F986D24008DB1F5 /* AlbumViewController.swift in Sources */,
 				DD81675B1F95CB1900A80891 /* PlayLists.swift in Sources */,
 				4BD4BE9D1F96390900F8261C /* MusicInfo.swift in Sources */,
 				DD00852A1F983A2E008DB1F5 /* DataCenter.swift in Sources */,

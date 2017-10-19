@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-// Singleton DataCenter (UserModel과 데이터 파일의 중개자 역할)
+// Singleton DataCenter (UserModel과 데이터 파일ex.plist의 중개자 역할)
 class DataCenter
 {
     // Singleton Instance
@@ -26,6 +25,7 @@ class DataCenter
     }
     
     // 최초에는 documentPath에 plist 파일이 없으므로 currentUser가 nil인 상태
+    // 다시 로그인 할 떄는 delegate에서 write 하면서 documentPath에 plist 파일이 생겼으므로 init 할 때 loadUserData() 되면서 currentUser가 생김
     func loadUserData() {
         // document Path는 String의 array로 들어오기 때문에, [0] + 내 파일명
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/UserPlist.plist"
@@ -47,7 +47,6 @@ class DataCenter
     func write(userData data: UserModel) {
         
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/UserPlist.plist"
-        
         // 최초 한 번 UserPlist 파일을 document에 넣어놓는 것
         if !FileManager.default.fileExists(atPath: documentPath) {
             if let bundlePath = Bundle.main.path(forResource: "UserPlist", ofType: "plist") {

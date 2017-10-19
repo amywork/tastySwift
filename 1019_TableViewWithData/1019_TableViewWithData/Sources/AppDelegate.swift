@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  1016_DataModel
+//  1019_Setting
 //
-//  Created by 김기윤 on 16/10/2017.
+//  Created by 김기윤 on 19/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
 
@@ -28,8 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
-//        let isSaved = DataCenter.main.writeUserData()
-//        print(isSaved)
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

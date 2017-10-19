@@ -9,32 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
- 
-    let albumTelevision:Dictionary<String,Any> =
-        ["albumInfo":["albumTitle":"Television",
-                      "artist":"지코(ZICO)",
-                      "genre":"국내 hiphop"],
-         "songList":[["songTitle":"천재",
-                      "trackNum":1,
-                      "artist":"지코(ZICO)",
-                      "writer":"지코, Poptime",
-                      "playTime":12340,
-                      "playURL":"http://music.naver.com/123"],
-                     ["songTitle":"Artist",
-                      "trackNum":2,
-                      "artist":"지코(ZICO)",
-                      "writer":"지코, Poptime",
-                      "playTime":10130,
-                      "playURL":"http://music.naver.com/124"],
-                     ["songTitle":"ANTI",
-                      "trackNum":3,
-                      "artist":"지코(ZICO)",
-                      "writer":"지코, Poptime",
-                      "playTime":12134,
-                      "playURL":"http://music.naver.com/126"]
-            ]
-    ]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +22,6 @@ class ViewController: UIViewController {
             let newUserDic = ["userID":"","userPWD":"","email":""]
             DataCenter.main.currentUser = UserModel(userDic: newUserDic)
         }
-        
     }
 
 }
