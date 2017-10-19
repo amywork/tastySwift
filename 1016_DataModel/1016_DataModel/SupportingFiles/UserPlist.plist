@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>userID</key>
-	<string>ZICO</string>
+	<string></string>
 	<key>gender</key>
 	<integer>0</integer>
 	<key>userPWD</key>
-	<string>12345</string>
+	<string></string>
 	<key>birthday</key>
-	<string>2017.10.10</string>
+	<string></string>
 	<key>email</key>
-	<string>zico@gmail.com</string>
+	<string></string>
 </dict>
 </plist>

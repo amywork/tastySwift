@@ -25,7 +25,7 @@ class DataCenter
         return documentDic[forkey]
     }
     
-    // plist 파일을 불러와서 UserModel에 넣어주는 것
+    // 최초에는 documentPath에 plist 파일이 없으므로 currentUser가 nil인 상태
     func loadUserData() {
         // document Path는 String의 array로 들어오기 때문에, [0] + 내 파일명
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/UserPlist.plist"
@@ -33,17 +33,22 @@ class DataCenter
         currentUser = UserModel(userDic: documentDic)
     }
     
-    
-    
-    // UserModel의 데이터를 plist에 넣어주는 것
-    func write(userData data: UserModel) {
-        
+    func writeUserData() -> Bool {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/UserPlist.plist"
-       
+        guard let data = currentUser else { return false }
         let newDic = data.dictionary
         let NSDic = NSDictionary(dictionary: newDic)
         NSDic.write(toFile: documentPath, atomically: true)
+        return true
+    }
+    
+    
+    // UserModel의 데이터를 plist에 넣어주는 것 (Just Sample Code)
+    func write(userData data: UserModel) {
         
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/UserPlist.plist"
+        
+        // 최초 한 번 UserPlist 파일을 document에 넣어놓는 것
         if !FileManager.default.fileExists(atPath: documentPath) {
             if let bundlePath = Bundle.main.path(forResource: "UserPlist", ofType: "plist") {
                 do {
@@ -54,6 +59,9 @@ class DataCenter
             }
         }
         
+        let newDic = data.dictionary
+        let NSDic = NSDictionary(dictionary: newDic)
+        NSDic.write(toFile: documentPath, atomically: true)
         
     }
     

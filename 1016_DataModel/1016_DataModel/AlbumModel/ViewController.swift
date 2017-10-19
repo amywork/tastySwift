@@ -39,9 +39,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // DataCenter Test
-        DataCenter.main.loadUserData()
-
+        // DataCenter
+        if let _ = DataCenter.main.currentUser {
+            // main 화면을 띄운다.
+        }else {
+            // 로그인 화면을 띄운다.
+            // 사용자가 최초 로그인 -> 로그인 정보를 newUserDic으로 만들어서
+            let newUserDic = ["userID":"","userPWD":"","email":""]
+            DataCenter.main.currentUser = UserModel(userDic: newUserDic)
+        }
+        
     }
 
 }
