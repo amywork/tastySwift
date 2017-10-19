@@ -12,7 +12,7 @@
 		DDA0F0451F98C9850016901A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0431F98C9850016901A /* Main.storyboard */; };
 		DDA0F0471F98C9850016901A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0461F98C9850016901A /* Assets.xcassets */; };
 		DDA0F04A1F98C9850016901A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0481F98C9850016901A /* LaunchScreen.storyboard */; };
-		DDA0F0541F98C9B50016901A /* FreindInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0531F98C9B50016901A /* FreindInfo.plist */; };
+		DDA0F0541F98C9B50016901A /* FriendInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0531F98C9B50016901A /* FriendInfo.plist */; };
 		DDA0F0561F98CA000016901A /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0551F98CA000016901A /* DataCenter.swift */; };
 		DDA0F0581F98CA110016901A /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0571F98CA110016901A /* FriendDataModel.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 		DDA0F0461F98C9850016901A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA0F0491F98C9850016901A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDA0F04B1F98C9850016901A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDA0F0531F98C9B50016901A /* FreindInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FreindInfo.plist; sourceTree = "<group>"; };
+		DDA0F0531F98C9B50016901A /* FriendInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FriendInfo.plist; sourceTree = "<group>"; };
 		DDA0F0551F98CA000016901A /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DDA0F0571F98CA110016901A /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA0F04B1F98C9850016901A /* Info.plist */,
-				DDA0F0531F98C9B50016901A /* FreindInfo.plist */,
+				DDA0F0531F98C9B50016901A /* FriendInfo.plist */,
 				DDA0F0591F98CA160016901A /* DataCenter */,
 				DDA0F0521F98C9A60016901A /* ViewControllers */,
 				DDA0F0511F98C9910016901A /* Sources */,
@@ -158,7 +158,7 @@
 			files = (
 				DDA0F04A1F98C9850016901A /* LaunchScreen.storyboard in Resources */,
 				DDA0F0471F98C9850016901A /* Assets.xcassets in Resources */,
-				DDA0F0541F98C9B50016901A /* FreindInfo.plist in Resources */,
+				DDA0F0541F98C9B50016901A /* FriendInfo.plist in Resources */,
 				DDA0F0451F98C9850016901A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

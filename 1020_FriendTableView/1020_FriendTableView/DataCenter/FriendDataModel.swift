@@ -7,3 +7,28 @@
 //
 
 import Foundation
+
+struct FriendDataModel {
+    
+    var Nickname: String
+    var MyProfileDescription: String
+    var ProfileImage: String?
+    var friendDataDic: [String:String] {
+        return ["Nickname":self.Nickname, "MyProfileDescription":self.MyProfileDescription]
+    }
+    
+    init?(with dataDic: [String:Any]) {
+        
+        guard let name = dataDic["Nickname"] as? String else { return nil }
+        self.Nickname = name
+        
+        guard let profileStr = dataDic["MyProfileDescription"] as? String else { return nil }
+        self.MyProfileDescription = profileStr
+        
+        if let img = dataDic["ProfileImage"] as? String {
+            self.ProfileImage = img
+        }
+        
+    }
+
+}

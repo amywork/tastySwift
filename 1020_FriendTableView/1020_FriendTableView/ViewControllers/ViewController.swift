@@ -8,11 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    let friendList = DataCenter.mainCenter.friendList
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DataCenter.mainCenter.friendList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
+        cell.textLabel?.text = friendList[indexPath.row].Nickname
+        cell.detailTextLabel?.text = friendList[indexPath.row].MyProfileDescription
+        cell.imageView?.image = UIImage(named: friendList[indexPath.row].ProfileImage!)
+        
+        return cell
+    }
+    
+    
 
 }
 
