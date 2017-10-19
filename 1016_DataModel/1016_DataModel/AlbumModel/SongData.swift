@@ -37,7 +37,6 @@ struct SongData {
         formatter.dateFormat = "mm:ss"
         self.totalPlayTime = formatter.string(from: now)
         
-        
         guard let artist = dataDic["artist"] as? String else { return nil }
         self.artist = artist
         

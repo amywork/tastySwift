@@ -10,18 +10,6 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let hertImgView = UIImageView(image: UIImage(named: "Heart"))
-//        hertImgView.contentMode = .scaleAspectFit
-        usernameTextField.leftView = UIImageView(image: UIImage(named: "Heart"))
-        usernameTextField.leftViewMode = .always
-        passwordTextField.leftView = UIImageView(image: UIImage(named: "Heart"))
-        passwordTextField.leftViewMode = .always
-        conformPwdTextField.leftView = UIImageView(image: UIImage(named: "Heart"))
-        conformPwdTextField.leftViewMode = .always
-        emailTextField.leftView = UIImageView(image: UIImage(named: "Heart"))
-        emailTextField.leftViewMode = .always
-        
         
         usernameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         passwordTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)

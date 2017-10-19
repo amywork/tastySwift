@@ -18,8 +18,13 @@ struct UserModel {
     var userID: String
     var userPWD: String
     var email: String
-    var birthday: String?
+    var birthday: String
     var gender: Gender?
+    var dictionary:[String:Any] {
+        let genderValue = self.gender?.rawValue ?? 0
+        let dic:[String:Any] = ["userID":self.userID, "userPWD":self.userPWD, "email":self.email, "gender":genderValue]
+        return dic
+    }
     
     init?(userDic:[String:Any]) {
         
@@ -33,10 +38,10 @@ struct UserModel {
         guard let email = userDic["email"] as? String else { return nil }
         self.email = email
         
+        guard let birthday = userDic["birthday"] as? String else { return nil }
+        self.birthday = birthday
         
         // Optional Properties
-        self.birthday = userDic["birthday"] as? String
-        
         if let gender = userDic["gender"] as? Int, (gender == 1 || gender == 2)
         {
             self.gender = Gender(rawValue: gender)

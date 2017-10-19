@@ -31,24 +31,6 @@ class ViewController: UIViewController {
                       "artist":"지코(ZICO)",
                       "writer":"지코, Poptime",
                       "playTime":12134,
-                      "playURL":"http://music.naver.com/126"],
-                     ["songTitle":"FANXY CHILD",
-                      "trackNum":4,
-                      "artist":"지코(ZICO)",
-                      "writer":"지코, Poptime",
-                      "playTime":12134,
-                      "playURL":"http://music.naver.com/126"],
-                     ["songTitle":"She's a baby",
-                      "trackNum":5,
-                      "artist":"지코(ZICO)",
-                      "writer":"지코, Poptime",
-                      "playTime":12134,
-                      "playURL":"http://music.naver.com/126"],
-                     ["songTitle":"Bermuda Triangle",
-                      "trackNum":6,
-                      "artist":"지코(ZICO)",
-                      "writer":"지코, Poptime",
-                      "playTime":12134,
                       "playURL":"http://music.naver.com/126"]
             ]
     ]
@@ -56,37 +38,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let zicoTelevisionAlbum = AlbumModel(dataDic: albumTelevision) {
-            var playTime: String {
-                let second = zicoTelevisionAlbum.songList[0].playTime
-                return secondToTime(second: second)
-            }
-        }
         
-        if let path = Bundle.main.path(forResource: "UserPlist", ofType: "plist"),
-            let dic = NSDictionary(contentsOfFile: path) as? [String:String] {
-            let userDataModel = UserModel(userDic: dic)
-        }
-        
-        if let imagePath = Bundle.main.path(forResource: "UserImage", ofType: "PNG") {
-            let imgae = UIImage(contentsOfFile: imagePath)
-        }
-        
-        UserDefaults.standard.set("ZICO", forKey: "userID")
+        // DataCenter Test
+        DataCenter.main.loadUserData()
 
-    }
-
-    private func secondToTime(second: Int) -> String {
-        let second = second
-        var timeStr = ""
-        if second < 60 {
-            timeStr = "\(second)초"
-        }else if second >= 60 && second < 3600 {
-            timeStr = "\(second/60)분 \(second%60)초"
-        }else {
-            timeStr = "\(second/3600)시간 \((second%3600)/60)분 \((second%3600)%60)초"
-        }
-        return timeStr
     }
 
 }

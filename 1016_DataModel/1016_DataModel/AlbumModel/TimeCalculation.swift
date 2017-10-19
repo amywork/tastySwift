@@ -28,4 +28,18 @@ class TimeCalculation {
         return "\(hour):\(minute):\(second)"
     }
     
+    private func secondToTime(second: Int) -> String {
+        let second = second
+        var timeStr = ""
+        if second < 60 {
+            timeStr = "\(second)초"
+        }else if second >= 60 && second < 3600 {
+            timeStr = "\(second/60)분 \(second%60)초"
+        }else {
+            timeStr = "\(second/3600)시간 \((second%3600)/60)분 \((second%3600)%60)초"
+        }
+        return timeStr
+    }
+
+    
 }
