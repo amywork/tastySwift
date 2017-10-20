@@ -34,7 +34,11 @@ class DetailViewController: UIViewController {
             self.emailLabel.text = realData.email
             profileImageView.layer.cornerRadius = profileImageView.bounds.size.width/2
             profileImageView.clipsToBounds = true
-            self.navigationItem.title = "detail"
+            self.navigationItem.title = realData.nickName
         }
     }
+    
+//    func shareBarBtnHandler(_ sender: UIBarButtonItem) {
+//
+//    }
 }

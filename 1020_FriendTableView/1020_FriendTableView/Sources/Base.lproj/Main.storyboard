@@ -56,55 +56,6 @@
                                             <segue destination="kbg-TH-D3Y" kind="show" identifier="DetailViewController" id="lgS-Rl-2hd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="128" id="g4X-QD-ycf">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g4X-QD-ycf" id="lVT-uW-9x6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-gl-BTB">
-                                                    <rect key="frame" x="16" y="16" width="96" height="95.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="96" id="HKO-kA-ytN"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZM-Um-sgv">
-                                                    <rect key="frame" x="120" y="16" width="239" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4B-HM-iDn">
-                                                    <rect key="frame" x="120" y="41" width="239" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUb-Oz-HNh">
-                                                    <rect key="frame" x="256" y="79" width="103" height="32"/>
-                                                    <color key="backgroundColor" red="1" green="0.77937825520000004" blue="0.86634657120000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="팬 맺기">
-                                                        <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="nxj-gl-BTB" secondAttribute="bottom" constant="16" id="8NC-bO-R9W"/>
-                                                <constraint firstAttribute="trailing" secondItem="GZM-Um-sgv" secondAttribute="trailing" constant="16" id="8ni-sL-mUt"/>
-                                                <constraint firstItem="nxj-gl-BTB" firstAttribute="leading" secondItem="lVT-uW-9x6" secondAttribute="leading" constant="16" id="LUY-52-Xr8"/>
-                                                <constraint firstItem="T4B-HM-iDn" firstAttribute="leading" secondItem="GZM-Um-sgv" secondAttribute="leading" id="OLm-XO-KUz"/>
-                                                <constraint firstItem="GZM-Um-sgv" firstAttribute="top" secondItem="nxj-gl-BTB" secondAttribute="top" id="UeV-vW-Zni"/>
-                                                <constraint firstAttribute="trailing" secondItem="oUb-Oz-HNh" secondAttribute="trailing" constant="16" id="csE-EP-N3J"/>
-                                                <constraint firstAttribute="bottom" secondItem="oUb-Oz-HNh" secondAttribute="bottom" constant="16" id="kWI-IW-3d5"/>
-                                                <constraint firstItem="T4B-HM-iDn" firstAttribute="width" secondItem="GZM-Um-sgv" secondAttribute="width" id="mg5-4u-OC0"/>
-                                                <constraint firstItem="GZM-Um-sgv" firstAttribute="leading" secondItem="nxj-gl-BTB" secondAttribute="trailing" constant="8" id="qX5-2c-6v7"/>
-                                                <constraint firstItem="nxj-gl-BTB" firstAttribute="top" secondItem="lVT-uW-9x6" secondAttribute="top" constant="16" id="y0y-2x-C3r"/>
-                                                <constraint firstItem="T4B-HM-iDn" firstAttribute="top" secondItem="GZM-Um-sgv" secondAttribute="bottom" constant="4" id="zI4-Ek-BKt"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="tbs-8g-6w1"/>
@@ -241,7 +192,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T9e-xO-Eof"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Hm6-vw-kuA"/>
+                    <navigationItem key="navigationItem" title="Title" id="4wa-pb-Qiw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="mQA-Tp-xwG"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bgImageView" destination="z0g-QY-lmL" id="U2B-6T-KQO"/>
                         <outlet property="descriptionTextView" destination="xo4-v2-w0y" id="KsT-I3-h2g"/>
