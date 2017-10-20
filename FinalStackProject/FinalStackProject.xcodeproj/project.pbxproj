@@ -15,10 +15,10 @@
 		4BBE31031F9A372F00D08669 /* ExploreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */; };
 		4BBE310A1F9A3CAA00D08669 /* CustomCellSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31081F9A3CAA00D08669 /* CustomCellSample.swift */; };
 		4BBE310B1F9A3CAA00D08669 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31091F9A3CAA00D08669 /* ViewController.swift */; };
-		4BE462D21F9AA03300E593C9 /* CurrentUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE462D11F9AA03300E593C9 /* CurrentUser.plist */; };
 		4BE462D41F9AA07B00E593C9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE462D31F9AA07B00E593C9 /* UserModel.swift */; };
 		4BE462D61F9AA29E00E593C9 /* SigningNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE462D51F9AA29E00E593C9 /* SigningNavigationController.swift */; };
 		4BE462D81F9AA6B000E593C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */; };
+		4BE462DB1F9AA9A900E593C9 /* CurrentUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE462DA1F9AA9A800E593C9 /* CurrentUser.plist */; };
 		DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81676E1F96E8FE00A80891 /* AppDelegate.swift */; };
 		DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167721F96E8FE00A80891 /* Main.storyboard */; };
 		DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167771F96E8FE00A80891 /* LaunchScreen.storyboard */; };
@@ -43,10 +43,10 @@
 		4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDataModel.swift; sourceTree = "<group>"; };
 		4BBE31081F9A3CAA00D08669 /* CustomCellSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCellSample.swift; path = ../../../1020_CustomTableViewController/1020_CustomTableViewController/CustomCellSample.swift; sourceTree = "<group>"; };
 		4BBE31091F9A3CAA00D08669 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../1020_CustomTableViewController/1020_CustomTableViewController/ViewController.swift; sourceTree = "<group>"; };
-		4BE462D11F9AA03300E593C9 /* CurrentUser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CurrentUser.plist; path = ../../CurrentUser.plist; sourceTree = "<group>"; };
 		4BE462D31F9AA07B00E593C9 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = ../../../1016_DataModel/1016_DataModel/UserModel/UserModel.swift; sourceTree = "<group>"; };
 		4BE462D51F9AA29E00E593C9 /* SigningNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningNavigationController.swift; sourceTree = "<group>"; };
 		4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		4BE462DA1F9AA9A800E593C9 /* CurrentUser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentUser.plist; sourceTree = "<group>"; };
 		DD81676B1F96E8FE00A80891 /* FinalStackProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalStackProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81676E1F96E8FE00A80891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8167731F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 				DD81677A1F96E8FE00A80891 /* Info.plist */,
 				4B72C2E51F9A29160045EC9E /* Settings.plist */,
 				4BBE31001F9A36EE00D08669 /* ExploreData.plist */,
-				4BE462D11F9AA03300E593C9 /* CurrentUser.plist */,
+				4BE462DA1F9AA9A800E593C9 /* CurrentUser.plist */,
 				DD81679B1F97351D00A80891 /* DataCenter */,
 				DD8167981F97334E00A80891 /* Model */,
 				DD81678B1F96EEC500A80891 /* View */,
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */,
-				4BE462D21F9AA03300E593C9 /* CurrentUser.plist in Resources */,
+				4BE462DB1F9AA9A900E593C9 /* CurrentUser.plist in Resources */,
 				DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */,
 				DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */,
 				4BBE31011F9A36EE00D08669 /* ExploreData.plist in Resources */,
