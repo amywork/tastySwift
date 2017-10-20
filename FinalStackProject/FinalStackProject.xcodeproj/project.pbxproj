@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B72C2AF1F9A08970045EC9E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2AE1F9A08970045EC9E /* SettingViewController.swift */; };
+		4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */; };
+		4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */; };
+		4B72C2E61F9A29160045EC9E /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B72C2E51F9A29160045EC9E /* Settings.plist */; };
 		DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81676E1F96E8FE00A80891 /* AppDelegate.swift */; };
 		DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167721F96E8FE00A80891 /* Main.storyboard */; };
 		DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167771F96E8FE00A80891 /* LaunchScreen.storyboard */; };
@@ -19,13 +23,17 @@
 		DD8167931F97014400A80891 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167921F97014400A80891 /* CustomTextField.swift */; };
 		DD8167951F9731E900A80891 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8167941F9731E900A80891 /* UserData.plist */; };
 		DD8167971F97334800A80891 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167961F97334800A80891 /* User.swift */; };
-		DD81679A1F97351100A80891 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* UserService.swift */; };
+		DD81679A1F97351100A80891 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* DataCenter.swift */; };
 		DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */; };
 		DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C91F99CE18002CDB03 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD81676B1F96E8FE00A80891 /* 1018_Fanxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1018_Fanxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B72C2AE1F9A08970045EC9E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataModel.swift; sourceTree = "<group>"; };
+		4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		4B72C2E51F9A29160045EC9E /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		DD81676B1F96E8FE00A80891 /* FinalStackProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalStackProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81676E1F96E8FE00A80891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8167731F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD8167781F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,7 +47,7 @@
 		DD8167921F97014400A80891 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DD8167941F9731E900A80891 /* UserData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
 		DD8167961F97334800A80891 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DD8167991F97351100A80891 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		DD8167991F97351100A80891 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		DDEE84C91F99CE18002CDB03 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +66,7 @@
 		DD8167621F96E8FE00A80891 = {
 			isa = PBXGroup;
 			children = (
-				DD81676D1F96E8FE00A80891 /* 1018_Fanxy */,
+				DD81676D1F96E8FE00A80891 /* FinalStackProject */,
 				DD81676C1F96E8FE00A80891 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,24 +74,25 @@
 		DD81676C1F96E8FE00A80891 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD81676B1F96E8FE00A80891 /* 1018_Fanxy.app */,
+				DD81676B1F96E8FE00A80891 /* FinalStackProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DD81676D1F96E8FE00A80891 /* 1018_Fanxy */ = {
+		DD81676D1F96E8FE00A80891 /* FinalStackProject */ = {
 			isa = PBXGroup;
 			children = (
 				DD81677A1F96E8FE00A80891 /* Info.plist */,
+				4B72C2E51F9A29160045EC9E /* Settings.plist */,
 				DD8167941F9731E900A80891 /* UserData.plist */,
-				DD81679B1F97351D00A80891 /* Service */,
+				DD81679B1F97351D00A80891 /* DataCenter */,
 				DD8167981F97334E00A80891 /* Model */,
 				DD81678B1F96EEC500A80891 /* View */,
 				DD8167801F96E91000A80891 /* Appdelegate */,
 				DD8167811F96E91700A80891 /* ViewControllers */,
 				DD8167821F96E92500A80891 /* Resources */,
 			);
-			path = 1018_Fanxy;
+			path = FinalStackProject;
 			sourceTree = "<group>";
 		};
 		DD8167801F96E91000A80891 /* Appdelegate */ = {
@@ -99,9 +108,10 @@
 			children = (
 				DD8167851F96E99B00A80891 /* GateViewController.swift */,
 				DD81678C1F96F1E600A80891 /* SignInViewController.swift */,
-				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
 				DD81678E1F96F1F000A80891 /* SingUpViewController.swift */,
+				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
 				DDEE84C91F99CE18002CDB03 /* ListViewController.swift */,
+				4B72C2AE1F9A08970045EC9E /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -122,6 +132,7 @@
 				DD8167891F96EE7100A80891 /* RoundButton.swift */,
 				DD8167901F96FC1C00A80891 /* ShadowView.swift */,
 				DD8167921F97014400A80891 /* CustomTextField.swift */,
+				4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,25 +140,26 @@
 		DD8167981F97334E00A80891 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */,
 				DD8167961F97334800A80891 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DD81679B1F97351D00A80891 /* Service */ = {
+		DD81679B1F97351D00A80891 /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
-				DD8167991F97351100A80891 /* UserService.swift */,
+				DD8167991F97351100A80891 /* DataCenter.swift */,
 			);
-			path = Service;
+			path = DataCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD81676A1F96E8FE00A80891 /* 1018_Fanxy */ = {
+		DD81676A1F96E8FE00A80891 /* FinalStackProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD81677D1F96E8FE00A80891 /* Build configuration list for PBXNativeTarget "1018_Fanxy" */;
+			buildConfigurationList = DD81677D1F96E8FE00A80891 /* Build configuration list for PBXNativeTarget "FinalStackProject" */;
 			buildPhases = (
 				DD8167671F96E8FE00A80891 /* Sources */,
 				DD8167681F96E8FE00A80891 /* Frameworks */,
@@ -157,9 +169,9 @@
 			);
 			dependencies = (
 			);
-			name = 1018_Fanxy;
+			name = FinalStackProject;
 			productName = 1018_Fanxy;
-			productReference = DD81676B1F96E8FE00A80891 /* 1018_Fanxy.app */;
+			productReference = DD81676B1F96E8FE00A80891 /* FinalStackProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DD8167661F96E8FE00A80891 /* Build configuration list for PBXProject "1018_Fanxy" */;
+			buildConfigurationList = DD8167661F96E8FE00A80891 /* Build configuration list for PBXProject "FinalStackProject" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -191,7 +203,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD81676A1F96E8FE00A80891 /* 1018_Fanxy */,
+				DD81676A1F96E8FE00A80891 /* FinalStackProject */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +217,7 @@
 				DD8167951F9731E900A80891 /* UserData.plist in Resources */,
 				DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */,
 				DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */,
+				4B72C2E61F9A29160045EC9E /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,15 +230,18 @@
 			files = (
 				DD8167931F97014400A80891 /* CustomTextField.swift in Sources */,
 				DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */,
+				4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */,
 				DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */,
-				DD81679A1F97351100A80891 /* UserService.swift in Sources */,
+				DD81679A1F97351100A80891 /* DataCenter.swift in Sources */,
 				DD81678D1F96F1E600A80891 /* SignInViewController.swift in Sources */,
 				DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */,
 				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
 				DD8167971F97334800A80891 /* User.swift in Sources */,
+				4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */,
 				DD81678F1F96F1F000A80891 /* SingUpViewController.swift in Sources */,
 				DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */,
 				DD8167861F96E99B00A80891 /* GateViewController.swift in Sources */,
+				4B72C2AF1F9A08970045EC9E /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +407,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD8167661F96E8FE00A80891 /* Build configuration list for PBXProject "1018_Fanxy" */ = {
+		DD8167661F96E8FE00A80891 /* Build configuration list for PBXProject "FinalStackProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD81677B1F96E8FE00A80891 /* Debug */,
@@ -400,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD81677D1F96E8FE00A80891 /* Build configuration list for PBXNativeTarget "1018_Fanxy" */ = {
+		DD81677D1F96E8FE00A80891 /* Build configuration list for PBXNativeTarget "FinalStackProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD81677E1F96E8FE00A80891 /* Debug */,

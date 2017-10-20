@@ -65,7 +65,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         guard let username = userNameTextField.text, !username.isEmpty else { return }
         guard let password = passwordTextField.text, !password.isEmpty else { return }
         
-        if UserService.sharedInstance.validateUserInfo(username: username, password: password) {
+        if DataCenter.mainCenter.validateUserInfo(username: username, password: password) {
             // 로그인 성공
             print("suc")
         }else {
