@@ -20,6 +20,8 @@
 		DD8167951F9731E900A80891 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8167941F9731E900A80891 /* UserData.plist */; };
 		DD8167971F97334800A80891 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167961F97334800A80891 /* User.swift */; };
 		DD81679A1F97351100A80891 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* UserService.swift */; };
+		DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */; };
+		DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C91F99CE18002CDB03 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		DD8167941F9731E900A80891 /* UserData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
 		DD8167961F97334800A80891 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DD8167991F97351100A80891 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		DDEE84C91F99CE18002CDB03 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,9 @@
 			children = (
 				DD8167851F96E99B00A80891 /* GateViewController.swift */,
 				DD81678C1F96F1E600A80891 /* SignInViewController.swift */,
+				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
 				DD81678E1F96F1F000A80891 /* SingUpViewController.swift */,
+				DDEE84C91F99CE18002CDB03 /* ListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -211,8 +217,10 @@
 			files = (
 				DD8167931F97014400A80891 /* CustomTextField.swift in Sources */,
 				DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */,
+				DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */,
 				DD81679A1F97351100A80891 /* UserService.swift in Sources */,
 				DD81678D1F96F1E600A80891 /* SignInViewController.swift in Sources */,
+				DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */,
 				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
 				DD8167971F97334800A80891 /* User.swift in Sources */,
 				DD81678F1F96F1F000A80891 /* SingUpViewController.swift in Sources */,

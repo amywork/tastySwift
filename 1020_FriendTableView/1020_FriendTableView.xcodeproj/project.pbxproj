@@ -17,6 +17,7 @@
 		DDA0F0581F98CA110016901A /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0571F98CA110016901A /* FriendDataModel.swift */; };
 		DDA0F05B1F9986EB0016901A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F05A1F9986EB0016901A /* DetailViewController.swift */; };
 		DDA0F05D1F99A7D10016901A /* CustomFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F05C1F99A7D10016901A /* CustomFriendCell.swift */; };
+		DDEE84C61F99CA0E002CDB03 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C51F99CA0E002CDB03 /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DDA0F0571F98CA110016901A /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
 		DDA0F05A1F9986EB0016901A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DDA0F05C1F99A7D10016901A /* CustomFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFriendCell.swift; sourceTree = "<group>"; };
+		DDEE84C51F99CA0E002CDB03 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA0F0411F98C9850016901A /* MainViewController.swift */,
+				DDEE84C51F99CA0E002CDB03 /* MainNavigationController.swift */,
 				DDA0F05A1F9986EB0016901A /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
@@ -188,6 +191,7 @@
 				DDA0F0561F98CA000016901A /* DataCenter.swift in Sources */,
 				DDA0F0421F98C9850016901A /* MainViewController.swift in Sources */,
 				DDA0F05B1F9986EB0016901A /* DetailViewController.swift in Sources */,
+				DDEE84C61F99CA0E002CDB03 /* MainNavigationController.swift in Sources */,
 				DDA0F0401F98C9850016901A /* AppDelegate.swift in Sources */,
 				DDA0F0581F98CA110016901A /* FriendDataModel.swift in Sources */,
 			);

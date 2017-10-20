@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class DetailViewController: UIViewController {
 
     var data: FriendDataModel?
@@ -35,10 +34,16 @@ class DetailViewController: UIViewController {
             profileImageView.layer.cornerRadius = profileImageView.bounds.size.width/2
             profileImageView.clipsToBounds = true
             self.navigationItem.title = realData.nickName
+            
+            self.navigationItem.rightBarButtonItem?.target = self
+            self.navigationItem.rightBarButtonItem?.action = #selector(shareBarBtnHandler)
         }
     }
     
-//    func shareBarBtnHandler(_ sender: UIBarButtonItem) {
-//
-//    }
+    @objc func shareBarBtnHandler(_ sender: UIBarButtonItem) {
+        let likeAlert = UIAlertController(title: "LIKE♥️IT", message: "저장하시겠습니까?", preferredStyle: .actionSheet)
+        let likeAction = UIAlertAction(title: "YES!", style: .default, handler: nil)
+        likeAlert.addAction(likeAction)
+        self.present(likeAlert, animated: true, completion: nil)
+    }
 }
