@@ -25,8 +25,13 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
-        let section = DataCenter.mainCenter.settingDataList[indexPath.section]
-        cell.textLabel?.text = section.cellContentList[indexPath.row]
+        let data = DataCenter.mainCenter.settingDataList[indexPath.section]
+        cell.textLabel?.text = data.cellContentList[indexPath.row]
+        if data.cellTypeList[indexPath.row] == CellType.detail {
+            cell.accessoryType = .disclosureIndicator
+        }else if data.cellTypeList[indexPath.row] == CellType.withSwitch {
+            cell.accessoryType = .checkmark
+        }
         return cell
     }
     

@@ -14,17 +14,5 @@ class SettingTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-//    var indexPath: Int?
-//    var data:SettingDataModel? {
-//        didSet {
-//            self.textLabel?.text = self.data?.cellContentList[indexPath!]
-//            if data?.cellTypeList[indexPath!] == CellType.detail {
-//                self.accessoryType = .detailButton
-//            }else if data?.cellTypeList[indexPath!] == CellType.withSwitch {
-//                self.accessoryType = .checkmark
-//            }
-//        }
-//    }
-    
     
 }

@@ -33,7 +33,7 @@ struct SettingDataModel {
                 self.cellTypeList.append(.detail)
             }else if cellStyleStr == "SettingBasicCell" {
                  self.cellTypeList.append(.basic)
-            }else if cellStyleStr == "SettingSwithCell" {
+            }else if cellStyleStr == "SettingSwitchCell" {
                 self.cellTypeList.append(.withSwitch)
             }
             let cellContentStr = dataDic["Content"]

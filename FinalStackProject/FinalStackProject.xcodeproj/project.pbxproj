@@ -11,6 +11,11 @@
 		4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */; };
 		4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */; };
 		4B72C2E61F9A29160045EC9E /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B72C2E51F9A29160045EC9E /* Settings.plist */; };
+		4BBE31011F9A36EE00D08669 /* ExploreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE31001F9A36EE00D08669 /* ExploreData.plist */; };
+		4BBE31031F9A372F00D08669 /* ExploreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */; };
+		4BBE31051F9A3C3B00D08669 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31041F9A3C3B00D08669 /* MainNavigationController.swift */; };
+		4BBE310A1F9A3CAA00D08669 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31081F9A3CAA00D08669 /* CustomCell.swift */; };
+		4BBE310B1F9A3CAA00D08669 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31091F9A3CAA00D08669 /* ViewController.swift */; };
 		DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81676E1F96E8FE00A80891 /* AppDelegate.swift */; };
 		DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167721F96E8FE00A80891 /* Main.storyboard */; };
 		DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167771F96E8FE00A80891 /* LaunchScreen.storyboard */; };
@@ -22,7 +27,7 @@
 		DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167901F96FC1C00A80891 /* ShadowView.swift */; };
 		DD8167931F97014400A80891 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167921F97014400A80891 /* CustomTextField.swift */; };
 		DD8167951F9731E900A80891 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8167941F9731E900A80891 /* UserData.plist */; };
-		DD8167971F97334800A80891 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167961F97334800A80891 /* User.swift */; };
+		DD8167971F97334800A80891 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167961F97334800A80891 /* UserDataModel.swift */; };
 		DD81679A1F97351100A80891 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* DataCenter.swift */; };
 		DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */; };
 		DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C91F99CE18002CDB03 /* ListViewController.swift */; };
@@ -33,6 +38,11 @@
 		4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataModel.swift; sourceTree = "<group>"; };
 		4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		4B72C2E51F9A29160045EC9E /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		4BBE31001F9A36EE00D08669 /* ExploreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreData.plist; sourceTree = "<group>"; };
+		4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDataModel.swift; sourceTree = "<group>"; };
+		4BBE31041F9A3C3B00D08669 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		4BBE31081F9A3CAA00D08669 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = ../../../1020_CustomTableViewController/1020_CustomTableViewController/CustomCell.swift; sourceTree = "<group>"; };
+		4BBE31091F9A3CAA00D08669 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../1020_CustomTableViewController/1020_CustomTableViewController/ViewController.swift; sourceTree = "<group>"; };
 		DD81676B1F96E8FE00A80891 /* FinalStackProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalStackProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81676E1F96E8FE00A80891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8167731F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +56,7 @@
 		DD8167901F96FC1C00A80891 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		DD8167921F97014400A80891 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DD8167941F9731E900A80891 /* UserData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
-		DD8167961F97334800A80891 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD8167961F97334800A80891 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		DD8167991F97351100A80891 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		DDEE84C91F99CE18002CDB03 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +76,7 @@
 		DD8167621F96E8FE00A80891 = {
 			isa = PBXGroup;
 			children = (
+				DD8167801F96E91000A80891 /* Appdelegate */,
 				DD81676D1F96E8FE00A80891 /* FinalStackProject */,
 				DD81676C1F96E8FE00A80891 /* Products */,
 			);
@@ -84,11 +95,11 @@
 			children = (
 				DD81677A1F96E8FE00A80891 /* Info.plist */,
 				4B72C2E51F9A29160045EC9E /* Settings.plist */,
+				4BBE31001F9A36EE00D08669 /* ExploreData.plist */,
 				DD8167941F9731E900A80891 /* UserData.plist */,
 				DD81679B1F97351D00A80891 /* DataCenter */,
 				DD8167981F97334E00A80891 /* Model */,
 				DD81678B1F96EEC500A80891 /* View */,
-				DD8167801F96E91000A80891 /* Appdelegate */,
 				DD8167811F96E91700A80891 /* ViewControllers */,
 				DD8167821F96E92500A80891 /* Resources */,
 			);
@@ -106,6 +117,7 @@
 		DD8167811F96E91700A80891 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4BBE31041F9A3C3B00D08669 /* MainNavigationController.swift */,
 				DD8167851F96E99B00A80891 /* GateViewController.swift */,
 				DD81678C1F96F1E600A80891 /* SignInViewController.swift */,
 				DD81678E1F96F1F000A80891 /* SingUpViewController.swift */,
@@ -131,6 +143,8 @@
 			children = (
 				DD8167891F96EE7100A80891 /* RoundButton.swift */,
 				DD8167901F96FC1C00A80891 /* ShadowView.swift */,
+				4BBE31081F9A3CAA00D08669 /* CustomCell.swift */,
+				4BBE31091F9A3CAA00D08669 /* ViewController.swift */,
 				DD8167921F97014400A80891 /* CustomTextField.swift */,
 				4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */,
 			);
@@ -141,7 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */,
-				DD8167961F97334800A80891 /* User.swift */,
+				DD8167961F97334800A80891 /* UserDataModel.swift */,
+				4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +232,7 @@
 				DD8167951F9731E900A80891 /* UserData.plist in Resources */,
 				DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */,
 				DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */,
+				4BBE31011F9A36EE00D08669 /* ExploreData.plist in Resources */,
 				4B72C2E61F9A29160045EC9E /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,13 +246,17 @@
 			files = (
 				DD8167931F97014400A80891 /* CustomTextField.swift in Sources */,
 				DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */,
+				4BBE310A1F9A3CAA00D08669 /* CustomCell.swift in Sources */,
+				4BBE31051F9A3C3B00D08669 /* MainNavigationController.swift in Sources */,
 				4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */,
 				DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */,
 				DD81679A1F97351100A80891 /* DataCenter.swift in Sources */,
 				DD81678D1F96F1E600A80891 /* SignInViewController.swift in Sources */,
 				DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */,
+				4BBE31031F9A372F00D08669 /* ExploreDataModel.swift in Sources */,
 				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
-				DD8167971F97334800A80891 /* User.swift in Sources */,
+				DD8167971F97334800A80891 /* UserDataModel.swift in Sources */,
+				4BBE310B1F9A3CAA00D08669 /* ViewController.swift in Sources */,
 				4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */,
 				DD81678F1F96F1F000A80891 /* SingUpViewController.swift in Sources */,
 				DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */,
@@ -380,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = 1018_Fanxy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FinalStackProject/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-018-Fanxy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = 1018_Fanxy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FinalStackProject/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-018-Fanxy";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>itemName</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Design</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Apple</string>
+		<key>followerCnt</key>
+		<string>2103912</string>
+	</dict>
+	<dict>
+		<key>itemName</key>
+		<string>Adobe CC</string>
+		<key>category</key>
+		<string>Design</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Adobe</string>
+		<key>followerCnt</key>
+		<string>2103912</string>
+	</dict>
+	<dict>
+		<key>itemName</key>
+		<string>Netflix</string>
+		<key>category</key>
+		<string>Design</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Netflix</string>
+		<key>followerCnt</key>
+		<string>2103912</string>
+	</dict>
+	<dict>
+		<key>itemName</key>
+		<string>Dropbox Premium</string>
+		<key>category</key>
+		<string>Design</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>youtube</string>
+		<key>followerCnt</key>
+		<string>2103912</string>
+	</dict>
+	<dict>
+		<key>itemName</key>
+		<string>Amazon Prime</string>
+		<key>category</key>
+		<string>Design</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Spotify</string>
+		<key>followerCnt</key>
+		<string>2103912</string>
+	</dict>
+	<dict>
+		<key>itemName</key>
+		<string>iCloud</string>
+		<key>category</key>
+		<string>Design</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>youtube</string>
+		<key>followerCnt</key>
+		<string>2103912</string>
+	</dict>
+	<dict>
+		<key>itemName</key>
+		<string>Noun Project</string>
+		<key>category</key>
+		<string>Design</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Noun</string>
+		<key>followerCnt</key>
+		<string>2103912</string>
+	</dict>
+</array>
+</plist>

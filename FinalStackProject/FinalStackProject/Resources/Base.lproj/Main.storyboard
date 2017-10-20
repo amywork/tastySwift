@@ -14,7 +14,7 @@
         <!--Gate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GateViewController" customModule="_018_Fanxy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GateViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="A5g-56-fp5" kind="show" id="Wdh-Ac-h9Z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XH-Y8-F4t">
                                 <rect key="frame" x="75.5" y="595" width="225" height="36"/>
@@ -61,6 +64,9 @@
                                 <state key="normal" title="Already have an account?">
                                     <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="yVS-sS-WXe" kind="showDetail" id="CAh-JQ-iTr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,7 +98,7 @@
         <!--Sing Up View Controller-->
         <scene sceneID="7Nt-dB-lAB">
             <objects>
-                <viewController id="A5g-56-fp5" customClass="SingUpViewController" customModule="_018_Fanxy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A5g-56-fp5" customClass="SingUpViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msx-Dp-eiN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +112,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5em-sn-qQJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pE3-rE-Hca" customClass="CustomTextField" customModule="_018_Fanxy" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pE3-rE-Hca" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="137" width="300" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -126,7 +132,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="Mrk-SL-v2b"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h67-BG-g4h" customClass="CustomTextField" customModule="_018_Fanxy" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h67-BG-g4h" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="191" width="300" height="50"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="textColor"/>
@@ -143,7 +149,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="WDu-0B-x4c"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QvW-gu-0td" customClass="CustomTextField" customModule="_018_Fanxy" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QvW-gu-0td" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="245" width="300" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="textColor"/>
@@ -160,7 +166,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="hY6-4X-ulv"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-bS-5sR" customClass="CustomTextField" customModule="_018_Fanxy" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-bS-5sR" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="299" width="300" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="textColor"/>
@@ -290,30 +296,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTS-eg-Np9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nlR-CN-yYN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2073" y="914"/>
+            <point key="canvasLocation" x="-2761" y="666"/>
         </scene>
         <!--Explore-->
         <scene sceneID="jCJ-0d-CEc">
             <objects>
-                <viewController id="TV9-fD-X2d" customClass="ExploreViewController" customModule="_018_Fanxy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TV9-fD-X2d" customClass="ExploreViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gNY-fF-zv2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Qn-gb-qUa">
-                                <rect key="frame" x="0.0" y="137" width="375" height="481"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Qn-gb-qUa">
+                                <rect key="frame" x="0.0" y="218" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="l1P-TP-JWr">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l1P-TP-JWr" id="AZL-gP-Wc7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Qn-gb-qUa" firstAttribute="trailing" secondItem="WaU-Gb-m2W" secondAttribute="trailing" id="9QE-mM-bLa"/>
+                            <constraint firstItem="0Qn-gb-qUa" firstAttribute="leading" secondItem="WaU-Gb-m2W" secondAttribute="leading" id="DT3-5a-Jtz"/>
+                            <constraint firstItem="0Qn-gb-qUa" firstAttribute="height" secondItem="gNY-fF-zv2" secondAttribute="height" multiplier="0.6" id="r3N-5k-vJm"/>
+                            <constraint firstItem="0Qn-gb-qUa" firstAttribute="bottom" secondItem="WaU-Gb-m2W" secondAttribute="bottom" id="zuY-Eb-6um"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WaU-Gb-m2W"/>
                     </view>
                     <navigationItem key="navigationItem" title="Explore" id="498-eX-RQV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBZ-b6-a0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634" y="-2581"/>
+            <point key="canvasLocation" x="-634.39999999999998" y="-2581.2593703148427"/>
         </scene>
         <!--My Stack-->
         <scene sceneID="T5m-g0-Dw7">
@@ -323,35 +344,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NNr-6h-kw2">
-                                <rect key="frame" x="0.0" y="212" width="375" height="406"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A6N-Fi-yNo">
                                 <rect key="frame" x="-24" y="28" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0R-Sk-dGA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.77937825520000004" blue="0.86634657120000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NNr-6h-kw2">
+                                <rect key="frame" x="0.0" y="218" width="375" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="isQ-0l-O6d">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="isQ-0l-O6d" id="B7z-J8-5A6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NNr-6h-kw2" firstAttribute="height" secondItem="psw-eo-55W" secondAttribute="height" multiplier="0.6" id="AqI-Du-Cgq"/>
+                            <constraint firstItem="NNr-6h-kw2" firstAttribute="leading" secondItem="AcA-Z8-qDH" secondAttribute="leading" id="E8T-j3-v04"/>
+                            <constraint firstItem="NNr-6h-kw2" firstAttribute="trailing" secondItem="AcA-Z8-qDH" secondAttribute="trailing" id="M9Y-mZ-u7F"/>
+                            <constraint firstItem="NNr-6h-kw2" firstAttribute="bottom" secondItem="AcA-Z8-qDH" secondAttribute="bottom" id="Y9A-UM-Yu4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AcA-Z8-qDH"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Stack" id="OPd-pn-OhI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnv-d5-W5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634" y="-1822"/>
+            <point key="canvasLocation" x="-634.39999999999998" y="-1822.0389805097452"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6QC-Yc-NtA">
+            <objects>
+                <viewController id="R43-pE-A36" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uch-m6-qVQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="u33-AC-xLg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QjY-Xx-7bX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="-1822"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="F8r-FG-c50">
             <objects>
-                <viewController id="yVS-sS-WXe" customClass="SignInViewController" customModule="_018_Fanxy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yVS-sS-WXe" customClass="SignInViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VuB-4b-Tz8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,7 +431,7 @@
                                                     <action selector="didTapLoginButtonWith_sender:" destination="yVS-sS-WXe" eventType="touchUpInside" id="AdZ-ID-b8N"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ckW-mW-JtL" customClass="CustomTextField" customModule="_018_Fanxy" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ckW-mW-JtL" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                 <rect key="frame" x="37.5" y="100" width="300" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -398,7 +444,7 @@
                                                     <outlet property="delegate" destination="yVS-sS-WXe" id="rVf-Ob-eGY"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VXf-fS-ccc" customClass="CustomTextField" customModule="_018_Fanxy" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VXf-fS-ccc" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                 <rect key="frame" x="37.5" y="161" width="300" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="textColor"/>
@@ -464,12 +510,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8t-4P-jcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UH4-rC-7fG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2812" y="913"/>
+            <point key="canvasLocation" x="-3559" y="667"/>
         </scene>
         <!--Setting-->
         <scene sceneID="p9F-OH-8Xe">
             <objects>
-                <viewController id="UoX-rD-TF4" customClass="SettingViewController" customModule="_018_Fanxy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UoX-rD-TF4" customClass="SettingViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2sU-Lv-pi7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -479,7 +525,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="aJr-Qs-zSS" customClass="SettingTableViewCell" customModule="_018_Fanxy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="aJr-Qs-zSS" customClass="SettingTableViewCell" customModule="FinalStackProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJr-Qs-zSS" id="FBZ-QG-h3i">
@@ -513,7 +559,7 @@
         <scene sceneID="xEd-50-391">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KRN-Wl-MHr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" id="qRk-Fe-PWN"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="ExploreOn" landscapeImage="ExploreOff" id="qRk-Fe-PWN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oqx-uH-9kn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -553,7 +599,7 @@
         <scene sceneID="pog-Jh-4Lq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rwU-D6-uUM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Stack" id="Agw-Wp-qbG"/>
+                    <tabBarItem key="tabBarItem" title="My Stack" image="MyOff" id="Agw-Wp-qbG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ubM-W2-Cru">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -589,7 +635,7 @@
         <scene sceneID="v4g-cA-BRx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kgi-7u-IMY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" id="5a7-EG-vMA"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="SettingOn" id="5a7-EG-vMA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uQ4-hZ-zWp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -607,5 +653,9 @@
     </scenes>
     <resources>
         <image name="Cashbot" width="108" height="106"/>
+        <image name="ExploreOff" width="24" height="24"/>
+        <image name="ExploreOn" width="25" height="25"/>
+        <image name="MyOff" width="24" height="22"/>
+        <image name="SettingOn" width="25" height="25"/>
     </resources>
 </document>
