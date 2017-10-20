@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var data: FriendDataModel?
+    
     //MARK: - Image
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -23,5 +25,13 @@ class DetailViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let realData = data {
+            self.bgImageView.image = UIImage(named: realData.bgImageName)
+            self.profileImageView.image = UIImage(named: realData.profileImageName)
+            self.nameLabel.text = realData.nickName
+            self.descriptionTextView.text = realData.myProfileDescription
+            self.phoneLabel.text = realData.phoneNumber
+            self.emailLabel.text = realData.email
+        }
     }
 }

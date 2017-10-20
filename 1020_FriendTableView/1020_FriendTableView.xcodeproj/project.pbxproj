@@ -16,6 +16,7 @@
 		DDA0F0561F98CA000016901A /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0551F98CA000016901A /* DataCenter.swift */; };
 		DDA0F0581F98CA110016901A /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0571F98CA110016901A /* FriendDataModel.swift */; };
 		DDA0F05B1F9986EB0016901A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F05A1F9986EB0016901A /* DetailViewController.swift */; };
+		DDA0F05D1F99A7D10016901A /* CustomFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F05C1F99A7D10016901A /* CustomFriendCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DDA0F0551F98CA000016901A /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DDA0F0571F98CA110016901A /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
 		DDA0F05A1F9986EB0016901A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DDA0F05C1F99A7D10016901A /* CustomFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFriendCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				DDA0F0531F98C9B50016901A /* FriendInfo.plist */,
 				DDA0F0591F98CA160016901A /* DataCenter */,
 				DDA0F0521F98C9A60016901A /* ViewControllers */,
+				DDA0F05E1F99A7D50016901A /* View */,
 				DDA0F0511F98C9910016901A /* Sources */,
 			);
 			path = 1020_FriendTableView;
@@ -98,6 +101,14 @@
 				DDA0F0571F98CA110016901A /* FriendDataModel.swift */,
 			);
 			path = DataCenter;
+			sourceTree = "<group>";
+		};
+		DDA0F05E1F99A7D50016901A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDA0F05C1F99A7D10016901A /* CustomFriendCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA0F05D1F99A7D10016901A /* CustomFriendCell.swift in Sources */,
 				DDA0F0561F98CA000016901A /* DataCenter.swift in Sources */,
 				DDA0F0421F98C9850016901A /* MainViewController.swift in Sources */,
 				DDA0F05B1F9986EB0016901A /* DetailViewController.swift in Sources */,

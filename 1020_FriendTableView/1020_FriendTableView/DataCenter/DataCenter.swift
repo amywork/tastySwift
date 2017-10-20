@@ -35,9 +35,10 @@ class DataCenter {
             }
         }
         
-        guard let dataArr = NSArray(contentsOfFile: documentPath) as? [[String:Any]] else { return }
+        guard let dataArr = NSArray(contentsOfFile: documentPath) as? [[String:String]] else { return }
         for data in dataArr {
-            friendList.append(FriendDataModel(with: data)!)
+            guard let newModel = FriendDataModel(with: data) else { return }
+            friendList.append(newModel)
         }
         
     }
@@ -47,9 +48,7 @@ class DataCenter {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/FriendInfo.plist"
         let newArr = NSArray(array: friendList)
         newArr.write(toFile: documentPath, atomically: true)
-        
     }
-    
     
     
 }

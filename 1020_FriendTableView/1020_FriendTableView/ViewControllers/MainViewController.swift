@@ -24,12 +24,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
-        cell.textLabel?.text = friendList[indexPath.row].Nickname
-        cell.detailTextLabel?.text = friendList[indexPath.row].MyProfileDescription
-        cell.imageView?.image = UIImage(named: friendList[indexPath.row].ProfileImage!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomFriendCell", for: indexPath) as! CustomFriendCell
+        cell.data = friendList[indexPath.row]
+//        cell.textLabel?.text = friendList[indexPath.row].nickName
+//        cell.detailTextLabel?.text = friendList[indexPath.row].statusDescription
+//        cell.imageView?.image = UIImage(named: friendList[indexPath.row].profileImageName)
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let cell = sender as? CustomFriendCell else { return }
+        guard let nextVC = segue.destination as? DetailViewController else { return }
+        nextVC.data = cell.data
+    }
+    
     
 }
 

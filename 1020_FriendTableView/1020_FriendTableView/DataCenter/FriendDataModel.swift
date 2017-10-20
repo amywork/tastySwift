@@ -10,24 +10,49 @@ import Foundation
 
 struct FriendDataModel {
     
-    var Nickname: String
-    var MyProfileDescription: String
-    var ProfileImage: String?
+    var nickName: String
+    var myProfileDescription: String
+    var statusDescription: String
+    
+    var profileImageName: String
+    var bgImageName: String
+    
+    var phoneNumber: String
+    var email: String
+
     var friendDataDic: [String:String] {
-        return ["Nickname":self.Nickname, "MyProfileDescription":self.MyProfileDescription]
+        return ["Nickname":self.nickName,
+                "MyProfileDescription":self.myProfileDescription,
+                "StatusDescription":self.statusDescription,
+                "PhoneNumber":self.phoneNumber,
+                "Email":self.email,
+                "BackgroundImage":self.bgImageName,
+                "ProfileImage":self.profileImageName,
+        ]
     }
     
-    init?(with dataDic: [String:Any]) {
+    init?(with dataDic: [String:String]) {
         
-        guard let name = dataDic["Nickname"] as? String else { return nil }
-        self.Nickname = name
+        guard let name = dataDic["Nickname"] else { return nil }
+        self.nickName = name
         
-        guard let profileStr = dataDic["MyProfileDescription"] as? String else { return nil }
-        self.MyProfileDescription = profileStr
+        guard let profileStr = dataDic["MyProfileDescription"] else { return nil }
+        self.myProfileDescription = profileStr
         
-        if let img = dataDic["ProfileImage"] as? String {
-            self.ProfileImage = img
-        }
+        guard let statusStr = dataDic["StatusDescription"] else { return nil }
+        self.statusDescription = statusStr
+        
+        guard let phoneStr = dataDic["PhoneNumber"] else { return nil }
+        self.phoneNumber = phoneStr
+        
+        guard let emailStr = dataDic["Email"] else { return nil }
+        self.email = emailStr
+        
+        guard let bgImageStr = dataDic["BackgroundImage"] else { return nil }
+        self.bgImageName = bgImageStr
+        
+        guard let profileImg = dataDic["ProfileImage"] else { return nil }
+        self.profileImageName = profileImg
         
     }
 

@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Hdz-cE-N7C" detailTextLabel="64I-oI-gQi" imageView="duM-JM-NOw" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="N6w-2W-096">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CustomFriendCell" textLabel="Hdz-cE-N7C" detailTextLabel="64I-oI-gQi" imageView="duM-JM-NOw" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="N6w-2W-096" customClass="CustomFriendCell" customModule="_020_FriendTableView" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N6w-2W-096" id="Xwm-TF-Sp7">
@@ -53,7 +53,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kbg-TH-D3Y" kind="show" identifier="toDetailView" id="lgS-Rl-2hd"/>
+                                            <segue destination="kbg-TH-D3Y" kind="show" identifier="DetailViewController" id="lgS-Rl-2hd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="128" id="g4X-QD-ycf">
@@ -81,8 +81,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUb-Oz-HNh">
-                                                    <rect key="frame" x="313" y="79" width="46" height="32"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUb-Oz-HNh">
+                                                    <rect key="frame" x="256" y="79" width="103" height="32"/>
                                                     <color key="backgroundColor" red="1" green="0.77937825520000004" blue="0.86634657120000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" title="팬 맺기">
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.79999999999995" y="106.59670164917542"/>
+            <point key="canvasLocation" x="986" y="107"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="sHt-AI-NNm">
@@ -138,18 +138,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackImage20" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-QY-lmL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="z0g-QY-lmL" secondAttribute="height" multiplier="6:4" id="CpL-U1-eX6"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackImage13" translatesAutoresizingMaskIntoConstraints="NO" id="rpu-vc-Qxl">
-                                <rect key="frame" x="150" y="276.5" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rpu-vc-Qxl" secondAttribute="height" multiplier="1:1" id="5YV-kj-z41"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8G2-dG-Ty2">
                                 <rect key="frame" x="56" y="314" width="262.5" height="267"/>
                                 <subviews>
@@ -224,6 +212,18 @@
                                     <constraint firstItem="kQR-hw-943" firstAttribute="width" secondItem="JV4-JX-Lsv" secondAttribute="width" id="x0i-nd-9Mf"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackImage20" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-QY-lmL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="z0g-QY-lmL" secondAttribute="height" multiplier="6:4" id="CpL-U1-eX6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImage6" translatesAutoresizingMaskIntoConstraints="NO" id="rpu-vc-Qxl">
+                                <rect key="frame" x="150" y="276" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rpu-vc-Qxl" secondAttribute="height" multiplier="1:1" id="5YV-kj-z41"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -247,12 +247,12 @@
                         <outlet property="emailLabel" destination="Xgs-c1-xNP" id="XC1-qz-AAt"/>
                         <outlet property="nameLabel" destination="sGV-3P-ynD" id="TJA-gv-zvh"/>
                         <outlet property="phoneLabel" destination="jYv-IT-4wB" id="3Pq-4i-70g"/>
-                        <outlet property="profileImageView" destination="z0g-QY-lmL" id="5BS-mg-vpH"/>
+                        <outlet property="profileImageView" destination="rpu-vc-Qxl" id="FS8-M7-OOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RR1-V2-tkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="106.59670164917542"/>
+            <point key="canvasLocation" x="1831" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7XC-8X-1I3">
@@ -270,13 +270,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LoF-KP-OiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="107"/>
+            <point key="canvasLocation" x="151" y="107"/>
         </scene>
     </scenes>
     <resources>
-        <image name="BackImage13" width="715" height="468"/>
         <image name="BackImage20" width="1300" height="731"/>
         <image name="Heart" width="24" height="22"/>
+        <image name="ProfileImage6" width="268" height="268"/>
         <image name="ProfileImage8" width="300" height="249"/>
     </resources>
 </document>
