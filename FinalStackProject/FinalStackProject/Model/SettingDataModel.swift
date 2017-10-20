@@ -16,7 +16,6 @@ enum CellType {
 struct SettingDataModel {
     
     var sectionTitle: String = ""
-
     // Cell Information
     var cellContentList: [String] = []
     var cellTypeList: [CellType] = []

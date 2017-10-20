@@ -1,13 +1,5 @@
-//
-//  CustomCell.swift
-//  1020_CustomTableViewController
-//
-//  Created by 김기윤 on 20/10/2017.
-//  Copyright © 2017 younari. All rights reserved.
-//
-
 import UIKit
-class CustomCell: UITableViewCell {
+class CustomCellSample: UITableViewCell {
     
     @IBOutlet var switcher: UISwitch!
     
@@ -30,5 +22,5 @@ class CustomCell: UITableViewCell {
 }
 
 protocol CustomCellDelegate {
-    func customCellSwitched(_ cell:CustomCell, didChangedSwitch value:Bool)
+    func customCellSwitched(_ cell:CustomCellSample, didChangedSwitch value:Bool)
 }

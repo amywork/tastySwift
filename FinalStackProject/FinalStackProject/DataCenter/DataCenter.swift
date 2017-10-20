@@ -4,8 +4,10 @@ import Foundation
 class DataCenter {
     
     static var mainCenter: DataCenter = DataCenter()
-    var userModel: Users?
+
+    var currentUser: UserModel?
     var settingDataList:[SettingDataModel] = []
+    var exploreDataList:[ExploreDataModel] = []
     var documentDirectory: URL {
         get {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -15,6 +17,39 @@ class DataCenter {
     private init() {
         // plist -> Data Model
         loadSettingData()
+        loadExploreData()
+        loadUserData()
+    }
+    
+    
+    func loadUserData() {
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
+        guard let documentDic = NSDictionary(contentsOfFile: documentPath) as? [String:Any] else { return }
+        currentUser = UserModel(userDic: documentDic)
+    }
+    
+    func writeUserData() -> Bool {
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
+        guard let data = currentUser else { return false }
+        let newDic = data.dictionary
+        let NSDic = NSDictionary(dictionary: newDic)
+        NSDic.write(toFile: documentPath, atomically: true)
+        return true
+    }
+    
+    func validateUserInfo(username:String, password: String) -> Bool {
+        if let model = self.currentUser {
+            if model.userID == username && model.userPWD == password {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func object(forkey: String) -> Any? {
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
+        guard let documentDic = NSDictionary(contentsOfFile: documentPath) as? [String:Any] else { return nil }
+        return documentDic[forkey]
     }
     
     
@@ -36,32 +71,20 @@ class DataCenter {
     }
     
     
-    func loadUserData() {
-        // documentDirectory plist까지의 경로
-        let userDataURL = documentDirectory.appendingPathComponent("UserData.plist")
-        let userDataPath = userDataURL.path
+    func loadExploreData() {
+        let exploreDataURL = documentDirectory.appendingPathComponent("ExploreData.plist")
+        let exploreDataPath = exploreDataURL.path
         
-        // Bundle -> Document 로의 plist 파일 복사
-        if !FileManager.default.fileExists(atPath: userDataPath) {
-            guard let plistURL = Bundle.main.url(forResource: "UserData", withExtension: "plist") else { return }
-            try! FileManager.default.copyItem(at: plistURL, to: userDataURL)
+        if !FileManager.default.fileExists(atPath: exploreDataPath) {
+            guard let plistURL = Bundle.main.url(forResource: "ExploreData", withExtension: "plist") else { return }
+            try! FileManager.default.copyItem(at: plistURL, to: exploreDataURL)
         }
-
-        // Userdata Load
-        let propertyDecoder = PropertyListDecoder()
-        let data = try! Data(contentsOf: userDataURL)
-        self.userModel = try! propertyDecoder.decode(Users.self, from: data)
-    }
-    
-    func validateUserInfo(username:String, password: String) -> Bool {
-        if let model = self.userModel {
-            for user in model.users {
-                if user.username == username && user.password == password {
-                    return true
-                }
-            }
+        
+        guard let dataArr = NSArray(contentsOf: exploreDataURL) as? [[String:String]] else { return }
+        for dataDic in dataArr {
+            guard let data = ExploreDataModel(with: dataDic) else { return }
+            self.exploreDataList.append(data)
         }
-        return false
     }
     
 }

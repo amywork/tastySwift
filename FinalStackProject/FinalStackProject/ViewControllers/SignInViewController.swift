@@ -60,14 +60,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     @IBAction func didTapLoginButton(_sender: RoundButton) {
         guard let username = userNameTextField.text, !username.isEmpty else { return }
         guard let password = passwordTextField.text, !password.isEmpty else { return }
         
         if DataCenter.mainCenter.validateUserInfo(username: username, password: password) {
             // 로그인 성공
-            print("suc")
+            let newUserDic = ["userID":username,"userPWD":password]
+            DataCenter.mainCenter.currentUser = UserModel(userDic: newUserDic)
+            self.navigationController?.dismiss(animated: true, completion: nil)
         }else {
             // 로그인 실패
             print("fail")

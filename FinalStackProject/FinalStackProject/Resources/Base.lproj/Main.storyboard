@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t6p-XZ-c0E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -65,7 +65,7 @@
                                     <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yVS-sS-WXe" kind="showDetail" id="CAh-JQ-iTr"/>
+                                    <segue destination="yVS-sS-WXe" kind="show" action="showDetailViewController:sender:" id="CAh-JQ-iTr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +118,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="pE3-rE-Hca" secondAttribute="height" multiplier="6:1" id="avY-SQ-Utg"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -135,7 +135,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h67-BG-g4h" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="191" width="300" height="50"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -152,7 +152,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QvW-gu-0td" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="245" width="300" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -169,7 +169,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-bS-5sR" customClass="CustomTextField" customModule="FinalStackProject" customModuleProvider="target">
                                                         <rect key="frame" x="38" y="299" width="300" height="50"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -253,6 +253,9 @@
                                                 <state key="normal" title="Sign up">
                                                     <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapSignUpBtn:" destination="A5g-56-fp5" eventType="touchUpInside" id="SnO-PH-Dve"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,15 +313,35 @@
                                 <rect key="frame" x="0.0" y="218" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="l1P-TP-JWr">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExploreTableCell" textLabel="ZxL-BX-R9j" detailTextLabel="J8C-hP-Zdc" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="l1P-TP-JWr">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l1P-TP-JWr" id="AZL-gP-Wc7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZxL-BX-R9j">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J8C-hP-Zdc">
+                                                    <rect key="frame" x="15" y="35.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TV9-fD-X2d" id="n3n-wY-GDM"/>
+                                    <outlet property="delegate" destination="TV9-fD-X2d" id="UCf-JP-lxy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -574,10 +597,10 @@
             </objects>
             <point key="canvasLocation" x="-1500" y="-2581"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="ZCg-Cl-lge">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="t6p-XZ-c0E" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="t6p-XZ-c0E" customClass="MainTabBarController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UIt-Cm-0a8">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -587,7 +610,7 @@
                     <connections>
                         <segue destination="KRN-Wl-MHr" kind="relationship" relationship="viewControllers" id="gtm-LH-GrH"/>
                         <segue destination="rwU-D6-uUM" kind="relationship" relationship="viewControllers" id="nd5-Xw-M8n"/>
-                        <segue destination="yxu-Zb-b2l" kind="presentation" identifier="SignIn" id="0lH-vn-f54"/>
+                        <segue destination="yxu-Zb-b2l" kind="presentation" identifier="ToSigningNav" id="0lH-vn-f54"/>
                         <segue destination="Kgi-7u-IMY" kind="relationship" relationship="viewControllers" id="Qz9-KV-pyR"/>
                     </connections>
                 </tabBarController>
@@ -614,10 +637,10 @@
             </objects>
             <point key="canvasLocation" x="-1500" y="-1822"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Signing Navigation Controller-->
         <scene sceneID="ukA-qM-0Rs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yxu-Zb-b2l" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yxu-Zb-b2l" customClass="SigningNavigationController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sUb-8P-KHh">
                         <autoresizingMask key="autoresizingMask"/>

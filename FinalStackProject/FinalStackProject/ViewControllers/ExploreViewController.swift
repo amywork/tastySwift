@@ -8,13 +8,24 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController {
+class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    var data = DataCenter.mainCenter.exploreDataList
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DataCenter.mainCenter.exploreDataList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreTableCell", for: indexPath)
+        cell.textLabel?.text = data[indexPath.row].itemName
+        cell.detailTextLabel?.text = data[indexPath.row].category
+        cell.accessoryType = .disclosureIndicator
+        return cell
+    }
+    
 }

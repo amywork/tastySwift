@@ -8,6 +8,13 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var SignUpScrollView: UIScrollView!
     @IBOutlet weak var emailTextField: CustomTextField!
     
+    
+    @IBAction func didTapSignUpBtn(_ sender: UIButton) {
+        let newUserDic = ["userID":usernameTextField.text,"userPWD":passwordTextField.text]
+        DataCenter.mainCenter.currentUser = UserModel(userDic: newUserDic)
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +50,6 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
         
         // NotificationCenter (default: singleton)
         // Keyboard가 올라왔을 때 화면의 스크롤뷰 UIEdge도 올려주기
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
 
     }
@@ -70,6 +76,8 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
             emailTextField.becomeFirstResponder()
         }
     }
+    
+    
     
     
 }

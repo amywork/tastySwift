@@ -10,6 +10,9 @@ import UIKit
 
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    var data:SettingDataModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,19 +22,23 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = DataCenter.mainCenter.settingDataList[section]
-        return section.cellContentList.count
+        data = DataCenter.mainCenter.settingDataList[section]
+        return data?.cellContentList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
-        let data = DataCenter.mainCenter.settingDataList[indexPath.section]
-        cell.textLabel?.text = data.cellContentList[indexPath.row]
-        if data.cellTypeList[indexPath.row] == CellType.detail {
-            cell.accessoryType = .disclosureIndicator
-        }else if data.cellTypeList[indexPath.row] == CellType.withSwitch {
-            cell.accessoryType = .checkmark
-        }
+        data = DataCenter.mainCenter.settingDataList[indexPath.section]
+        cell.index = indexPath.row
+        cell.data = data!
+//        if let data = self.data {
+//            cell.textLabel?.text = data.cellContentList[indexPath.row]
+//            if data.cellTypeList[indexPath.row] == CellType.detail {
+//                cell.accessoryType = .disclosureIndicator
+//            }else if data.cellTypeList[indexPath.row] == CellType.withSwitch {
+//                cell.accessoryType = .checkmark
+//            }
+//        }
         return cell
     }
     
