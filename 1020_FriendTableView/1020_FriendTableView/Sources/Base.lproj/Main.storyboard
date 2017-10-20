@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="986" y="107"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="sHt-AI-NNm">
             <objects>
                 <viewController id="kbg-TH-D3Y" customClass="DetailViewController" customModule="_020_FriendTableView" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,6 +241,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T9e-xO-Eof"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="Hm6-vw-kuA"/>
                     <connections>
                         <outlet property="bgImageView" destination="z0g-QY-lmL" id="U2B-6T-KQO"/>
                         <outlet property="descriptionTextView" destination="xo4-v2-w0y" id="KsT-I3-h2g"/>

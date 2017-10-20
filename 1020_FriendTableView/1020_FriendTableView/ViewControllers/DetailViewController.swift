@@ -32,6 +32,9 @@ class DetailViewController: UIViewController {
             self.descriptionTextView.text = realData.myProfileDescription
             self.phoneLabel.text = realData.phoneNumber
             self.emailLabel.text = realData.email
+            profileImageView.layer.cornerRadius = profileImageView.bounds.size.width/2
+            profileImageView.clipsToBounds = true
+            self.navigationItem.title = "detail"
         }
     }
 }
