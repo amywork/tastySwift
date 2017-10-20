@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		DDA0F0401F98C9850016901A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F03F1F98C9850016901A /* AppDelegate.swift */; };
-		DDA0F0421F98C9850016901A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0411F98C9850016901A /* ViewController.swift */; };
+		DDA0F0421F98C9850016901A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0411F98C9850016901A /* MainViewController.swift */; };
 		DDA0F0451F98C9850016901A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0431F98C9850016901A /* Main.storyboard */; };
 		DDA0F0471F98C9850016901A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0461F98C9850016901A /* Assets.xcassets */; };
 		DDA0F04A1F98C9850016901A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0481F98C9850016901A /* LaunchScreen.storyboard */; };
 		DDA0F0541F98C9B50016901A /* FriendInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDA0F0531F98C9B50016901A /* FriendInfo.plist */; };
 		DDA0F0561F98CA000016901A /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0551F98CA000016901A /* DataCenter.swift */; };
 		DDA0F0581F98CA110016901A /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0571F98CA110016901A /* FriendDataModel.swift */; };
+		DDA0F05B1F9986EB0016901A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F05A1F9986EB0016901A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DDA0F03C1F98C9850016901A /* 1020_FriendTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1020_FriendTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA0F03F1F98C9850016901A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDA0F0411F98C9850016901A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDA0F0411F98C9850016901A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DDA0F0441F98C9850016901A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDA0F0461F98C9850016901A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA0F0491F98C9850016901A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +29,7 @@
 		DDA0F0531F98C9B50016901A /* FriendInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FriendInfo.plist; sourceTree = "<group>"; };
 		DDA0F0551F98CA000016901A /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DDA0F0571F98CA110016901A /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
+		DDA0F05A1F9986EB0016901A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,8 @@
 		DDA0F0521F98C9A60016901A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DDA0F0411F98C9850016901A /* ViewController.swift */,
+				DDA0F0411F98C9850016901A /* MainViewController.swift */,
+				DDA0F05A1F9986EB0016901A /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -171,7 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA0F0561F98CA000016901A /* DataCenter.swift in Sources */,
-				DDA0F0421F98C9850016901A /* ViewController.swift in Sources */,
+				DDA0F0421F98C9850016901A /* MainViewController.swift in Sources */,
+				DDA0F05B1F9986EB0016901A /* DetailViewController.swift in Sources */,
 				DDA0F0401F98C9850016901A /* AppDelegate.swift in Sources */,
 				DDA0F0581F98CA110016901A /* FriendDataModel.swift in Sources */,
 			);

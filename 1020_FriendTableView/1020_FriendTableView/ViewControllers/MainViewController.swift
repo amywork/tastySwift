@@ -8,15 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
+    @IBOutlet weak var mainTableView: UITableView!
     let friendList = DataCenter.mainCenter.friendList
-        
+
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    //MARK: - TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataCenter.mainCenter.friendList.count
     }
@@ -26,11 +28,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = friendList[indexPath.row].Nickname
         cell.detailTextLabel?.text = friendList[indexPath.row].MyProfileDescription
         cell.imageView?.image = UIImage(named: friendList[indexPath.row].ProfileImage!)
-        
         return cell
     }
     
-    
-
 }
 
