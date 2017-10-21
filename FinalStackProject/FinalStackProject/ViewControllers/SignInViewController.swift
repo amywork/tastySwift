@@ -16,18 +16,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        userNameTextField.leftView = UIImageView(image: UIImage(named: "Heart"))
-        userNameTextField.leftViewMode = .always
-        passwordTextField.leftView = UIImageView(image: UIImage(named: "Heart"))
-        passwordTextField.leftViewMode = .always
         
         userNameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         passwordTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
 
         userNameTextField.configureAttributedString(
             string: "아이디를 입력해주세요",
-            range: NSRange(location: 0, length: 10),
+            range: NSRange(location: 0, length:11),
             stringColor: .lightGray
         )
         
@@ -65,13 +60,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordTextField.text, !password.isEmpty else { return }
         
         if DataCenter.mainCenter.validateUserInfo(username: username, password: password) {
-            // 로그인 성공
+            // 로그인 성공, didEnterBackground 할 때 write 할 것.
             let newUserDic = ["userID":username,"userPWD":password]
             DataCenter.mainCenter.currentUser = UserModel(userDic: newUserDic)
             self.navigationController?.dismiss(animated: true, completion: nil)
         }else {
             // 로그인 실패
-            print("fail")
+            // Alert action
         }
     }
     

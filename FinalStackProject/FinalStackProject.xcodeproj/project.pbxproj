@@ -13,12 +13,14 @@
 		4B72C2E61F9A29160045EC9E /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B72C2E51F9A29160045EC9E /* Settings.plist */; };
 		4BBE31011F9A36EE00D08669 /* ExploreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE31001F9A36EE00D08669 /* ExploreData.plist */; };
 		4BBE31031F9A372F00D08669 /* ExploreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */; };
-		4BBE310A1F9A3CAA00D08669 /* CustomCellSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31081F9A3CAA00D08669 /* CustomCellSample.swift */; };
-		4BBE310B1F9A3CAA00D08669 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31091F9A3CAA00D08669 /* ViewController.swift */; };
 		4BE462D41F9AA07B00E593C9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE462D31F9AA07B00E593C9 /* UserModel.swift */; };
 		4BE462D61F9AA29E00E593C9 /* SigningNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE462D51F9AA29E00E593C9 /* SigningNavigationController.swift */; };
 		4BE462D81F9AA6B000E593C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */; };
 		4BE462DB1F9AA9A900E593C9 /* CurrentUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE462DA1F9AA9A800E593C9 /* CurrentUser.plist */; };
+		4BFF2B7E1F9AE34B00B1C150 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */; };
+		4BFF2B801F9AE55E00B1C150 /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF2B7F1F9AE55E00B1C150 /* FriendDataModel.swift */; };
+		4BFF2B821F9AE58F00B1C150 /* FriendInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */; };
+		4BFF2B841F9AE65700B1C150 /* CustomFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF2B831F9AE65600B1C150 /* CustomFriendCell.swift */; };
 		DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81676E1F96E8FE00A80891 /* AppDelegate.swift */; };
 		DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167721F96E8FE00A80891 /* Main.storyboard */; };
 		DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167771F96E8FE00A80891 /* LaunchScreen.storyboard */; };
@@ -31,7 +33,7 @@
 		DD8167931F97014400A80891 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167921F97014400A80891 /* CustomTextField.swift */; };
 		DD81679A1F97351100A80891 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* DataCenter.swift */; };
 		DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */; };
-		DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C91F99CE18002CDB03 /* ListViewController.swift */; };
+		DDEE84CA1F99CE18002CDB03 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C91F99CE18002CDB03 /* ItemListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,12 +43,14 @@
 		4B72C2E51F9A29160045EC9E /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		4BBE31001F9A36EE00D08669 /* ExploreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreData.plist; sourceTree = "<group>"; };
 		4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDataModel.swift; sourceTree = "<group>"; };
-		4BBE31081F9A3CAA00D08669 /* CustomCellSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCellSample.swift; path = ../../../1020_CustomTableViewController/1020_CustomTableViewController/CustomCellSample.swift; sourceTree = "<group>"; };
-		4BBE31091F9A3CAA00D08669 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../1020_CustomTableViewController/1020_CustomTableViewController/ViewController.swift; sourceTree = "<group>"; };
 		4BE462D31F9AA07B00E593C9 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = ../../../1016_DataModel/1016_DataModel/UserModel/UserModel.swift; sourceTree = "<group>"; };
 		4BE462D51F9AA29E00E593C9 /* SigningNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigningNavigationController.swift; sourceTree = "<group>"; };
 		4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4BE462DA1F9AA9A800E593C9 /* CurrentUser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CurrentUser.plist; sourceTree = "<group>"; };
+		4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		4BFF2B7F1F9AE55E00B1C150 /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
+		4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FriendInfo.plist; path = ../../1020_FriendTableView/1020_FriendTableView/FriendInfo.plist; sourceTree = "<group>"; };
+		4BFF2B831F9AE65600B1C150 /* CustomFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFriendCell.swift; path = ../../../1020_FriendTableView/1020_FriendTableView/View/CustomFriendCell.swift; sourceTree = "<group>"; };
 		DD81676B1F96E8FE00A80891 /* FinalStackProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalStackProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81676E1F96E8FE00A80891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8167731F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,7 +65,7 @@
 		DD8167921F97014400A80891 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DD8167991F97351100A80891 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
-		DDEE84C91F99CE18002CDB03 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		DDEE84C91F99CE18002CDB03 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 				4B72C2E51F9A29160045EC9E /* Settings.plist */,
 				4BBE31001F9A36EE00D08669 /* ExploreData.plist */,
 				4BE462DA1F9AA9A800E593C9 /* CurrentUser.plist */,
+				4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */,
 				DD81679B1F97351D00A80891 /* DataCenter */,
 				DD8167981F97334E00A80891 /* Model */,
 				DD81678B1F96EEC500A80891 /* View */,
@@ -125,7 +130,8 @@
 				DD81678C1F96F1E600A80891 /* SignInViewController.swift */,
 				DD81678E1F96F1F000A80891 /* SingUpViewController.swift */,
 				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
-				DDEE84C91F99CE18002CDB03 /* ListViewController.swift */,
+				DDEE84C91F99CE18002CDB03 /* ItemListViewController.swift */,
+				4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */,
 				4B72C2AE1F9A08970045EC9E /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
@@ -144,11 +150,10 @@
 		DD81678B1F96EEC500A80891 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD8167921F97014400A80891 /* CustomTextField.swift */,
 				DD8167891F96EE7100A80891 /* RoundButton.swift */,
 				DD8167901F96FC1C00A80891 /* ShadowView.swift */,
-				DD8167921F97014400A80891 /* CustomTextField.swift */,
-				4BBE31081F9A3CAA00D08669 /* CustomCellSample.swift */,
-				4BBE31091F9A3CAA00D08669 /* ViewController.swift */,
+				4BFF2B831F9AE65600B1C150 /* CustomFriendCell.swift */,
 				4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */,
 			);
 			path = View;
@@ -160,6 +165,7 @@
 				4BE462D31F9AA07B00E593C9 /* UserModel.swift */,
 				4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */,
 				4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */,
+				4BFF2B7F1F9AE55E00B1C150 /* FriendDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 				DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */,
 				4BE462DB1F9AA9A900E593C9 /* CurrentUser.plist in Resources */,
 				DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */,
+				4BFF2B821F9AE58F00B1C150 /* FriendInfo.plist in Resources */,
 				DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */,
 				4BBE31011F9A36EE00D08669 /* ExploreData.plist in Resources */,
 				4B72C2E61F9A29160045EC9E /* Settings.plist in Resources */,
@@ -249,22 +256,23 @@
 			files = (
 				DD8167931F97014400A80891 /* CustomTextField.swift in Sources */,
 				DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */,
-				4BBE310A1F9A3CAA00D08669 /* CustomCellSample.swift in Sources */,
 				4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */,
 				DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */,
 				DD81679A1F97351100A80891 /* DataCenter.swift in Sources */,
 				4BE462D61F9AA29E00E593C9 /* SigningNavigationController.swift in Sources */,
 				DD81678D1F96F1E600A80891 /* SignInViewController.swift in Sources */,
-				DDEE84CA1F99CE18002CDB03 /* ListViewController.swift in Sources */,
+				DDEE84CA1F99CE18002CDB03 /* ItemListViewController.swift in Sources */,
+				4BFF2B841F9AE65700B1C150 /* CustomFriendCell.swift in Sources */,
 				4BBE31031F9A372F00D08669 /* ExploreDataModel.swift in Sources */,
 				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
-				4BBE310B1F9A3CAA00D08669 /* ViewController.swift in Sources */,
 				4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */,
 				4BE462D81F9AA6B000E593C9 /* MainTabBarController.swift in Sources */,
 				DD81678F1F96F1F000A80891 /* SingUpViewController.swift in Sources */,
 				DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */,
+				4BFF2B7E1F9AE34B00B1C150 /* ItemDetailViewController.swift in Sources */,
 				DD8167861F96E99B00A80891 /* GateViewController.swift in Sources */,
 				4BE462D41F9AA07B00E593C9 /* UserModel.swift in Sources */,
+				4BFF2B801F9AE55E00B1C150 /* FriendDataModel.swift in Sources */,
 				4B72C2AF1F9A08970045EC9E /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

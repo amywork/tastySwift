@@ -10,7 +10,9 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func didTapSignUpBtn(_ sender: UIButton) {
-        let newUserDic = ["userID":usernameTextField.text,"userPWD":passwordTextField.text]
+        guard let id = usernameTextField.text else { return }
+        guard let pwd = passwordTextField.text  else { return }
+        let newUserDic = ["userID":id,"userPWD":pwd]
         DataCenter.mainCenter.currentUser = UserModel(userDic: newUserDic)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
@@ -76,8 +78,6 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
             emailTextField.becomeFirstResponder()
         }
     }
-    
-    
     
     
 }

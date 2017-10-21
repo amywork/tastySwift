@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class CustomFriendCell: UITableViewCell {
     
     var data:FriendDataModel? {
@@ -20,9 +19,5 @@ class CustomFriendCell: UITableViewCell {
             self.imageView?.image = UIImage(named:data.profileImageName)
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+
 }

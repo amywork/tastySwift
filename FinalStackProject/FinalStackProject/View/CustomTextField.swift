@@ -7,14 +7,13 @@ class CustomTextField: UITextField {
 
     // leftViewRect의 목적은 CGRect를 반환하는 것, super 안불러도 OK
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
-        
         let leftViewWidth = self.bounds.size.height / 3
         let resultRect = CGRect(x: 10, y: self.bounds.height/2-leftViewWidth/2, width: leftViewWidth, height: leftViewWidth)
         return resultRect
     }
     
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        let edgeInsetRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, self.bounds.size.height/2+10, 0, 0))
+        let edgeInsetRect = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(0, 10, 0, 0))
         // 컨텐트 안쪽으로 들어가는 패딩값을 의미한다. (+는 패딩값이 커지고 -는 마진값이 커짐)
         return edgeInsetRect
     }

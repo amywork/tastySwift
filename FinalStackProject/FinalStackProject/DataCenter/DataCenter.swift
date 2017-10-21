@@ -8,6 +8,7 @@ class DataCenter {
     var currentUser: UserModel?
     var settingDataList:[SettingDataModel] = []
     var exploreDataList:[ExploreDataModel] = []
+    var friendList:[FriendDataModel] = []
     var documentDirectory: URL {
         get {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -19,6 +20,7 @@ class DataCenter {
         loadSettingData()
         loadExploreData()
         loadUserData()
+        loadFriendData()
     }
     
     
@@ -85,6 +87,40 @@ class DataCenter {
             guard let data = ExploreDataModel(with: dataDic) else { return }
             self.exploreDataList.append(data)
         }
+    }
+    
+    
+    
+    // add to friendList
+    func addFriend(with data:FriendDataModel) {
+        friendList.append(data)
+        saveData()
+    }
+    
+    // loadFriendData()
+    func loadFriendData() {
+        guard let bundlePath = Bundle.main.path(forResource: "FriendInfo", ofType: "plist") else { return }
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/FriendInfo.plist"
+        if !FileManager.default.fileExists(atPath: documentPath) {
+            do {
+                try FileManager.default.copyItem(atPath: bundlePath, toPath: documentPath)
+            }catch {
+                print("No such File")
+            }
+        }
+        guard let dataArr = NSArray(contentsOfFile: documentPath) as? [[String:String]] else { return }
+        for data in dataArr {
+            guard let newModel = FriendDataModel(with: data) else { return }
+            friendList.append(newModel)
+        }
+        
+    }
+    
+    // Model -> plist
+    func saveData() {
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/FriendInfo.plist"
+        let newArr = NSArray(array: friendList)
+        newArr.write(toFile: documentPath, atomically: true)
     }
     
 }
