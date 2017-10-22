@@ -3,26 +3,22 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    /*
-    required init?(coder aDecoder: NSCoder) {
-	    스토리보드가 인스턴스화 되는 시점
-    }
  
-    override func awakeFromNib() {
-        스토리보드에 연결되는 @IBOutlet 들이 연결되는 시점
-    }
-    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // SignInViewController가 등장했을 때 키보드를 무조건 올려놓고 싶어서!
+        userNameTextField.becomeFirstResponder()
+        
+        // UITextField is a UIControl, so you can target action
         userNameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         passwordTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
 
+        // UITextField Placeholder Attributed String
         userNameTextField.configureAttributedString(
             string: "아이디를 입력해주세요",
-            range: NSRange(location: 0, length:11),
+            range: NSRange(location: 0, length: 11),
             stringColor: .lightGray
         )
         
@@ -30,7 +26,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.attributedPlaceholder = placeHolderStr
         
         
-        // NotificationCenter (default: singleton)
+        // Notification Center (default: singleton)
         // Keyboard가 올라왔을 때 화면의 스크롤뷰 UIEdge도 올려주기
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -48,13 +44,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         scrollView.contentInset = UIEdgeInsets.zero
     }
 
-    /*****Keyboard 내리기 Function*****/
+    
+    // MARK: - UITextFieldDelegate delegate method
+    // didEndOnExit: Find out when editing has ended, when TF resign being first respnder
     @objc func didEndOnExit(_ sender: UITextField) {
         if userNameTextField.isFirstResponder {
             passwordTextField.becomeFirstResponder()
+        }else if passwordTextField.isFirstResponder {
+            passwordTextField.resignFirstResponder()
         }
     }
     
+    
+    // MARK: - Login Button clicked method
     @IBAction func didTapLoginButton(_sender: RoundButton) {
         guard let username = userNameTextField.text, !username.isEmpty else { return }
         guard let password = passwordTextField.text, !password.isEmpty else { return }

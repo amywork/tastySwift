@@ -26,9 +26,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomFriendCell", for: indexPath) as! CustomFriendCell
         cell.data = friendList[indexPath.row]
-//        cell.textLabel?.text = friendList[indexPath.row].nickName
-//        cell.detailTextLabel?.text = friendList[indexPath.row].statusDescription
-//        cell.imageView?.image = UIImage(named: friendList[indexPath.row].profileImageName)
         return cell
     }
     

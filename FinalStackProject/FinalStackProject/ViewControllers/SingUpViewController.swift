@@ -20,6 +20,7 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameTextField.becomeFirstResponder()
         usernameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         passwordTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         conformPwdTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
@@ -28,6 +29,12 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.configureAttributedString(
             string: "아이디를 입력해주세요",
             range: NSRange(location: 0, length: 3),
+            stringColor: UIColor.black.withAlphaComponent(0.5)
+        )
+        
+        emailTextField.configureAttributedString(
+            string: "Email을 입력해주세요",
+            range: NSRange(location: 0, length: 5),
             stringColor: UIColor.black.withAlphaComponent(0.5)
         )
         
@@ -43,20 +50,13 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
             stringColor: UIColor.black.withAlphaComponent(0.5)
         )
         
-        
-        emailTextField.configureAttributedString(
-            string: "Email을 입력해주세요",
-            range: NSRange(location: 0, length: 5),
-            stringColor: UIColor.black.withAlphaComponent(0.5)
-        )
-        
         // NotificationCenter (default: singleton)
         // Keyboard가 올라왔을 때 화면의 스크롤뷰 UIEdge도 올려주기
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
 
     }
     
-    // Notification 인스턴스에 키보드의 정보를 모두 담고 있다.
+    // Notification 인스턴스에 담겨있는 키보드의 정보를 활용하기
     @objc func keyboardWillShow(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
         guard let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
@@ -68,14 +68,15 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    /*****Keyboard 내리기 Function*****/
+    // MARK: - UITextFieldDelegate delegate method
+    // didEndOnExit: Find out when editing has ended, when TF resign being first respnder
     @objc func didEndOnExit(_ sender: UITextField) {
         if usernameTextField.isFirstResponder {
+            emailTextField.becomeFirstResponder()
+        }else if emailTextField.isFirstResponder {
             passwordTextField.becomeFirstResponder()
         }else if passwordTextField.isFirstResponder {
             conformPwdTextField.becomeFirstResponder()
-        }else if conformPwdTextField.isFirstResponder {
-            emailTextField.becomeFirstResponder()
         }
     }
     
