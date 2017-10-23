@@ -16,7 +16,7 @@
         <!--Gate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GateViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GateViewController" id="BYZ-38-t0r" customClass="GateViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A5g-56-fp5" kind="show" id="Wdh-Ac-h9Z"/>
+                                    <segue destination="A5g-56-fp5" kind="show" action="showDetailViewController:sender:" id="Eak-Pv-60Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XH-Y8-F4t">
@@ -67,7 +67,7 @@
                                     <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yVS-sS-WXe" kind="show" identifier="SignInViewController" action="showDetailViewController:sender:" id="CAh-JQ-iTr"/>
+                                    <segue destination="yVS-sS-WXe" kind="show" id="hwc-hX-9fn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,7 +100,7 @@
         <!--Sing Up View Controller-->
         <scene sceneID="7Nt-dB-lAB">
             <objects>
-                <viewController id="A5g-56-fp5" customClass="SingUpViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SingUpViewController" id="A5g-56-fp5" customClass="SingUpViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msx-Dp-eiN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,7 +302,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTS-eg-Np9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nlR-CN-yYN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3542" y="676"/>
+            <point key="canvasLocation" x="-3567" y="947"/>
         </scene>
         <!--Explore-->
         <scene sceneID="jCJ-0d-CEc">
@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBZ-b6-a0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-503" y="-2848"/>
+            <point key="canvasLocation" x="-230" y="-4314"/>
         </scene>
         <!--Home-->
         <scene sceneID="T5m-g0-Dw7">
@@ -439,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnv-d5-W5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-503" y="-2069"/>
+            <point key="canvasLocation" x="-231" y="-3307"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="F8r-FG-c50">
@@ -558,7 +558,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8t-4P-jcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UH4-rC-7fG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2876" y="675"/>
+            <point key="canvasLocation" x="-2809" y="947"/>
         </scene>
         <!--Setting-->
         <scene sceneID="p9F-OH-8Xe">
@@ -622,7 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwL-nW-G1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-607" y="-917"/>
+            <point key="canvasLocation" x="-231" y="-2454"/>
         </scene>
         <!--Explore-->
         <scene sceneID="xEd-50-391">
@@ -641,7 +641,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRP-YD-dtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1380" y="-2848"/>
+            <point key="canvasLocation" x="-1380" y="-4313"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="ZCg-Cl-lge">
@@ -656,13 +656,21 @@
                     <connections>
                         <segue destination="KRN-Wl-MHr" kind="relationship" relationship="viewControllers" id="gtm-LH-GrH"/>
                         <segue destination="rwU-D6-uUM" kind="relationship" relationship="viewControllers" id="nd5-Xw-M8n"/>
-                        <segue destination="yxu-Zb-b2l" kind="presentation" identifier="ToSigningNav" id="0lH-vn-f54"/>
                         <segue destination="Kgi-7u-IMY" kind="relationship" relationship="viewControllers" id="Qz9-KV-pyR"/>
+                        <segue destination="rZs-Ml-flM" kind="presentation" identifier="LoginFlow" animates="NO" id="FN0-Cq-dHy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yee-xi-RdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2454" y="-1920"/>
+            <point key="canvasLocation" x="-3204" y="-2912"/>
+        </scene>
+        <!--LoginFlow-->
+        <scene sceneID="Kvk-EE-k6R">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginFlow" id="rZs-Ml-flM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EiE-QJ-6mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3105" y="-2405"/>
         </scene>
         <!--My Stack-->
         <scene sceneID="pog-Jh-4Lq">
@@ -681,12 +689,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pu8-yq-HpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1380" y="-2069"/>
+            <point key="canvasLocation" x="-1380" y="-3307"/>
         </scene>
         <!--Signing Navigation Controller-->
         <scene sceneID="ukA-qM-0Rs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yxu-Zb-b2l" customClass="SigningNavigationController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SigningNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yxu-Zb-b2l" customClass="SigningNavigationController" customModule="FinalStackProject" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sUb-8P-KHh">
                         <autoresizingMask key="autoresizingMask"/>
@@ -717,7 +725,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQq-4J-XhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1500" y="-917"/>
+            <point key="canvasLocation" x="-1380" y="-2454"/>
         </scene>
         <!--Title-->
         <scene sceneID="TMe-UG-t4p">
@@ -844,7 +852,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viX-MH-xx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="345" y="-2069"/>
+            <point key="canvasLocation" x="911" y="-3307"/>
         </scene>
     </scenes>
     <resources>

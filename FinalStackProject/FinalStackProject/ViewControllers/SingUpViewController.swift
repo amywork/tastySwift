@@ -13,7 +13,8 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didTapSignUpBtn(_ sender: UIButton) {
         guard let id = usernameTextField.text else { return }
         guard let pwd = passwordTextField.text  else { return }
-        let newUserDic = ["userID":id,"userPWD":pwd]
+        guard let email = emailTextField.text else { return }
+        let newUserDic = ["userID":id,"userPWD":pwd,"email":email,"birthday":id]
         DataCenter.mainCenter.currentUser = UserModel(userDic: newUserDic)
         self.navigationController?.dismiss(animated: true, completion: nil)
     }

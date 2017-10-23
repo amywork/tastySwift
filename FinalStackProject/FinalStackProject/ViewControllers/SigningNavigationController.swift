@@ -9,9 +9,7 @@
 import UIKit
 
 class SigningNavigationController: UINavigationController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }

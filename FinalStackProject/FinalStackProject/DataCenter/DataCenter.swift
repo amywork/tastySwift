@@ -21,6 +21,7 @@ class DataCenter {
         loadExploreData()
         loadUserData()
         loadFriendData()
+        print(currentUser)
     }
     
     func loadUserData() {
@@ -66,10 +67,10 @@ class DataCenter {
         
         guard let settingDataArr = NSArray(contentsOf: settingDataURL) as? [[String:Any]] else { return }
         for settingDataDic in settingDataArr {
-            print(settingDataDic)
+            // print(settingDataDic)
             self.settingDataList.append(SettingDataModel(with: settingDataDic))
         }
-        print(settingDataList)
+        // print(settingDataList)
     }
     
     

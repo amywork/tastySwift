@@ -46,7 +46,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    // MARK: - UITextFieldDelegate delegate method
+    // MARK: UITextFieldDelegate delegate method
     // didEndOnExit: Find out when editing has ended, when TF resign being first respnder
     @objc func didEndOnExit(_ sender: UITextField) {
         if userNameTextField.isFirstResponder {
@@ -56,19 +56,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - Login Button clicked method
+    // MARK: didTapLoginButton
     @IBAction func didTapLoginButton(_sender: RoundButton) {
         guard let username = userNameTextField.text, !username.isEmpty else { return }
         guard let password = passwordTextField.text, !password.isEmpty else { return }
-        
         if DataCenter.mainCenter.validateUserInfo(username: username, password: password) {
             // 로그인 성공, didEnterBackground 할 때 write 할 것.
             let newUserDic = ["userID":username,"userPWD":password]
             DataCenter.mainCenter.currentUser = UserModel(userDic: newUserDic)
             self.navigationController?.dismiss(animated: true, completion: nil)
         }else {
-            // 로그인 실패
-            // Alert action
+            // 로그인 실패 Alert
+            let alertVC = UIAlertController(title: "로그인 실패", message: "아이디와 패스워드를 확인해주세요", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertVC.addAction(okAction)
         }
     }
     

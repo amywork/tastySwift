@@ -30,14 +30,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         data = DataCenter.mainCenter.settingDataList[indexPath.section]
         cell.index = indexPath.row
         cell.data = data!
-//        if let data = self.data {
-//            cell.textLabel?.text = data.cellContentList[indexPath.row]
-//            if data.cellTypeList[indexPath.row] == CellType.detail {
-//                cell.accessoryType = .disclosureIndicator
-//            }else if data.cellTypeList[indexPath.row] == CellType.withSwitch {
-//                cell.accessoryType = .checkmark
-//            }
-//        }
         return cell
     }
     
@@ -49,4 +41,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func didChangedSwitchValue(_ sender: UISwitch) {
         // switch value changed code in here
     }
+    
+    
+    // Setting - Logout method
+    func logout() {
+        let mainVC = self.tabBarController as? MainTabBarController
+        mainVC?.showLoginVC()
+    }
+    
 }

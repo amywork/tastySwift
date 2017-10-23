@@ -12,19 +12,22 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // With LoginFlow Segue
         if DataCenter.mainCenter.currentUser == nil {
-            performSegue(withIdentifier: "ToSigningNav", sender: self)
+            performSegue(withIdentifier: "LoginFlow", sender: nil)
         }
     }
     
-    /*
-     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-     if identifier == "ToSigningNav" {
-     if DataCenter.mainCenter.currentUser == nil {
-     return true
-     }
-     }
-     return false
-     }
-     */
+    func showLoginGateVC() {
+        let loginSB = UIStoryboard(name: "LoginFlow", bundle: nil)
+        if let gateVC = loginSB.instantiateViewController(withIdentifier: "SigningNavigationController") as? UINavigationController {
+            self.present(gateVC, animated: false, completion: nil)
+        }
+    }
+    
 }
