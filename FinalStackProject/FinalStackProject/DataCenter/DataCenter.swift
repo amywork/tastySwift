@@ -23,9 +23,9 @@ class DataCenter {
         loadFriendData()
     }
     
-    
     func loadUserData() {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
+        print(documentPath)
         guard let documentDic = NSDictionary(contentsOfFile: documentPath) as? [String:Any] else { return }
         currentUser = UserModel(userDic: documentDic)
     }

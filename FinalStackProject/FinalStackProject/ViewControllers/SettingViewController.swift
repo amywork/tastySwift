@@ -8,9 +8,8 @@
 
 import UIKit
 
-class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SettingCellDelegate {
 
-    
     var data:SettingDataModel?
     
     override func viewDidLoad() {
@@ -45,5 +44,9 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let section = DataCenter.mainCenter.settingDataList[section]
         return section.sectionTitle
+    }
+    
+    func didChangedSwitchValue(_ sender: UISwitch) {
+        // switch value changed code in here
     }
 }

@@ -40,7 +40,7 @@
 		<array>
 			<dict>
 				<key>CellStyle</key>
-				<string>SettingBasicCell</string>
+				<string>SettingTextCell</string>
 				<key>Content</key>
 				<string>버전정보</string>
 			</dict>

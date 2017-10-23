@@ -8,11 +8,18 @@
 
 import UIKit
 class SettingTableViewCell: UITableViewCell {
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
+
+    @IBOutlet weak var accessoryLabel: UILabel?
+    @IBOutlet weak var swithcher: UISwitch?
+    
+    override func awakeFromNib() {
+        self.accessoryLabel?.text = ""
+        self.swithcher?.isHidden = true
+    }
+    
     var index: Int = 0
+    var delegate: SettingCellDelegate?
+    
     var data: SettingDataModel? {
         didSet {
             let index = self.index
@@ -20,9 +27,20 @@ class SettingTableViewCell: UITableViewCell {
             if data?.cellTypeList[index] == CellType.detail {
                 self.accessoryType = .disclosureIndicator
             }else if data?.cellTypeList[index] == CellType.withSwitch {
+                self.swithcher?.isHidden = false
+                self.delegate?.didChangedSwitchValue(self.swithcher!)
+            }else if data?.cellTypeList[index] == CellType.basic {
                 self.accessoryType = .checkmark
+            }else if data?.cellTypeList[index] == CellType.text {
+                self.accessoryLabel?.text = "1.1.2"
+                self.isUserInteractionEnabled = false
             }
         }
     }
     
+}
+
+
+protocol SettingCellDelegate {
+    func didChangedSwitchValue(_ sender: UISwitch)
 }

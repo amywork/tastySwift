@@ -11,6 +11,7 @@ enum CellType {
     case detail
     case basic
     case withSwitch
+    case text
 }
 
 struct SettingDataModel {
@@ -34,6 +35,8 @@ struct SettingDataModel {
                  self.cellTypeList.append(.basic)
             }else if cellStyleStr == "SettingSwitchCell" {
                 self.cellTypeList.append(.withSwitch)
+            }else if cellStyleStr == "SettingTextCell" {
+                self.cellTypeList.append(.text)
             }
             let cellContentStr = dataDic["Content"]
             self.cellContentList.append(cellContentStr!)

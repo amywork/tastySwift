@@ -7,6 +7,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -578,7 +579,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJr-Qs-zSS" id="FBZ-QG-h3i">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.0.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZF-pT-KBW">
+                                                    <rect key="frame" x="313" y="12" width="38" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6R-ry-7uZ">
+                                                    <rect key="frame" x="310" y="6.5" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="N6R-ry-7uZ" firstAttribute="centerY" secondItem="FBZ-QG-h3i" secondAttribute="centerY" id="5TA-fb-t04"/>
+                                                <constraint firstAttribute="trailing" secondItem="N6R-ry-7uZ" secondAttribute="trailing" constant="16" id="Ndj-bV-LcU"/>
+                                                <constraint firstItem="nZF-pT-KBW" firstAttribute="centerY" secondItem="FBZ-QG-h3i" secondAttribute="centerY" id="Vdi-Od-hsu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="nZF-pT-KBW" secondAttribute="trailing" constant="16" id="X5y-w6-Kj5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accessoryLabel" destination="nZF-pT-KBW" id="Tqb-Sm-nPG"/>
+                                            <outlet property="swithcher" destination="N6R-ry-7uZ" id="hVT-6l-qZm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
