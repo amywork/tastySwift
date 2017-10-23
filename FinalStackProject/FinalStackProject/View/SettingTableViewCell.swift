@@ -30,9 +30,9 @@ class SettingTableViewCell: UITableViewCell {
                 self.swithcher?.isHidden = false
                 self.delegate?.didChangedSwitchValue(self.swithcher!)
             }else if data?.cellTypeList[index] == CellType.basic {
-                self.accessoryType = .checkmark
+                self.accessoryLabel?.text = ""
             }else if data?.cellTypeList[index] == CellType.text {
-                self.accessoryLabel?.text = "1.1.2"
+                self.accessoryLabel?.text = "1.2.1"
                 self.isUserInteractionEnabled = false
             }
         }

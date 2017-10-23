@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SettingCellDelegate {
 
     var data:SettingDataModel?
@@ -46,7 +45,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Setting - Logout method
     func logout() {
         let mainVC = self.tabBarController as? MainTabBarController
-        mainVC?.showLoginVC()
+        mainVC?.showLoginGateVC()
     }
     
 }

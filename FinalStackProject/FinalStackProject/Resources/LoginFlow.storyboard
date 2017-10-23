@@ -217,7 +217,7 @@
                                                             <constraint firstAttribute="width" secondItem="nQu-Yy-xGH" secondAttribute="height" multiplier="5:1" id="W3L-fC-y6q"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                        <state key="normal" title="Done">
+                                                        <state key="normal" title="OK">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -331,9 +331,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTe-Ra-iRn">
-                                                <rect key="frame" x="292.5" y="227" width="45" height="33"/>
+                                                <rect key="frame" x="307.5" y="227" width="30" height="33"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="Login">
+                                                <state key="normal" title="GO">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>

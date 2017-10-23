@@ -350,12 +350,37 @@
                                     <outlet property="delegate" destination="TV9-fD-X2d" id="UCf-JP-lxy"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cz-Ni-CgR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="154"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p25-Wy-J8q">
+                                        <rect key="frame" x="20" y="20" width="69" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-k6-1gk">
+                                        <rect key="frame" x="20" y="53" width="355" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="p25-Wy-J8q" firstAttribute="leading" secondItem="1cz-Ni-CgR" secondAttribute="leading" constant="20" id="Xsf-Ld-IRI"/>
+                                    <constraint firstItem="p25-Wy-J8q" firstAttribute="top" secondItem="1cz-Ni-CgR" secondAttribute="top" constant="20" id="wUu-bo-MYE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0Qn-gb-qUa" firstAttribute="trailing" secondItem="WaU-Gb-m2W" secondAttribute="trailing" id="9QE-mM-bLa"/>
                             <constraint firstItem="0Qn-gb-qUa" firstAttribute="leading" secondItem="WaU-Gb-m2W" secondAttribute="leading" id="DT3-5a-Jtz"/>
+                            <constraint firstItem="0Qn-gb-qUa" firstAttribute="top" secondItem="1cz-Ni-CgR" secondAttribute="bottom" id="ME0-Ep-Ehb"/>
+                            <constraint firstItem="1cz-Ni-CgR" firstAttribute="trailing" secondItem="WaU-Gb-m2W" secondAttribute="trailing" id="MFu-Ui-yI4"/>
+                            <constraint firstItem="1cz-Ni-CgR" firstAttribute="top" secondItem="WaU-Gb-m2W" secondAttribute="top" id="XDn-Br-REj"/>
                             <constraint firstItem="0Qn-gb-qUa" firstAttribute="height" secondItem="gNY-fF-zv2" secondAttribute="height" multiplier="0.6" id="r3N-5k-vJm"/>
+                            <constraint firstItem="1cz-Ni-CgR" firstAttribute="leading" secondItem="WaU-Gb-m2W" secondAttribute="leading" id="ujL-y1-CDb"/>
                             <constraint firstItem="0Qn-gb-qUa" firstAttribute="bottom" secondItem="WaU-Gb-m2W" secondAttribute="bottom" id="zuY-Eb-6um"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WaU-Gb-m2W"/>
@@ -364,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBZ-b6-a0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230" y="-4314"/>
+            <point key="canvasLocation" x="-231.19999999999999" y="-4314.6926536731635"/>
         </scene>
         <!--Home-->
         <scene sceneID="T5m-g0-Dw7">

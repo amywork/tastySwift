@@ -16,6 +16,10 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var data = DataCenter.mainCenter.exploreDataList
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "All services"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataCenter.mainCenter.exploreDataList.count
     }
