@@ -1,5 +1,6 @@
 import UIKit
 class SignInViewController: UIViewController, UITextFieldDelegate {
+   
     @IBOutlet weak var userNameTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -55,7 +56,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     // MARK: - Login Button clicked method
     @IBAction func didTapLoginButton(_sender: RoundButton) {
         guard let username = userNameTextField.text, !username.isEmpty else { return }
@@ -70,6 +70,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             // 로그인 실패
             // Alert action
         }
+    }
+    
+    @IBAction func didTapBackBtn(_sender: UIButton) {
+        userNameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
     
 }

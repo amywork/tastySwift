@@ -35,8 +35,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack으로 한 눈에 보는 나의 모바일 정기 결제 목록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4q-6D-EVq">
-                                <rect key="frame" x="44" y="277" width="266" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack으로 관리하는 모바일 정기 결제" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4q-6D-EVq">
+                                <rect key="frame" x="44" y="277" width="195" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="VXB-X0-kNN"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="tintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Sign Up">
+                                <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -187,6 +187,7 @@
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
+                                                            <action selector="didTapBackBtnWith_sender:" destination="A5g-56-fp5" eventType="touchUpInside" id="90E-sL-zVz"/>
                                                             <segue destination="nlR-CN-yYN" kind="unwind" unwindAction="unwidnToGateViewControllerWithSegue:" id="6pL-5m-6oN"/>
                                                         </connections>
                                                     </button>
@@ -210,6 +211,20 @@
                                                             <constraint firstItem="wrq-Gt-E5V" firstAttribute="width" secondItem="Jyr-SO-J9a" secondAttribute="width" multiplier="0.8" id="S80-GJ-Fk6"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-f9-toG">
+                                                        <rect key="frame" x="173" y="353" width="165" height="33"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Ygq-f9-toG" secondAttribute="height" multiplier="5:1" id="BO7-6b-1Kf"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <state key="normal" title="Done">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapSignUpBtn:" destination="A5g-56-fp5" eventType="touchUpInside" id="SnO-PH-Dve"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -218,11 +233,13 @@
                                                     <constraint firstItem="h67-BG-g4h" firstAttribute="height" secondItem="pE3-rE-Hca" secondAttribute="height" id="9Gh-Vg-lyD"/>
                                                     <constraint firstItem="cH3-bS-5sR" firstAttribute="top" secondItem="0qS-C8-rUA" secondAttribute="top" constant="2" id="B3V-Ev-4mP"/>
                                                     <constraint firstItem="Jyr-SO-J9a" firstAttribute="top" secondItem="5em-sn-qQJ" secondAttribute="top" constant="68" id="HiK-f8-oCK"/>
+                                                    <constraint firstItem="Ygq-f9-toG" firstAttribute="top" secondItem="cH3-bS-5sR" secondAttribute="bottom" constant="4" id="IkB-ax-79I"/>
                                                     <constraint firstItem="h67-BG-g4h" firstAttribute="top" secondItem="zXS-7t-01G" secondAttribute="top" constant="2" id="JPP-1H-BgC"/>
                                                     <constraint firstItem="0qS-C8-rUA" firstAttribute="top" secondItem="QvW-gu-0td" secondAttribute="bottom" constant="2" id="Ji5-gZ-cJ3"/>
                                                     <constraint firstItem="pE3-rE-Hca" firstAttribute="width" secondItem="5em-sn-qQJ" secondAttribute="width" multiplier="0.8" id="KA7-be-YrL"/>
                                                     <constraint firstItem="QvW-gu-0td" firstAttribute="top" secondItem="d88-rc-O59" secondAttribute="top" constant="2" id="Qoc-nu-WBt"/>
                                                     <constraint firstItem="pE3-rE-Hca" firstAttribute="top" secondItem="Jyr-SO-J9a" secondAttribute="bottom" constant="36" id="SGQ-KW-JQ8"/>
+                                                    <constraint firstItem="Ygq-f9-toG" firstAttribute="trailing" secondItem="cH3-bS-5sR" secondAttribute="trailing" id="SxW-yw-QVT"/>
                                                     <constraint firstItem="QvW-gu-0td" firstAttribute="centerX" secondItem="d88-rc-O59" secondAttribute="centerX" id="Uht-jg-A10"/>
                                                     <constraint firstItem="cH3-bS-5sR" firstAttribute="height" secondItem="QvW-gu-0td" secondAttribute="height" id="UqW-ht-zwk"/>
                                                     <constraint firstItem="bSV-Bl-Qhy" firstAttribute="top" secondItem="5em-sn-qQJ" secondAttribute="top" constant="30" id="Xtq-fh-Rjm"/>
@@ -244,27 +261,11 @@
                                                     <constraint firstItem="zXS-7t-01G" firstAttribute="width" secondItem="pE3-rE-Hca" secondAttribute="width" id="vGA-QA-faE"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-f9-toG">
-                                                <rect key="frame" x="104.5" y="590" width="165" height="33"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Ygq-f9-toG" secondAttribute="height" multiplier="5:1" id="BO7-6b-1Kf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="Sign up">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapSignUpBtn:" destination="A5g-56-fp5" eventType="touchUpInside" id="SnO-PH-Dve"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Ygq-f9-toG" firstAttribute="centerX" secondItem="5em-sn-qQJ" secondAttribute="centerX" id="17y-1I-YbF"/>
                                             <constraint firstItem="5em-sn-qQJ" firstAttribute="top" secondItem="nL5-4d-Ohz" secondAttribute="top" id="BU0-3E-WKN"/>
                                             <constraint firstItem="5em-sn-qQJ" firstAttribute="leading" secondItem="nL5-4d-Ohz" secondAttribute="leading" id="Zqw-6R-dWv"/>
-                                            <constraint firstItem="Ygq-f9-toG" firstAttribute="bottom" secondItem="5em-sn-qQJ" secondAttribute="bottom" constant="-44" id="aDA-Jn-HeJ"/>
                                             <constraint firstAttribute="trailing" secondItem="5em-sn-qQJ" secondAttribute="trailing" id="cqL-ED-IdX"/>
                                             <constraint firstAttribute="bottom" secondItem="5em-sn-qQJ" secondAttribute="bottom" id="hKQ-Jn-0w3"/>
                                         </constraints>
@@ -300,7 +301,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTS-eg-Np9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nlR-CN-yYN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2761" y="666"/>
+            <point key="canvasLocation" x="-3542" y="676"/>
         </scene>
         <!--Explore-->
         <scene sceneID="jCJ-0d-CEc">
@@ -437,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnv-d5-W5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-340" y="-1790"/>
+            <point key="canvasLocation" x="-503" y="-2069"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="F8r-FG-c50">
@@ -463,13 +464,14 @@
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="didTapBackBtnWith_sender:" destination="yVS-sS-WXe" eventType="touchUpInside" id="Qtd-Nb-LKq"/>
                                                     <segue destination="UH4-rC-7fG" kind="unwind" unwindAction="unwidnToGateViewControllerWithSegue:" id="BCR-N4-5mS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcy-In-DIC">
-                                                <rect key="frame" x="283.5" y="227" width="54" height="33"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <state key="normal" title="Sign In">
+                                                <rect key="frame" x="292.5" y="227" width="45" height="33"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="Login">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -555,7 +557,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8t-4P-jcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UH4-rC-7fG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3559" y="667"/>
+            <point key="canvasLocation" x="-2876" y="675"/>
         </scene>
         <!--Setting-->
         <scene sceneID="p9F-OH-8Xe">
@@ -657,7 +659,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pu8-yq-HpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1191" y="-1790"/>
+            <point key="canvasLocation" x="-1380" y="-2069"/>
         </scene>
         <!--Signing Navigation Controller-->
         <scene sceneID="ukA-qM-0Rs">
@@ -820,7 +822,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viX-MH-xx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="-1789"/>
+            <point key="canvasLocation" x="345" y="-2069"/>
         </scene>
     </scenes>
     <resources>

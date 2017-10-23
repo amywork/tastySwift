@@ -2,12 +2,13 @@ import UIKit
 
 class SingUpViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var SignUpScrollView: UIScrollView!
     @IBOutlet weak var conformPwdTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var usernameTextField: CustomTextField!
-    @IBOutlet weak var SignUpScrollView: UIScrollView!
     @IBOutlet weak var emailTextField: CustomTextField!
     
+    // weak var firstResponderTf:CustomTextField?
     
     @IBAction func didTapSignUpBtn(_ sender: UIButton) {
         guard let id = usernameTextField.text else { return }
@@ -20,7 +21,9 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 화면 띄웠을 때 키보드가 바로 보이게 처리
         usernameTextField.becomeFirstResponder()
+        
         usernameTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         passwordTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
         conformPwdTextField.addTarget(self, action: #selector(didEndOnExit), for: UIControlEvents.editingDidEndOnExit)
@@ -67,9 +70,8 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
         SignUpScrollView.contentInset = UIEdgeInsets.zero
     }
     
-    
     // MARK: - UITextFieldDelegate delegate method
-    // didEndOnExit: Find out when editing has ended, when TF resign being first respnder
+    // didEndOnExit: Find out when editing has ended, when TF resign being first responder
     @objc func didEndOnExit(_ sender: UITextField) {
         if usernameTextField.isFirstResponder {
             emailTextField.becomeFirstResponder()
@@ -80,5 +82,11 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func didTapBackBtn(_sender: UIButton) {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        conformPwdTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+    }
     
 }

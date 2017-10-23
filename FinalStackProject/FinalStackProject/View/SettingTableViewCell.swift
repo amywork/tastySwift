@@ -8,11 +8,10 @@
 
 import UIKit
 class SettingTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
     var index: Int = 0
     var data: SettingDataModel? {
         didSet {
