@@ -15,7 +15,7 @@ enum CellType: String {
     case disabled = "SettingDisabledCell"
 }
 
-// Setting Section
+// MARK: - Section of Setting
 struct SettingDataModel {
     
     var sectionTitle: String = ""
