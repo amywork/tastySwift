@@ -66,6 +66,7 @@ class SettingMainVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let logoutAction = UIAlertAction(title: "YES", style: .default, handler: { (action) in
                 // Logout
                 DataCenter.mainCenter.currentUser = nil
+                self.tabBarController?.selectedIndex = 0
                 let mainVC = self.tabBarController as? MainTabBarController
                 mainVC?.showLoginGateVC()
             })
