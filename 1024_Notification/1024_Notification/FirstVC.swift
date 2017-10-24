@@ -14,8 +14,8 @@ class FirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(forName: Notification.Name.init("TestNoti"), object: nil, queue: nil) { (noti) in
-            if let text = noti.object as? String {
+        NotificationCenter.default.addObserver(forName: Notification.Name.TestPush, object: nil, queue: nil) { (noti) in
+            if let text = noti.userInfo!["noti"] as? String {
                 self.firstLB.text = text
             }
         }

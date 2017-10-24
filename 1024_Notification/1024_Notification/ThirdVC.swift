@@ -18,10 +18,12 @@ class ThirdVC: UIViewController {
     }
     
     @IBAction func notiPostBtn(_ sender: UIButton) {
-        NotificationCenter.default.post(name: NSNotification.Name.init("TestNoti"), object:ThirdTF!.text, userInfo: ["noti":"info"])
+        NotificationCenter.default.post(name: NSNotification.Name.TestPush, object:ThirdTF!.text, userInfo: ["noti":"userInformation"])
     }
-    
-    
-
 
 }
+
+extension Notification.Name {
+    static let TestPush:Notification.Name = Notification.Name("testNoti")
+}
+
