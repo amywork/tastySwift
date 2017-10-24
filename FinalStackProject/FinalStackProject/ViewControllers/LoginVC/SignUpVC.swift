@@ -1,6 +1,6 @@
 import UIKit
 
-class SingUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var SignUpScrollView: UIScrollView!
     @IBOutlet weak var conformPwdTextField: CustomTextField!

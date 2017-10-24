@@ -16,7 +16,7 @@ enum MenuType {
     case non
 }
 
-class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SettingCellDelegate {
+class SettingMainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SettingCellDelegate {
 
     var data:SettingDataModel?
     
@@ -66,6 +66,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             let logoutAction = UIAlertAction(title: "YES", style: .default, handler: { (action) in
                 // Logout
                 DataCenter.mainCenter.currentUser = nil
+                let mainVC = self.tabBarController as? MainTabBarController
+                mainVC?.showLoginGateVC()
             })
             let cancelAction = UIAlertAction(title: "CANCEL", style: .default, handler: nil)
             alertVC.addAction(logoutAction)
@@ -106,8 +108,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         return MenuType.non
     }
     
-    // Setting - Logout method
-    @objc func logout() {
+    // MARK: Setting - Logout method
+    func logout() {
         let mainVC = self.tabBarController as? MainTabBarController
         mainVC?.showLoginGateVC()
     }

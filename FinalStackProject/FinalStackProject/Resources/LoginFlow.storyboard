@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gate View Controller-->
+        <!--GateVC-->
         <scene sceneID="VJw-u5-nLP">
             <objects>
-                <viewController storyboardIdentifier="GateViewController" id="oqI-hy-Va9" customClass="GateViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GateViewController" id="oqI-hy-Va9" customClass="GateVC" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8gu-Gy-pSO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnu-Jl-EOS">
-                                <rect key="frame" x="75.5" y="595" width="225" height="36"/>
+                                <rect key="frame" x="75" y="595" width="225" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                 <color key="tintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Already have an account?">
@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="-2864.8000000000002" y="-109.29535232383809"/>
         </scene>
-        <!--Sing Up View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="kha-Xo-1lq">
             <objects>
-                <viewController storyboardIdentifier="SingUpViewController" id="lmh-YK-dwG" customClass="SingUpViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SingUpViewController" id="lmh-YK-dwG" customClass="SignUpVC" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E1r-ND-FtS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,10 +302,10 @@
             </objects>
             <point key="canvasLocation" x="-1818" y="-459"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="Hvx-Yg-RoO">
             <objects>
-                <viewController id="aAY-sy-64l" customClass="SignInViewController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aAY-sy-64l" customClass="SignInVC" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvx-qE-4bv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -421,10 +421,10 @@
             </objects>
             <point key="canvasLocation" x="-1818" y="349"/>
         </scene>
-        <!--Signing Navigation Controller-->
+        <!--Signing Nav Controller-->
         <scene sceneID="wlQ-Q3-R8z">
             <objects>
-                <navigationController storyboardIdentifier="SigningNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="joz-hy-LfP" customClass="SigningNavigationController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SigningNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="joz-hy-LfP" customClass="SigningNavController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RjB-Jv-sru">
                         <autoresizingMask key="autoresizingMask"/>

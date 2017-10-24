@@ -1,5 +1,5 @@
 import UIKit
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInVC: UIViewController, UITextFieldDelegate {
    
     @IBOutlet weak var userNameTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!

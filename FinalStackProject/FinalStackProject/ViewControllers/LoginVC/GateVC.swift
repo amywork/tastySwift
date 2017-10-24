@@ -1,6 +1,6 @@
 import UIKit
 
-class GateViewController: UIViewController {
+class GateVC: UIViewController {
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {

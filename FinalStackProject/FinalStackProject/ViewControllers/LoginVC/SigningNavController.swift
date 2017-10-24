@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SigningNavigationController: UINavigationController {
+class SigningNavController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
