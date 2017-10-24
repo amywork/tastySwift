@@ -17,7 +17,6 @@ class SecondVC: UIViewController {
             if let text = noti.object as? String {
                 self.secondLB.text = text
             }
-            
         }
     }
 
