@@ -32,7 +32,7 @@
 		DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167901F96FC1C00A80891 /* ShadowView.swift */; };
 		DD8167931F97014400A80891 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167921F97014400A80891 /* CustomTextField.swift */; };
 		DD81679A1F97351100A80891 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* DataCenter.swift */; };
-		DDB290E61F9DB23B005E438D /* HandlingErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB290E51F9DB23B005E438D /* HandlingErrorViewController.swift */; };
+		DDB290E61F9DB23B005E438D /* HandlingErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB290E51F9DB23B005E438D /* HandlingErrorVC.swift */; };
 		DDB290E81F9DCBEB005E438D /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB290E71F9DCBEB005E438D /* LoginFlow.storyboard */; };
 		DDD146DC1F9ECEA400709FF5 /* AddSubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD146DB1F9ECEA400709FF5 /* AddSubscriptionVC.swift */; };
 		DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */; };
@@ -67,7 +67,7 @@
 		DD8167901F96FC1C00A80891 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		DD8167921F97014400A80891 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DD8167991F97351100A80891 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
-		DDB290E51F9DB23B005E438D /* HandlingErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingErrorViewController.swift; sourceTree = "<group>"; };
+		DDB290E51F9DB23B005E438D /* HandlingErrorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingErrorVC.swift; sourceTree = "<group>"; };
 		DDB290E71F9DCBEB005E438D /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		DDD146DB1F9ECEA400709FF5 /* AddSubscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionVC.swift; sourceTree = "<group>"; };
 		DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
@@ -130,17 +130,10 @@
 		DD8167811F96E91700A80891 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */,
-				4BE462D51F9AA29E00E593C9 /* SigningNavigationController.swift */,
-				DD8167851F96E99B00A80891 /* GateViewController.swift */,
-				DD81678C1F96F1E600A80891 /* SignInViewController.swift */,
-				DD81678E1F96F1F000A80891 /* SingUpViewController.swift */,
-				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
-				DDEE84C91F99CE18002CDB03 /* ItemListViewController.swift */,
-				4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */,
-				4B72C2AE1F9A08970045EC9E /* SettingViewController.swift */,
-				DDD146DB1F9ECEA400709FF5 /* AddSubscriptionVC.swift */,
-				DDB290E51F9DB23B005E438D /* HandlingErrorViewController.swift */,
+				DDD146DE1F9ED5BA00709FF5 /* MainVC */,
+				DDD146DD1F9ED5A600709FF5 /* LoginVC */,
+				DDD146DF1F9ED5CC00709FF5 /* SettingVC */,
+				DDB290E51F9DB23B005E438D /* HandlingErrorVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +178,37 @@
 				DD8167991F97351100A80891 /* DataCenter.swift */,
 			);
 			path = DataCenter;
+			sourceTree = "<group>";
+		};
+		DDD146DD1F9ED5A600709FF5 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				4BE462D51F9AA29E00E593C9 /* SigningNavigationController.swift */,
+				DD8167851F96E99B00A80891 /* GateViewController.swift */,
+				DD81678C1F96F1E600A80891 /* SignInViewController.swift */,
+				DD81678E1F96F1F000A80891 /* SingUpViewController.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		DDD146DE1F9ED5BA00709FF5 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */,
+				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
+				DDEE84C91F99CE18002CDB03 /* ItemListViewController.swift */,
+				4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */,
+				DDD146DB1F9ECEA400709FF5 /* AddSubscriptionVC.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		DDD146DF1F9ED5CC00709FF5 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				4B72C2AE1F9A08970045EC9E /* SettingViewController.swift */,
+			);
+			path = SettingVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +291,7 @@
 				DD8167931F97014400A80891 /* CustomTextField.swift in Sources */,
 				DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */,
 				4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */,
-				DDB290E61F9DB23B005E438D /* HandlingErrorViewController.swift in Sources */,
+				DDB290E61F9DB23B005E438D /* HandlingErrorVC.swift in Sources */,
 				DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */,
 				DD81679A1F97351100A80891 /* DataCenter.swift in Sources */,
 				4BE462D61F9AA29E00E593C9 /* SigningNavigationController.swift in Sources */,

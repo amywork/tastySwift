@@ -15,7 +15,7 @@ enum NumberCheckType: Error {
     case noData
 }
 
-class HandlingErrorViewController: UIViewController {
+class HandlingErrorVC: UIViewController {
 
     func isSmallNum(baseNum: Int, targetNum: Int?) throws -> Int {
         guard let compareNum = targetNum else {

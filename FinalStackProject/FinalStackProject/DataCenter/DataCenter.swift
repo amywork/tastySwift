@@ -4,25 +4,28 @@ import Foundation
 class DataCenter {
     
     static var mainCenter: DataCenter = DataCenter()
-
-    var currentUser: UserModel?
-    var settingDataList:[SettingDataModel] = []
-    var exploreDataList:[ExploreDataModel] = []
-    var friendList:[FriendDataModel] = []
     var documentDirectory: URL {
         get {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         }
     }
     
+    // MARK: - Data Property
+    var currentUser: UserModel?
+    var settingDataList:[SettingDataModel] = []
+    var exploreDataList:[ExploreDataModel] = []
+    var friendList:[FriendDataModel] = []
+    
+    // MARK: - init with load data
     private init() {
-        // plist -> Data Model
         loadSettingData()
         loadExploreData()
         loadUserData()
         loadFriendData()
+        // pirnt(currentUser)
     }
     
+    // MARK: - method
     func loadUserData() {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
         print(documentPath)
@@ -88,7 +91,6 @@ class DataCenter {
             self.exploreDataList.append(data)
         }
     }
-    
     
     
     // add to friendList
