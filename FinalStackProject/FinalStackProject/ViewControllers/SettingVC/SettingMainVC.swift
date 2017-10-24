@@ -17,13 +17,13 @@ enum MenuType {
 }
 
 class SettingMainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SettingCellDelegate {
-
+    
     var data:SettingDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return DataCenter.mainCenter.settingDataList.count
     }
@@ -58,7 +58,7 @@ class SettingMainVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         switch menuType {
         case .infoMenu:
             /*guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileInfo") else { return }
-            self.navigationController?.pushViewController(nextVC, animated: true)*/
+             self.navigationController?.pushViewController(nextVC, animated: true)*/
             // Manual Segue로 실행
             performSegue(withIdentifier: "ProfileInfo", sender: self)
         case .logout:
@@ -67,8 +67,9 @@ class SettingMainVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 // Logout
                 DataCenter.mainCenter.currentUser = nil
                 self.tabBarController?.selectedIndex = 0
-                let mainVC = self.tabBarController as? MainTabBarController
-                mainVC?.showLoginGateVC()
+                //                let mainVC = self.tabBarController as? MainTabBarController
+                //                mainVC?.showLoginGateVC()
+                NotificationCenter.default.post(name: NSNotification.Name.init("LogOut"), object: nil)
             })
             let cancelAction = UIAlertAction(title: "CANCEL", style: .default, handler: nil)
             alertVC.addAction(logoutAction)
