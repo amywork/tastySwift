@@ -12,6 +12,7 @@ enum CellType: String {
     case basic = "SettingBasicCell"
     case withSwitch = "SettingSwitchCell"
     case text = "SettingTextCell"
+    case disabled = "SettingDisabledCell"
 }
 
 // Setting Section

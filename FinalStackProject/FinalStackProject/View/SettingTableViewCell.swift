@@ -37,12 +37,15 @@ class SettingTableViewCell: UITableViewCell {
         case .withSwitch:
             self.swithcher?.isHidden = false
             self.delegate?.didChangedSwitchValue(self.swithcher!)
+            self.selectionStyle = .none
         case .basic:
             self.accessoryLabel?.text = ""
         case .text:
-            let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+            let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Invalid Version"
             self.accessoryLabel?.text = version
-            self.isUserInteractionEnabled = false
+            self.selectionStyle = .none
+        case .disabled:
+            self.textLabel?.textColor = UIColor.gray
         }
     }
 }

@@ -21,13 +21,13 @@
 			</dict>
 			<dict>
 				<key>CellStyle</key>
-				<string>SettingBasicCell</string>
+				<string>SettingDisabledCell</string>
 				<key>Content</key>
 				<string>로그아웃</string>
 			</dict>
 			<dict>
 				<key>CellStyle</key>
-				<string>SettingBasicCell</string>
+				<string>SettingDisabledCell</string>
 				<key>Content</key>
 				<string>회원탈퇴</string>
 			</dict>
