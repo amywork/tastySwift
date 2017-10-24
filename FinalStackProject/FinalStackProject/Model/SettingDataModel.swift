@@ -7,17 +7,17 @@
 //
 
 import Foundation
-enum CellType {
-    case detail
-    case basic
-    case withSwitch
-    case text
+enum CellType: String {
+    case detail = "SettingDetailCell"
+    case basic = "SettingBasicCell"
+    case withSwitch = "SettingSwitchCell"
+    case text = "SettingTextCell"
 }
 
+// Setting Section
 struct SettingDataModel {
     
     var sectionTitle: String = ""
-    // Cell Information
     var cellContentList: [String] = []
     var cellTypeList: [CellType] = []
     
@@ -26,20 +26,14 @@ struct SettingDataModel {
         let sectionTitle = dataDic["SectionTitle"] as? String
         self.sectionTitle = sectionTitle!
         
-        let dataDicArr = dataDic["Data"] as? [[String:String]]
-        for dataDic in dataDicArr! {
-            let cellStyleStr = dataDic["CellStyle"]
-            if cellStyleStr == "SettingDetailCell" {
-                self.cellTypeList.append(.detail)
-            }else if cellStyleStr == "SettingBasicCell" {
-                 self.cellTypeList.append(.basic)
-            }else if cellStyleStr == "SettingSwitchCell" {
-                self.cellTypeList.append(.withSwitch)
-            }else if cellStyleStr == "SettingTextCell" {
-                self.cellTypeList.append(.text)
-            }
-            let cellContentStr = dataDic["Content"]
-            self.cellContentList.append(cellContentStr!)
+        guard let dataDicArr = dataDic["Data"] as? [[String:String]] else { return }
+        for dataDic in dataDicArr {
+            guard let cellTypeStr = dataDic["CellStyle"] else { return }
+            let cellType = CellType(rawValue: cellTypeStr) ?? .basic
+            self.cellTypeList.append(cellType)
+            
+            guard let cellContentStr = dataDic["Content"] else { return }
+            self.cellContentList.append(cellContentStr)
         }
     }
     

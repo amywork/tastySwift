@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class SettingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var accessoryLabel: UILabel?
@@ -22,22 +23,28 @@ class SettingTableViewCell: UITableViewCell {
     
     var data: SettingDataModel? {
         didSet {
-            let index = self.index
-            self.textLabel?.text = data?.cellContentList[index]
-            if data?.cellTypeList[index] == CellType.detail {
-                self.accessoryType = .disclosureIndicator
-            }else if data?.cellTypeList[index] == CellType.withSwitch {
-                self.swithcher?.isHidden = false
-                self.delegate?.didChangedSwitchValue(self.swithcher!)
-            }else if data?.cellTypeList[index] == CellType.basic {
-                self.accessoryLabel?.text = ""
-            }else if data?.cellTypeList[index] == CellType.text {
-                self.accessoryLabel?.text = "1.2.1"
-                self.isUserInteractionEnabled = false
-            }
+            updateUI()
         }
     }
     
+    func updateUI() {
+        let index = self.index
+        self.textLabel?.text = data?.cellContentList[index]
+        guard let cellType = data?.cellTypeList[index] else { return }
+        switch cellType {
+        case .detail:
+            self.accessoryType = .disclosureIndicator
+        case .withSwitch:
+            self.swithcher?.isHidden = false
+            self.delegate?.didChangedSwitchValue(self.swithcher!)
+        case .basic:
+            self.accessoryLabel?.text = ""
+        case .text:
+            let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+            self.accessoryLabel?.text = version
+            self.isUserInteractionEnabled = false
+        }
+    }
 }
 
 

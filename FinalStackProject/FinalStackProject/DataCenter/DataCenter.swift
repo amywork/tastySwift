@@ -21,7 +21,6 @@ class DataCenter {
         loadExploreData()
         loadUserData()
         loadFriendData()
-        print(currentUser)
     }
     
     func loadUserData() {
