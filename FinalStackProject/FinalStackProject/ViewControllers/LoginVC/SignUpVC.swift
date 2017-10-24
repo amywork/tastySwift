@@ -8,8 +8,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: CustomTextField!
     @IBOutlet weak var emailTextField: CustomTextField!
     
-    // weak var firstResponderTf:CustomTextField?
-    
+    // MARK: - SignUp Action
     @IBAction func didTapSignUpBtn(_ sender: UIButton) {
         guard let id = usernameTextField.text else { return }
         guard let pwd = passwordTextField.text  else { return }
