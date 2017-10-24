@@ -13,6 +13,12 @@ class SecondVC: UIViewController {
     @IBOutlet weak var secondLB: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: Notification.Name.init("TestNoti"), object: nil, queue: nil) { (noti) in
+            if let text = noti.object as? String {
+                self.secondLB.text = text
+            }
+            
+        }
     }
 
 

@@ -31,10 +31,6 @@
 		DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167901F96FC1C00A80891 /* ShadowView.swift */; };
 		DD8167931F97014400A80891 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167921F97014400A80891 /* CustomTextField.swift */; };
 		DD81679A1F97351100A80891 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8167991F97351100A80891 /* DataCenter.swift */; };
-		DDABBE9D1F9F197400E33C93 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDABBE9C1F9F197400E33C93 /* Notification.storyboard */; };
-		DDABBE9F1F9F19E800E33C93 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABBE9E1F9F19E800E33C93 /* NotificationVC.swift */; };
-		DDABBEA21F9F1A4500E33C93 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABBEA11F9F1A4500E33C93 /* SecondVC.swift */; };
-		DDABBEA41F9F1A5300E33C93 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABBEA31F9F1A5300E33C93 /* ThirdVC.swift */; };
 		DDB290E61F9DB23B005E438D /* HandlingErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB290E51F9DB23B005E438D /* HandlingErrorVC.swift */; };
 		DDB290E81F9DCBEB005E438D /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB290E71F9DCBEB005E438D /* LoginFlow.storyboard */; };
 		DDD146DC1F9ECEA400709FF5 /* AddSubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD146DB1F9ECEA400709FF5 /* AddSubscriptionVC.swift */; };
@@ -71,10 +67,6 @@
 		DD8167901F96FC1C00A80891 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		DD8167921F97014400A80891 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DD8167991F97351100A80891 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
-		DDABBE9C1F9F197400E33C93 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
-		DDABBE9E1F9F19E800E33C93 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
-		DDABBEA11F9F1A4500E33C93 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
-		DDABBEA31F9F1A5300E33C93 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 		DDB290E51F9DB23B005E438D /* HandlingErrorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingErrorVC.swift; sourceTree = "<group>"; };
 		DDB290E71F9DCBEB005E438D /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		DDD146DB1F9ECEA400709FF5 /* AddSubscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionVC.swift; sourceTree = "<group>"; };
@@ -125,7 +117,6 @@
 				DD81678B1F96EEC500A80891 /* View */,
 				DD8167811F96E91700A80891 /* ViewControllers */,
 				DD8167821F96E92500A80891 /* Resources */,
-				DDABBEA01F9F1A2B00E33C93 /* Notification */,
 			);
 			path = FinalStackProject;
 			sourceTree = "<group>";
@@ -187,17 +178,6 @@
 				DD8167991F97351100A80891 /* DataCenter.swift */,
 			);
 			path = DataCenter;
-			sourceTree = "<group>";
-		};
-		DDABBEA01F9F1A2B00E33C93 /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				DDABBE9C1F9F197400E33C93 /* Notification.storyboard */,
-				DDABBE9E1F9F19E800E33C93 /* NotificationVC.swift */,
-				DDABBEA11F9F1A4500E33C93 /* SecondVC.swift */,
-				DDABBEA31F9F1A5300E33C93 /* ThirdVC.swift */,
-			);
-			path = Notification;
 			sourceTree = "<group>";
 		};
 		DDD146DD1F9ED5A600709FF5 /* LoginVC */ = {
@@ -303,7 +283,6 @@
 			files = (
 				4B4208071F9E024A009F90C4 /* Settings.plist in Resources */,
 				DD8167791F96E8FE00A80891 /* LaunchScreen.storyboard in Resources */,
-				DDABBE9D1F9F197400E33C93 /* Notification.storyboard in Resources */,
 				4BE462DB1F9AA9A900E593C9 /* CurrentUser.plist in Resources */,
 				DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */,
 				DDB290E81F9DCBEB005E438D /* LoginFlow.storyboard in Resources */,
@@ -327,7 +306,6 @@
 				DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */,
 				DD81679A1F97351100A80891 /* DataCenter.swift in Sources */,
 				4BE462D61F9AA29E00E593C9 /* SigningNavController.swift in Sources */,
-				DDABBE9F1F9F19E800E33C93 /* NotificationVC.swift in Sources */,
 				DD81678D1F96F1E600A80891 /* SignInVC.swift in Sources */,
 				DDEE84CA1F99CE18002CDB03 /* ItemListViewController.swift in Sources */,
 				4BFF2B841F9AE65700B1C150 /* CustomFriendCell.swift in Sources */,
@@ -336,13 +314,11 @@
 				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
 				4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */,
 				DDD146DC1F9ECEA400709FF5 /* AddSubscriptionVC.swift in Sources */,
-				DDABBEA21F9F1A4500E33C93 /* SecondVC.swift in Sources */,
 				4BE462D81F9AA6B000E593C9 /* MainTabBarController.swift in Sources */,
 				DDD146E21F9EE66000709FF5 /* ProfileInfoVC.swift in Sources */,
 				DD81678F1F96F1F000A80891 /* SignUpVC.swift in Sources */,
 				DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */,
 				4BFF2B7E1F9AE34B00B1C150 /* ItemDetailViewController.swift in Sources */,
-				DDABBEA41F9F1A5300E33C93 /* ThirdVC.swift in Sources */,
 				DD8167861F96E99B00A80891 /* GateVC.swift in Sources */,
 				4BE462D41F9AA07B00E593C9 /* UserModel.swift in Sources */,
 				4BFF2B801F9AE55E00B1C150 /* FriendDataModel.swift in Sources */,

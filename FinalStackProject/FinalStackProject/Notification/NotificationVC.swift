@@ -8,11 +8,11 @@
 
 import UIKit
 
-class NotificationVC: UIViewController {
+class FirstVC: UIViewController {
 
     @IBOutlet weak var FirstLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+            }
 
 }

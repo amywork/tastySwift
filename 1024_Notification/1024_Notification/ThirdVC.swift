@@ -11,14 +11,17 @@ import UIKit
 class ThirdVC: UIViewController {
 
     @IBOutlet weak var ThirdTF: UITextField!
-    @IBAction func notiPostBtn(_ sender: UIButton) {
-    
-    }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
+    
+    @IBAction func notiPostBtn(_ sender: UIButton) {
+        NotificationCenter.default.post(name: NSNotification.Name.init("TestNoti"), object:ThirdTF!.text, userInfo: ["noti":"info"])
+    }
+    
+    
 
 
 }
