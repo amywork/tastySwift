@@ -8,6 +8,9 @@
 
 import UIKit
 class ProfileInfoVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
+   
+    var currentUser = DataCenter.mainCenter.currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,7 +23,7 @@ class ProfileInfoVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         if section == 0 {
             return "Accounts"
         }else if section == 1 {
-            return "Toggle Subscriptions"
+            return "Subscriptions"
         }
         return ""
     }
@@ -31,7 +34,8 @@ class ProfileInfoVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileInfoCell", for: indexPath)
-        cell.textLabel?.text = "Table Cell Title"
+        cell.textLabel?.text = currentUser?.userID
+        cell.detailTextLabel?.text = currentUser?.email
         return cell
     }
 

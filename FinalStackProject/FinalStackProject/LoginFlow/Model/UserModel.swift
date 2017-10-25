@@ -19,6 +19,7 @@ struct UserModel {
     var userPWD: String
     var email: String
     var birthday: String
+    var profileImageData: Data?
     var gender: Gender?
     var dictionary:[String:Any] {
         let genderValue = self.gender?.rawValue ?? 0
