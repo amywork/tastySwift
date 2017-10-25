@@ -421,10 +421,10 @@
             </objects>
             <point key="canvasLocation" x="-1818" y="349"/>
         </scene>
-        <!--Signing Nav Controller-->
+        <!--Login NaviVC-->
         <scene sceneID="wlQ-Q3-R8z">
             <objects>
-                <navigationController storyboardIdentifier="SigningNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="joz-hy-LfP" customClass="SigningNavController" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SigningNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="joz-hy-LfP" customClass="LoginNaviVC" customModule="FinalStackProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RjB-Jv-sru">
                         <autoresizingMask key="autoresizingMask"/>
