@@ -68,11 +68,11 @@ extension SettingMainVC: UITableViewDelegate, UITableViewDataSource {
         switch cellMenuType {
         case .infoMenu?:
             /*SB instantiate으로 실행*/
-            /*guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileInfo") else { return }
+            /*guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileInfoVC") else { return }
              self.navigationController?.pushViewController(nextVC, animated: true)*/
             
             /*Manual Segue로 실행*/
-            performSegue(withIdentifier: "DetailProfileVC", sender: self)
+            performSegue(withIdentifier: "ProfileInfoVC", sender: self)
         case .logout?:
             let alertVC = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
             let logoutAction = UIAlertAction(title: "YES", style: .default, handler: { (action) in
@@ -101,7 +101,7 @@ extension SettingMainVC: UITableViewDelegate, UITableViewDataSource {
             alertVC.addAction(cancelAction)
             self.present(alertVC, animated: true, completion: nil)
         case .memberout?:
-            performSegue(withIdentifier: "ProfileInfo", sender: self)
+            performSegue(withIdentifier: "ProfileInfoVC", sender: self)
         default:
             print("default selected")
         }
