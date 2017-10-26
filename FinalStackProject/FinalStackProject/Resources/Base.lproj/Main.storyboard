@@ -683,7 +683,7 @@
     </scenes>
     <resources>
         <image name="Airbnb" width="60" height="60"/>
-        <image name="BackImage3" width="800" height="452"/>
+        <image name="BackImage3" width="564" height="376"/>
         <image name="CalendarOff" width="22" height="22"/>
         <image name="ExploreOff" width="24" height="24"/>
         <image name="ExploreOn" width="25" height="25"/>
