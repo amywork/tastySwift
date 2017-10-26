@@ -22,7 +22,7 @@ class DataCenter {
         loadExploreData()
         loadUserData()
         loadFriendData()
-        // pirnt(currentUser)
+        // print(currentUser)
     }
     
     // MARK: - method

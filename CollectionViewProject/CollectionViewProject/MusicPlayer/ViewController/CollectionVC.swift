@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-
 private let reuseIdentifier = "AlbumCoverCell"
 class CollectionVC: UIViewController {
     /*Property*/

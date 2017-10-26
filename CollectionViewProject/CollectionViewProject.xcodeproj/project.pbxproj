@@ -101,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B2B03A81FA1FE4D0089F4B0 /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				DD64AB241FA1A124002779CE /* Model */,
+				DD64AB1F1FA18236002779CE /* View */,
+				DD64AB211FA1824E002779CE /* ViewController */,
+			);
+			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
 		DD64AAFD1FA181D7002779CE = {
 			isa = PBXGroup;
 			children = (
@@ -122,9 +132,7 @@
 			children = (
 				DD64AB151FA181D7002779CE /* Info.plist */,
 				DDA2A8A41FA1B3F300AC4A9F /* Song */,
-				DD64AB241FA1A124002779CE /* Model */,
-				DD64AB1F1FA18236002779CE /* View */,
-				DD64AB211FA1824E002779CE /* ViewController */,
+				4B2B03A81FA1FE4D0089F4B0 /* MusicPlayer */,
 				DD64AB201FA18245002779CE /* Resources */,
 			);
 			path = CollectionViewProject;

@@ -40,9 +40,6 @@ struct Stack<Z> {
 
 // var stack = Stack<Int>()
 // stack.pop()
-
-
-
 struct Queue<T> {
     
     private var queArr:[T] = []

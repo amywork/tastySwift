@@ -8,14 +8,20 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ExploreViewController: UIViewController {
 
+    var data = DataCenter.mainCenter.exploreDataList
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.isPagingEnabled = true
     }
-    
-    var data = DataCenter.mainCenter.exploreDataList
-    
+   
+}
+
+/*UITableViewDataSource*/
+extension ExploreViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "All services"
     }
@@ -23,6 +29,10 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataCenter.mainCenter.exploreDataList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,5 +43,21 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.accessoryType = .disclosureIndicator
         return cell
     }
+}
+
+
+/*UICollectionViewDataSource*/
+extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreCollectionCell", for: indexPath)
+        cell.layer.cornerRadius = cell.bounds.width/2
+        return cell
+    }
+    
     
 }

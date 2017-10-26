@@ -27,8 +27,15 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         return "Your stacks"
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomFriendCell", for: indexPath) as! CustomFriendCell
+        cell.imageView?.frame = CGRect(x: 8, y: 8, width: 10, height: 10)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.imageView?.clipsToBounds = true
         cell.data = friendList[indexPath.row]
         return cell
     }

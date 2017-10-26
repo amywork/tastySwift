@@ -21,7 +21,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-Du-yjW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dda-Du-yjW" secondAttribute="height" id="Ro9-CL-ewm"/>
                                 </constraints>
@@ -39,12 +39,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2q-1J-FcY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2q-1J-FcY">
                                                     <rect key="frame" x="0.0" y="-0.5" width="300" height="300"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
                                             <constraint firstItem="w2q-1J-FcY" firstAttribute="centerY" secondItem="uP9-RM-561" secondAttribute="centerY" id="9AX-Ms-ql1"/>
                                             <constraint firstItem="w2q-1J-FcY" firstAttribute="width" secondItem="uP9-RM-561" secondAttribute="width" id="Ez3-1d-GLH"/>
