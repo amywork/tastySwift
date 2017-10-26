@@ -393,7 +393,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yee-xi-RdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3204" y="-2912"/>
+            <point key="canvasLocation" x="-4342" y="-2693"/>
         </scene>
         <!--LoginFlow-->
         <scene sceneID="Kvk-EE-k6R">
@@ -401,7 +401,7 @@
                 <viewControllerPlaceholder storyboardName="LoginFlow" id="rZs-Ml-flM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EiE-QJ-6mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3105" y="-2405"/>
+            <point key="canvasLocation" x="-4344" y="-2028"/>
         </scene>
         <!--My Stack-->
         <scene sceneID="pog-Jh-4Lq">
