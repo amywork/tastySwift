@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+
 class DataCenter {
     
     static var main:DataCenter = DataCenter()
@@ -15,7 +16,6 @@ class DataCenter {
     
     private init() {
         loadSongData()
-        print(albumList[0])
     }
     
     func loadSongData() {

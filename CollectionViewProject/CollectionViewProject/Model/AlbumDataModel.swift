@@ -14,20 +14,30 @@ struct AlbumDataModel {
     
     var title:String?
     var artist:String?
-    var image:UIImage?
-    var lyric:String?
+    var albumName:String?
+
+    var imageData:Data?
+    var image:UIImage?{
+        if let data = self.imageData
+        {
+            return UIImage(data:data)
+        }
+        return nil
+    }
     
     init(data: [AVMetadataItem]) {
         for item in data {
             if let key = item.commonKey?.rawValue {
+                print(key)
                 switch key {
                 case "title":
                     title = item.value as? String
                 case "artist":
                     artist = item.value as? String
                 case "artwork":
-                    let data = item.dataValue
-                    image = UIImage(data: data!) ?? #imageLiteral(resourceName: "Artist")
+                    imageData = item.dataValue
+                case "albumName":
+                    albumName = item.value as? String
                 default:
                     break
                 }

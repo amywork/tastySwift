@@ -14,16 +14,23 @@ class CollectionVC: UIViewController {
     /*Property*/
     var albumList:[AlbumDataModel] = DataCenter.main.albumList
     var isPlaying: Bool = false
+    var player:AVPlayer?
     var currentPageIndex = 0 {
         willSet {
             titleLabel.text = albumList[newValue].title
             artistLabel.text = albumList[newValue].artist
         }
     }
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var playImageView:UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var playBtn: UIButton!
+    @IBAction func nextSongAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func prevSongAction(_ sender: UIButton) {
+    }
 
     
     /*Life Cycle*/
@@ -34,17 +41,6 @@ class CollectionVC: UIViewController {
     }
 }
 
-extension CollectionVC {
-    @IBAction func pauseBtnHandler() {
-        if isPlaying {
-            isPlaying = false
-            playImageView.image = #imageLiteral(resourceName: "Pause")
-        }else {
-            isPlaying = true
-            playImageView.image = #imageLiteral(resourceName: "Play")
-        }
-    }
-}
 
 /*Extension Collection Data Source*/
 extension CollectionVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -96,26 +92,15 @@ extension CollectionVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-
-        /*
-         let fLayout = collectionViewLayout as! UICollectionViewFlowLayout
-         fLayout.itemSize
-         
-         let indexPath = IndexPath(item: 0, section: section)
-         collectionView.cellForItem(at: indexPath)
-         */
-
         return UIEdgeInsets(top: (viewHeight-cellHeight)/2, left: (viewWidth-cellWidth)/2, bottom: (viewHeight-cellHeight) / 2, right: (viewWidth-cellWidth)/2)
-        
     }
     
 }
 
+/*scrollViewWillEndDragging*/
 extension CollectionVC: UIScrollViewDelegate {
-    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let pageIndex = Int(targetContentOffset.pointee.x/scrollView.bounds.size.width)
         currentPageIndex = pageIndex
     }
-    
 }
