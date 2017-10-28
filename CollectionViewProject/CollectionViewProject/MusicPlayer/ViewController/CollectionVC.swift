@@ -35,7 +35,7 @@ class CollectionVC: UIViewController {
     /*Life Cycle*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.isPagingEnabled = true
+        //collectionView.isPagingEnabled = true
         currentPageIndex = 0
     }
 }
@@ -45,11 +45,11 @@ class CollectionVC: UIViewController {
 extension CollectionVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var cellWidth: CGFloat {
-        return collectionView.bounds.width*0.8
+        return collectionView.bounds.width*0.5
     }
     
     var cellHeight: CGFloat {
-        return collectionView.bounds.width*0.8
+        return collectionView.bounds.width*0.5
     }
     
     var viewWidth: CGFloat {
@@ -72,26 +72,15 @@ extension CollectionVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
         cell.data = albumList[indexPath.item]
         return cell
     }
-
+    
     
     /*sizeForItemAt*/
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellWidth, height: cellHeight)
-        
-    }
-    
-    /*minimumInteritemSpacingForSectionAt*/
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    /*minimumLineSpacingForSectionAt*/
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return (viewWidth - cellWidth)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: (viewHeight-cellHeight)/2, left: (viewWidth-cellWidth)/2, bottom: (viewHeight-cellHeight) / 2, right: (viewWidth-cellWidth)/2)
+        return UIEdgeInsets(top: 0, left: (viewWidth-cellWidth)/2, bottom: 0, right: (viewWidth-cellWidth)/2)
     }
     
 }

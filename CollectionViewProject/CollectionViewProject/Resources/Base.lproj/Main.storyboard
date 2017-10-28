@@ -25,7 +25,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dda-Du-yjW" secondAttribute="height" id="Ro9-CL-ewm"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nfo-bj-k1O">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nfo-bj-k1O" customClass="CoverFlowLayout" customModule="CollectionViewProject" customModuleProvider="target">
                                     <size key="itemSize" width="300" height="300"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BE26A381FA385A00042D66E /* CoverFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */; };
 		DD64AB0A1FA181D7002779CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64AB091FA181D7002779CE /* AppDelegate.swift */; };
 		DD64AB0F1FA181D7002779CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB0D1FA181D7002779CE /* Main.storyboard */; };
 		DD64AB111FA181D7002779CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB101FA181D7002779CE /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverFlowLayout.swift; sourceTree = "<group>"; };
 		DD64AB061FA181D7002779CE /* CollectionViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD64AB091FA181D7002779CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD64AB0E1FA181D7002779CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		DD64AB211FA1824E002779CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */,
 				DD64AB1B1FA181FB002779CE /* CollectionVC.swift */,
 			);
 			path = ViewController;
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD64AB1C1FA181FB002779CE /* CollectionVC.swift in Sources */,
+				4BE26A381FA385A00042D66E /* CoverFlowLayout.swift in Sources */,
 				DD64AB231FA1A11F002779CE /* AlbumDataModel.swift in Sources */,
 				DDA2A8E21FA1B6FD00AC4A9F /* DataCenter.swift in Sources */,
 				DD64AB0A1FA181D7002779CE /* AppDelegate.swift in Sources */,
