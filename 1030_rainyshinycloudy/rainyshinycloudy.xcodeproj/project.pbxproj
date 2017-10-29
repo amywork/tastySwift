@@ -114,12 +114,12 @@
 		715BA9BB1D46A1A200A8D4A4 /* rainyshinycloudy */ = {
 			isa = PBXGroup;
 			children = (
+				715BA9C81D46A1A200A8D4A4 /* Info.plist */,
+				715BA9C31D46A1A200A8D4A4 /* Assets.xcassets */,
+				715BA9C01D46A1A200A8D4A4 /* Main.storyboard */,
+				715BA9C51D46A1A200A8D4A4 /* LaunchScreen.storyboard */,
 				715BA9BC1D46A1A200A8D4A4 /* AppDelegate.swift */,
 				715BA9BE1D46A1A200A8D4A4 /* WeatherVC.swift */,
-				715BA9C01D46A1A200A8D4A4 /* Main.storyboard */,
-				715BA9C31D46A1A200A8D4A4 /* Assets.xcassets */,
-				715BA9C51D46A1A200A8D4A4 /* LaunchScreen.storyboard */,
-				715BA9C81D46A1A200A8D4A4 /* Info.plist */,
 				7143A1621D4818FF008A649C /* CurrentWeather.swift */,
 				7143A1601D48174D008A649C /* Constants.swift */,
 				7143A1641D48DD65008A649C /* Forecast.swift */,
