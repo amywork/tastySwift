@@ -12,7 +12,6 @@
 		DD64AB0F1FA181D7002779CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB0D1FA181D7002779CE /* Main.storyboard */; };
 		DD64AB111FA181D7002779CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB101FA181D7002779CE /* Assets.xcassets */; };
 		DD64AB141FA181D7002779CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB121FA181D7002779CE /* LaunchScreen.storyboard */; };
-		DD64AB1C1FA181FB002779CE /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64AB1B1FA181FB002779CE /* CollectionVC.swift */; };
 		DD64AB231FA1A11F002779CE /* AlbumDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64AB221FA1A11F002779CE /* AlbumDataModel.swift */; };
 		DD64AB281FA1A725002779CE /* AlbumCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64AB271FA1A725002779CE /* AlbumCoverCell.swift */; };
 		DDA2A8C31FA1B3F300AC4A9F /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDA2A8A51FA1B3F300AC4A9F /* 0.mp3 */; };
@@ -46,6 +45,7 @@
 		DDA2A8DF1FA1B3F400AC4A9F /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDA2A8C11FA1B3F300AC4A9F /* 8.mp3 */; };
 		DDA2A8E01FA1B3F400AC4A9F /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDA2A8C21FA1B3F300AC4A9F /* 9.mp3 */; };
 		DDA2A8E21FA1B6FD00AC4A9F /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA2A8E11FA1B6FD00AC4A9F /* DataCenter.swift */; };
+		DDA4803E1FA6F1AB00C80705 /* MainPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4803D1FA6F1AB00C80705 /* MainPlayerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,6 @@
 		DD64AB101FA181D7002779CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD64AB131FA181D7002779CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD64AB151FA181D7002779CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD64AB1B1FA181FB002779CE /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		DD64AB221FA1A11F002779CE /* AlbumDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDataModel.swift; sourceTree = "<group>"; };
 		DD64AB271FA1A725002779CE /* AlbumCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCoverCell.swift; sourceTree = "<group>"; };
 		DDA2A8A51FA1B3F300AC4A9F /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0.mp3; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		DDA2A8C11FA1B3F300AC4A9F /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
 		DDA2A8C21FA1B3F300AC4A9F /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
 		DDA2A8E11FA1B6FD00AC4A9F /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		DDA4803D1FA6F1AB00C80705 /* MainPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +162,8 @@
 		DD64AB211FA1824E002779CE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DDA4803D1FA6F1AB00C80705 /* MainPlayerVC.swift */,
 				4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */,
-				DD64AB1B1FA181FB002779CE /* CollectionVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD64AB1C1FA181FB002779CE /* CollectionVC.swift in Sources */,
+				DDA4803E1FA6F1AB00C80705 /* MainPlayerVC.swift in Sources */,
 				4BE26A381FA385A00042D66E /* CoverFlowLayout.swift in Sources */,
 				DD64AB231FA1A11F002779CE /* AlbumDataModel.swift in Sources */,
 				DDA2A8E21FA1B6FD00AC4A9F /* DataCenter.swift in Sources */,

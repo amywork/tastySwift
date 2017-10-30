@@ -14,7 +14,7 @@
         <!--Now Playing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CollectionVC" customModule="CollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainPlayerVC" customModule="CollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +103,9 @@
                                     <constraint firstAttribute="width" constant="44" id="ZTx-7Y-uV0"/>
                                 </constraints>
                                 <state key="normal" image="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="za8-w4-US5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -135,7 +138,7 @@
                     <connections>
                         <outlet property="artistLabel" destination="fQE-hV-mGf" id="Q3V-Ca-oCZ"/>
                         <outlet property="collectionView" destination="Dda-Du-yjW" id="PqU-dh-pSK"/>
-                        <outlet property="playBtn" destination="ITa-Bt-Zw8" id="KHk-zh-yfP"/>
+                        <outlet property="playButton" destination="ITa-Bt-Zw8" id="A8u-A3-gTN"/>
                         <outlet property="titleLabel" destination="y6S-p4-Mjy" id="fkF-Hi-qMh"/>
                     </connections>
                 </viewController>

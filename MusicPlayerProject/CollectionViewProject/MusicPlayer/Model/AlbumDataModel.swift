@@ -16,6 +16,7 @@ struct AlbumDataModel {
     var artist:String?
     var albumName:String?
 
+    var songURL:URL?
     var imageData:Data?
     var image:UIImage?{
         if let data = self.imageData
@@ -28,7 +29,6 @@ struct AlbumDataModel {
     init(data: [AVMetadataItem]) {
         for item in data {
             if let key = item.commonKey?.rawValue {
-                print(key)
                 switch key {
                 case "title":
                     title = item.value as? String
