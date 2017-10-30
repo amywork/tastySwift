@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='Extension'/>
+        <page name='class'/>
+        <page name='enumerate'/>
+        <page name='Generic'/>
+        <page name='Protocol'/>
+        <page name='AssociatedType'/>
+        <page name='Closure'/>
+        <page name='Tuple'/>
+        <page name='Optional'/>
+        <page name='Map'/>
+        <page name='Untitled Page'/>
+    </pages>
+</playground>
