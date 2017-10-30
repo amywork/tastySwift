@@ -107,43 +107,19 @@
                                     <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="za8-w4-US5"/>
                                 </connections>
                             </button>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGb-yC-pkO" userLabel="lyricsView" customClass="LyricsView" customModule="CollectionViewProject" customModuleProvider="target">
+                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGb-yC-pkO" userLabel="lyricsView" customClass="LyricsView" customModule="CollectionViewProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOH-2f-GIO">
-                                        <rect key="frame" x="64" y="64" width="247" height="426"/>
-                                        <subviews>
-                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gx5-WS-KJr" userLabel="ContentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="247" height="2000"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aaj-xI-TBT" userLabel="textLabel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="247" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2000" id="Dei-5z-5ht"/>
-                                                    <constraint firstItem="Aaj-xI-TBT" firstAttribute="leading" secondItem="Gx5-WS-KJr" secondAttribute="leading" id="aSC-IG-Xc4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Aaj-xI-TBT" secondAttribute="trailing" id="fIS-c1-PZt"/>
-                                                    <constraint firstItem="Aaj-xI-TBT" firstAttribute="width" secondItem="Gx5-WS-KJr" secondAttribute="width" id="hZB-Nb-2qf"/>
-                                                    <constraint firstItem="Aaj-xI-TBT" firstAttribute="top" secondItem="Gx5-WS-KJr" secondAttribute="top" id="uqb-yz-EET"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Gx5-WS-KJr" firstAttribute="width" secondItem="IOH-2f-GIO" secondAttribute="width" id="Ak6-t0-mh6"/>
-                                            <constraint firstAttribute="bottom" secondItem="Gx5-WS-KJr" secondAttribute="bottom" id="GJR-B0-HxO"/>
-                                            <constraint firstItem="Gx5-WS-KJr" firstAttribute="top" secondItem="IOH-2f-GIO" secondAttribute="top" id="Vvk-Py-CLQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Gx5-WS-KJr" secondAttribute="trailing" id="fFh-KR-Ybh"/>
-                                            <constraint firstItem="Gx5-WS-KJr" firstAttribute="leading" secondItem="IOH-2f-GIO" secondAttribute="leading" id="jTT-H8-gAy"/>
-                                        </constraints>
-                                    </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E09-qL-CLo">
-                                        <rect key="frame" x="310" y="36" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-8F-mxd">
+                                        <rect key="frame" x="44" y="44" width="287" height="466"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E09-qL-CLo">
+                                        <rect key="frame" x="337" y="8" width="30" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="✕">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,15 +131,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="IOH-2f-GIO" secondAttribute="bottom" constant="64" id="1i3-2e-dc3"/>
-                                    <constraint firstItem="IOH-2f-GIO" firstAttribute="top" secondItem="kGb-yC-pkO" secondAttribute="top" constant="64" id="8AT-S8-2Xl"/>
-                                    <constraint firstAttribute="trailing" secondItem="IOH-2f-GIO" secondAttribute="trailing" constant="64" id="9j3-Ct-oRR"/>
-                                    <constraint firstItem="IOH-2f-GIO" firstAttribute="leading" secondItem="kGb-yC-pkO" secondAttribute="leading" constant="64" id="IZy-Lt-6qQ"/>
-                                    <constraint firstItem="IOH-2f-GIO" firstAttribute="centerX" secondItem="kGb-yC-pkO" secondAttribute="centerX" id="WdP-F7-LuZ"/>
-                                    <constraint firstItem="IOH-2f-GIO" firstAttribute="centerY" secondItem="kGb-yC-pkO" secondAttribute="centerY" id="vtH-Vo-KPD"/>
+                                    <constraint firstAttribute="trailing" secondItem="cyG-8F-mxd" secondAttribute="trailing" constant="44" id="D3r-3A-wnR"/>
+                                    <constraint firstItem="cyG-8F-mxd" firstAttribute="top" secondItem="kGb-yC-pkO" secondAttribute="top" constant="44" id="DBu-Xq-C9W"/>
+                                    <constraint firstItem="cyG-8F-mxd" firstAttribute="leading" secondItem="kGb-yC-pkO" secondAttribute="leading" constant="44" id="dyY-Gz-ZeQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="cyG-8F-mxd" secondAttribute="bottom" constant="44" id="ibI-ZN-jT4"/>
+                                    <constraint firstItem="E09-qL-CLo" firstAttribute="top" secondItem="kGb-yC-pkO" secondAttribute="top" constant="8" id="oET-bM-Yki"/>
+                                    <constraint firstAttribute="trailing" secondItem="E09-qL-CLo" secondAttribute="trailing" constant="8" id="wri-Mr-MN4"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="textLabel" destination="Aaj-xI-TBT" id="F6q-gU-MQR"/>
+                                    <outlet property="textView" destination="cyG-8F-mxd" id="OGw-eh-6zD"/>
                                 </connections>
                             </view>
                         </subviews>

@@ -6,6 +6,7 @@ class MainPlayerVC: UIViewController {
     
     /*Song DATA*/
     var albumList:[AlbumDataModel] = DataCenter.main.albumList
+    var currentPageIndex = 0
     
     /*UI Property*/
     @IBOutlet weak var collectionView: UICollectionView!
@@ -13,15 +14,13 @@ class MainPlayerVC: UIViewController {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var lyricsView: LyricsView!
-    @IBAction func exitLyricsView(_ sender: UIButton) {
-        self.lyricsView.isHidden = true
-    }
+    
     
     /*AV Property*/
     var isPlaying: Bool = false
     var player:AVPlayer = AVPlayer()
     
-    /*CollectionView Property*/
+    /*CollectionView Size Property*/
     var cellWidth: CGFloat {
         return collectionView.bounds.width*0.5
     }
@@ -34,24 +33,10 @@ class MainPlayerVC: UIViewController {
     var viewHeight: CGFloat {
         return collectionView!.bounds.height
     }
-    
-    var currentPageIndex = 0
-    //        willSet {
-    //            if newValue >= 0 && newValue < albumList.count {
-    //                titleLabel.text = albumList[newValue].title
-    //                artistLabel.text = albumList[newValue].artist
-    //                let indexPath = IndexPath(item: newValue, section: 0)
-    //                let cell = collectionView.cellForItem(at: indexPath) as? AlbumCoverCell
-    //                cell?.data = albumList[newValue]
-    //            }
-    //        }
-    //    }
-    
-    
+
     /*Life Cycle*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        lyricsView.isHidden = true
         playWithCurrentIndex()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapOnAlbumCover(_:)))
         collectionView.addGestureRecognizer(gesture)
@@ -61,6 +46,10 @@ class MainPlayerVC: UIViewController {
 
 /*tapOnAlbumCover*/
 extension MainPlayerVC {
+    @IBAction func exitLyricsView(_ sender: UIButton) {
+        self.lyricsView.isHidden = true
+    }
+    
     @objc func tapOnAlbumCover(_ sender: UITapGestureRecognizer) {
         //album 커버 선택시 가사뷰 띄우기
         lyricsView.isHidden = false
@@ -93,7 +82,7 @@ extension MainPlayerVC {
     }
     
     @IBAction func prevSongAction(_ sender: UIButton) {
-        if currentPageIndex >= 0 {
+        if currentPageIndex > 0 {
             currentPageIndex -= 1
             setContentOffset()
         }
@@ -112,10 +101,10 @@ extension MainPlayerVC {
     }
     
     private func playWithCurrentIndex() {
-        let selectedData = albumList[currentPageIndex]
-        self.titleLabel.text = selectedData.title
-        self.artistLabel.text = selectedData.artist
-        if let url = selectedData.songURL
+        let currentSong = albumList[currentPageIndex]
+        self.titleLabel.text = currentSong.title
+        self.artistLabel.text = currentSong.artist
+        if let url = currentSong.songURL
         {
             let asset = AVAsset(url: url)
             let playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: nil)
@@ -128,8 +117,8 @@ extension MainPlayerVC {
     }
     
     private func setContentOffset() {
-        let newOffset = CGPoint(x: CGFloat(currentPageIndex)*cellWidth, y: collectionView.contentOffset.y)
-        collectionView.setContentOffset(newOffset, animated: true)
+        let newOffset = CGPoint(x: CGFloat(currentPageIndex)*(cellWidth), y: collectionView.contentOffset.y)
+        collectionView.setContentOffset(newOffset, animated: true) // -> scrollViewDidEndScrollingAnimation
     }
     
 }
@@ -146,17 +135,8 @@ extension MainPlayerVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCoverCell
         cell.data = albumList[indexPath.item]
-        print(cell.frame.size.width)
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if let albumCell = cell as? AlbumCoverCell
-//        {
-//            albumCell.coverImageView.layer.cornerRadius = albumCell.coverImageView.bounds.width/2
-//        }
-//
-//    }
     
     /*sizeForItemAt*/
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

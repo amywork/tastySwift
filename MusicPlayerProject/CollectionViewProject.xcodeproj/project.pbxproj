@@ -147,6 +147,7 @@
 		DD64AB1F1FA18236002779CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */,
 				DD64AB271FA1A725002779CE /* AlbumCoverCell.swift */,
 				DDADD6461FA703B80030E8D9 /* LyricsView.swift */,
 			);
@@ -169,7 +170,6 @@
 			children = (
 				DDA4803D1FA6F1AB00C80705 /* MainPlayerVC.swift */,
 				DD50E3531FA6F8A300D16FE7 /* GestureVC.swift */,
-				4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

@@ -10,13 +10,11 @@ import UIKit
 
 class LyricsView: UIView {
     
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
     var data:AlbumDataModel? {
         didSet {
-            self.textLabel.text = self.data?.lyrics
+            self.textView.text = self.data?.lyrics
         }
     }
     
-    
-        
 }
