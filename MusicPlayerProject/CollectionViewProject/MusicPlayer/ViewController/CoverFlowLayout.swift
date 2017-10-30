@@ -47,6 +47,12 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
         attribute.transform3D = CATransform3DScale(CATransform3DIdentity, ratio, ratio, 1)
         // attribute.zIndex = NSInteger(ratio)
         attribute.alpha = ratio
+      
+//        let cells = collectionView.visibleCells as? [AlbumCoverCell]
+//        for cell in cells! {
+//            cell.coverImageView.layer.cornerRadius = (cell.bounds.size.width)/2
+//        }
+        
     }
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {

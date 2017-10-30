@@ -25,6 +25,7 @@ class DataCenter {
                 let asset = AVURLAsset(url: url)
                 let metaData:[AVMetadataItem] = asset.metadata
                 var newAlbum = AlbumDataModel(data: metaData)
+                newAlbum.lyrics = asset.lyrics
                 newAlbum.songURL = url
                 albumList.append(newAlbum)
             }

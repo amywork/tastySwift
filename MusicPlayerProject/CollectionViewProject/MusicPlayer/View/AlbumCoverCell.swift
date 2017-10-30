@@ -12,11 +12,15 @@ class AlbumCoverCell: UICollectionViewCell {
     var data:AlbumDataModel? {
         didSet {
             coverImageView.image = data?.image
-//            coverImageView.layer.cornerRadius = coverImageView.bounds.width/2
-//            coverImageView.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
-//            coverImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
-//            coverImageView.layer.shadowOpacity = 0.5
+        }willSet {
+            
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layoutIfNeeded()
+        coverImageView.layer.cornerRadius = coverImageView.frame.size.width/2
     }
     
     

@@ -58,9 +58,9 @@
 			children = (
 				DDAAEAD51F8F1DE20000ACFA /* Assets.xcassets */,
 				DDAAEACE1F8F1DE20000ACFA /* AppDelegate.swift */,
+				DDAAEAE01F8F1E170000ACFA /* CustomView.swift */,
 				DDAAEAD01F8F1DE20000ACFA /* ViewController.swift */,
 				DDAAEAD21F8F1DE20000ACFA /* Main.storyboard */,
-				DDAAEAE01F8F1E170000ACFA /* CustomView.swift */,
 				DDAAEAD71F8F1DE20000ACFA /* LaunchScreen.storyboard */,
 				DDAAEADA1F8F1DE20000ACFA /* Info.plist */,
 			);

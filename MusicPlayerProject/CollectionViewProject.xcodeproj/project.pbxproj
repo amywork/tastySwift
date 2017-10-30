@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BE26A381FA385A00042D66E /* CoverFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */; };
+		DD50E3541FA6F8A400D16FE7 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD50E3531FA6F8A300D16FE7 /* GestureVC.swift */; };
 		DD64AB0A1FA181D7002779CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64AB091FA181D7002779CE /* AppDelegate.swift */; };
 		DD64AB0F1FA181D7002779CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB0D1FA181D7002779CE /* Main.storyboard */; };
 		DD64AB111FA181D7002779CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB101FA181D7002779CE /* Assets.xcassets */; };
@@ -46,10 +47,12 @@
 		DDA2A8E01FA1B3F400AC4A9F /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DDA2A8C21FA1B3F300AC4A9F /* 9.mp3 */; };
 		DDA2A8E21FA1B6FD00AC4A9F /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA2A8E11FA1B6FD00AC4A9F /* DataCenter.swift */; };
 		DDA4803E1FA6F1AB00C80705 /* MainPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4803D1FA6F1AB00C80705 /* MainPlayerVC.swift */; };
+		DDADD6471FA703B80030E8D9 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDADD6461FA703B80030E8D9 /* LyricsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverFlowLayout.swift; sourceTree = "<group>"; };
+		DD50E3531FA6F8A300D16FE7 /* GestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVC.swift; sourceTree = "<group>"; };
 		DD64AB061FA181D7002779CE /* CollectionViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD64AB091FA181D7002779CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD64AB0E1FA181D7002779CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 		DDA2A8C21FA1B3F300AC4A9F /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
 		DDA2A8E11FA1B6FD00AC4A9F /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DDA4803D1FA6F1AB00C80705 /* MainPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerVC.swift; sourceTree = "<group>"; };
+		DDADD6461FA703B80030E8D9 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				DD64AB271FA1A725002779CE /* AlbumCoverCell.swift */,
+				DDADD6461FA703B80030E8D9 /* LyricsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA4803D1FA6F1AB00C80705 /* MainPlayerVC.swift */,
+				DD50E3531FA6F8A300D16FE7 /* GestureVC.swift */,
 				4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */,
 			);
 			path = ViewController;
@@ -316,9 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD50E3541FA6F8A400D16FE7 /* GestureVC.swift in Sources */,
 				DDA4803E1FA6F1AB00C80705 /* MainPlayerVC.swift in Sources */,
 				4BE26A381FA385A00042D66E /* CoverFlowLayout.swift in Sources */,
 				DD64AB231FA1A11F002779CE /* AlbumDataModel.swift in Sources */,
+				DDADD6471FA703B80030E8D9 /* LyricsView.swift in Sources */,
 				DDA2A8E21FA1B6FD00AC4A9F /* DataCenter.swift in Sources */,
 				DD64AB0A1FA181D7002779CE /* AppDelegate.swift in Sources */,
 				DD64AB281FA1A725002779CE /* AlbumCoverCell.swift in Sources */,

@@ -12,6 +12,10 @@ class MainPlayerVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var lyricsView: LyricsView!
+    @IBAction func exitLyricsView(_ sender: UIButton) {
+        self.lyricsView.isHidden = true
+    }
     
     /*AV Property*/
     var isPlaying: Bool = false
@@ -47,7 +51,20 @@ class MainPlayerVC: UIViewController {
     /*Life Cycle*/
     override func viewDidLoad() {
         super.viewDidLoad()
+        lyricsView.isHidden = true
         playWithCurrentIndex()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapOnAlbumCover(_:)))
+        collectionView.addGestureRecognizer(gesture)
+    }
+    
+}
+
+/*tapOnAlbumCover*/
+extension MainPlayerVC {
+    @objc func tapOnAlbumCover(_ sender: UITapGestureRecognizer) {
+        //album 커버 선택시 가사뷰 띄우기
+        lyricsView.isHidden = false
+        lyricsView!.data = albumList[currentPageIndex]
     }
 }
 
@@ -129,8 +146,17 @@ extension MainPlayerVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCoverCell
         cell.data = albumList[indexPath.item]
+        print(cell.frame.size.width)
         return cell
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        if let albumCell = cell as? AlbumCoverCell
+//        {
+//            albumCell.coverImageView.layer.cornerRadius = albumCell.coverImageView.bounds.width/2
+//        }
+//
+//    }
     
     /*sizeForItemAt*/
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

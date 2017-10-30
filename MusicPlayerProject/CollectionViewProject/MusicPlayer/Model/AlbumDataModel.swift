@@ -15,6 +15,7 @@ struct AlbumDataModel {
     var title:String?
     var artist:String?
     var albumName:String?
+    var lyrics:String?
 
     var songURL:URL?
     var imageData:Data?
