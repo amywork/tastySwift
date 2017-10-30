@@ -117,8 +117,9 @@ extension MainPlayerVC {
     }
     
     private func setContentOffset() {
-        let newOffset = CGPoint(x: CGFloat(currentPageIndex)*(cellWidth), y: collectionView.contentOffset.y)
-        collectionView.setContentOffset(newOffset, animated: true) // -> scrollViewDidEndScrollingAnimation
+        //let newOffset = CGPoint(x: collectionView.contentOffset.x + cellWidth, y: collectionView.contentOffset.y)
+        collectionView.contentOffset.x = CGFloat(currentPageIndex)*cellWidth
+        // -> scrollViewDidEndScrollingAnimation
     }
     
 }
