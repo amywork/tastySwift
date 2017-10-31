@@ -61,11 +61,16 @@ extension MainPlayerVC {
 }
 
 
-/*UIScrollViewDelegate*/
+/*UIScrollViewDelegate************Debugging*/
 extension MainPlayerVC: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let pageIndex = targetContentOffset.pointee.x/(viewWidth-(cellWidth/2))
+        print("target: \(targetContentOffset.pointee.x)")
+        print("cellWidth: \(cellWidth)")
+        print("viewWidth: \(viewWidth)")
+        print("cellWidth + (cellWidth/2): \(cellWidth + (cellWidth/2))")
+        let pageIndex = targetContentOffset.pointee.x/280
         currentPageIndex = Int(pageIndex)
+        print("currentPageIndex: \(currentPageIndex)")
         playWithCurrentIndex()
     }
     
@@ -124,7 +129,8 @@ extension MainPlayerVC {
     private func setContentOffset() {
         let index = CGFloat(currentPageIndex)
         let newOffset = CGPoint(x: (index*cellWidth)+(index*(cellWidth/2)), y: collectionView.contentOffset.y)
-        collectionView.setContentOffset(newOffset, animated: true) // -> scrollViewDidEndScrollingAnimation
+        collectionView.setContentOffset(newOffset, animated: true)
+        // -> scrollViewDidEndScrollingAnimation
     }
     
 }

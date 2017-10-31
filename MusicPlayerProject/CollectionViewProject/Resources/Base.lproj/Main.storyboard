@@ -62,22 +62,22 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6S-p4-Mjy">
-                                <rect key="frame" x="37.5" y="465" width="300" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="37.5" y="439" width="300" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQE-hV-mGf">
-                                <rect key="frame" x="38.5" y="485.5" width="299.5" height="18"/>
+                                <rect key="frame" x="38.5" y="468" width="299.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.95499999999999996" green="0.0" blue="0.33788629476923077" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-wD-18j">
-                                <rect key="frame" x="74.5" y="580" width="225" height="2"/>
+                                <rect key="frame" x="74.5" y="552" width="225" height="2"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-p7-p86" userLabel="FastForward">
-                                <rect key="frame" x="225.5" y="531" width="44" height="22"/>
+                                <rect key="frame" x="225.5" y="503" width="44" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="PuN-wJ-4TX"/>
                                 </constraints>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8y9-xb-tbm" userLabel="BackTrack">
-                                <rect key="frame" x="105.5" y="531" width="44" height="22"/>
+                                <rect key="frame" x="105.5" y="503" width="44" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Ave-GO-PcO"/>
                                 </constraints>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-Bt-Zw8" userLabel="PauseButton">
-                                <rect key="frame" x="165.5" y="520" width="44" height="44"/>
+                                <rect key="frame" x="165.5" y="492" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9tK-ji-jkN"/>
                                     <constraint firstAttribute="width" constant="44" id="ZTx-7Y-uV0"/>
@@ -156,7 +156,7 @@
                             <constraint firstItem="hmq-p7-p86" firstAttribute="leading" secondItem="ITa-Bt-Zw8" secondAttribute="trailing" constant="16" id="MjU-Ma-tGT"/>
                             <constraint firstItem="8y9-xb-tbm" firstAttribute="width" secondItem="ITa-Bt-Zw8" secondAttribute="width" id="Qr9-Bc-gn3"/>
                             <constraint firstItem="aN8-wD-18j" firstAttribute="top" secondItem="ITa-Bt-Zw8" secondAttribute="bottom" constant="16" id="T1d-Sk-8Wt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-wD-18j" secondAttribute="bottom" constant="36" id="U98-nN-F1M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-wD-18j" secondAttribute="bottom" constant="64" id="U98-nN-F1M"/>
                             <constraint firstItem="aN8-wD-18j" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="UMk-6c-QOa"/>
                             <constraint firstItem="hmq-p7-p86" firstAttribute="centerY" secondItem="ITa-Bt-Zw8" secondAttribute="centerY" id="UcL-Bd-Ot2"/>
                             <constraint firstItem="ITa-Bt-Zw8" firstAttribute="leading" secondItem="8y9-xb-tbm" secondAttribute="trailing" constant="16" id="XsT-3p-Qbt"/>
@@ -169,7 +169,7 @@
                             <constraint firstItem="hmq-p7-p86" firstAttribute="width" secondItem="ITa-Bt-Zw8" secondAttribute="width" id="sZW-Ca-N8y"/>
                             <constraint firstItem="fQE-hV-mGf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="thL-QF-FAq"/>
                             <constraint firstItem="y6S-p4-Mjy" firstAttribute="width" secondItem="Dda-Du-yjW" secondAttribute="width" multiplier="0.8" id="yuO-wR-VTo"/>
-                            <constraint firstItem="y6S-p4-Mjy" firstAttribute="top" secondItem="Dda-Du-yjW" secondAttribute="bottom" constant="26" id="zu4-gg-1ct"/>
+                            <constraint firstItem="y6S-p4-Mjy" firstAttribute="top" secondItem="Dda-Du-yjW" secondAttribute="bottom" id="zu4-gg-1ct"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
