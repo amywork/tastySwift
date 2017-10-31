@@ -30,11 +30,10 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
         let distance = distanceFromOffset(toOffset: attribute.center.x)
         var ratio:CGFloat = 0.0
         if distance < halfOfCollectionWidth {
-            ratio = (halfOfCollectionWidth-distance)/halfOfCollectionWidth + 0.3
+            ratio = (halfOfCollectionWidth-distance)/halfOfCollectionWidth + 0.2
         }else if distance >= halfOfCollectionWidth {
-            ratio = 0.5
+            ratio = 0
         }
-        print(ratio)
         attribute.transform3D = CATransform3DScale(CATransform3DIdentity, ratio, ratio, 1)
         attribute.alpha = ratio
         //attribute.zIndex = NSInteger(ratio+0.5)
@@ -43,7 +42,6 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = self.collectionView else { return proposedContentOffset }
         guard let attributeList = self.layoutAttributesForElements(in: collectionView.bounds) else { return proposedContentOffset }
-        print(attributeList)
         let sortedAttributes = attributeList.sorted { (attribute1, attribute2) -> Bool in
             distanceFromOffset(toOffset: attribute1.center.x) < distanceFromOffset(toOffset: attribute2.center.x) }
         let targetOffsetOfMinimumAttributesCenter = sortedAttributes.first?.center.x

@@ -6,7 +6,7 @@ class MainPlayerVC: UIViewController {
     
     /*Song DATA*/
     var albumList:[AlbumDataModel] = DataCenter.main.albumList
-    var currentPageIndex = 0
+    private var currentPageIndex = 0
     
     /*UI Property*/
     @IBOutlet weak var collectionView: UICollectionView!
@@ -15,10 +15,9 @@ class MainPlayerVC: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var lyricsView: LyricsView!
     
-    
     /*AV Property*/
-    var isPlaying: Bool = false
-    var player:AVPlayer = AVPlayer()
+    private var isPlaying: Bool = false
+    private var player:AVPlayer = AVPlayer()
     
     
     /*CollectionView Size Property*/
@@ -65,7 +64,7 @@ extension MainPlayerVC {
 /*UIScrollViewDelegate*/
 extension MainPlayerVC: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let pageIndex = targetContentOffset.pointee.x/cellWidth
+        let pageIndex = targetContentOffset.pointee.x/(viewWidth-(cellWidth/2))
         currentPageIndex = Int(pageIndex)
         playWithCurrentIndex()
     }
@@ -79,7 +78,7 @@ extension MainPlayerVC: UIScrollViewDelegate {
 extension MainPlayerVC {
     
     @IBAction func nextSongAction(_ sender: UIButton) {
-        if currentPageIndex < albumList.count {
+        if currentPageIndex < albumList.count - 1 {
             currentPageIndex += 1
             setContentOffset()
         }
@@ -105,27 +104,27 @@ extension MainPlayerVC {
     }
     
     private func playWithCurrentIndex() {
-        let currentSong = albumList[currentPageIndex]
-        self.titleLabel.text = currentSong.title
-        self.artistLabel.text = currentSong.artist
-        if let url = currentSong.songURL
-        {
-            let asset = AVAsset(url: url)
-            let playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: nil)
-            player.replaceCurrentItem(with: playerItem)
-            if isPlaying {
-                player.play()
-                isPlaying = true
+        if currentPageIndex >= 0 && currentPageIndex < albumList.count {
+            let currentSong = albumList[currentPageIndex]
+            self.titleLabel.text = currentSong.title
+            self.artistLabel.text = currentSong.artist
+            if let url = currentSong.songURL
+            {
+                let asset = AVAsset(url: url)
+                let playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: nil)
+                player.replaceCurrentItem(with: playerItem)
+                if isPlaying {
+                    player.play()
+                    isPlaying = true
+                }
             }
         }
     }
     
     private func setContentOffset() {
-        print(cellWidth)
-        let newOffset = CGPoint(x: CGFloat(currentPageIndex)*cellWidth+cellWidth, y: collectionView.contentOffset.y)
-        print(newOffset.x)
-        collectionView.setContentOffset(newOffset, animated: true)
-        // -> scrollViewDidEndScrollingAnimation
+        let index = CGFloat(currentPageIndex)
+        let newOffset = CGPoint(x: (index*cellWidth)+(index*(cellWidth/2)), y: collectionView.contentOffset.y)
+        collectionView.setContentOffset(newOffset, animated: true) // -> scrollViewDidEndScrollingAnimation
     }
     
 }
@@ -150,12 +149,14 @@ extension MainPlayerVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
+    /*insetForSectionAt*/
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: viewHeight/2, left: cellWidth/2, bottom: viewHeight/2, right: cellWidth/2)
     }
     
+    /*minimumLineSpacingForSectionAt*/
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cellWidth
+        return cellWidth/2
     }
     
 }
