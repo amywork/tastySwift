@@ -2,6 +2,8 @@
 - **Apple Lover** 👍🏻💙, **Archiving Xcode projects (written in Swift)**
 - **[Blog](https://younari.github.io/)** : https://younari.github.io/
 
+# 👋🏻 Welcome
+
 # 01. Swift
 ## 스위프트 기본 문법
 - [스위프트 Enum](https://younari.github.io/2017-09-19/enumeration)
@@ -15,10 +17,12 @@
 - [스위프트 Type](https://younari.github.io/2017-09-14/swiftTypes)
 - [스위프트 Class](https://younari.github.io/2017-09-14/Class)
 - [스위프트 Array](https://younari.github.io/2017-09-14/Array)
-- [스위프트 Subscript, Extension, Generic](https://younari.github.io/2017-10-25/Extensions)
 - [스위프트 Notification Center](https://younari.github.io/2017-10-24/Notification)
 - [스위프트 Error Handling](https://younari.github.io/2017-10-23/ErrorHandling)
 - [스위프트 Cell Delegate](https://younari.github.io/2017-10-21/CellDelegate)
+- [스위프트 Subscript, Extension, Generic](https://younari.github.io/2017-10-25/Extensions)
+- [스위프트 AV Foundation](https://younari.github.io/2017-10-30/AVFoundation)
+- [스위프트 ARC](https://younari.github.io/2017-10-31/ARC)
 
 ## 스위프트로 데이터 다루기
 - [서버와의 데이터 연동시 Data Control](https://younari.github.io/2017-10-16/DataControl)
@@ -82,6 +86,9 @@
 - [객체 지향 프로그래밍](https://younari.github.io/2017-09-13/Object)
 
 # 04. Demo Projects
+## Music Player
+- [Music Player : Custom Cover Flow Layout & Collection View](https://github.com/younari/tastySwift/tree/master/MusicPlayerProject)
+
 ## 로그인, 회원가입 페이지 구현하기
 - [로그인, 회원가입 페이지 구현하기 v0.2](https://younari.github.io/2017-09-24/SignUpSignInV02)
 - [로그인, 회원가입 페이지 구현하기 v0.1](https://younari.github.io/2017-09-24/SignUpSignInV01)
@@ -105,9 +112,6 @@
 - [Baseball 게임 만들기 v0.3](https://younari.github.io/2017-09-22/BaseballGameV0.3)
 - [Baseball 게임 만들기 v0.4](https://younari.github.io/2017-09-22/BaseballGameV0.4)
 - [Baseball 게임 만들기 v0.5](https://younari.github.io/2017-09-23/BaseballGameV0.5)
-
-## Music Player
-- [Music Player : Cover Collection View](https://github.com/younari/tastySwift/tree/master/CollectionViewProject)
 
 # 05. Insights
 - [API Lists](https://younari.github.io/2017-10-17/APILists)
