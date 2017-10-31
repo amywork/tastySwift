@@ -19,7 +19,6 @@ class MainPlayerVC: UIViewController {
     private var isPlaying: Bool = false
     private var player:AVPlayer = AVPlayer()
     
-    
     /*CollectionView Size Property*/
     var cellWidth: CGFloat {
         return viewWidth/2
@@ -43,6 +42,7 @@ class MainPlayerVC: UIViewController {
         playWithCurrentIndex()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapOnAlbumCover(_:)))
         collectionView.addGestureRecognizer(gesture)
+        self.collectionView.showsHorizontalScrollIndicator = false
     }
     
 }
@@ -57,6 +57,17 @@ extension MainPlayerVC {
         //album 커버 선택시 가사뷰 띄우기
         lyricsView.isHidden = false
         lyricsView!.data = albumList[currentPageIndex]
+    }
+    
+    /*longTap Gesture*/
+    @IBAction func longTapToLastGesture(_ sender: UITouch) {
+        currentPageIndex = albumList.count-1
+        setContentOffset()
+    }
+    
+    @IBAction func longTapToFirstGesture(_ sender: UITouch) {
+        currentPageIndex = 0
+        setContentOffset()
     }
 }
 
@@ -77,6 +88,7 @@ extension MainPlayerVC: UIScrollViewDelegate {
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         playWithCurrentIndex()
     }
+    
 }
 
 /*AVPlayer Handler*/

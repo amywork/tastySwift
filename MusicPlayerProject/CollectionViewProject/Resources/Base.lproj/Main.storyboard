@@ -78,12 +78,14 @@
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmq-p7-p86" userLabel="FastForward">
                                 <rect key="frame" x="225.5" y="503" width="44" height="22"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="PuN-wJ-4TX"/>
                                 </constraints>
                                 <state key="normal" image="FastForward"/>
                                 <connections>
                                     <action selector="nextSongAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i2w-yk-Rne"/>
+                                    <outletCollection property="gestureRecognizers" destination="1ir-T1-HHK" appends="YES" id="aaT-0T-gwv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8y9-xb-tbm" userLabel="BackTrack">
@@ -94,6 +96,7 @@
                                 <state key="normal" image="BackTrack"/>
                                 <connections>
                                     <action selector="prevSongAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Np9-S1-ClJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="CXA-aW-9Fc" appends="YES" id="WZB-6M-hbM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-Bt-Zw8" userLabel="PauseButton">
@@ -183,6 +186,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="CXA-aW-9Fc" userLabel="LongPressToFirst">
+                    <connections>
+                        <action selector="longTapToFirstGesture:" destination="BYZ-38-t0r" id="5Sx-TZ-2XF"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="85F-Q5-b1n"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="1ir-T1-HHK" userLabel="LongPressToLast">
+                    <connections>
+                        <action selector="longTapToLastGesture:" destination="BYZ-38-t0r" id="Kar-7l-jmI"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="DTp-rd-Iig"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="900" y="131.78410794602701"/>
         </scene>
