@@ -17,10 +17,6 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
         return 0
     }
     
-    override func awakeFromNib() {
-        minimumLineSpacing = 16
-    }
-    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let superLayoutAttributes = super.layoutAttributesForElements(in: rect) else { return nil }
         for attribute in superLayoutAttributes {
@@ -29,19 +25,19 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
         }
         return cacheAttributes
     }
-    
+
     func change(attribute: UICollectionViewLayoutAttributes) {
         let distance = distanceFromOffset(toOffset: attribute.center.x)
         var ratio:CGFloat = 0.0
         if distance < halfOfCollectionWidth {
             ratio = (halfOfCollectionWidth-distance)/halfOfCollectionWidth + 0.3
         }else if distance >= halfOfCollectionWidth {
-            ratio = 0
+            ratio = 0.5
         }
+        print(ratio)
         attribute.transform3D = CATransform3DScale(CATransform3DIdentity, ratio, ratio, 1)
         attribute.alpha = ratio
         //attribute.zIndex = NSInteger(ratio+0.5)
-        
     }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
@@ -66,3 +62,4 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
     }
     
 }
+

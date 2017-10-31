@@ -20,20 +20,24 @@ class MainPlayerVC: UIViewController {
     var isPlaying: Bool = false
     var player:AVPlayer = AVPlayer()
     
+    
     /*CollectionView Size Property*/
     var cellWidth: CGFloat {
-        return collectionView.bounds.width*0.5
+        return viewWidth/2
     }
+    
     var cellHeight: CGFloat {
-        return collectionView.bounds.width*0.5
+        return viewHeight/2
     }
+    
     var viewWidth: CGFloat {
-        return collectionView!.bounds.width
+        return collectionView!.frame.size.width
     }
     var viewHeight: CGFloat {
-        return collectionView!.bounds.height
+        return collectionView!.frame.size.height
     }
-
+    
+    
     /*Life Cycle*/
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,8 +121,9 @@ extension MainPlayerVC {
     }
     
     private func setContentOffset() {
-        //let newOffset = CGPoint(x: collectionView.contentOffset.x + cellWidth, y: collectionView.contentOffset.y)
-        collectionView.contentOffset.x = CGFloat(currentPageIndex)*cellWidth
+        print(cellWidth)
+        let newOffset = CGPoint(x: CGFloat(currentPageIndex)*cellWidth+cellWidth, y: collectionView.contentOffset.y)
+        collectionView.setContentOffset(newOffset, animated: true)
         // -> scrollViewDidEndScrollingAnimation
     }
     
@@ -145,7 +150,11 @@ extension MainPlayerVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: (viewWidth-cellWidth)/2, bottom: 0, right: (viewWidth-cellWidth)/2)
+        return UIEdgeInsets(top: cellHeight/2, left: cellWidth/2, bottom: cellHeight/2, right: cellWidth/2)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return cellWidth
     }
     
 }
