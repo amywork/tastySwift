@@ -123,6 +123,7 @@ extension MainPlayerVC {
     private func setContentOffset() {
         print(cellWidth)
         let newOffset = CGPoint(x: CGFloat(currentPageIndex)*cellWidth+cellWidth, y: collectionView.contentOffset.y)
+        print(newOffset.x)
         collectionView.setContentOffset(newOffset, animated: true)
         // -> scrollViewDidEndScrollingAnimation
     }
@@ -150,7 +151,7 @@ extension MainPlayerVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: cellHeight/2, left: cellWidth/2, bottom: cellHeight/2, right: cellWidth/2)
+        return UIEdgeInsets(top: viewHeight/2, left: cellWidth/2, bottom: viewHeight/2, right: cellWidth/2)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
