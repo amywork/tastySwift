@@ -11,6 +11,7 @@ import UIKit
 class LyricsView: UIView {
     
     @IBOutlet weak var textView: UITextView!
+   
     var data:AlbumDataModel? {
         didSet {
             self.textView.text = self.data?.lyrics

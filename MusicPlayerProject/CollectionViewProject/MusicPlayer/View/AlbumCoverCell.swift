@@ -8,6 +8,7 @@
 
 import UIKit
 class AlbumCoverCell: UICollectionViewCell {
+    
     @IBOutlet weak var coverImageView: UIImageView!
     var data:AlbumDataModel? {
         didSet {

@@ -147,9 +147,9 @@
 		DD64AB1F1FA18236002779CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */,
-				DD64AB271FA1A725002779CE /* AlbumCoverCell.swift */,
 				DDADD6461FA703B80030E8D9 /* LyricsView.swift */,
+				DD64AB271FA1A725002779CE /* AlbumCoverCell.swift */,
+				4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

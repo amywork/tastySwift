@@ -17,6 +17,7 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
         return 0
     }
     
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let superLayoutAttributes = super.layoutAttributesForElements(in: rect) else { return nil }
         for attribute in superLayoutAttributes {
@@ -40,12 +41,14 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
         guard let collectionView = self.collectionView else { return proposedContentOffset }
         guard let attributeList = self.layoutAttributesForElements(in: collectionView.bounds) else { return proposedContentOffset }
         let sortedAttributes = attributeList.sorted { (attribute1, attribute2) -> Bool in
             distanceFromOffset(toOffset: attribute1.center.x) < distanceFromOffset(toOffset: attribute2.center.x) }
+        let inset = collectionView.contentInset.left
         let targetOffsetOfMinimumAttributesCenter = sortedAttributes.first?.center.x
-        let targetOffset = CGPoint(x: targetOffsetOfMinimumAttributesCenter!-halfOfCollectionWidth, y: proposedContentOffset.y)
+        let targetOffset = CGPoint(x: targetOffsetOfMinimumAttributesCenter!-(halfOfCollectionWidth-inset), y: proposedContentOffset.y)
         return targetOffset
     }
     

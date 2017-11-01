@@ -4,7 +4,7 @@
 //
 //  Created by 김기윤 on 30/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
-//
+//  JUST TEST FOR GESTURE RECOGNIZER
 
 import UIKit
 
@@ -16,8 +16,7 @@ class GestureVC: UIViewController, UIGestureRecognizerDelegate {
     var location:String = ""
     
     @IBAction func tapGesture(_ sender: UITouch) {
-        //topLabel.text = count
-        //secondLabel.text = location
+    
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
