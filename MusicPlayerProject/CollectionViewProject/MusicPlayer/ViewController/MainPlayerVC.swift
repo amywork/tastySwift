@@ -72,14 +72,16 @@ extension MainPlayerVC {
 }
 
 
-/*UIScrollViewDelegate************Debugging*/
+/*UIScrollViewDelegate***Debugging*/
 extension MainPlayerVC: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         print("target: \(targetContentOffset.pointee.x)")
         print("cellWidth: \(cellWidth)")
         print("viewWidth: \(viewWidth)")
         print("cellWidth + (cellWidth/2): \(cellWidth + (cellWidth/2))")
-        let pageIndex = targetContentOffset.pointee.x/280
+        print("viewWidth - (cellWidth/2): \(viewWidth - (cellWidth/2))")
+        let pageWidth = viewWidth - (cellWidth/2) - 1
+        let pageIndex = targetContentOffset.pointee.x/pageWidth
         currentPageIndex = Int(pageIndex)
         print("currentPageIndex: \(currentPageIndex)")
         playWithCurrentIndex()
