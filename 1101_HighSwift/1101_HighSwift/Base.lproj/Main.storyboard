@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,59 +18,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWn-rf-3eR">
-                                <rect key="frame" x="0.0" y="101" width="375" height="566"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dV3-Fz-Cx9">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <connections>
-                                    <segue destination="oFr-x8-9xV" kind="embed" identifier="left" id="GbG-Px-zNN"/>
+                                    <segue destination="9O7-d3-tR8" kind="embed" identifier="CENTER" id="yg2-30-o1P"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sU-ZY-cTJ">
-                                <rect key="frame" x="49" y="49" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="left"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uim-bV-Jwv">
-                                <rect key="frame" x="164" y="49" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Center"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJs-UV-MOI">
-                                <rect key="frame" x="293" y="49" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="right"/>
-                            </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV3-Fz-Cx9">
-                                <rect key="frame" x="0.0" y="101" width="375" height="566"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-zW-DCD">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <connections>
-                                    <segue destination="9O7-d3-tR8" kind="embed" id="yg2-30-o1P"/>
+                                    <segue destination="AtZ-5e-c5g" kind="embed" identifier="LEFT" id="BwP-0O-mza"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-zW-DCD">
-                                <rect key="frame" x="0.0" y="101" width="375" height="566"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWn-rf-3eR">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <connections>
-                                    <segue destination="AtZ-5e-c5g" kind="embed" id="BwP-0O-mza"/>
+                                    <segue destination="oFr-x8-9xV" kind="embed" identifier="RIGHT" id="GbG-Px-zNN"/>
                                 </connections>
                             </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TU9-Lt-By7">
+                                <rect key="frame" x="0.0" y="68" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sU-ZY-cTJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="left">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9qR-oz-GzL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uim-bV-Jwv">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Center">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toCenter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ERz-Bx-LHq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJs-UV-MOI">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="30"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="right">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="61d-uu-qeB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cWn-rf-3eR" firstAttribute="height" secondItem="dV3-Fz-Cx9" secondAttribute="height" id="05n-Ad-MWO"/>
+                            <constraint firstItem="cWn-rf-3eR" firstAttribute="centerX" secondItem="dV3-Fz-Cx9" secondAttribute="centerX" id="3LG-yA-lm4"/>
+                            <constraint firstItem="dV3-Fz-Cx9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="D45-00-rn1"/>
+                            <constraint firstItem="dV3-Fz-Cx9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DBe-ji-0bm"/>
+                            <constraint firstItem="dV3-Fz-Cx9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="Ilx-0g-N1T"/>
+                            <constraint firstItem="BC4-zW-DCD" firstAttribute="height" secondItem="dV3-Fz-Cx9" secondAttribute="height" id="JNh-3u-N6u"/>
+                            <constraint firstItem="cWn-rf-3eR" firstAttribute="centerY" secondItem="dV3-Fz-Cx9" secondAttribute="centerY" id="OCW-rK-j70"/>
+                            <constraint firstItem="TU9-Lt-By7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OMJ-ck-A1D"/>
+                            <constraint firstItem="BC4-zW-DCD" firstAttribute="width" secondItem="dV3-Fz-Cx9" secondAttribute="width" id="Pfx-zD-lE3"/>
+                            <constraint firstItem="BC4-zW-DCD" firstAttribute="bottom" secondItem="cWn-rf-3eR" secondAttribute="bottom" id="a0z-fF-wpX"/>
+                            <constraint firstItem="BC4-zW-DCD" firstAttribute="centerY" secondItem="dV3-Fz-Cx9" secondAttribute="centerY" id="c1p-84-1DL"/>
+                            <constraint firstItem="BC4-zW-DCD" firstAttribute="centerX" secondItem="dV3-Fz-Cx9" secondAttribute="centerX" id="kQF-Bx-3bQ"/>
+                            <constraint firstItem="BC4-zW-DCD" firstAttribute="bottom" secondItem="dV3-Fz-Cx9" secondAttribute="bottom" id="o9N-EW-krX"/>
+                            <constraint firstItem="TU9-Lt-By7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="sXy-ar-U48"/>
+                            <constraint firstItem="cWn-rf-3eR" firstAttribute="width" secondItem="dV3-Fz-Cx9" secondAttribute="width" id="uCy-LQ-66G"/>
+                            <constraint firstItem="TU9-Lt-By7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z9o-v8-3OQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dV3-Fz-Cx9" secondAttribute="bottom" id="zf3-Fn-F7F"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="centerView" destination="dV3-Fz-Cx9" id="9XO-n0-qat"/>
+                        <outlet property="leftView" destination="BC4-zW-DCD" id="0Xy-B9-ALv"/>
+                        <outlet property="rightView" destination="cWn-rf-3eR" id="umE-Dt-Q2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="67"/>
+            <point key="canvasLocation" x="309.60000000000002" y="66.11694152923539"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zhS-eL-kqY">
             <objects>
                 <viewController id="oFr-x8-9xV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zKn-Wq-gLx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="566"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDu-we-xZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,23 +123,23 @@
             <objects>
                 <viewController id="9O7-d3-tR8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Icy-0K-Plu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="566"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqV-YP-5EN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="1025"/>
+            <point key="canvasLocation" x="310" y="1119"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aZz-pB-Odh">
             <objects>
                 <viewController id="AtZ-5e-c5g" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nKP-IX-UXM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="566"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmK-eA-e99" userLabel="First Responder" sceneMemberID="firstResponder"/>

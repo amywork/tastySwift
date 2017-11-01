@@ -12,7 +12,6 @@
 		DDD141071FA96AF800726EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD141051FA96AF800726EA2 /* Main.storyboard */; };
 		DDD141091FA96AF800726EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD141081FA96AF800726EA2 /* Assets.xcassets */; };
 		DDD1410C1FA96AF800726EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1410A1FA96AF800726EA2 /* LaunchScreen.storyboard */; };
-		DDD141141FA96B1B00726EA2 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD141131FA96B1B00726EA2 /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		DDD141081FA96AF800726EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDD1410B1FA96AF800726EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDD1410D1FA96AF800726EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDD141131FA96B1B00726EA2 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +56,6 @@
 			children = (
 				DDD141011FA96AF800726EA2 /* AppDelegate.swift */,
 				DDD141031FA96AF800726EA2 /* ViewController.swift */,
-				DDD141131FA96B1B00726EA2 /* ContainerViewController.swift */,
 				DDD141081FA96AF800726EA2 /* Assets.xcassets */,
 				DDD141051FA96AF800726EA2 /* Main.storyboard */,
 				DDD1410A1FA96AF800726EA2 /* LaunchScreen.storyboard */,
@@ -140,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDD141041FA96AF800726EA2 /* ViewController.swift in Sources */,
-				DDD141141FA96B1B00726EA2 /* ContainerViewController.swift in Sources */,
 				DDD141021FA96AF800726EA2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
