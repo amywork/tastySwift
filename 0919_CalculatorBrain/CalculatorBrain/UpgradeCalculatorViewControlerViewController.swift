@@ -8,17 +8,22 @@
 import UIKit
 class UpgradeCalculatorViewControler: UIViewController {
 
+    override func viewDidLoad() {
+        self.displayLB.text = "calculator"
+    }
+    
     //MARK: - UI Property
     @IBOutlet weak var displayLB: UILabel!
 
     //MARK: - IBAction
-    //숫자 입력받기 OK
+    //숫자 입력
     var isTyping: Bool = false
-    @IBAction func digit(_ sender: UIButton) {
+  
+    @IBAction func digitBtnHandler(_ sender: UIButton) {
         let currentDigit = sender.currentTitle!
         if isTyping {
-            let textCurrentlyInDisplay = displayLB!.text!
-            displayLB!.text = textCurrentlyInDisplay + currentDigit
+            let textCurrentlyInDisplay = displayLB.text
+            displayLB!.text = textCurrentlyInDisplay! + currentDigit
         }else {
             displayLB!.text = currentDigit
             isTyping = true
@@ -27,10 +32,10 @@ class UpgradeCalculatorViewControler: UIViewController {
     
     // 리셋
     @IBAction func resetHandler(_ sender: UIButton) {
-        displayValue = 0.0
+        displayLB.text = "calculator"
         isTyping = false
-        calModel.setNumber(displayNum: displayValue)
-        calModel.operand = nil
+        calModel.middleNum = nil
+        calModel.firstNum = nil
     }
     
     // 전시된 값을 get 하거나 set하는 displayValue
@@ -45,20 +50,19 @@ class UpgradeCalculatorViewControler: UIViewController {
     
     // operation
     var calModel = CalculatorModel()
-    @IBAction func operation(_ sender: UIButton) {
+    
+    @IBAction func operationBtnHandler(_ sender: UIButton) {
         if isTyping {
             calModel.setNumber(displayNum: displayValue)
             isTyping = false
+            guard let symbol = sender.currentTitle else { return }
+            calModel.perfomrOperation(with: symbol)
+            displayValue = calModel.middleNum!
+        }else if isTyping == false && calModel.middleNum != nil {
+            calModel.setNumber(displayNum: displayValue)
+            guard let symbol = sender.currentTitle else { return }
+            calModel.perfomrOperation(with: symbol)
+            displayValue = calModel.middleNum!
         }
-        
-        guard let symbol = sender.currentTitle else { return }
-        calModel.perfomrOperation(mathSymbol: symbol)
-        
-        if symbol == "=" {
-            displayValue = calModel.returnValue!
-        }else {
-            displayValue = calModel.operand!
-        }
-        
     }
 }

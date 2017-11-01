@@ -1,8 +1,7 @@
 //
 //  CoverFlowLayout.swift
 //  CollectionViewProject
-//
-//  Created by Kimkeeyun on 28/10/2017.
+//  Created by KimKeeYun on 28/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
 
@@ -16,7 +15,6 @@ class CoverFlowLayout: UICollectionViewFlowLayout {
         }
         return 0
     }
-    
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let superLayoutAttributes = super.layoutAttributesForElements(in: rect) else { return nil }

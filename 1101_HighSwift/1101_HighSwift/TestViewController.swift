@@ -12,7 +12,6 @@ class TestViewController: UIViewController, CustomViewDelegate {
 
     @IBOutlet weak var customView: CustomView!
     @IBOutlet weak var textLable: UILabel!
-    
     @IBAction func trickingAnimation(_ sender: UIButton) {
         self.customView.animation(duration: 2, animation: animation, completion: animation2)
     }

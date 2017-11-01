@@ -60,8 +60,8 @@
 			children = (
 				DDD141011FA96AF800726EA2 /* AppDelegate.swift */,
 				DDD141031FA96AF800726EA2 /* ViewController.swift */,
-				DDD141171FA99ABB00726EA2 /* CustomView.swift */,
 				DDD141191FA99B5100726EA2 /* TestViewController.swift */,
+				DDD141171FA99ABB00726EA2 /* CustomView.swift */,
 				DDD141051FA96AF800726EA2 /* Main.storyboard */,
 				DDD1410A1FA96AF800726EA2 /* LaunchScreen.storyboard */,
 				DDD141081FA96AF800726EA2 /* Assets.xcassets */,

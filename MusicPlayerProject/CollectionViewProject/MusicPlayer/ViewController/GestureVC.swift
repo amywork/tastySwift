@@ -20,8 +20,8 @@ class GestureVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        count = "🙃 Tap Count : \(touch.tapCount) "
-        location = "🙃 X 좌표: \(touch.location(in: self.view).x) " + "🙃 Y 좌표: \(touch.location(in: self.view).y)"
+        count = "Tap Count : \(touch.tapCount) "
+        location = "X 좌표: \(touch.location(in: self.view).x) " + "Y 좌표: \(touch.location(in: self.view).y)"
         topLabel.text = count
         secondLabel.text = location
         return true
