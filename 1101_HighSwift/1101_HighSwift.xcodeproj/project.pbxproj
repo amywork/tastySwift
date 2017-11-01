@@ -12,6 +12,8 @@
 		DDD141071FA96AF800726EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD141051FA96AF800726EA2 /* Main.storyboard */; };
 		DDD141091FA96AF800726EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD141081FA96AF800726EA2 /* Assets.xcassets */; };
 		DDD1410C1FA96AF800726EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1410A1FA96AF800726EA2 /* LaunchScreen.storyboard */; };
+		DDD141181FA99ABB00726EA2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD141171FA99ABB00726EA2 /* CustomView.swift */; };
+		DDD1411A1FA99B5100726EA2 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD141191FA99B5100726EA2 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		DDD141081FA96AF800726EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDD1410B1FA96AF800726EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDD1410D1FA96AF800726EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD141171FA99ABB00726EA2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		DDD141191FA99B5100726EA2 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,11 @@
 			children = (
 				DDD141011FA96AF800726EA2 /* AppDelegate.swift */,
 				DDD141031FA96AF800726EA2 /* ViewController.swift */,
-				DDD141081FA96AF800726EA2 /* Assets.xcassets */,
+				DDD141171FA99ABB00726EA2 /* CustomView.swift */,
+				DDD141191FA99B5100726EA2 /* TestViewController.swift */,
 				DDD141051FA96AF800726EA2 /* Main.storyboard */,
 				DDD1410A1FA96AF800726EA2 /* LaunchScreen.storyboard */,
+				DDD141081FA96AF800726EA2 /* Assets.xcassets */,
 				DDD1410D1FA96AF800726EA2 /* Info.plist */,
 			);
 			path = 1101_HighSwift;
@@ -137,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDD141041FA96AF800726EA2 /* ViewController.swift in Sources */,
+				DDD141181FA99ABB00726EA2 /* CustomView.swift in Sources */,
+				DDD1411A1FA99B5100726EA2 /* TestViewController.swift in Sources */,
 				DDD141021FA96AF800726EA2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
