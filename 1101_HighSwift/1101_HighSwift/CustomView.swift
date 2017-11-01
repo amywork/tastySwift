@@ -13,7 +13,6 @@ class CustomView: UIView {
     var delegate: CustomViewDelegate?
     var btnActionClosure:((CustomView)->Void)?
     
-    
     @IBOutlet weak var titleLable:UILabel!
     @IBOutlet weak var textField:UITextField!
     
