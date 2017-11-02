@@ -10,6 +10,25 @@ import UIKit
 
 class SearchResultsCell: UITableViewCell {
 
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+
+    
+    var data: ExploreDataModel? {
+        didSet {
+            configureCell()
+        }
+    }
+    
+    func configureCell() {
+        if let image = data?.iconImage {
+            self.iconImageView.image = UIImage(named: image)
+        }
+        self.titleLabel.text = data?.itemName
+        self.subTitleLabel.text = data?.category
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

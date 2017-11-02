@@ -9,14 +9,13 @@
 import UIKit
 
 class SearchResultsViewController: ExploreViewController, UISearchResultsUpdating  {
+    
     // MARK: - Types
-  
     struct StoryboardConstants {
         static let identifier = "SearchResultsViewControllerStoryboardIdentifier"
     }
     
     // MARK: - UISearchResultsUpdating
-    
     func updateSearchResults(for searchController: UISearchController) {
         /*
          `updateSearchResultsForSearchController(_:)` is called when the controller is

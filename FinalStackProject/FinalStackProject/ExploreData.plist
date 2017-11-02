@@ -10,7 +10,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Apple</string>
+		<string>Airbnb</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -22,7 +22,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Adobe</string>
+		<string>Android</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -34,7 +34,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Netflix</string>
+		<string>Apple</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -46,7 +46,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>youtube</string>
+		<string>Behance</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -70,7 +70,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>youtube</string>
+		<string>LinkedIN</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -82,7 +82,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
+		<string>Medium</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -94,7 +94,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
+		<string>Slack</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -106,7 +106,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
+		<string>Trello</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -118,7 +118,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
+		<string>Skype</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -130,7 +130,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
+		<string>RSS</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -142,7 +142,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
+		<string>Instagram</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -154,7 +154,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
+		<string>Github</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
@@ -166,163 +166,7 @@
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Noun</string>
+		<string>Kickstarter</string>
 		<key>followerCnt</key>
 		<string>2103912</string>
 	</dict>
