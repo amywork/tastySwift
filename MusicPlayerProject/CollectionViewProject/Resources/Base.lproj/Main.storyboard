@@ -189,7 +189,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="900" y="131.78410794602701"/>
+            <point key="canvasLocation" x="934" y="-299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s0K-FL-Hl2">
@@ -208,7 +208,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bb-8K-tJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="132"/>
+            <point key="canvasLocation" x="15" y="-299"/>
+        </scene>
+        <!--LoginFlow-->
+        <scene sceneID="ytJ-s3-aiG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginFlow" id="OkG-s4-nkQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1H-ol-4gg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-840" y="806"/>
         </scene>
         <!--GestureVC-->
         <scene sceneID="cSn-0d-aQk">
@@ -254,12 +262,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-871.20000000000005" y="928.78560719640188"/>
+            <point key="canvasLocation" x="14" y="459"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="mZf-mN-jIK">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8qZ-Ms-CP7" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8qZ-Ms-CP7" customClass="MainTabBarController" customModule="CollectionViewProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFS-yb-Rap">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -271,11 +279,12 @@
                     <connections>
                         <segue destination="UpL-t9-kjC" kind="relationship" relationship="viewControllers" id="7ai-Gv-Wbv"/>
                         <segue destination="gzi-ll-RgM" kind="relationship" relationship="viewControllers" id="Y2i-aK-OSS"/>
+                        <segue destination="OkG-s4-nkQ" kind="presentation" identifier="LoginFlow" id="nJV-vE-9hx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgo-m1-mSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-870" y="132"/>
+            <point key="canvasLocation" x="-1190" y="67"/>
         </scene>
     </scenes>
     <resources>

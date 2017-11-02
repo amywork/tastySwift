@@ -18,14 +18,6 @@ class SettingMainVC: UIViewController {
     }
 }
 
-// MARK - Methods
-extension SettingMainVC {
-    func logout() {
-        let mainVC = self.tabBarController as? MainTabBarController
-        mainVC?.showLoginGateVC()
-    }
-}
-
 // MARK - Custom Cell Delegate
 extension SettingMainVC: SettingCellDelegate {
     func didChangedSwitchValue(_ sender: UISwitch) {
@@ -70,40 +62,17 @@ extension SettingMainVC: UITableViewDelegate, UITableViewDataSource {
             /*SB instantiate으로 실행*/
             /*guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileInfoVC") else { return }
              self.navigationController?.pushViewController(nextVC, animated: true)*/
-            
+
             /*Manual Segue로 실행*/
             performSegue(withIdentifier: "ProfileInfoVC", sender: self)
         case .logout?:
-            let alertVC = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
-            let logoutAction = UIAlertAction(title: "YES", style: .default, handler: { (action) in
-                // Logout
-                DataCenter.mainCenter.currentUser = nil
-                self.tabBarController?.selectedIndex = 0
-                //                let mainVC = self.tabBarController as? MainTabBarController
-                //                mainVC?.showLoginGateVC()
-                NotificationCenter.default.post(name: NSNotification.Name.init("LogOut"), object: nil)
-            })
-            let cancelAction = UIAlertAction(title: "CANCEL", style: .default, handler: nil)
-            alertVC.addAction(logoutAction)
-            alertVC.addAction(cancelAction)
-            self.present(alertVC, animated: true, completion: nil)
+            print("")
         case .changePW?:
-            let alertVC = UIAlertController(title: "비밀번호 변경", message: "비밀번호를 변경하세요", preferredStyle: .alert)
-            alertVC.addTextField(configurationHandler: { (textField) in
-                textField.placeholder = "Input PWD"
-            })
-            let changeAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                // Change PWD
-                DataCenter.mainCenter.currentUser = nil
-            })
-            let cancelAction = UIAlertAction(title: "CANCEL", style: .default, handler: nil)
-            alertVC.addAction(changeAction)
-            alertVC.addAction(cancelAction)
-            self.present(alertVC, animated: true, completion: nil)
+            print("")
         case .memberout?:
-            performSegue(withIdentifier: "ProfileInfoVC", sender: self)
+            print("")
         default:
-            print("default selected")
+            print("")
         }
     }
 }
