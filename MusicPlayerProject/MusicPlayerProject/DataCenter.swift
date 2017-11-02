@@ -1,5 +1,5 @@
 //
-//  DataCenter.swift
+//  DataCenter.swift - - Singleton
 //  CollectionViewProject
 //
 //  Created by 김기윤 on 26/10/2017.
@@ -54,7 +54,7 @@ class DataCenter {
     }
     
     func loadSongData() {
-        for i in 0..<10 {
+        for i in 0...10 {
             if let url = Bundle.main.url(forResource: "\(i)", withExtension: "mp3")
             {
                 let asset = AVURLAsset(url: url)

@@ -216,7 +216,7 @@
                 <viewControllerPlaceholder storyboardName="LoginFlow" id="OkG-s4-nkQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1H-ol-4gg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-840" y="806"/>
+            <point key="canvasLocation" x="-1192" y="619"/>
         </scene>
         <!--GestureVC-->
         <scene sceneID="cSn-0d-aQk">

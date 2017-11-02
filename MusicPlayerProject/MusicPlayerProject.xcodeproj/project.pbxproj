@@ -13,10 +13,11 @@
 		4BAE872C1FAA97FE007A0ED7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE87261FAA97FE007A0ED7 /* LoginVC.swift */; };
 		4BAE872D1FAA97FE007A0ED7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE87271FAA97FE007A0ED7 /* SignUpVC.swift */; };
 		4BAE872E1FAA97FE007A0ED7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE87291FAA97FE007A0ED7 /* UserModel.swift */; };
-		4BAE87301FAA9805007A0ED7 /* CurrentUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE872F1FAA9805007A0ED7 /* CurrentUser.plist */; };
 		4BAE87341FAA9B6D007A0ED7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE87331FAA9B6D007A0ED7 /* CustomTextField.swift */; };
 		4BAE87361FAA9C1E007A0ED7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE87351FAA9C1E007A0ED7 /* RoundButton.swift */; };
 		4BAE87381FAA9DF0007A0ED7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE87371FAA9DF0007A0ED7 /* MainTabBarController.swift */; };
+		4BB53B3F1FAAE73A0026A4E6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD64AB151FA181D7002779CE /* Info.plist */; };
+		4BB53B421FAAE7650026A4E6 /* CurrentUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53B411FAAE7650026A4E6 /* CurrentUser.plist */; };
 		4BE26A381FA385A00042D66E /* CoverFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */; };
 		DD50E3541FA6F8A400D16FE7 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD50E3531FA6F8A300D16FE7 /* GestureVC.swift */; };
 		DD64AB0A1FA181D7002779CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64AB091FA181D7002779CE /* AppDelegate.swift */; };
@@ -48,13 +49,13 @@
 		4BAE87261FAA97FE007A0ED7 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4BAE87271FAA97FE007A0ED7 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		4BAE87291FAA97FE007A0ED7 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		4BAE872F1FAA9805007A0ED7 /* CurrentUser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CurrentUser.plist; path = CollectionViewProject/CurrentUser.plist; sourceTree = SOURCE_ROOT; };
 		4BAE87331FAA9B6D007A0ED7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4BAE87351FAA9C1E007A0ED7 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		4BAE87371FAA9DF0007A0ED7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		4BB53B411FAAE7650026A4E6 /* CurrentUser.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CurrentUser.plist; sourceTree = "<group>"; };
 		4BE26A371FA385A00042D66E /* CoverFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverFlowLayout.swift; sourceTree = "<group>"; };
 		DD50E3531FA6F8A300D16FE7 /* GestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVC.swift; sourceTree = "<group>"; };
-		DD64AB061FA181D7002779CE /* CollectionViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD64AB061FA181D7002779CE /* MusicPlayerProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayerProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD64AB091FA181D7002779CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD64AB0E1FA181D7002779CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD64AB101FA181D7002779CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,7 +133,7 @@
 		DD64AAFD1FA181D7002779CE = {
 			isa = PBXGroup;
 			children = (
-				DD64AB081FA181D7002779CE /* CollectionViewProject */,
+				DD64AB081FA181D7002779CE /* MusicPlayerProject */,
 				DD64AB071FA181D7002779CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,23 +141,23 @@
 		DD64AB071FA181D7002779CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD64AB061FA181D7002779CE /* CollectionViewProject.app */,
+				DD64AB061FA181D7002779CE /* MusicPlayerProject.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DD64AB081FA181D7002779CE /* CollectionViewProject */ = {
+		DD64AB081FA181D7002779CE /* MusicPlayerProject */ = {
 			isa = PBXGroup;
 			children = (
 				DDA2A8A41FA1B3F300AC4A9F /* Song */,
 				DD64AB151FA181D7002779CE /* Info.plist */,
-				4BAE872F1FAA9805007A0ED7 /* CurrentUser.plist */,
+				4BB53B411FAAE7650026A4E6 /* CurrentUser.plist */,
 				DDA2A8E11FA1B6FD00AC4A9F /* DataCenter.swift */,
 				4B2B03A81FA1FE4D0089F4B0 /* MusicPlayer */,
 				4BAE87221FAA97FE007A0ED7 /* LoginFlow */,
 				DD64AB201FA18245002779CE /* Resources */,
 			);
-			path = CollectionViewProject;
+			path = MusicPlayerProject;
 			sourceTree = "<group>";
 		};
 		DD64AB1F1FA18236002779CE /* View */ = {
@@ -220,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD64AB051FA181D7002779CE /* CollectionViewProject */ = {
+		DD64AB051FA181D7002779CE /* MusicPlayerProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD64AB181FA181D7002779CE /* Build configuration list for PBXNativeTarget "CollectionViewProject" */;
+			buildConfigurationList = DD64AB181FA181D7002779CE /* Build configuration list for PBXNativeTarget "MusicPlayerProject" */;
 			buildPhases = (
 				DD64AB021FA181D7002779CE /* Sources */,
 				DD64AB031FA181D7002779CE /* Frameworks */,
@@ -232,9 +233,9 @@
 			);
 			dependencies = (
 			);
-			name = CollectionViewProject;
+			name = MusicPlayerProject;
 			productName = CollectionViewProject;
-			productReference = DD64AB061FA181D7002779CE /* CollectionViewProject.app */;
+			productReference = DD64AB061FA181D7002779CE /* MusicPlayerProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -253,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DD64AB011FA181D7002779CE /* Build configuration list for PBXProject "CollectionViewProject" */;
+			buildConfigurationList = DD64AB011FA181D7002779CE /* Build configuration list for PBXProject "MusicPlayerProject" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -266,7 +267,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD64AB051FA181D7002779CE /* CollectionViewProject */,
+				DD64AB051FA181D7002779CE /* MusicPlayerProject */,
 			);
 		};
 /* End PBXProject section */
@@ -276,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB53B421FAAE7650026A4E6 /* CurrentUser.plist in Resources */,
+				4BB53B3F1FAAE73A0026A4E6 /* Info.plist in Resources */,
 				DDA2A8DD1FA1B3F400AC4A9F /* 6.mp3 in Resources */,
 				DD64AB141FA181D7002779CE /* LaunchScreen.storyboard in Resources */,
 				4BAE87211FAA9679007A0ED7 /* LoginFlow.storyboard in Resources */,
@@ -289,7 +292,6 @@
 				DDA2A8DB1FA1B3F400AC4A9F /* 4.mp3 in Resources */,
 				DDA2A8DF1FA1B3F400AC4A9F /* 8.mp3 in Resources */,
 				DD64AB0F1FA181D7002779CE /* Main.storyboard in Resources */,
-				4BAE87301FAA9805007A0ED7 /* CurrentUser.plist in Resources */,
 				DDA2A8CF1FA1B3F400AC4A9F /* 2.mp3 in Resources */,
 				DDA2A8DC1FA1B3F400AC4A9F /* 5.mp3 in Resources */,
 			);
@@ -464,7 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = CollectionViewProject/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MusicPlayerProject/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = younari.CollectionViewProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,7 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = CollectionViewProject/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MusicPlayerProject/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = younari.CollectionViewProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,7 +493,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD64AB011FA181D7002779CE /* Build configuration list for PBXProject "CollectionViewProject" */ = {
+		DD64AB011FA181D7002779CE /* Build configuration list for PBXProject "MusicPlayerProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD64AB161FA181D7002779CE /* Debug */,
@@ -500,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD64AB181FA181D7002779CE /* Build configuration list for PBXNativeTarget "CollectionViewProject" */ = {
+		DD64AB181FA181D7002779CE /* Build configuration list for PBXNativeTarget "MusicPlayerProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD64AB191FA181D7002779CE /* Debug */,

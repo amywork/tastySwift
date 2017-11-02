@@ -1,11 +1,10 @@
 import UIKit
-
 class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: - deinit 할 떄 removeObserver 해줄 것!
+        //MARK: - deinit 할 떄 removeObserver
         NotificationCenter.default.addObserver(forName: Notification.Name.init("LogOut"), object: nil, queue: nil) { (noti) in
             self.showLoginGateVC()
         }
