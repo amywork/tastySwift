@@ -167,7 +167,7 @@ class AlertControllerViewController : UITableViewController {
             Stop listening for text change notifications on the text field. This
             closure will be called in the two action handlers.
         */
-        let removeTextFieldObserver: (Void) -> Void = {
+        let removeTextFieldObserver: () -> Void = {
             NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: alertController.textFields!.first)
         }
 

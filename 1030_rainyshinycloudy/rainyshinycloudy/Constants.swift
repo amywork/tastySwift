@@ -8,6 +8,7 @@
 
 import Foundation
 typealias DownloadComplete = () -> ()
+
 let BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
 let LATITUDE = "lat="
 let LONGITUDE = "&lon="
@@ -19,5 +20,3 @@ let longitude = Location.sharedInstance.longitude!
 
 let CURRENT_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=42a1771a0b787bf12e734ada0cfc80cb"
 let FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=\(latitude)&lon=\(longitude)&cnt=10&mode=json&appid=42a1771a0b787bf12e734ada0cfc80cb"
-
-

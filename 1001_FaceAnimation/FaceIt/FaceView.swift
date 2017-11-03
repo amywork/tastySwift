@@ -1,11 +1,3 @@
-//
-//  FaceView.swift
-//  FaceIt
-//
-//  Created by CS193p Instructor on 1/23/17.
-//  Copyright © 2017 Stanford University. All rights reserved.
-//
-
 import UIKit
 
 @IBDesignable
@@ -71,11 +63,6 @@ class FaceView: UIView
     
     // MARK: Eyes
     
-    private enum Eye {
-        case left
-        case right
-    }
-    
 //    private func pathForEye(_ eye: Eye) -> UIBezierPath
 //    {
 //        let eyeRadius = skullRadius / Ratios.skullRadiusToEyeRadius
@@ -97,6 +84,11 @@ class FaceView: UIView
     // eyes are shown using EyeView subviews now instead
     // of being drawn by draw(rect:)
 
+    private enum Eye {
+        case left
+        case right
+    }
+    
     private func centerOfEye(_ eye: Eye) -> CGPoint {
         let eyeOffset = skullRadius / Ratios.skullRadiusToEyeOffset
         var eyeCenter = skullCenter

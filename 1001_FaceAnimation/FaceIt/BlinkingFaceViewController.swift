@@ -10,18 +10,20 @@ import UIKit
 
 class BlinkingFaceViewController: FaceViewController
 {
+    //isBlinking?
     var blinking = false {
         didSet {
             blinkIfNeeded()
         }
     }
     
+    //Rate
     private struct BlinkRate {
         static let closedDuration: TimeInterval = 0.4
         static let openDuration: TimeInterval = 2.5
     }
 
-    
+    //Blink Animation
     private func blinkIfNeeded() {
         if blinking {
             faceView.eyesOpen = false
