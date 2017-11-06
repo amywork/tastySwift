@@ -12,8 +12,49 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView!
     @IBOutlet weak var mainLB: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadImage()
+    }
+    
+    func loadImage() {
+        self.imageView.loadImgData("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD7g4AMiNe0jQceNdo4BT5HmhIM4w-oA42q0UVkQbgp2UXSUSVKA")
+        self.imageView2.loadImgData("https://www.visafranchise.com/wp-content/uploads/2017/09/Coffee-Photo-1.jpg")
+    }
+    
+    /*
+    func useWorkItem() {
+        var value = 10
+        print(value)
+        let workItem = DispatchWorkItem {
+            value += 5 }
+        workItem.perform()
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.async(execute: workItem)
+        workItem.notify(queue: DispatchQueue.main) {
+            print("value = ", value)
+        }
+    }
+     */
+    
     @IBAction func action(_ sender: UIButton) {
+        
+        // 저수준
+        DispatchQueue.global().async {
+            //code
+        }
+        
+        // DispatchQueue를 wrapping한 클래스
+        // 고수준, 속도 느림
+        let op = OperationQueue()
+        op.addOperation {
+            //code
+        }
+        
         longTimeAction2()
         mainLB.text = "Thread Test"
     }
@@ -34,6 +75,29 @@ class ViewController: UIViewController {
             for n in 1...1000000 {
                 total += n
                 print(total)
+            }
+        }
+    }
+    
+}
+
+
+// Img caching을 통한 UIImage 업데이트
+var cache: [String:Data] = [:]
+extension UIImageView {
+
+    func loadImgData(_ urlString: String) {
+        if cache.keys.contains(urlString) {
+            let data = cache[urlString]!
+            self.image = UIImage(data: data)
+        }else {
+            DispatchQueue.global().sync {
+                if let data = try? Data(contentsOf: URL(string: urlString)!) {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.image = UIImage(data: data)
+                    }
+                    cache.updateValue(data, forKey: urlString)
+                }
             }
         }
     }
