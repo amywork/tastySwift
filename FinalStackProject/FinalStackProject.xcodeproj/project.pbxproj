@@ -20,6 +20,7 @@
 		4BFF2B7E1F9AE34B00B1C150 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */; };
 		4BFF2B801F9AE55E00B1C150 /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF2B7F1F9AE55E00B1C150 /* FriendDataModel.swift */; };
 		4BFF2B821F9AE58F00B1C150 /* FriendInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */; };
+		DD09852D1FB17E2C008833EF /* StackItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD09852C1FB17E2C008833EF /* StackItemCell.swift */; };
 		DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81676E1F96E8FE00A80891 /* AppDelegate.swift */; };
 		DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8167721F96E8FE00A80891 /* Main.storyboard */; };
 		DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8167871F96ECA000A80891 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		4BFF2B7F1F9AE55E00B1C150 /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
 		4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FriendInfo.plist; path = ../../1020_FriendTableView/1020_FriendTableView/FriendInfo.plist; sourceTree = "<group>"; };
+		DD09852C1FB17E2C008833EF /* StackItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackItemCell.swift; sourceTree = "<group>"; };
 		DD81676B1F96E8FE00A80891 /* FinalStackProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalStackProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81676E1F96E8FE00A80891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8167731F96E8FE00A80891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				DD8167891F96EE7100A80891 /* RoundButton.swift */,
 				DD8167901F96FC1C00A80891 /* ShadowView.swift */,
 				4BAE873F1FAAB8D2007A0ED7 /* SearchResultsCell.swift */,
+				DD09852C1FB17E2C008833EF /* StackItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				DDD146E41F9EEFAD00709FF5 /* SettingMainVC.swift in Sources */,
 				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
 				DD9E40ED1FA0411C00750413 /* CustomFriendCell.swift in Sources */,
+				DD09852D1FB17E2C008833EF /* StackItemCell.swift in Sources */,
 				4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */,
 				DDD146DC1F9ECEA400709FF5 /* AddSubscriptionVC.swift in Sources */,
 				4BE462D81F9AA6B000E593C9 /* MainTabBarController.swift in Sources */,

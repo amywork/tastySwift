@@ -9,7 +9,6 @@
 //  Timer.invalidate 하면 중단
 
 import UIKit
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
