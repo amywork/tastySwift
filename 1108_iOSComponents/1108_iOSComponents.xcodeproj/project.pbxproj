@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BFA2F0D1FB1C28300450923 /* BookMarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFA2F0C1FB1C28300450923 /* BookMarkModel.swift */; };
 		DD0985191FB178D6008833EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0985181FB178D6008833EF /* AppDelegate.swift */; };
 		DD09851E1FB178D6008833EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD09851C1FB178D6008833EF /* Main.storyboard */; };
 		DD0985201FB178D6008833EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD09851F1FB178D6008833EF /* Assets.xcassets */; };
@@ -14,10 +15,10 @@
 		DD09852B1FB17A51008833EF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD09852A1FB17A51008833EF /* MapViewController.swift */; };
 		DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DB1FB1855900E4FDC1 /* Location.swift */; };
 		DD2666DE1FB1B8E900E4FDC1 /* CustomPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */; };
-		DD2666E01FB1BBD900E4FDC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DF1FB1BBD900E4FDC1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BFA2F0C1FB1C28300450923 /* BookMarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkModel.swift; sourceTree = "<group>"; };
 		DD0985151FB178D6008833EF /* 1108_iOSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1108_iOSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0985181FB178D6008833EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD09851D1FB178D6008833EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		DD09852A1FB17A51008833EF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DD2666DB1FB1855900E4FDC1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinView.swift; sourceTree = "<group>"; };
-		DD2666DF1FB1BBD900E4FDC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +41,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BFA2F0B1FB1C0A500450923 /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				DD2666DB1FB1855900E4FDC1 /* Location.swift */,
+				4BFA2F0C1FB1C28300450923 /* BookMarkModel.swift */,
+				DD09852A1FB17A51008833EF /* MapViewController.swift */,
+				DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */,
+			);
+			path = MapKit;
+			sourceTree = "<group>";
+		};
 		DD09850C1FB178D6008833EF = {
 			isa = PBXGroup;
 			children = (
@@ -61,10 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0985241FB178D6008833EF /* Info.plist */,
-				DD2666DB1FB1855900E4FDC1 /* Location.swift */,
-				DD2666DF1FB1BBD900E4FDC1 /* Constants.swift */,
-				DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */,
-				DD09852A1FB17A51008833EF /* MapViewController.swift */,
+				4BFA2F0B1FB1C0A500450923 /* MapKit */,
 				DD09851F1FB178D6008833EF /* Assets.xcassets */,
 				DD0985181FB178D6008833EF /* AppDelegate.swift */,
 				DD09851C1FB178D6008833EF /* Main.storyboard */,
@@ -145,9 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD2666E01FB1BBD900E4FDC1 /* Constants.swift in Sources */,
 				DD0985191FB178D6008833EF /* AppDelegate.swift in Sources */,
 				DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */,
+				4BFA2F0D1FB1C28300450923 /* BookMarkModel.swift in Sources */,
 				DD09852B1FB17A51008833EF /* MapViewController.swift in Sources */,
 				DD2666DE1FB1B8E900E4FDC1 /* CustomPinView.swift in Sources */,
 			);
@@ -293,7 +301,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
