@@ -15,6 +15,8 @@
 		DD09852B1FB17A51008833EF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD09852A1FB17A51008833EF /* MapViewController.swift */; };
 		DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DB1FB1855900E4FDC1 /* Location.swift */; };
 		DD2666DE1FB1B8E900E4FDC1 /* CustomPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */; };
+		DD9F37601FB2917B0056E3D9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9F375F1FB2917B0056E3D9 /* CalendarViewController.swift */; };
+		DD9F37651FB292860056E3D9 /* StackCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9F37641FB292860056E3D9 /* StackCalendar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DD09852A1FB17A51008833EF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DD2666DB1FB1855900E4FDC1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinView.swift; sourceTree = "<group>"; };
+		DD9F375F1FB2917B0056E3D9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		DD9F37641FB292860056E3D9 /* StackCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCalendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,14 +75,24 @@
 		DD0985171FB178D6008833EF /* 1108_iOSComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DD09851F1FB178D6008833EF /* Assets.xcassets */,
 				DD0985241FB178D6008833EF /* Info.plist */,
 				4BFA2F0B1FB1C0A500450923 /* MapKit */,
-				DD09851F1FB178D6008833EF /* Assets.xcassets */,
+				DD9F37631FB292530056E3D9 /* Calendar */,
 				DD0985181FB178D6008833EF /* AppDelegate.swift */,
 				DD09851C1FB178D6008833EF /* Main.storyboard */,
 				DD0985211FB178D6008833EF /* LaunchScreen.storyboard */,
 			);
 			path = 1108_iOSComponents;
+			sourceTree = "<group>";
+		};
+		DD9F37631FB292530056E3D9 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DD9F375F1FB2917B0056E3D9 /* CalendarViewController.swift */,
+				DD9F37641FB292860056E3D9 /* StackCalendar.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9F37601FB2917B0056E3D9 /* CalendarViewController.swift in Sources */,
+				DD9F37651FB292860056E3D9 /* StackCalendar.swift in Sources */,
 				DD0985191FB178D6008833EF /* AppDelegate.swift in Sources */,
 				DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */,
 				4BFA2F0D1FB1C28300450923 /* BookMarkModel.swift in Sources */,
