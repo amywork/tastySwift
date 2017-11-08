@@ -1,6 +1,5 @@
 //
 //  CalendarView.swift
-//  1108_iOSComponents
 //
 //  Created by 김기윤 on 08/11/2017.
 //  Copyright © 2017 younari. All rights reserved.
@@ -43,7 +42,7 @@ struct CalendarDataModel {
     
     private let calendar = Calendar(identifier: .gregorian)
     // Locale, Timezone : default == device default
-
+    
     init?(date: Date) {
         var components = calendar.dateComponents([.year,.month,.day], from: date)
         self.year = components.year ?? 0
@@ -55,7 +54,7 @@ struct CalendarDataModel {
         var weekDayCompo = calendar.dateComponents([.weekday], from: firstDateOfMonth)
         let weekDate = weekDayCompo.weekday ?? 1
         startWeekDayOfMonth = WeekDay.init(rawValue: weekDate - 1)!
-       
+        
         var addComponents = DateComponents()
         addComponents.month = 1
         addComponents.day = -1
@@ -117,7 +116,7 @@ class CalendarView: UIView, CalendarViewDelegate {
             contentView.reloadData()
         }
     }
-   
+    
     private let identifier: String = "CustomDateCell"
     private var contentView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -126,7 +125,7 @@ class CalendarView: UIView, CalendarViewDelegate {
         collectionView.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         return collectionView
     }()
-   
+    
     // MARK : - init
     override func awakeFromNib() {
         updateUI()
@@ -140,7 +139,7 @@ class CalendarView: UIView, CalendarViewDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
 }
 
 // MARK : - CalendarView CollectionView
@@ -322,7 +321,7 @@ class CustomDateCell: UICollectionViewCell {
 
 // AutoLayout
 extension UIView {
-  
+    
     func autolayout(targetView: UIView, topConstant: CGFloat?, rightConstant: CGFloat?, bottomConstant: CGFloat?, leftConstant: CGFloat?) {
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -352,7 +351,8 @@ extension UIView {
         if let multiplier = heightMultiplier {
             self.heightAnchor.constraint(equalTo: targetView.heightAnchor, multiplier: multiplier).isActive = true
         }
-    
+        
     }
     
 }
+

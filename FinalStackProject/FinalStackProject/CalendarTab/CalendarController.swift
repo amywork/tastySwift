@@ -1,6 +1,5 @@
 //
 //  CalendarViewController.swift
-//  1108_iOSComponents
 //
 //  Created by 김기윤 on 08/11/2017.
 //  Copyright © 2017 younari. All rights reserved.
@@ -8,7 +7,7 @@
 
 import UIKit
 class CalendarViewController: UIViewController, CalendarViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     //KEY: MM DD
@@ -42,7 +41,7 @@ class CalendarViewController: UIViewController, CalendarViewDelegate {
         calendarView.updatePrevMonth()
         thisMonthLabel.text = "\(calendarView.year ?? 1). \(calendarView.month ?? 1)"
     }
-
+    
 }
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,7 +54,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = "Dropbox"
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Upcomings"
     }
@@ -63,7 +62,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension Date {
-
+    
     var mmdd:String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
@@ -71,6 +70,7 @@ extension Date {
         dateFormatter.dateFormat = "MMdd"
         return dateFormatter.string(from: self)
     }
-
+    
 }
+
 
