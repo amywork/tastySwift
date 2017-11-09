@@ -16,23 +16,18 @@ class CardDetailController: UIViewController {
     var data: CardData?
     
     @IBAction func didTapEditPhotoBtn(_ sender: UIButton) {
+        
     }
     
     @IBAction func didTapSaveBtn(_ sender: UIButton) {
         
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         if let data = self.data {
             nameLabel.text = data.cardName
-            if let name = data.cardImgName {
-                self.imgView.image = UIImage(named: name)
-            }
-            if let data = data.imgData {
-                self.imgView.image = UIImage(data: data)
-            }
+            imgView.image = UIImage(data: data.imgData)
         }
     }
 

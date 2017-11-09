@@ -16,7 +16,7 @@
 		DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DB1FB1855900E4FDC1 /* Location.swift */; };
 		DD2666DE1FB1B8E900E4FDC1 /* CustomPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */; };
 		DD72677B1FB3E6FF00514E72 /* MyCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72677A1FB3E6FF00514E72 /* MyCardController.swift */; };
-		DD7267821FB3EB6700514E72 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267811FB3EB6700514E72 /* CardCell.swift */; };
+		DD7267821FB3EB6700514E72 /* CustomCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267811FB3EB6700514E72 /* CustomCardCell.swift */; };
 		DD7267841FB3EBEC00514E72 /* AddCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267831FB3EBEC00514E72 /* AddCardController.swift */; };
 		DD7267861FB3EC7200514E72 /* CardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267851FB3EC7200514E72 /* CardDetailController.swift */; };
 		DD7267881FB3ECC900514E72 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267871FB3ECC900514E72 /* CardData.swift */; };
@@ -37,7 +37,7 @@
 		DD2666DB1FB1855900E4FDC1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinView.swift; sourceTree = "<group>"; };
 		DD72677A1FB3E6FF00514E72 /* MyCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardController.swift; sourceTree = "<group>"; };
-		DD7267811FB3EB6700514E72 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		DD7267811FB3EB6700514E72 /* CustomCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardCell.swift; sourceTree = "<group>"; };
 		DD7267831FB3EBEC00514E72 /* AddCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardController.swift; sourceTree = "<group>"; };
 		DD7267851FB3EC7200514E72 /* CardDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailController.swift; sourceTree = "<group>"; };
 		DD7267871FB3ECC900514E72 /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
@@ -102,10 +102,10 @@
 			children = (
 				DD7267891FB3F33200514E72 /* DataCenter.swift */,
 				DD7267871FB3ECC900514E72 /* CardData.swift */,
+				DD7267811FB3EB6700514E72 /* CustomCardCell.swift */,
 				DD72677A1FB3E6FF00514E72 /* MyCardController.swift */,
 				DD7267831FB3EBEC00514E72 /* AddCardController.swift */,
 				DD7267851FB3EC7200514E72 /* CardDetailController.swift */,
-				DD7267811FB3EB6700514E72 /* CardCell.swift */,
 			);
 			path = WidgetPicker;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 				DD72678A1FB3F33200514E72 /* DataCenter.swift in Sources */,
 				DD72677B1FB3E6FF00514E72 /* MyCardController.swift in Sources */,
 				DD7267881FB3ECC900514E72 /* CardData.swift in Sources */,
-				DD7267821FB3EB6700514E72 /* CardCell.swift in Sources */,
+				DD7267821FB3EB6700514E72 /* CustomCardCell.swift in Sources */,
 				DD7267841FB3EBEC00514E72 /* AddCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

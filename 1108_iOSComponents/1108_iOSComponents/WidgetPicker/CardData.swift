@@ -11,23 +11,31 @@ import UIKit
 
 struct CardData {
     var cardName: String
-    var cardImgName: String?
-    var imgData: Data?
-    var img: UIImage?
+    var imgData: Data
+    var isLike: Bool = false
+    
+    var dictionaryData:[String:Any] {
+        return ["name":cardName,"data":imgData,"isLike":isLike]
+    }
 
-    init(name:String, img:UIImage) {
-        self.cardName = name
-        self.img = img
+    var image:UIImage?{
+        return UIImage(data:imgData)
     }
     
-    init(name:String, imgName:String) {
-        self.cardName = name
-        self.cardImgName = imgName
-    }
-    
-    init(name:String, data:Data) {
+    init(name:String, data:Data)
+    {
         self.cardName = name
         self.imgData = data
+    }
+    
+    init?(dataDic:[String:Any])
+    {
+        guard let title = dataDic["name"] as? String else {return nil}
+        self.cardName = title
+        guard let data = dataDic["data"] as? Data else {return nil}
+        self.imgData = data
+        guard let isLike = dataDic["isLike"] as? Bool else {return nil}
+        self.isLike = isLike
     }
 
 }
