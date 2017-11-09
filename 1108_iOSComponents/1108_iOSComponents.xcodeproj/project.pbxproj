@@ -15,6 +15,12 @@
 		DD09852B1FB17A51008833EF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD09852A1FB17A51008833EF /* MapViewController.swift */; };
 		DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DB1FB1855900E4FDC1 /* Location.swift */; };
 		DD2666DE1FB1B8E900E4FDC1 /* CustomPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */; };
+		DD72677B1FB3E6FF00514E72 /* MyCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72677A1FB3E6FF00514E72 /* MyCardController.swift */; };
+		DD7267821FB3EB6700514E72 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267811FB3EB6700514E72 /* CardCell.swift */; };
+		DD7267841FB3EBEC00514E72 /* AddCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267831FB3EBEC00514E72 /* AddCardController.swift */; };
+		DD7267861FB3EC7200514E72 /* CardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267851FB3EC7200514E72 /* CardDetailController.swift */; };
+		DD7267881FB3ECC900514E72 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267871FB3ECC900514E72 /* CardData.swift */; };
+		DD72678A1FB3F33200514E72 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267891FB3F33200514E72 /* DataCenter.swift */; };
 		DD9F37601FB2917B0056E3D9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9F375F1FB2917B0056E3D9 /* CalendarViewController.swift */; };
 		DD9F37651FB292860056E3D9 /* StackCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9F37641FB292860056E3D9 /* StackCalendar.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +36,12 @@
 		DD09852A1FB17A51008833EF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DD2666DB1FB1855900E4FDC1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DD2666DD1FB1B8E900E4FDC1 /* CustomPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinView.swift; sourceTree = "<group>"; };
+		DD72677A1FB3E6FF00514E72 /* MyCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardController.swift; sourceTree = "<group>"; };
+		DD7267811FB3EB6700514E72 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		DD7267831FB3EBEC00514E72 /* AddCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardController.swift; sourceTree = "<group>"; };
+		DD7267851FB3EC7200514E72 /* CardDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailController.swift; sourceTree = "<group>"; };
+		DD7267871FB3ECC900514E72 /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		DD7267891FB3F33200514E72 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		DD9F375F1FB2917B0056E3D9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		DD9F37641FB292860056E3D9 /* StackCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCalendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,15 +87,37 @@
 		DD0985171FB178D6008833EF /* 1108_iOSComponents */ = {
 			isa = PBXGroup;
 			children = (
-				DD09851F1FB178D6008833EF /* Assets.xcassets */,
 				DD0985241FB178D6008833EF /* Info.plist */,
+				DD09851C1FB178D6008833EF /* Main.storyboard */,
+				DD72677D1FB3E72500514E72 /* Sources */,
 				4BFA2F0B1FB1C0A500450923 /* MapKit */,
 				DD9F37631FB292530056E3D9 /* Calendar */,
-				DD0985181FB178D6008833EF /* AppDelegate.swift */,
-				DD09851C1FB178D6008833EF /* Main.storyboard */,
-				DD0985211FB178D6008833EF /* LaunchScreen.storyboard */,
+				DD72677C1FB3E70400514E72 /* Widget */,
 			);
 			path = 1108_iOSComponents;
+			sourceTree = "<group>";
+		};
+		DD72677C1FB3E70400514E72 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				DD7267891FB3F33200514E72 /* DataCenter.swift */,
+				DD7267871FB3ECC900514E72 /* CardData.swift */,
+				DD72677A1FB3E6FF00514E72 /* MyCardController.swift */,
+				DD7267831FB3EBEC00514E72 /* AddCardController.swift */,
+				DD7267851FB3EC7200514E72 /* CardDetailController.swift */,
+				DD7267811FB3EB6700514E72 /* CardCell.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		DD72677D1FB3E72500514E72 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DD09851F1FB178D6008833EF /* Assets.xcassets */,
+				DD0985181FB178D6008833EF /* AppDelegate.swift */,
+				DD0985211FB178D6008833EF /* LaunchScreen.storyboard */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		DD9F37631FB292530056E3D9 /* Calendar */ = {
@@ -170,10 +204,16 @@
 				DD9F37601FB2917B0056E3D9 /* CalendarViewController.swift in Sources */,
 				DD9F37651FB292860056E3D9 /* StackCalendar.swift in Sources */,
 				DD0985191FB178D6008833EF /* AppDelegate.swift in Sources */,
+				DD7267861FB3EC7200514E72 /* CardDetailController.swift in Sources */,
 				DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */,
 				4BFA2F0D1FB1C28300450923 /* BookMarkModel.swift in Sources */,
 				DD09852B1FB17A51008833EF /* MapViewController.swift in Sources */,
 				DD2666DE1FB1B8E900E4FDC1 /* CustomPinView.swift in Sources */,
+				DD72678A1FB3F33200514E72 /* DataCenter.swift in Sources */,
+				DD72677B1FB3E6FF00514E72 /* MyCardController.swift in Sources */,
+				DD7267881FB3ECC900514E72 /* CardData.swift in Sources */,
+				DD7267821FB3EB6700514E72 /* CardCell.swift in Sources */,
+				DD7267841FB3EBEC00514E72 /* AddCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,13 +85,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B3BA2ED1FB33A720033E061 /* CalendarTab */ = {
+		4B3BA2ED1FB33A720033E061 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				4B3BA2EB1FB33A640033E061 /* CalendarView.swift */,
 				4B3BA2EE1FB33A950033E061 /* CalendarController.swift */,
 			);
-			path = CalendarTab;
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		DD72677F1FB3E7CF00514E72 /* StackList */ = {
+			isa = PBXGroup;
+			children = (
+				DD9E40EC1FA0411C00750413 /* CustomFriendCell.swift */,
+				4BFF2B7F1F9AE55E00B1C150 /* FriendDataModel.swift */,
+				DDEE84C91F99CE18002CDB03 /* ItemListViewController.swift */,
+				4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */,
+			);
+			path = StackList;
+			sourceTree = "<group>";
+		};
+		DD7267801FB3E85400514E72 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				DD8167921F97014400A80891 /* CustomTextField.swift */,
+				DD8167901F96FC1C00A80891 /* ShadowView.swift */,
+				DD8167891F96EE7100A80891 /* RoundButton.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		DD8167621F96E8FE00A80891 = {
@@ -120,9 +141,11 @@
 				4BE462DA1F9AA9A800E593C9 /* CurrentUser.plist */,
 				4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */,
 				DD81679B1F97351D00A80891 /* DataCenter */,
-				DD8167811F96E91700A80891 /* MainTab */,
-				4B3BA2ED1FB33A720033E061 /* CalendarTab */,
-				DDD146DF1F9ED5CC00709FF5 /* SettingTab */,
+				DD7267801FB3E85400514E72 /* CustomView */,
+				DD8167811F96E91700A80891 /* Explore */,
+				DD72677F1FB3E7CF00514E72 /* StackList */,
+				4B3BA2ED1FB33A720033E061 /* Calendar */,
+				DDD146DF1F9ED5CC00709FF5 /* Setting */,
 				DD8167821F96E92500A80891 /* Resources */,
 			);
 			path = FinalStackProject;
@@ -136,14 +159,14 @@
 			path = Appdelegate;
 			sourceTree = "<group>";
 		};
-		DD8167811F96E91700A80891 /* MainTab */ = {
+		DD8167811F96E91700A80891 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
 				DD9E40EB1FA03FF500750413 /* Model */,
 				DD81678B1F96EEC500A80891 /* View */,
 				DDD146DE1F9ED5BA00709FF5 /* Controller */,
 			);
-			path = MainTab;
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		DD8167821F96E92500A80891 /* Resources */ = {
@@ -160,10 +183,6 @@
 		DD81678B1F96EEC500A80891 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DD9E40EC1FA0411C00750413 /* CustomFriendCell.swift */,
-				DD8167921F97014400A80891 /* CustomTextField.swift */,
-				DD8167891F96EE7100A80891 /* RoundButton.swift */,
-				DD8167901F96FC1C00A80891 /* ShadowView.swift */,
 				4BAE873F1FAAB8D2007A0ED7 /* SearchResultsCell.swift */,
 				DD09852C1FB17E2C008833EF /* StackItemCell.swift */,
 			);
@@ -207,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */,
-				4BFF2B7F1F9AE55E00B1C150 /* FriendDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,21 +236,19 @@
 				4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */,
 				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
 				4BAE873B1FAAA933007A0ED7 /* SearchResultsViewController.swift */,
-				DDEE84C91F99CE18002CDB03 /* ItemListViewController.swift */,
-				4BFF2B7D1F9AE34B00B1C150 /* ItemDetailViewController.swift */,
 				DDD146DB1F9ECEA400709FF5 /* AddSubscriptionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		DDD146DF1F9ED5CC00709FF5 /* SettingTab */ = {
+		DDD146DF1F9ED5CC00709FF5 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 				DD9E40E91FA03F5C00750413 /* Model */,
 				DD9E40E81FA03F5500750413 /* View */,
 				DD9E40E71FA03F4200750413 /* Controller */,
 			);
-			path = SettingTab;
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
