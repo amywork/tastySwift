@@ -11,7 +11,7 @@ import UIKit
 class ListMainController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var itemTableView: UITableView!
-    lazy var stacks = DataCenter.mainCenter.stackList
+    lazy var stacks = DataCenter.main.stackDataList
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class ListMainController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 52
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -1,7 +1,5 @@
 //
 //  SettingDataModel.swift
-//  1018_Fanxy
-//
 //  Created by Kimkeeyun on 20/10/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
@@ -16,7 +14,7 @@ enum CellType: String {
 }
 
 // MARK: - Section of Setting
-struct SettingDataModel {
+struct SettingData {
     
     var sectionTitle: String = ""
     var cellContentList: [String] = []

@@ -3,172 +3,196 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>itemName</key>
+		<key>name</key>
 		<string>Youtube Red</string>
 		<key>category</key>
-		<string>Design</string>
+		<string>Movies</string>
+		<key>URL</key>
+		<string>https://www.youtube.com/red</string>
+		<key>image</key>
+		<string>Youtube</string>
+		<key>memo</key>
+		<string>음악과 동영상을 광고없이 백그라운드 및 오프라인 상태에서 즐길 수 있습니다.</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dropbox</string>
+		<key>category</key>
+		<string>Productivity</string>
+		<key>URL</key>
+		<string>https://www.dropbox.com/upgrade</string>
+		<key>image</key>
+		<string>Coub</string>
+		<key>memo</key>
+		<string>Dropbox professional을 통해 모든 업무 파일을 보관하고, 공유하며, 진행 상황을 파악할 수 있습니다.</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
 		<string>Airbnb</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 	<dict>
-		<key>itemName</key>
-		<string>Adobe CC</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Android</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Netflix</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Apple</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Dropbox Premium</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Behance</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Amazon Prime</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Spotify</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>iCloud</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>LinkedIN</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
-		<key>category</key>
-		<string>Design</string>
-		<key>URL</key>
-		<string>www.youtube.com</string>
-		<key>iconImage</key>
-		<string>Medium</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
-	</dict>
-	<dict>
-		<key>itemName</key>
-		<string>tving</string>
+		<key>name</key>
+		<string>Youtube Red</string>
 		<key>category</key>
 		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Slack</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 	<dict>
-		<key>itemName</key>
-		<string>melon music</string>
+		<key>name</key>
+		<string>Youtube Red</string>
 		<key>category</key>
 		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Trello</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
+		<key>name</key>
+		<string>Youtube Red</string>
 		<key>category</key>
-		<string>Design</string>
+		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Skype</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
+		<key>name</key>
+		<string>Youtube Red</string>
 		<key>category</key>
-		<string>Design</string>
+		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>RSS</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
+		<key>name</key>
+		<string>Youtube Red</string>
 		<key>category</key>
-		<string>Design</string>
+		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Instagram</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
+		<key>name</key>
+		<string>Youtube Red</string>
 		<key>category</key>
-		<string>Design</string>
+		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Github</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 	<dict>
-		<key>itemName</key>
-		<string>Noun Project</string>
+		<key>name</key>
+		<string>Youtube Red</string>
 		<key>category</key>
-		<string>Design</string>
+		<string>Entertainment</string>
 		<key>URL</key>
 		<string>www.youtube.com</string>
 		<key>iconImage</key>
-		<string>Kickstarter</string>
-		<key>followerCnt</key>
-		<string>2103912</string>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Entertainment</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Entertainment</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Entertainment</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Entertainment</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Entertainment</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Youtube Red</string>
+		<key>category</key>
+		<string>Entertainment</string>
+		<key>URL</key>
+		<string>www.youtube.com</string>
+		<key>iconImage</key>
+		<string>Airbnb</string>
+		<key>memo</key>
+		<string>유튜브 프리미엄 서비스를 감상하세요</string>
 	</dict>
 </array>
 </plist>

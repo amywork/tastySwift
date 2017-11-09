@@ -15,18 +15,19 @@ class SearchResultsCell: UITableViewCell {
     @IBOutlet weak var subTitleLabel: UILabel!
 
     
-    var data: ExploreDataModel? {
+    var data: ExploreData? {
         didSet {
             configureCell()
         }
     }
     
     func configureCell() {
-        if let image = data?.iconImage {
-            self.iconImageView.image = UIImage(named: image)
+        if let image = data?.image {
+            self.iconImageView.image = image
         }
-        self.titleLabel.text = data?.itemName
-        self.subTitleLabel.text = data?.category
+        self.titleLabel.text = data?.name
+        self.subTitleLabel.text = data?.URL
+
     }
     
     override func awakeFromNib() {

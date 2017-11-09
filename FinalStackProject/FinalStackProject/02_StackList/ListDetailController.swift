@@ -10,7 +10,7 @@ import UIKit
 
 class ListDetailController: UIViewController {
     
-    var data: StackDataModel?
+    var data: StackData?
     
     override func viewDidLoad() {
         super.viewDidLoad()

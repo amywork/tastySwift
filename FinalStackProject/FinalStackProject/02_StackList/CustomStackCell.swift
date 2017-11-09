@@ -10,13 +10,29 @@ import UIKit
 
 class CustomStackCell: UITableViewCell {
     
-    var data: StackDataModel?
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    private var payday:String?
+    
+    var data: StackData? {
+        willSet {
+            configureCell()
+            payday = data?.payDay.mmdd
+        }
+    }
+    
+    func configureCell() {
+        self.titleLabel.text = data?.name
+        guard let payday = payday else { return }
+        self.subTitleLabel.text = "매 월 " + payday + " 일 결제"
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

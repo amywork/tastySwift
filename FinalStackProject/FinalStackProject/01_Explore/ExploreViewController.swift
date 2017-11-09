@@ -16,8 +16,8 @@ class ExploreViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var searchController: UISearchController!
-    lazy var allResults = DataCenter.mainCenter.exploreDataList
-    lazy var visibleResults: [ExploreDataModel] = self.allResults
+    lazy var allResults = DataCenter.main.exploreDataList
+    lazy var visibleResults: [ExploreData] = self.allResults
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +45,14 @@ class ExploreViewController: UIViewController {
                 let filterPredicate = NSPredicate(format: "self contains[c] %@", argumentArray: [filterString!])
                 var list:[String] = []
                 for result in allResults {
-                    let name = result.itemName
+                    let name = result.name
                     list.append(name)
                 }
                 list = list.filter { filterPredicate.evaluate(with: $0) }
-                var lastArr: [ExploreDataModel] = []
+                var lastArr: [ExploreData] = []
                 for name in list {
                     for data in visibleResults {
-                        if data.itemName == name {
+                        if data.name == name {
                             lastArr.append(data)
                         }
                     }
@@ -68,7 +68,7 @@ class ExploreViewController: UIViewController {
 /*UITableViewDataSource*/
 extension ExploreViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Trending Now"
+        return "Trending"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

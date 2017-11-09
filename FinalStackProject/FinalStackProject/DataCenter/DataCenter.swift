@@ -3,37 +3,29 @@
 import Foundation
 class DataCenter {
     
-    static var mainCenter: DataCenter = DataCenter()
+    static var main: DataCenter = DataCenter()
     var documentDirectory: URL {
         get {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         }
     }
     
-    // MARK: - Data Property
-    var settingDataList:[SettingDataModel] = []
-    var exploreDataList:[ExploreDataModel] = []
-    var stackList:[StackDataModel] = []
+    // MARK: - data Property
+    var settingDataList:[SettingData] = []
+    var exploreDataList:[ExploreData] = []
+    var stackDataList:[StackData] = []
   
     // MARK: - init with load data
     private init() {
         loadSettingData()
         loadExploreData()
-        loadFriendData()
-        // print(currentUser)
     }
     
-    // MARK: - method
-    func object(forkey: String) -> Any? {
-        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
-        guard let documentDic = NSDictionary(contentsOfFile: documentPath) as? [String:Any] else { return nil }
-        return documentDic[forkey]
-    }
-    
-    
+    // MARK: - load data method
     func loadSettingData() {
         let settingDataURL = documentDirectory.appendingPathComponent("Settings.plist")
         let settingDataPath = settingDataURL.path
+        print(settingDataPath)
         
         if !FileManager.default.fileExists(atPath: settingDataPath) {
             guard let plistURL = Bundle.main.url(forResource: "Settings", withExtension: "plist") else { return }
@@ -42,10 +34,8 @@ class DataCenter {
         
         guard let settingDataArr = NSArray(contentsOf: settingDataURL) as? [[String:Any]] else { return }
         for settingDataDic in settingDataArr {
-            // print(settingDataDic)
-            self.settingDataList.append(SettingDataModel(with: settingDataDic))
+            self.settingDataList.append(SettingData(with: settingDataDic))
         }
-        // print(settingDataList)
     }
     
     
@@ -60,7 +50,7 @@ class DataCenter {
         
         guard let dataArr = NSArray(contentsOf: exploreDataURL) as? [[String:String]] else { return }
         for dataDic in dataArr {
-            guard let data = ExploreDataModel(with: dataDic) else { return }
+            guard let data = ExploreData(with: dataDic) else { return }
             self.exploreDataList.append(data)
         }
     }

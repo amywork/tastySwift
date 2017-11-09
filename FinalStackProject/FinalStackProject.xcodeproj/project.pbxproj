@@ -9,19 +9,17 @@
 /* Begin PBXBuildFile section */
 		4B3BA2EC1FB33A640033E061 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BA2EB1FB33A640033E061 /* CalendarView.swift */; };
 		4B3BA2EF1FB33A950033E061 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BA2EE1FB33A950033E061 /* CalendarController.swift */; };
+		4B3BA3081FB481BB0033E061 /* StackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BA3071FB481BB0033E061 /* StackData.swift */; };
 		4B4208071F9E024A009F90C4 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B72C2E51F9A29160045EC9E /* Settings.plist */; };
-		4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */; };
+		4B72C2B11F9A09320045EC9E /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2B01F9A09320045EC9E /* SettingData.swift */; };
 		4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */; };
 		4BAE873C1FAAA933007A0ED7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE873B1FAAA933007A0ED7 /* SearchResultsViewController.swift */; };
 		4BAE87401FAAB8D2007A0ED7 /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE873F1FAAB8D2007A0ED7 /* SearchResultsCell.swift */; };
 		4BBE31011F9A36EE00D08669 /* ExploreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE31001F9A36EE00D08669 /* ExploreData.plist */; };
-		4BBE31031F9A372F00D08669 /* ExploreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */; };
+		4BBE31031F9A372F00D08669 /* ExploreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE31021F9A372F00D08669 /* ExploreData.swift */; };
 		4BE462D81F9AA6B000E593C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */; };
 		4BFF2B7E1F9AE34B00B1C150 /* ListDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF2B7D1F9AE34B00B1C150 /* ListDetailController.swift */; };
-		4BFF2B821F9AE58F00B1C150 /* FriendInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */; };
-		DD09852D1FB17E2C008833EF /* StackItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD09852C1FB17E2C008833EF /* StackItemCell.swift */; };
 		DD72678C1FB416D700514E72 /* AddCustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72678B1FB416D700514E72 /* AddCustomController.swift */; };
-		DD72678E1FB4189700514E72 /* StackDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72678D1FB4189700514E72 /* StackDataModel.swift */; };
 		DD7267941FB41A1400514E72 /* CustomStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267931FB41A1400514E72 /* CustomStackCell.swift */; };
 		DD7267961FB41CA500514E72 /* ListMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7267951FB41CA500514E72 /* ListMainController.swift */; };
 		DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81676E1F96E8FE00A80891 /* AppDelegate.swift */; };
@@ -41,19 +39,17 @@
 /* Begin PBXFileReference section */
 		4B3BA2EB1FB33A640033E061 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		4B3BA2EE1FB33A950033E061 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
-		4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataModel.swift; sourceTree = "<group>"; };
+		4B3BA3071FB481BB0033E061 /* StackData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackData.swift; sourceTree = "<group>"; };
+		4B72C2B01F9A09320045EC9E /* SettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
 		4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		4B72C2E51F9A29160045EC9E /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		4BAE873B1FAAA933007A0ED7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		4BAE873F1FAAB8D2007A0ED7 /* SearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
 		4BBE31001F9A36EE00D08669 /* ExploreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreData.plist; sourceTree = "<group>"; };
-		4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDataModel.swift; sourceTree = "<group>"; };
+		4BBE31021F9A372F00D08669 /* ExploreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreData.swift; sourceTree = "<group>"; };
 		4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4BFF2B7D1F9AE34B00B1C150 /* ListDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailController.swift; sourceTree = "<group>"; };
-		4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = FriendInfo.plist; path = ../../1020_FriendTableView/1020_FriendTableView/FriendInfo.plist; sourceTree = "<group>"; };
-		DD09852C1FB17E2C008833EF /* StackItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackItemCell.swift; sourceTree = "<group>"; };
 		DD72678B1FB416D700514E72 /* AddCustomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomController.swift; sourceTree = "<group>"; };
-		DD72678D1FB4189700514E72 /* StackDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackDataModel.swift; sourceTree = "<group>"; };
 		DD7267931FB41A1400514E72 /* CustomStackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackCell.swift; sourceTree = "<group>"; };
 		DD7267951FB41CA500514E72 /* ListMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMainController.swift; sourceTree = "<group>"; };
 		DD81676B1F96E8FE00A80891 /* FinalStackProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalStackProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +88,14 @@
 			path = 03_Calendar;
 			sourceTree = "<group>";
 		};
+		4B3BA3091FB483070033E061 /* 00_Main */ = {
+			isa = PBXGroup;
+			children = (
+				4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */,
+			);
+			path = 00_Main;
+			sourceTree = "<group>";
+		};
 		DD72677F1FB3E7CF00514E72 /* 02_StackList */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +120,6 @@
 		DD8167621F96E8FE00A80891 = {
 			isa = PBXGroup;
 			children = (
-				DD8167801F96E91000A80891 /* Appdelegate */,
 				DD81676D1F96E8FE00A80891 /* FinalStackProject */,
 				DD81676C1F96E8FE00A80891 /* Products */,
 			);
@@ -136,9 +139,8 @@
 				DD81677A1F96E8FE00A80891 /* Info.plist */,
 				4B72C2E51F9A29160045EC9E /* Settings.plist */,
 				4BBE31001F9A36EE00D08669 /* ExploreData.plist */,
-				4BFF2B811F9AE58F00B1C150 /* FriendInfo.plist */,
 				DD81679B1F97351D00A80891 /* DataCenter */,
-				4BE462D71F9AA6B000E593C9 /* MainTabBarController.swift */,
+				4B3BA3091FB483070033E061 /* 00_Main */,
 				DD8167811F96E91700A80891 /* 01_Explore */,
 				DD72677F1FB3E7CF00514E72 /* 02_StackList */,
 				4B3BA2ED1FB33A720033E061 /* 03_Calendar */,
@@ -148,20 +150,10 @@
 			path = FinalStackProject;
 			sourceTree = "<group>";
 		};
-		DD8167801F96E91000A80891 /* Appdelegate */ = {
-			isa = PBXGroup;
-			children = (
-				DD81676E1F96E8FE00A80891 /* AppDelegate.swift */,
-			);
-			path = Appdelegate;
-			sourceTree = "<group>";
-		};
 		DD8167811F96E91700A80891 /* 01_Explore */ = {
 			isa = PBXGroup;
 			children = (
-				4BBE31021F9A372F00D08669 /* ExploreDataModel.swift */,
 				4BAE873F1FAAB8D2007A0ED7 /* SearchResultsCell.swift */,
-				DD09852C1FB17E2C008833EF /* StackItemCell.swift */,
 				DDEE84C71F99CD20002CDB03 /* ExploreViewController.swift */,
 				4BAE873B1FAAA933007A0ED7 /* SearchResultsViewController.swift */,
 				DDD146DB1F9ECEA400709FF5 /* AddExploreController.swift */,
@@ -175,6 +167,7 @@
 				DD7267801FB3E85400514E72 /* CustomView */,
 				DD8167871F96ECA000A80891 /* Assets.xcassets */,
 				DD8167721F96E8FE00A80891 /* Main.storyboard */,
+				DD81676E1F96E8FE00A80891 /* AppDelegate.swift */,
 				DDB290E51F9DB23B005E438D /* HandlingErrorVC.swift */,
 				DDACD97C1FA0568B00DAD9D5 /* Generic.swift */,
 			);
@@ -185,7 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				DD8167991F97351100A80891 /* DataCenter.swift */,
-				DD72678D1FB4189700514E72 /* StackDataModel.swift */,
+				4BBE31021F9A372F00D08669 /* ExploreData.swift */,
+				4B3BA3071FB481BB0033E061 /* StackData.swift */,
+				4B72C2B01F9A09320045EC9E /* SettingData.swift */,
 			);
 			path = DataCenter;
 			sourceTree = "<group>";
@@ -193,7 +188,6 @@
 		DDD146DF1F9ED5CC00709FF5 /* 04_Setting */ = {
 			isa = PBXGroup;
 			children = (
-				4B72C2B01F9A09320045EC9E /* SettingDataModel.swift */,
 				DDD146E31F9EEFAD00709FF5 /* SettingMainVC.swift */,
 				4B72C2B21F9A11E10045EC9E /* SettingTableViewCell.swift */,
 			);
@@ -261,7 +255,6 @@
 			files = (
 				4B4208071F9E024A009F90C4 /* Settings.plist in Resources */,
 				DD8167881F96ECA000A80891 /* Assets.xcassets in Resources */,
-				4BFF2B821F9AE58F00B1C150 /* FriendInfo.plist in Resources */,
 				DD8167741F96E8FE00A80891 /* Main.storyboard in Resources */,
 				4BBE31011F9A36EE00D08669 /* ExploreData.plist in Resources */,
 			);
@@ -282,19 +275,18 @@
 				DD8167911F96FC1C00A80891 /* ShadowView.swift in Sources */,
 				4B72C2B31F9A11E10045EC9E /* SettingTableViewCell.swift in Sources */,
 				DDB290E61F9DB23B005E438D /* HandlingErrorVC.swift in Sources */,
+				4B3BA3081FB481BB0033E061 /* StackData.swift in Sources */,
 				DD7267961FB41CA500514E72 /* ListMainController.swift in Sources */,
 				DDEE84C81F99CD20002CDB03 /* ExploreViewController.swift in Sources */,
 				DD7267941FB41A1400514E72 /* CustomStackCell.swift in Sources */,
 				DD81679A1F97351100A80891 /* DataCenter.swift in Sources */,
-				4BBE31031F9A372F00D08669 /* ExploreDataModel.swift in Sources */,
+				4BBE31031F9A372F00D08669 /* ExploreData.swift in Sources */,
 				DDD146E41F9EEFAD00709FF5 /* SettingMainVC.swift in Sources */,
 				DD81678A1F96EE7200A80891 /* RoundButton.swift in Sources */,
-				DD09852D1FB17E2C008833EF /* StackItemCell.swift in Sources */,
-				4B72C2B11F9A09320045EC9E /* SettingDataModel.swift in Sources */,
+				4B72C2B11F9A09320045EC9E /* SettingData.swift in Sources */,
 				DDD146DC1F9ECEA400709FF5 /* AddExploreController.swift in Sources */,
 				4BE462D81F9AA6B000E593C9 /* MainTabBarController.swift in Sources */,
 				DD81676F1F96E8FE00A80891 /* AppDelegate.swift in Sources */,
-				DD72678E1FB4189700514E72 /* StackDataModel.swift in Sources */,
 				4BFF2B7E1F9AE34B00B1C150 /* ListDetailController.swift in Sources */,
 				DD72678C1FB416D700514E72 /* AddCustomController.swift in Sources */,
 				4BAE873C1FAAA933007A0ED7 /* SearchResultsViewController.swift in Sources */,

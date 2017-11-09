@@ -19,5 +19,5 @@ class AddExploreController: UIViewController {
 }
 
 /*Update UI Extension*/
-extension AddExploreItemController {
+extension AddExploreController {
 }

@@ -21,7 +21,7 @@ class SettingTableViewCell: UITableViewCell {
     // MARK: - Cell property
     var index: Int = 0
     var delegate: SettingCellDelegate?
-    var data: SettingDataModel? {
+    var data: SettingData? {
         didSet {
             updateUI()
         }
