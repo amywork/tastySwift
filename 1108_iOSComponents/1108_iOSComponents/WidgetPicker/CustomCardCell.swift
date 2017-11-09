@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CardCellDelegate {
-    func didSelectedLikeCell(_ cell: CustomCardCell)
+    func didSelectedCell(_ cell: CustomCardCell)
 }
 
 class CustomCardCell: UITableViewCell {
@@ -21,14 +21,16 @@ class CustomCardCell: UITableViewCell {
     var delegate: CardCellDelegate?
     var data: CardData? {
         willSet {
-            nameLabel.text = newValue!.cardName
-            imgView.image = newValue!.image
-            likeBtn.isSelected = newValue!.isLike
+            if let newValue = newValue {
+                nameLabel.text = newValue.cardName
+                imgView.image = newValue.image
+                likeBtn.isSelected = newValue.isSelected
+            }
         }
     }
     
     @IBAction func didTapLikeBtn(_ sender: UIButton) {
-        delegate?.didSelectedLikeCell(self)
+        delegate?.didSelectedCell(self)
     }
 
 }

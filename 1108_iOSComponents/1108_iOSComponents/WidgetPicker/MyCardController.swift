@@ -9,7 +9,7 @@
 import UIKit
 class MyCardController: UIViewController, CardCellDelegate {
     
-    var currentStarredCell: CustomCardCell?
+    var currentSelectedCell: CustomCardCell?
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -54,25 +54,27 @@ extension MyCardController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    func didSelectedLikeCell(_ cell: CustomCardCell) {
-        if let selectedCell = currentStarredCell
+    func didSelectedCell(_ cell: CustomCardCell) {
+        if let selectedCell = currentSelectedCell
         {
             if cell === selectedCell
             {
-                cell.data?.isLike = false
-                self.currentStarredCell = nil
+                cell.data?.isSelected = false
+                self.currentSelectedCell = nil
+                DataCenter.main.selectedCard = nil
             }else
             {
-                selectedCell.data!.isLike = false
-                cell.data!.isLike = true
-                self.currentStarredCell = cell
+                selectedCell.data!.isSelected = false
+                cell.data!.isSelected = true
+                self.currentSelectedCell = cell
+                DataCenter.main.selectedCard = cell.data
             }
         }else
         {
-            cell.data!.isLike = true
-            self.currentStarredCell = cell
+            cell.data!.isSelected = true
+            self.currentSelectedCell = cell
+            DataCenter.main.selectedCard = cell.data
         }
-        //동기화
         
     }
     

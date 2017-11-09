@@ -15,8 +15,7 @@ class AddCardController: UIViewController, UITextFieldDelegate {
     
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
         guard let name = nameTF.text, !name.isEmpty, let data = selectedImageData else { return }
-        let newCard = CardData(name: name, data: data)
-        DataCenter.main.addCard(card: newCard)
+        DataCenter.main.addCard(name: name, data: data)
         NotificationCenter.default.post(name: NSNotification.Name.init("NewCard"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
@@ -38,11 +37,10 @@ class AddCardController: UIViewController, UITextFieldDelegate {
 }
 
 // ImagePicker => Select Image
-extension AddCardController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
-{
+extension AddCardController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             cardImageView.image = image
             selectedImageData = UIImageJPEGRepresentation(image, 0.5)
         }

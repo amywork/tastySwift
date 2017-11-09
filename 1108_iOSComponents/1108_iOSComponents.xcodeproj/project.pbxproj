@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B3BA3011FB46DAE0033E061 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4BFA2F0D1FB1C28300450923 /* BookMarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFA2F0C1FB1C28300450923 /* BookMarkModel.swift */; };
 		DD0985191FB178D6008833EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0985181FB178D6008833EF /* AppDelegate.swift */; };
 		DD09851E1FB178D6008833EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD09851C1FB178D6008833EF /* Main.storyboard */; };
@@ -25,7 +26,32 @@
 		DD9F37651FB292860056E3D9 /* StackCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9F37641FB292860056E3D9 /* StackCalendar.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4B3BA2FF1FB46DAE0033E061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD09850D1FB178D6008833EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B3BA2F31FB46DAE0033E061;
+			remoteInfo = TodayExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4B3BA3051FB46DAE0033E061 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4B3BA3011FB46DAE0033E061 /* TodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BFA2F0C1FB1C28300450923 /* BookMarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkModel.swift; sourceTree = "<group>"; };
 		DD0985151FB178D6008833EF /* 1108_iOSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1108_iOSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0985181FB178D6008833EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B3BA2F11FB46DAE0033E061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD0985121FB178D6008833EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0985151FB178D6008833EF /* 1108_iOSComponents.app */,
+				4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +166,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4B3BA2F31FB46DAE0033E061 /* TodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B3BA3041FB46DAE0033E061 /* Build configuration list for PBXNativeTarget "TodayExtension" */;
+			buildPhases = (
+				4B3BA2F01FB46DAE0033E061 /* Sources */,
+				4B3BA2F11FB46DAE0033E061 /* Frameworks */,
+				4B3BA2F21FB46DAE0033E061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayExtension;
+			productName = TodayExtension;
+			productReference = 4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DD0985141FB178D6008833EF /* 1108_iOSComponents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD0985271FB178D6008833EF /* Build configuration list for PBXNativeTarget "1108_iOSComponents" */;
@@ -139,10 +190,12 @@
 				DD0985111FB178D6008833EF /* Sources */,
 				DD0985121FB178D6008833EF /* Frameworks */,
 				DD0985131FB178D6008833EF /* Resources */,
+				4B3BA3051FB46DAE0033E061 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4B3BA3001FB46DAE0033E061 /* PBXTargetDependency */,
 			);
 			name = 1108_iOSComponents;
 			productName = 1108_iOSComponents;
@@ -155,10 +208,19 @@
 		DD09850D1FB178D6008833EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = younari;
 				TargetAttributes = {
+					4B3BA2F31FB46DAE0033E061 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					DD0985141FB178D6008833EF = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
@@ -179,11 +241,19 @@
 			projectRoot = "";
 			targets = (
 				DD0985141FB178D6008833EF /* 1108_iOSComponents */,
+				4B3BA2F31FB46DAE0033E061 /* TodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4B3BA2F21FB46DAE0033E061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD0985131FB178D6008833EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +267,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B3BA2F01FB46DAE0033E061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD0985111FB178D6008833EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +296,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4B3BA3001FB46DAE0033E061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B3BA2F31FB46DAE0033E061 /* TodayExtension */;
+			targetProxy = 4B3BA2FF1FB46DAE0033E061 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DD09851C1FB178D6008833EF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -239,6 +324,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4B3BA3021FB46DAE0033E061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6W2L5AWAU;
+				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents.TodayExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4B3BA3031FB46DAE0033E061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6W2L5AWAU;
+				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents.TodayExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DD0985251FB178D6008833EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -379,6 +498,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4B3BA3041FB46DAE0033E061 /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B3BA3021FB46DAE0033E061 /* Debug */,
+				4B3BA3031FB46DAE0033E061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DD0985101FB178D6008833EF /* Build configuration list for PBXProject "1108_iOSComponents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

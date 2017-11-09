@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 struct CardData {
+   
     var cardName: String
     var imgData: Data
-    var isLike: Bool = false
+    var isSelected: Bool = false
     
-    var dictionaryData:[String:Any] {
-        return ["name":cardName,"data":imgData,"isLike":isLike]
+    var cardDic:[String:Any] {
+        return ["name":cardName,"data":imgData,"isSelected":isSelected]
     }
 
     var image:UIImage?{
@@ -30,12 +31,12 @@ struct CardData {
     
     init?(dataDic:[String:Any])
     {
-        guard let title = dataDic["name"] as? String else {return nil}
+        guard let title = dataDic["name"] as? String else { return nil }
         self.cardName = title
-        guard let data = dataDic["data"] as? Data else {return nil}
+        guard let data = dataDic["data"] as? Data else { return nil }
         self.imgData = data
-        guard let isLike = dataDic["isLike"] as? Bool else {return nil}
-        self.isLike = isLike
+        guard let isSelected = dataDic["isSelected"] as? Bool else { return nil }
+        self.isSelected = isSelected
     }
 
 }

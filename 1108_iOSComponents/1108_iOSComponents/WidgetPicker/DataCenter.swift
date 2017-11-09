@@ -14,27 +14,24 @@ class DataCenter {
     static var main: DataCenter = DataCenter()
     var cardList: [CardData] = []
     
-    var likedData: CardData? {
+    var selectedCard: CardData? {
         didSet {
             // For Widget - 앱과 위젯 사이 정보를 주고받기 위함
             let groupUser = UserDefaults(suiteName: "group.wingjoo.developer.todayextension")
-            if let _ = likedData {
-                updateCardData(new: likedData!)
-                groupUser?.set(likedData?.dictionaryData, forKey: "likedDataKey")
+            if let _ = selectedCard {
+                groupUser?.set(selectedCard?.cardDic, forKey: "selectedCardKey")
             }else {
-                groupUser?.set(nil, forKey: "likedDataKey")
+                groupUser?.set(nil, forKey: "selectedCardKey")
             }
             
         }
     }
     
-    private init()
-    {
+    private init() {
         loadCardData()
     }
     
-    private func loadCardData()
-    {
+    private func loadCardData() {
         guard let list = UserDefaults.standard.value(forKey: key) as? [[String:Any]] else { return }
         
         for dic in list
@@ -46,41 +43,20 @@ class DataCenter {
         }
     }
     
-    func saveCardsData()
-    {
-        var dicList:[Any] = []
+    func saveCards() {
+        var cardDicList:[Any] = []
         for card in cardList
         {
-            dicList.append(card.dictionaryData)
+            cardDicList.append(card.cardDic)
         }
-        UserDefaults.standard.set(dicList, forKey: key)
+        UserDefaults.standard.set(cardDicList, forKey: key)
     }
     
     
-    func addCard(name:String, data:Data)
-    {
+    func addCard(name:String, data:Data) {
         cardList.append(CardData(name: name, data: data))
-        saveCardsData() //매번 저장할 필요는 없음
+        saveCards()
     }
     
-    func updateCardData(new newData:CardData)
-    {
-        cardList = cardList.map { (data) -> CardData in
-            
-            if data.cardName == newData.cardName
-            {
-                return newData
-            }else
-            {
-                return data
-            }
-        }
-        saveCardsData()
-    }
-    
-    func addCard(card: CardData) {
-        self.cardList.append(card)
-    }
-
     
 }
