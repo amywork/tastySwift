@@ -16,10 +16,10 @@
 		DD26D6B51F9450800090E5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD26D6B41F9450800090E5BE /* Assets.xcassets */; };
 		DD26D6B81F9450800090E5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD26D6B61F9450800090E5BE /* LaunchScreen.storyboard */; };
 		DD26D6C01F945C0F0090E5BE /* SomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6BF1F945C0F0090E5BE /* SomeView.swift */; };
-		DD26D6C21F9490C70090E5BE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C11F9490C70090E5BE /* UserModel.swift */; };
 		DD26D6C41F9497480090E5BE /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C31F9497480090E5BE /* AlbumInfo.swift */; };
 		DD26D6C61F94975A0090E5BE /* SongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C51F94975A0090E5BE /* SongData.swift */; };
 		DD26D6C81F9497750090E5BE /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26D6C71F9497750090E5BE /* AlbumModel.swift */; };
+		DD7267901FB4191D00514E72 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72678F1FB4191D00514E72 /* UserModel.swift */; };
 		DD81675B1F95CB1900A80891 /* PlayLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81675A1F95CB1900A80891 /* PlayLists.swift */; };
 		DD81675D1F95CC5800A80891 /* LikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81675C1F95CC5800A80891 /* LikeInfo.swift */; };
 		DD81675F1F95EE0100A80891 /* UserPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD81675E1F95EE0100A80891 /* UserPlist.plist */; };
@@ -40,10 +40,10 @@
 		DD26D6B71F9450800090E5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD26D6B91F9450800090E5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD26D6BF1F945C0F0090E5BE /* SomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeView.swift; sourceTree = "<group>"; };
-		DD26D6C11F9490C70090E5BE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DD26D6C31F9497480090E5BE /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		DD26D6C51F94975A0090E5BE /* SongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongData.swift; sourceTree = "<group>"; };
 		DD26D6C71F9497750090E5BE /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		DD72678F1FB4191D00514E72 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DD81675A1F95CB1900A80891 /* PlayLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLists.swift; sourceTree = "<group>"; };
 		DD81675C1F95CC5800A80891 /* LikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeInfo.swift; sourceTree = "<group>"; };
 		DD81675E1F95EE0100A80891 /* UserPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserPlist.plist; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0085291F983A2E008DB1F5 /* DataCenter.swift */,
-				DD26D6C11F9490C70090E5BE /* UserModel.swift */,
+				DD72678F1FB4191D00514E72 /* UserModel.swift */,
 				DDB3C2531F949D55008C630D /* EventData.swift */,
 			);
 			path = UserModel;
@@ -226,10 +226,10 @@
 				DD26D6AE1F9450800090E5BE /* AppDelegate.swift in Sources */,
 				DD00852C1F986D24008DB1F5 /* AlbumViewController.swift in Sources */,
 				DD81675B1F95CB1900A80891 /* PlayLists.swift in Sources */,
+				DD7267901FB4191D00514E72 /* UserModel.swift in Sources */,
 				4BD4BE9D1F96390900F8261C /* MusicInfo.swift in Sources */,
 				DD00852A1F983A2E008DB1F5 /* DataCenter.swift in Sources */,
 				DD26D6C61F94975A0090E5BE /* SongData.swift in Sources */,
-				DD26D6C21F9490C70090E5BE /* UserModel.swift in Sources */,
 				DD26D6C01F945C0F0090E5BE /* SomeView.swift in Sources */,
 				DD26D6C41F9497480090E5BE /* AlbumInfo.swift in Sources */,
 			);

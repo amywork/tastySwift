@@ -1,41 +1,47 @@
 //
-//  AddSubscriptionVC.swift
-//  FinalStackProject
+//  AddCardController.swift
+//  1108_iOSComponents
 //
-//  Created by 김기윤 on 24/10/2017.
+//  Created by 김기윤 on 09/11/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
 
 import UIKit
-import Photos
+class AddCardController: UIViewController, UITextFieldDelegate {
 
-class AddSubscriptionVC: UIViewController {
+    
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var cardImageView: UIImageView!
 
-    // MARK: - UIProperty
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBAction func didTapDoneBtn(_ sender: UIButton) {
+        guard let name = nameTF.text, let image = cardImageView.image else { return }
+        let newCard = CardData(name: name, img: image)
+        NotificationCenter.default.post(name: NSNotification.Name.init("NewCard"), object: newCard)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    @IBAction func unwindToAddCardController(_ sender: UIStoryboardSegue) {
     }
 
 }
 
-/*Update UI Extension*/
-extension AddSubscriptionVC {
-    func updateUI() {
-        profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
-        profileImageView.layer.borderColor = UIColor.lightGray.cgColor
-        profileImageView.layer.borderWidth = 1
-        profileImageView.clipsToBounds = true
-    }
-}
 
 /*Image Picker Extension*/
-extension AddSubscriptionVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddCardController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Edit profile photo img
-    @IBAction func editProfileImage(_ sender: UIButton) {
+    @IBAction func addPhotoBtn(_ sender: UIButton) {
         let actionSheet = UIAlertController(title: "📷", message: "Change Profile", preferredStyle: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -67,9 +73,10 @@ extension AddSubscriptionVC: UIImagePickerControllerDelegate, UINavigationContro
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let url = info[UIImagePickerControllerImageURL] as? URL {
             if let data = try? Data(contentsOf: url) {
-                profileImageView.image = UIImage(data: data)
+                cardImageView.image = UIImage(data: data)
             }
         }
         picker.dismiss(animated: true, completion: nil)
     }
 }
+

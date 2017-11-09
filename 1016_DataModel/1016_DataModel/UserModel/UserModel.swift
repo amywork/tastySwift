@@ -9,7 +9,7 @@
 
 import Foundation
 struct UserModel {
-
+    
     enum Gender: Int {
         case women = 1
         case men = 2
@@ -51,3 +51,4 @@ struct UserModel {
     }
     
 }
+

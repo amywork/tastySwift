@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListMainController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var itemTableView: UITableView!
-    let friendList = DataCenter.mainCenter.friendList
+    lazy var stacks = DataCenter.mainCenter.stackList
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataCenter.mainCenter.friendList.count
+        return stacks.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -32,18 +32,16 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomFriendCell", for: indexPath) as! CustomFriendCell
-        cell.imageView?.frame = CGRect(x: 8, y: 8, width: 10, height: 10)
-        cell.imageView?.contentMode = .scaleAspectFit
-        cell.imageView?.clipsToBounds = true
-        cell.data = friendList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomStackCell", for: indexPath) as! CustomStackCell
+        cell.data = stacks[indexPath.row]
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let cell = sender as? CustomFriendCell else { return }
-        guard let nextVC = segue.destination as? ItemDetailViewController else { return }
+        guard let cell = sender as? CustomStackCell else { return }
+        guard let nextVC = segue.destination as? ListDetailController else { return }
         nextVC.data = cell.data
     }
-
+    
 }
+

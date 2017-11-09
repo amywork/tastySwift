@@ -92,12 +92,12 @@
 				DD72677D1FB3E72500514E72 /* Sources */,
 				4BFA2F0B1FB1C0A500450923 /* MapKit */,
 				DD9F37631FB292530056E3D9 /* Calendar */,
-				DD72677C1FB3E70400514E72 /* Widget */,
+				DD72677C1FB3E70400514E72 /* WidgetPicker */,
 			);
 			path = 1108_iOSComponents;
 			sourceTree = "<group>";
 		};
-		DD72677C1FB3E70400514E72 /* Widget */ = {
+		DD72677C1FB3E70400514E72 /* WidgetPicker */ = {
 			isa = PBXGroup;
 			children = (
 				DD7267891FB3F33200514E72 /* DataCenter.swift */,
@@ -107,7 +107,7 @@
 				DD7267851FB3EC7200514E72 /* CardDetailController.swift */,
 				DD7267811FB3EB6700514E72 /* CardCell.swift */,
 			);
-			path = Widget;
+			path = WidgetPicker;
 			sourceTree = "<group>";
 		};
 		DD72677D1FB3E72500514E72 /* Sources */ = {

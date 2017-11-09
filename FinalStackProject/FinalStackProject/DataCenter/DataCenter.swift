@@ -11,46 +11,19 @@ class DataCenter {
     }
     
     // MARK: - Data Property
-    var currentUser: UserModel?
     var settingDataList:[SettingDataModel] = []
     var exploreDataList:[ExploreDataModel] = []
-    var friendList:[FriendDataModel] = []
-    
+    var stackList:[StackDataModel] = []
+  
     // MARK: - init with load data
     private init() {
         loadSettingData()
         loadExploreData()
-        loadUserData()
         loadFriendData()
         // print(currentUser)
     }
     
     // MARK: - method
-    func loadUserData() {
-        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
-        print(documentPath)
-        guard let documentDic = NSDictionary(contentsOfFile: documentPath) as? [String:Any] else { return }
-        currentUser = UserModel(userDic: documentDic)
-    }
-    
-    func writeUserData() -> Bool {
-        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
-        guard let data = currentUser else { return false }
-        let newDic = data.dictionary
-        let NSDic = NSDictionary(dictionary: newDic)
-        NSDic.write(toFile: documentPath, atomically: true)
-        return true
-    }
-    
-    func validateUserInfo(username:String, password: String) -> Bool {
-        if let model = self.currentUser {
-            if model.userID == username && model.userPWD == password {
-                return true
-            }
-        }
-        return false
-    }
-    
     func object(forkey: String) -> Any? {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/CurrentUser.plist"
         guard let documentDic = NSDictionary(contentsOfFile: documentPath) as? [String:Any] else { return nil }
@@ -91,38 +64,5 @@ class DataCenter {
             self.exploreDataList.append(data)
         }
     }
-    
-    
-    // add to friendList
-    func addFriend(with data:FriendDataModel) {
-        friendList.append(data)
-        saveData()
-    }
-    
-    // loadFriendData()
-    func loadFriendData() {
-        guard let bundlePath = Bundle.main.path(forResource: "FriendInfo", ofType: "plist") else { return }
-        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/FriendInfo.plist"
-        if !FileManager.default.fileExists(atPath: documentPath) {
-            do {
-                try FileManager.default.copyItem(atPath: bundlePath, toPath: documentPath)
-            }catch {
-                print("No such File")
-            }
-        }
-        guard let dataArr = NSArray(contentsOfFile: documentPath) as? [[String:String]] else { return }
-        for data in dataArr {
-            guard let newModel = FriendDataModel(with: data) else { return }
-            friendList.append(newModel)
-        }
-        
-    }
-    
-    // Model -> plist
-    func saveData() {
-        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/FriendInfo.plist"
-        let newArr = NSArray(array: friendList)
-        newArr.write(toFile: documentPath, atomically: true)
-    }
-    
+
 }
