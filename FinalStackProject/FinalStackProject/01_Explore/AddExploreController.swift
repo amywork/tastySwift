@@ -11,11 +11,8 @@ import Photos
 
 class AddExploreController: UIViewController {
 
-    // MARK: - UIProperty
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+    private var data: StackData?
+    
 }
 
 /*Update UI Extension*/

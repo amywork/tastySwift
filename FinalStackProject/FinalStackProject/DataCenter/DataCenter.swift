@@ -1,20 +1,37 @@
 // Singleton DataCenter Object Class
 
 import Foundation
+
+
 class DataCenter {
     
     static var main: DataCenter = DataCenter()
     var documentDirectory: URL {
-        get {
-            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        }
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
     // MARK: - data Property
     var settingDataList:[SettingData] = []
     var exploreDataList:[ExploreData] = []
     var stackDataList:[StackData] = []
-  
+    private let userStackKey = "userStackKey"
+    
+    
+    private func loadUserStacks() {
+        guard let list = UserDefaults.standard.value(forKey: userStackKey) as? [StackData] else { return }
+        stackDataList = list
+    }
+    
+    private func saveUserStacks() {
+        UserDefaults.standard.set(stackDataList, forKey: userStackKey)
+    }
+    
+    func addUserStack(with data: StackData) {
+        stackDataList.append(data)
+        saveUserStacks()
+    }
+    
+    
     // MARK: - init with load data
     private init() {
         loadSettingData()

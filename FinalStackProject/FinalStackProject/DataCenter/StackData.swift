@@ -4,7 +4,7 @@
 //
 //  Created by 김기윤 on 09/11/2017.
 //  Copyright © 2017 younari. All rights reserved.
-//  Stack Data Modeling
+//  User's Stack Data Modeling
 
 import Foundation
 
@@ -17,16 +17,29 @@ struct StackData {
     
     var name: String
     var plan: PlanType
-    var memo: String
+    var memo: String?
     var payDay: Date // From yyMMdd
     
     
     var stackDataDic: [String:Any] {
         return ["name":self.name,
                 "plan":self.plan,
-                "memo":self.memo,
+                "memo":self.memo ?? "",
                 "payDay":self.payDay
         ]
+    }
+    
+    init(name: String, planStr: String, payDay: Date) {
+        self.name = name
+        self.plan = PlanType(rawValue: planStr) ?? .month
+        self.payDay = payDay
+    }
+    
+    init(name: String, planStr: String, payDay: Date, memo: String) {
+        self.name = name
+        self.plan = PlanType(rawValue: planStr) ?? .month
+        self.payDay = payDay
+        self.memo = memo
     }
     
     init?(with dataDic: [String:Any]) {
@@ -35,9 +48,9 @@ struct StackData {
         self.name = name
         
         guard let planStr = dataDic["plan"] as? String else { return nil }
-        self.plan = PlanType(rawValue: planStr)!
+        self.plan = PlanType(rawValue: planStr) ?? .month
         
-        guard let memo = dataDic["memo"] as? String else { return nil }
+        let memo = dataDic["memo"] as? String
         self.memo = memo
         
         guard let payDayStr = dataDic["payDay"] as? String else { return nil }

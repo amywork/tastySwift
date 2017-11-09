@@ -24,22 +24,22 @@ class CalendarViewController: UIViewController, CalendarViewDelegate {
     
     /*Calendar*/
     @IBOutlet weak var calendarView: CalendarView!
-    @IBOutlet weak var thisMonthLabel: UILabel!
+    @IBOutlet weak var thisMonthLabel: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.delegate = self
         calendarView.date = Date()
-        thisMonthLabel.text = "\(calendarView.year ?? 1). \(calendarView.month ?? 1)"
+        thisMonthLabel.title = "\(calendarView.year ?? 1). \(calendarView.month ?? 1)"
     }
     
     @IBAction func toNextMonth(_ sender: UIButton) {
         calendarView.updateNextMonth()
-        thisMonthLabel.text = "\(calendarView.year ?? 1). \(calendarView.month ?? 1)"
+        thisMonthLabel.title = "\(calendarView.year ?? 1). \(calendarView.month ?? 1)"
     }
     @IBAction func toPrevMonth(_ sender: UIButton) {
         calendarView.updatePrevMonth()
-        thisMonthLabel.text = "\(calendarView.year ?? 1). \(calendarView.month ?? 1)"
+        thisMonthLabel.title = "\(calendarView.year ?? 1). \(calendarView.month ?? 1)"
     }
     
 }
