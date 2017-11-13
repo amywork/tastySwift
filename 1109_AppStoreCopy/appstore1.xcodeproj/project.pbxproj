@@ -76,8 +76,8 @@
 				4BA7D21D1FB945520000C5E3 /* Resources */,
 				C76B41D71C9A99B60049214B /* AppDelegate.swift */,
 				C76B42C11C9FE9250049214B /* Models.swift */,
-				C76B41D91C9A99B60049214B /* FeaturedAppsController.swift */,
 				C76B41E91C9A9BC70049214B /* CategoryCell.swift */,
+				C76B41D91C9A99B60049214B /* FeaturedAppsController.swift */,
 				C70F3A651CA8631800AC2E55 /* AppDetailController.swift */,
 				C70F3A671CA9D39C00AC2E55 /* ScreenshotsCell.swift */,
 			);

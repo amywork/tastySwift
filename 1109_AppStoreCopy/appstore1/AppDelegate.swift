@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let featuredAppsController = FeaturedAppsController(collectionViewLayout: layout)
         window?.rootViewController = UINavigationController(rootViewController: featuredAppsController)
         
-        // Override point for customization after application launch.
         return true
     }
     

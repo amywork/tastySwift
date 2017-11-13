@@ -1,11 +1,3 @@
-//
-//  AppDetailController.swift
-//  appstore1
-//
-//  Created by Brian Voong on 3/27/16.
-//  Copyright © 2016 letsbuildthatapp. All rights reserved.
-//
-
 import UIKit
 
 class AppDetailController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -23,7 +15,6 @@ class AppDetailController: UICollectionViewController, UICollectionViewDelegateF
                 URLSession.shared.dataTask(with: URL(string: urlString)!, completionHandler: { (data, response, error) -> Void in
                     
                     if error != nil {
-                        print(error)
                         return
                     }
                     

@@ -1,10 +1,7 @@
-//
-//  Models.swift
-//  appstore1
-//
-//  Created by Brian Voong on 3/21/16.
-//  Copyright © 2016 letsbuildthatapp. All rights reserved.
-//
+// Data Modeling: Hierarchy
+// FeaturedApps: bannerCategory, appCategories
+// AppCategory: apps
+// App
 
 import UIKit
 
@@ -61,12 +58,10 @@ class AppCategory: NSObject {
         URLSession.shared.dataTask(with: URL(string: urlString)!, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {
-                print(error)
                 return
             }
             
             do {
-                
                 let json = try(JSONSerialization.jsonObject(with: data!, options: .mutableContainers))
                 
                 let featuredApps = FeaturedApps()
@@ -83,44 +78,6 @@ class AppCategory: NSObject {
         }) .resume()
         
     }
-    
-    static func sampleAppCategories() -> [AppCategory] {
-        
-        let bestNewAppsCategory = AppCategory()
-        bestNewAppsCategory.name = "Best New Apps"
-        
-        var apps = [App]()
-        
-        // logic
-        let frozenApp = App()
-        frozenApp.name = "Disney Build It: Frozen"
-        frozenApp.imageName = "frozen"
-        frozenApp.category = "Entertainment"
-        frozenApp.price = NSNumber(value: 3.99 as Float)
-        apps.append(frozenApp)
-        
-        bestNewAppsCategory.apps = apps
-        
-        
-        let bestNewGamesCategory = AppCategory()
-        bestNewGamesCategory.name = "Best New Games"
-        
-        var bestNewGamesApps = [App]()
-        
-        let telepaintApp = App()
-        telepaintApp.name = "Telepaint"
-        telepaintApp.category = "Games"
-        telepaintApp.imageName = "telepaint"
-        telepaintApp.price = NSNumber(value: 2.99 as Float)
-        
-        bestNewGamesApps.append(telepaintApp)
-        
-        bestNewGamesCategory.apps = bestNewGamesApps
-        
-        return [bestNewAppsCategory, bestNewGamesCategory]
-        
-    }
-    
 }
 
 class App: NSObject {
