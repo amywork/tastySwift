@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B3BA3011FB46DAE0033E061 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4BA5B44E1FB8A0060037D373 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA5B44D1FB8A0060037D373 /* NotificationCenter.framework */; };
+		4BA5B4511FB8A0060037D373 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B4501FB8A0060037D373 /* TodayViewController.swift */; };
+		4BA5B4541FB8A0060037D373 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA5B4521FB8A0060037D373 /* MainInterface.storyboard */; };
+		4BA5B4581FB8A0060037D373 /* TodayExtension2.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4BA5B44C1FB8A0060037D373 /* TodayExtension2.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4BA5B45D1FB8ACD60037D373 /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B45C1FB8ACD60037D373 /* PhotoSelectorController.swift */; };
+		4BA5B45F1FB8AD0C0037D373 /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B45E1FB8AD0C0037D373 /* PhotoSelectorCell.swift */; };
 		4BFA2F0D1FB1C28300450923 /* BookMarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFA2F0C1FB1C28300450923 /* BookMarkModel.swift */; };
 		DD0985191FB178D6008833EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0985181FB178D6008833EF /* AppDelegate.swift */; };
 		DD09851E1FB178D6008833EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD09851C1FB178D6008833EF /* Main.storyboard */; };
@@ -27,12 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4B3BA2FF1FB46DAE0033E061 /* PBXContainerItemProxy */ = {
+		4BA5B4561FB8A0060037D373 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD09850D1FB178D6008833EF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4B3BA2F31FB46DAE0033E061;
-			remoteInfo = TodayExtension;
+			remoteGlobalIDString = 4BA5B44B1FB8A0060037D373;
+			remoteInfo = TodayExtension2;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -43,7 +48,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4B3BA3011FB46DAE0033E061 /* TodayExtension.appex in Embed App Extensions */,
+				4BA5B4581FB8A0060037D373 /* TodayExtension2.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +56,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA5B4471FB89F620037D373 /* 1108_iOSComponents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 1108_iOSComponents.entitlements; sourceTree = "<group>"; };
+		4BA5B44C1FB8A0060037D373 /* TodayExtension2.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension2.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA5B44D1FB8A0060037D373 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4BA5B4501FB8A0060037D373 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4BA5B4531FB8A0060037D373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4BA5B4551FB8A0060037D373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BA5B45C1FB8ACD60037D373 /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
+		4BA5B45E1FB8AD0C0037D373 /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
+		4BA5B4601FB8B1BA0037D373 /* TodayExtension2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension2.entitlements; sourceTree = "<group>"; };
 		4BFA2F0C1FB1C28300450923 /* BookMarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkModel.swift; sourceTree = "<group>"; };
 		DD0985151FB178D6008833EF /* 1108_iOSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1108_iOSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0985181FB178D6008833EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,10 +86,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B3BA2F11FB46DAE0033E061 /* Frameworks */ = {
+		4BA5B4491FB8A0060037D373 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA5B44E1FB8A0060037D373 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +104,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BA5B4441FB89F620037D373 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BA5B44D1FB8A0060037D373 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BA5B44F1FB8A0060037D373 /* TodayExtension2 */ = {
+			isa = PBXGroup;
+			children = (
+				4BA5B4601FB8B1BA0037D373 /* TodayExtension2.entitlements */,
+				4BA5B4501FB8A0060037D373 /* TodayViewController.swift */,
+				4BA5B4521FB8A0060037D373 /* MainInterface.storyboard */,
+				4BA5B4551FB8A0060037D373 /* Info.plist */,
+			);
+			path = TodayExtension2;
+			sourceTree = "<group>";
+		};
+		4BA5B4611FB8B3110037D373 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DD7267811FB3EB6700514E72 /* CustomCardCell.swift */,
+				4BA5B45E1FB8AD0C0037D373 /* PhotoSelectorCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4BA5B4621FB8B3210037D373 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD7267891FB3F33200514E72 /* DataCenter.swift */,
+				DD7267871FB3ECC900514E72 /* CardData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4BA5B4631FB8B3290037D373 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD72677A1FB3E6FF00514E72 /* MyCardController.swift */,
+				DD7267831FB3EBEC00514E72 /* AddCardController.swift */,
+				DD7267851FB3EC7200514E72 /* CardDetailController.swift */,
+				4BA5B45C1FB8ACD60037D373 /* PhotoSelectorController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4BFA2F0B1FB1C0A500450923 /* MapKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				DD0985171FB178D6008833EF /* 1108_iOSComponents */,
+				4BA5B44F1FB8A0060037D373 /* TodayExtension2 */,
 				DD0985161FB178D6008833EF /* Products */,
+				4BA5B4441FB89F620037D373 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0985151FB178D6008833EF /* 1108_iOSComponents.app */,
-				4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */,
+				4BA5B44C1FB8A0060037D373 /* TodayExtension2.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +185,7 @@
 		DD0985171FB178D6008833EF /* 1108_iOSComponents */ = {
 			isa = PBXGroup;
 			children = (
+				4BA5B4471FB89F620037D373 /* 1108_iOSComponents.entitlements */,
 				DD0985241FB178D6008833EF /* Info.plist */,
 				DD09851C1FB178D6008833EF /* Main.storyboard */,
 				DD72677D1FB3E72500514E72 /* Sources */,
@@ -134,12 +199,9 @@
 		DD72677C1FB3E70400514E72 /* WidgetPicker */ = {
 			isa = PBXGroup;
 			children = (
-				DD7267891FB3F33200514E72 /* DataCenter.swift */,
-				DD7267871FB3ECC900514E72 /* CardData.swift */,
-				DD7267811FB3EB6700514E72 /* CustomCardCell.swift */,
-				DD72677A1FB3E6FF00514E72 /* MyCardController.swift */,
-				DD7267831FB3EBEC00514E72 /* AddCardController.swift */,
-				DD7267851FB3EC7200514E72 /* CardDetailController.swift */,
+				4BA5B4621FB8B3210037D373 /* Model */,
+				4BA5B4611FB8B3110037D373 /* Cell */,
+				4BA5B4631FB8B3290037D373 /* Controller */,
 			);
 			path = WidgetPicker;
 			sourceTree = "<group>";
@@ -166,21 +228,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B3BA2F31FB46DAE0033E061 /* TodayExtension */ = {
+		4BA5B44B1FB8A0060037D373 /* TodayExtension2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B3BA3041FB46DAE0033E061 /* Build configuration list for PBXNativeTarget "TodayExtension" */;
+			buildConfigurationList = 4BA5B4591FB8A0060037D373 /* Build configuration list for PBXNativeTarget "TodayExtension2" */;
 			buildPhases = (
-				4B3BA2F01FB46DAE0033E061 /* Sources */,
-				4B3BA2F11FB46DAE0033E061 /* Frameworks */,
-				4B3BA2F21FB46DAE0033E061 /* Resources */,
+				4BA5B4481FB8A0060037D373 /* Sources */,
+				4BA5B4491FB8A0060037D373 /* Frameworks */,
+				4BA5B44A1FB8A0060037D373 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TodayExtension;
-			productName = TodayExtension;
-			productReference = 4B3BA2F41FB46DAE0033E061 /* TodayExtension.appex */;
+			name = TodayExtension2;
+			productName = TodayExtension2;
+			productReference = 4BA5B44C1FB8A0060037D373 /* TodayExtension2.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		DD0985141FB178D6008833EF /* 1108_iOSComponents */ = {
@@ -195,7 +257,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4B3BA3001FB46DAE0033E061 /* PBXTargetDependency */,
+				4BA5B4571FB8A0060037D373 /* PBXTargetDependency */,
 			);
 			name = 1108_iOSComponents;
 			productName = 1108_iOSComponents;
@@ -212,7 +274,7 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = younari;
 				TargetAttributes = {
-					4B3BA2F31FB46DAE0033E061 = {
+					4BA5B44B1FB8A0060037D373 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -224,6 +286,17 @@
 					DD0985141FB178D6008833EF = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -241,16 +314,17 @@
 			projectRoot = "";
 			targets = (
 				DD0985141FB178D6008833EF /* 1108_iOSComponents */,
-				4B3BA2F31FB46DAE0033E061 /* TodayExtension */,
+				4BA5B44B1FB8A0060037D373 /* TodayExtension2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4B3BA2F21FB46DAE0033E061 /* Resources */ = {
+		4BA5B44A1FB8A0060037D373 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA5B4541FB8A0060037D373 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,10 +341,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4B3BA2F01FB46DAE0033E061 /* Sources */ = {
+		4BA5B4481FB8A0060037D373 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA5B4511FB8A0060037D373 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,9 +353,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA5B45D1FB8ACD60037D373 /* PhotoSelectorController.swift in Sources */,
 				DD9F37601FB2917B0056E3D9 /* CalendarViewController.swift in Sources */,
 				DD9F37651FB292860056E3D9 /* StackCalendar.swift in Sources */,
 				DD0985191FB178D6008833EF /* AppDelegate.swift in Sources */,
+				4BA5B45F1FB8AD0C0037D373 /* PhotoSelectorCell.swift in Sources */,
 				DD7267861FB3EC7200514E72 /* CardDetailController.swift in Sources */,
 				DD2666DC1FB1855900E4FDC1 /* Location.swift in Sources */,
 				4BFA2F0D1FB1C28300450923 /* BookMarkModel.swift in Sources */,
@@ -297,14 +374,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4B3BA3001FB46DAE0033E061 /* PBXTargetDependency */ = {
+		4BA5B4571FB8A0060037D373 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4B3BA2F31FB46DAE0033E061 /* TodayExtension */;
-			targetProxy = 4B3BA2FF1FB46DAE0033E061 /* PBXContainerItemProxy */;
+			target = 4BA5B44B1FB8A0060037D373 /* TodayExtension2 */;
+			targetProxy = 4BA5B4561FB8A0060037D373 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4BA5B4521FB8A0060037D373 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BA5B4531FB8A0060037D373 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		DD09851C1FB178D6008833EF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -324,16 +409,16 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4B3BA3021FB46DAE0033E061 /* Debug */ = {
+		4BA5B45A1FB8A0060037D373 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension2/TodayExtension2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = TodayExtension/Info.plist;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = TodayExtension2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents.TodayExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents.TodayExtension2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -341,16 +426,16 @@
 			};
 			name = Debug;
 		};
-		4B3BA3031FB46DAE0033E061 /* Release */ = {
+		4BA5B45B1FB8A0060037D373 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension2/TodayExtension2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W6W2L5AWAU;
-				INFOPLIST_FILE = TodayExtension/Info.plist;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = TodayExtension2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents.TodayExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents.TodayExtension2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -468,9 +553,11 @@
 		DD0985281FB178D6008833EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = 1108_iOSComponents/1108_iOSComponents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W6W2L5AWAU;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = 1108_iOSComponents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents";
@@ -483,9 +570,11 @@
 		DD0985291FB178D6008833EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = 1108_iOSComponents/1108_iOSComponents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W6W2L5AWAU;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = 1108_iOSComponents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "younari.-108-iOSComponents";
@@ -498,11 +587,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B3BA3041FB46DAE0033E061 /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
+		4BA5B4591FB8A0060037D373 /* Build configuration list for PBXNativeTarget "TodayExtension2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4B3BA3021FB46DAE0033E061 /* Debug */,
-				4B3BA3031FB46DAE0033E061 /* Release */,
+				4BA5B45A1FB8A0060037D373 /* Debug */,
+				4BA5B45B1FB8A0060037D373 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

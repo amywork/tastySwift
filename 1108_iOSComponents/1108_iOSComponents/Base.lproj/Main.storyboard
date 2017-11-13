@@ -324,7 +324,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imgView" destination="BGt-SH-Pbw" id="lBG-CK-5Z9"/>
-                                            <outlet property="likeBtn" destination="Gtq-dW-5Tt" id="8mq-cc-3bt"/>
+                                            <outlet property="likeBtn" destination="Gtq-dW-5Tt" id="g2j-AT-Odg"/>
                                             <outlet property="nameLabel" destination="6co-Af-rGx" id="0wQ-6F-nFW"/>
                                             <segue destination="urX-xj-RTI" kind="show" identifier="CardDetailController" id="xW5-kI-wDS"/>
                                         </connections>
