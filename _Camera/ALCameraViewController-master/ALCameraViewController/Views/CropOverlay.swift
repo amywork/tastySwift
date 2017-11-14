@@ -27,10 +27,8 @@ internal class CropOverlay: UIView {
         return self.cornerLineWidth * 2
     }
 
-    // 4각형 라인 굵기
     let lineWidth: CGFloat = 1
 
-    // 버튼 안쪽에 들어오는 ㄱ 라인의 origin point를 잡기 위함
     let outterGapRatio: CGFloat = 1/3
     var outterGap: CGFloat {
         return self.cornerButtonWidth * self.outterGapRatio
@@ -52,7 +50,6 @@ internal class CropOverlay: UIView {
     
     override func layoutSubviews() {
         
-        // 4각형의 4변 frame 잡기
         for i in 0..<outerLines.count {
             let line = outerLines[i]
             var lineFrame: CGRect
@@ -77,8 +74,6 @@ internal class CropOverlay: UIView {
             line.frame = lineFrame
         }
         
-        
-        // 4변의 ㄱ 코너 프레임 + 버튼 프레임 잡기
         let corners = [topLeftCornerLines, topRightCornerLines, bottomLeftCornerLines, bottomRightCornerLines]
         for i in 0..<corners.count {
             let corner = corners[i]
@@ -115,7 +110,6 @@ internal class CropOverlay: UIView {
             corner[0].frame = verticalFrame
             corner[1].frame = horizontalFrame
 			cornerButtons[i].frame = buttonFrame
-            cornerButtons[i].backgroundColor = .yellow
         }
 		
 		let lineThickness = lineWidth / UIScreen.main.scale
@@ -137,20 +131,15 @@ internal class CropOverlay: UIView {
 	
     func createLines() {
         
-        // 사각형 4변
         outerLines = [createLine(), createLine(), createLine(), createLine()]
-        
-        // 사각형 내부 그리드
         horizontalLines = [createLine(), createLine()]
         verticalLines = [createLine(), createLine()]
         
-        // 코너 버튼의 ㄱ라인
         topLeftCornerLines = [createLine(), createLine()]
         topRightCornerLines = [createLine(), createLine()]
         bottomLeftCornerLines = [createLine(), createLine()]
         bottomRightCornerLines = [createLine(), createLine()]
         
-        // 코너 버튼 (리사이징)
 		cornerButtons = [createButton(), createButton(), createButton(), createButton()]
 		
 		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(moveCropOverlay))
@@ -170,12 +159,11 @@ internal class CropOverlay: UIView {
 		
 		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(moveCropOverlay))
 		button.addGestureRecognizer(dragGestureRecognizer)
+
 		addSubview(button)
 		return button
 	}
 	
-    
-    // 드래깅 할 때
 	@objc func moveCropOverlay(gestureRecognizer: UIPanGestureRecognizer) {
 		if isResizable, let button = gestureRecognizer.view as? UIButton {
 			if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
@@ -199,7 +187,7 @@ internal class CropOverlay: UIView {
                 let minimumFrame = CGRect(x: newFrame.origin.x, y: newFrame.origin.y, width: max(newFrame.size.width, minimumSize.width + 2 * outterGap), height: max(newFrame.size.height, minimumSize.height + 2 * outterGap))
 				frame = minimumFrame
 				layoutSubviews()
-                
+
 				gestureRecognizer.setTranslation(CGPoint.zero, in: self)
 			}
 		} else if isMovable {

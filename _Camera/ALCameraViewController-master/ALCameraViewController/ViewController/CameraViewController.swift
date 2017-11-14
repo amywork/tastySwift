@@ -199,11 +199,11 @@ open class CameraViewController: UIViewController {
         super.loadView()
         view.backgroundColor = UIColor.black
         [cameraView,
-         cameraOverlay,
-         cameraButton,
-         closeButton,
-         flashButton,
-         containerSwapLibraryButton].forEach({ view.addSubview($0) })
+            cameraOverlay,
+            cameraButton,
+            closeButton,
+            flashButton,
+            containerSwapLibraryButton].forEach({ view.addSubview($0) })
         [swapButton, libraryButton].forEach({ containerSwapLibraryButton.addSubview($0) })
         view.setNeedsUpdateConstraints()
     }

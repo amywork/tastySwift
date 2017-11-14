@@ -62,7 +62,7 @@ public class ConfirmViewController: UIViewController, UIScrollViewDelegate {
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 
-		view.backgroundColor = UIColor.white
+		view.backgroundColor = UIColor.black
 		
 		scrollView.addSubview(imageView)
 		scrollView.delegate = self
