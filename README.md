@@ -1,8 +1,6 @@
 # tastySwift 📝💛
-- **Apple Lover** 👍🏻💙, **Archiving Xcode projects (written in Swift)**
+- **Archiving Xcode projects (written in Swift)**
 - **[Blog](https://younari.github.io/)** : https://younari.github.io/
-
-# 👋🏻 Welcome
 
 # 01. Swift
 ## 스위프트 기본 문법
@@ -20,9 +18,12 @@
 - [스위프트 Notification Center](https://younari.github.io/2017-10-24/Notification)
 - [스위프트 Error Handling](https://younari.github.io/2017-10-23/ErrorHandling)
 - [스위프트 Cell Delegate](https://younari.github.io/2017-10-21/CellDelegate)
+- [스위프트 Gesture Recognizer](https://younari.github.io/2017-10-22/GestureRecognizer)
 - [스위프트 Subscript, Extension, Generic](https://younari.github.io/2017-10-25/Extensions)
 - [스위프트 AV Foundation](https://younari.github.io/2017-10-30/AVFoundation)
 - [스위프트 ARC](https://younari.github.io/2017-10-31/ARC)
+- [스위프트 Thread, GCD](https://younari.github.io/2017-11-06/ThreadAndGCD)
+
 
 ## 스위프트로 데이터 다루기
 - [서버와의 데이터 연동시 Data Control](https://younari.github.io/2017-10-16/DataControl)
@@ -63,7 +64,7 @@
 - [Apple Events 2017](https://younari.github.io/2017-09-12/AppleEvents2017)
 
 
-# 03. Algorithm and Data Structure
+# 03. Programming
 ## 알고리즘
 - [알고리즘 기초](https://younari.github.io/2017-09-07/Algorithm)
 - [연속으로 중복된 숫자 제거하기](https://younari.github.io/2017-09-11/RepeatedNumber)
@@ -81,8 +82,7 @@
 - [배열의 최대값과 최소값](https://younari.github.io/2017-09-09/MinMax)
 
 ## 프로그래밍 기초
-- [프로그래밍 기초 용어](https://younari.github.io/2017-09-05/Program)
-- [Backend 기초 용어](https://younari.github.io/2017-09-06/Backend)
+- [컴퓨터 공학 기초 용어](https://younari.github.io/2017-09-05/Programming)
 - [객체 지향 프로그래밍](https://younari.github.io/2017-09-13/Object)
 
 # 04. Demo Projects
@@ -115,3 +115,4 @@
 
 # 05. Insights
 - [API Lists](https://younari.github.io/2017-10-17/APILists)
+- [2017년 11월, 페이스북 밋업 참가 기록](https://younari.github.io/2017-11-05/FacebookPlatform)

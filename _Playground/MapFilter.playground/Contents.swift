@@ -23,6 +23,7 @@ stringArr.flatMap { (string: String) -> String? in
     return URL(string: string)?.host
 }
 
+
 let quizStr = "ab2v9bc13j5jf4jv21"
 let ranges = (try? NSRegularExpression(pattern: "[0-9]+").matches(in: quizStr, range: NSRange(quizStr.startIndex...,in: quizStr))) ?? []
 
