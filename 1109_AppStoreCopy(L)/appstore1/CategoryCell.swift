@@ -27,7 +27,6 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     // UI
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Best New Apps"
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

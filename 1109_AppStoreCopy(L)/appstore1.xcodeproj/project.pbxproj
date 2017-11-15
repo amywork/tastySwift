@@ -46,6 +46,7 @@
 		4BA7D21D1FB945520000C5E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C76B41D71C9A99B60049214B /* AppDelegate.swift */,
 				C76B41DB1C9A99B60049214B /* Main.storyboard */,
 				C76B41DE1C9A99B60049214B /* Assets.xcassets */,
 				C76B41E01C9A99B60049214B /* LaunchScreen.storyboard */,
@@ -74,7 +75,6 @@
 			children = (
 				C76B41E31C9A99B60049214B /* Info.plist */,
 				4BA7D21D1FB945520000C5E3 /* Resources */,
-				C76B41D71C9A99B60049214B /* AppDelegate.swift */,
 				C76B42C11C9FE9250049214B /* Models.swift */,
 				C76B41E91C9A9BC70049214B /* CategoryCell.swift */,
 				C76B41D91C9A99B60049214B /* FeaturedAppsController.swift */,
