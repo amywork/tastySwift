@@ -28,7 +28,7 @@ var latitude: CLLocationDegrees {
     if let lat = Location.shared.latitude {
         return lat
     }else {
-        return 58
+        return 37.7739
     }
 }
 
@@ -36,7 +36,7 @@ var longitude: CLLocationDegrees {
     if let lon = Location.shared.longitude {
         return lon
     }else {
-        return 80
+        return -122.43129
     }
 }
 
