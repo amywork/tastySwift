@@ -62,12 +62,14 @@ public class SingleImageFetcher {
     
     private func _fetch() {
     
+        // 원래 있던 asset을 가져와서
         guard let asset = asset else {
             let error = errorWithKey("error.cant-fetch-photo", domain: errorDomain)
             failure?(error)
             return
         }
         
+        // PHImageRequestOptions의 normalizedCropRect에 cropRect를 넣어서 잘라준다.
         let options = PHImageRequestOptions()
         options.deliveryMode = .highQualityFormat
         options.isNetworkAccessAllowed = true

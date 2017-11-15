@@ -136,15 +136,15 @@ public class ConfirmViewController: UIViewController, UIScrollViewDelegate {
 		
 		let insets = calculateScrollViewInsets(frame)
 		
-		coordinator.animate(alongsideTransition: { [weak self] context in
-			self?.scrollView.contentInset = insets
-			self?.scrollView.minimumZoomScale = scale
-			self?.scrollView.zoomScale = scale
-			self?.centerScrollViewContents()
-			self?.centerImageViewOnRotate()
-			}, completion: nil)
-	}
-	
+        coordinator.animate(alongsideTransition: { [weak self] context in
+            self?.scrollView.contentInset = insets
+            self?.scrollView.minimumZoomScale = scale
+            self?.scrollView.zoomScale = scale
+            self?.centerScrollViewContents()
+            self?.centerImageViewOnRotate()
+            }, completion: nil)
+    }
+    
 	private func configureWithImage(_ image: UIImage) {
 		cropOverlay.isHidden = !croppingParameters.isEnabled
 		
@@ -236,12 +236,12 @@ public class ConfirmViewController: UIViewController, UIScrollViewDelegate {
 		
 		let spinner = showSpinner()
 		
-		if let asset = asset {
-			var fetcher = SingleImageFetcher()
-				.onSuccess { [weak self] image in
-					self?.onComplete?(image, self?.asset)
-					self?.hideSpinner(spinner)
-					self?.enable()
+        if let asset = asset {
+            var fetcher = SingleImageFetcher()
+                .onSuccess { [weak self] image in
+                    self?.onComplete?(image, self?.asset)
+                    self?.hideSpinner(spinner)
+                    self?.enable()
 				}
 				.onFailure { [weak self] error in
 					self?.hideSpinner(spinner)
