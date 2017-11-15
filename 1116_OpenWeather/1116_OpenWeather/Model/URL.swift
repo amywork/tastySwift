@@ -24,9 +24,27 @@ public class Location {
     var longitude: CLLocationDegrees?
 }
 
-let latitude = Location.shared.latitude!
-let longitude = Location.shared.longitude!
+var latitude: CLLocationDegrees {
+    if let lat = Location.shared.latitude {
+        return lat
+    }else {
+        return 58
+    }
+}
+
+var longitude: CLLocationDegrees {
+    if let lon = Location.shared.longitude {
+        return lon
+    }else {
+        return 80
+    }
+}
 
 let locationURL = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=9eb78416466a2480d3da80192164b38c"
 
 let locationForecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=9eb78416466a2480d3da80192164b38c"
+
+
+
+
+

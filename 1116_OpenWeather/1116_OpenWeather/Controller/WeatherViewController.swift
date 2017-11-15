@@ -23,7 +23,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK : - Location
     let locationManager = CLLocationManager()
-    var currentLocation: CLLocation!
+    var currentLocation: CLLocation?
     
     // MARK : - LifeCycle
     override func viewDidLoad() {
@@ -42,8 +42,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     func locationAuthStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
-            Location.shared.latitude = currentLocation.coordinate.latitude
-            Location.shared.longitude = currentLocation.coordinate.longitude
+            Location.shared.latitude = currentLocation?.coordinate.latitude
+            Location.shared.longitude = currentLocation?.coordinate.longitude
             print(locationURL)
             print(locationForecastURL)
             fetchToday(string: locationURL)
