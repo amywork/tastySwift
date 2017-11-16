@@ -26,7 +26,7 @@ internal class RequestManager {
     private init() {}
     
     private let session = URLSession.shared
-    typealias FetchCompletion = (_ isSucess: Bool, _ result: Any?, _ error: Error?) -> Void
+    typealias FetchCompletion = (_ isSucess: Bool, _ error: Error?) -> Void
     
     func fetchToday(string: String, completion: @escaping FetchCompletion) {
         
@@ -44,27 +44,27 @@ internal class RequestManager {
                 let codeLevel = response.statusCode / 100
                 switch codeLevel {
                 case 1:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("100 에러")
                 case 2:
                     do {
                         let jsonDic = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, AnyObject>
                         DispatchQueue.main.sync {
                             WeatherData.shared.todayWeather = TodayWeather(dic: jsonDic)
-                            completion(true, jsonDic, nil)
+                            completion(true, nil)
                         }
                     } catch let err {
                         // JSONSerialization 에러
                         print("\(err.localizedDescription)")
                     }
                 case 3:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("300 에러")
                 case 4:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("400 에러")
                 case 5:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("500 에러")
                 default:
                     break
@@ -74,7 +74,7 @@ internal class RequestManager {
                 
                 // 03. server error도 없고, response도 없고!
             else {
-                completion(false, nil, nil)
+                completion(false, nil)
             }
             
             // 04. dataTask 실행
@@ -97,7 +97,7 @@ internal class RequestManager {
                 let codeLevel = response.statusCode / 100
                 switch codeLevel {
                 case 1:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("100 에러")
                 case 2:
                     do {
@@ -110,19 +110,19 @@ internal class RequestManager {
                                 }
                             }
                         }
-                        completion(true, jsonDic, nil)
+                        completion(true, nil)
                     }catch let err {
                         // JSONSerialization 에러
                         print("\(err.localizedDescription)")
                     }
                 case 3:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("300 에러")
                 case 4:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("400 에러")
                 case 5:
-                    completion(false, data, nil)
+                    completion(false, nil)
                     print("500 에러")
                 default:
                     break
@@ -131,7 +131,7 @@ internal class RequestManager {
                 
                 // 03. server error도 없고, response도 없고!
             else {
-                completion(false, nil, nil)
+                completion(false, nil)
             }
             
             // 04. dataTask 실행

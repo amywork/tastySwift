@@ -18,39 +18,61 @@ class CityViewController: UIViewController {
     @IBOutlet weak var portlandTempLabel: UILabel!
     @IBOutlet weak var portlandImageView: UIImageView!
     
-    private var todayWeather: TodayWeather?
-
+    private var copenhagenWeather: TodayWeather? {
+        didSet {
+            let temp: String = copenhagenWeather?.temp ?? ""
+            let imgName: String = copenhagenWeather?.weatherType ?? "Clear"
+            self.copenhagenTempLabel.text = "Today: \(temp)C"
+            self.copenhagenImageView.image = UIImage(named: imgName)
+        }
+    }
+    
+    private var melbourneWeather: TodayWeather? {
+        didSet {
+            let temp: String = melbourneWeather?.temp ?? ""
+            let imgName: String = melbourneWeather?.weatherType ?? "Clear"
+            self.melbourneTempLabel.text = "Today: \(temp)C"
+            self.melbourneImageView.image = UIImage(named: imgName)
+        }
+    }
+    
+    private var portlandWeather: TodayWeather? {
+        didSet {
+            let temp: String = portlandWeather?.temp ?? ""
+            let imgName: String = portlandWeather?.weatherType ?? "Clear"
+            self.portlandTempLabel.text = "Today: \(temp)C"
+            self.portlandImageView.image = UIImage(named: imgName)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         FetchAllCity()
     }
 
     private func FetchAllCity() {
-        RequestManager.shared.fetchToday(string: CityURL.copenhagen.rawValue) { (success, data, err) in
+        RequestManager.shared.fetchToday(string: CityURL.copenhagen.rawValue) { (success, err) in
             if success {
-                self.todayWeather = WeatherData.shared.todayWeather
                 DispatchQueue.main.async {
-                    self.updateUI()
+                    self.copenhagenWeather = WeatherData.shared.todayWeather
                 }
             }else {
                 print("error")
             }
         }
-        RequestManager.shared.fetchToday(string: CityURL.melbourne.rawValue) { (success, data, err) in
+        RequestManager.shared.fetchToday(string: CityURL.melbourne.rawValue) { (success, err) in
             if success {
-                self.todayWeather = WeatherData.shared.todayWeather
                 DispatchQueue.main.async {
-                    self.updateUI()
+                    self.melbourneWeather = WeatherData.shared.todayWeather
                 }
             }else {
                 print("error")
             }
         }
-        RequestManager.shared.fetchToday(string: CityURL.portland.rawValue) { (success, data, err) in
+        RequestManager.shared.fetchToday(string: CityURL.portland.rawValue) { (success, err) in
             if success {
-                self.todayWeather = WeatherData.shared.todayWeather
                 DispatchQueue.main.async {
-                    self.updateUI()
+                    self.portlandWeather = WeatherData.shared.todayWeather
                 }
             }else {
                 print("error")
@@ -58,19 +80,4 @@ class CityViewController: UIViewController {
         }
     }
     
-    private func updateUI() {
-        let temp: String = todayWeather?.temp ?? ""
-        let imgName: String = todayWeather?.weatherType ?? "Clear"
-        // 아래 스위치문으로 바꾸기
-        if todayWeather?.cityName == "Copenhagen" {
-            self.copenhagenTempLabel.text = "Today: \(temp)C"
-            self.copenhagenImageView.image = UIImage(named: imgName)
-        }else if todayWeather?.cityName == "Melbourne" {
-            self.melbourneTempLabel.text = "Today: \(temp)C"
-            self.melbourneImageView.image = UIImage(named: imgName)
-        }else if todayWeather?.cityName == "Portland" {
-            self.portlandTempLabel.text = "Today: \(temp)C"
-            self.portlandImageView.image = UIImage(named: imgName)
-        }
-    }
 }
