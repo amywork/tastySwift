@@ -53,8 +53,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
 
 }
 
+/*Request Data*/
 extension WeatherViewController {
-    
+
     private func fetchForecast(string: String) {
         var request = URLRequest(url: URL(string: string)!)
         request.httpMethod = "GET"
