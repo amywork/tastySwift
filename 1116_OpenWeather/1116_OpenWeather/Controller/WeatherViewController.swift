@@ -22,44 +22,40 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     private var todayWeather: TodayWeather?
     
     // MARK : - Location
-    let locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
+    private let locationManager = CLLocationManager()
+    private var currentLocation: CLLocation?
     
     // MARK : - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        locationAuthStatus()
+        requestWhenInUseAuth()
     }
-
-    func locationAuthStatus() {
+    
+    private func requestWhenInUseAuth() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
             Location.shared.latitude = currentLocation?.coordinate.latitude
             Location.shared.longitude = currentLocation?.coordinate.longitude
-            print(locationURL)
-            print(locationForecastURL)
             fetchToday(string: locationURL)
             fetchForecast(string: locationForecastURL)
         } else {
             locationManager.requestWhenInUseAuthorization()
-            locationAuthStatus()
+            requestWhenInUseAuth()
         }
     }
-
 
 }
 
 extension WeatherViewController {
     
-    func fetchForecast(string: String) {
+    private func fetchForecast(string: String) {
         var request = URLRequest(url: URL(string: string)!)
         request.httpMethod = "GET"
         let session = URLSession.shared
@@ -85,7 +81,7 @@ extension WeatherViewController {
             }.resume()
     }
     
-    func fetchToday(string: String) {
+    private func fetchToday(string: String) {
         var request = URLRequest(url: URL(string: string)!)
         request.httpMethod = "GET"
         let session = URLSession.shared
@@ -104,7 +100,7 @@ extension WeatherViewController {
             }.resume()
     }
     
-    func updateUI() {
+    private func updateUI() {
         if let temp = todayWeather?.temp {
             todayTempLabel.text = "오늘의 평균 기온: \(temp)C"
         }
@@ -128,7 +124,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }else {
-            cell.backgroundColor = #colorLiteral(red: 0.9117823243, green: 0.9118037224, blue: 0.9117922187, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         }
         
         return cell
@@ -139,7 +135,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Forecasts"
+        return "5days Forecasts"
     }
     
 }

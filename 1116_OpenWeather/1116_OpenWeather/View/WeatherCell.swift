@@ -17,8 +17,8 @@ internal class WeatherCell: UITableViewCell {
     @IBOutlet weak var weatherIconView: UIImageView!
     
     func configureCell(forecast: Forecast) {
-        lowTempLabel.text = "\(forecast.lowTemp)"
-        highTempLabel.text = "\(forecast.highTemp)"
+        lowTempLabel.text = "\(forecast.minTemp)"
+        highTempLabel.text = "\(forecast.maxTemp)"
         weatherTypeLabel.text = forecast.weatherType
         weatherIconView.image = UIImage(named: forecast.weatherType)
         dayLabel.text = forecast.date

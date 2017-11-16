@@ -26,7 +26,7 @@ class CityViewController: UIViewController {
         fetchToday(string: CityURL.portland.rawValue)
     }
 
-    func fetchToday(string: String) {
+    private func fetchToday(string: String) {
         var request = URLRequest(url: URL(string: string)!)
         request.httpMethod = "GET"
         let session = URLSession.shared
@@ -45,7 +45,7 @@ class CityViewController: UIViewController {
             }.resume()
     }
 
-    func updateUI() {
+    private func updateUI() {
         let temp: String = todayWeather?.temp ?? ""
         let imgName: String = todayWeather?.weatherType ?? "Clear"
         if todayWeather?.cityName == "Copenhagen" {

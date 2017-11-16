@@ -11,9 +11,9 @@ import UIKit
 
 internal struct TodayWeather {
  
-    var cityName: String
-    var weatherType: String
-    var temp: String
+    public var cityName: String
+    public var weatherType: String
+    public var temp: String
     
     init?(dic: Dictionary<String, AnyObject>) {
         guard let name = dic["name"] as? String else { return nil }

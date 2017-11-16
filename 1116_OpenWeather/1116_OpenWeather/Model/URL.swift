@@ -20,11 +20,11 @@ public enum CityURL: String {
 public class Location {
     static var shared = Location()
     private init() {}
-    var latitude: CLLocationDegrees?
-    var longitude: CLLocationDegrees?
+    var latitude: Double?
+    var longitude: Double?
 }
 
-var latitude: CLLocationDegrees {
+public var latitude: Double {
     if let lat = Location.shared.latitude {
         return lat
     }else {
@@ -32,7 +32,7 @@ var latitude: CLLocationDegrees {
     }
 }
 
-var longitude: CLLocationDegrees {
+public var longitude: Double {
     if let lon = Location.shared.longitude {
         return lon
     }else {
@@ -40,9 +40,9 @@ var longitude: CLLocationDegrees {
     }
 }
 
-let locationURL = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=9eb78416466a2480d3da80192164b38c"
+public let locationURL = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=9eb78416466a2480d3da80192164b38c"
 
-let locationForecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=9eb78416466a2480d3da80192164b38c"
+public let locationForecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=9eb78416466a2480d3da80192164b38c"
 
 
 

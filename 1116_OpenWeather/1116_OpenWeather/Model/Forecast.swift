@@ -9,23 +9,24 @@
 import UIKit
 import Foundation
 
+// Forecast Model
 internal struct Forecast {
     
-    var date: String
-    var weatherType: String
-    var highTemp: String
-    var lowTemp: String
+    public var date: String
+    public var weatherType: String
+    public var maxTemp: String
+    public var minTemp: String
     
     init?(weatherDict: Dictionary<String, AnyObject>) {
         
         guard let temp = weatherDict["main"] as? Dictionary<String, AnyObject> else { return nil }
         guard let min = temp["temp_min"] as? Double  else { return nil }
         let minTemp = round(min-273)
-        self.lowTemp = "\(minTemp)"
+        self.minTemp = "\(minTemp)"
         
         guard let max = temp["temp_max"] as? Double  else { return nil }
         let maxTemp = round(max-273)
-        self.highTemp = "\(maxTemp)"
+        self.maxTemp = "\(maxTemp)"
         
         guard let weather = weatherDict["weather"] as? [Dictionary<String, AnyObject>] else { return nil }
         guard let main = weather[0]["main"] as? String else { return nil }
@@ -33,13 +34,13 @@ internal struct Forecast {
         
         guard let date = weatherDict["dt"] as? Double else { return nil }
         let convertedDate = Date(timeIntervalSince1970: date)
-        self.date = convertedDate.dayOfTheWeek()
+        self.date = convertedDate.dateToStr()
     }
     
 }
 
 extension Date {
-    func dayOfTheWeek() -> String {
+    public func dateToStr() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM월 dd일 : HH시"
         return dateFormatter.string(from: self)
