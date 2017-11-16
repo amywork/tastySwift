@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBAction func signupHandler(_ sender: UIButton) {
         
         if checkData() {
-            let userID = "woozicodean92"
+            let userID = "woozicodn92"
             let userPW = "wooZico9@2@$@"
             
             NetworkManger.shared.requestSingup(id: userID, pw: userPW, completion: { [unowned self] (isSucess, data, err) in
@@ -46,7 +46,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(NetworkManger.shared.token)
     }
     
     override func viewDidAppear(_ animated: Bool) {
