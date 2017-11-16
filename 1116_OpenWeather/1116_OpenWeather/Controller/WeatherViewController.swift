@@ -51,7 +51,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                     self.updateUI()
                 }
             }else {
-                print("error")
+                if let err = err {
+                    print(err.localizedDescription)
+                }
             }
         })
         
@@ -62,7 +64,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                     self.tableView.reloadData()
                 }
             }else {
-                print("error")
+                if let err = err {
+                    print(err.localizedDescription)
+                }
             }
         })
     }
@@ -72,7 +76,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             todayTempLabel.text = "오늘의 평균 기온: \(temp)C"
         }
         locationLabel.text = todayWeather?.cityName
-        currentWeatherImageView.image = UIImage(named: "\(todayWeather?.weatherType ?? "Clear")")
+        currentWeatherImageView.image = UIImage(named: "\(todayWeather?.weatherType ?? "NoImage")")
     }
     
 }

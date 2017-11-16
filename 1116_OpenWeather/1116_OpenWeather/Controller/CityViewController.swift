@@ -8,6 +8,7 @@
 //  CityViewController (Tab 02)
 
 import UIKit
+
 class CityViewController: UIViewController {
 
     // MARK : - Outlet
@@ -21,7 +22,7 @@ class CityViewController: UIViewController {
     private var copenhagenWeather: TodayWeather? {
         didSet {
             let temp: String = copenhagenWeather?.temp ?? ""
-            let imgName: String = copenhagenWeather?.weatherType ?? "Clear"
+            let imgName: String = copenhagenWeather?.weatherType ?? "NoImage"
             self.copenhagenTempLabel.text = "Today: \(temp)C"
             self.copenhagenImageView.image = UIImage(named: imgName)
         }
@@ -30,7 +31,7 @@ class CityViewController: UIViewController {
     private var melbourneWeather: TodayWeather? {
         didSet {
             let temp: String = melbourneWeather?.temp ?? ""
-            let imgName: String = melbourneWeather?.weatherType ?? "Clear"
+            let imgName: String = melbourneWeather?.weatherType ?? "NoImage"
             self.melbourneTempLabel.text = "Today: \(temp)C"
             self.melbourneImageView.image = UIImage(named: imgName)
         }
@@ -39,7 +40,7 @@ class CityViewController: UIViewController {
     private var portlandWeather: TodayWeather? {
         didSet {
             let temp: String = portlandWeather?.temp ?? ""
-            let imgName: String = portlandWeather?.weatherType ?? "Clear"
+            let imgName: String = portlandWeather?.weatherType ?? "NoImage"
             self.portlandTempLabel.text = "Today: \(temp)C"
             self.portlandImageView.image = UIImage(named: imgName)
         }
@@ -51,8 +52,8 @@ class CityViewController: UIViewController {
     }
 
     private func FetchAllCity() {
-        RequestManager.shared.fetchToday(string: CityURL.copenhagen.rawValue) { (success, err) in
-            if success {
+        RequestManager.shared.fetchToday(string: CityURL.copenhagen.rawValue) { (isSucess, err) in
+            if isSucess {
                 DispatchQueue.main.async {
                     self.copenhagenWeather = WeatherData.shared.todayWeather
                 }
@@ -60,8 +61,8 @@ class CityViewController: UIViewController {
                 print("error")
             }
         }
-        RequestManager.shared.fetchToday(string: CityURL.melbourne.rawValue) { (success, err) in
-            if success {
+        RequestManager.shared.fetchToday(string: CityURL.melbourne.rawValue) { (isSucess, err) in
+            if isSucess {
                 DispatchQueue.main.async {
                     self.melbourneWeather = WeatherData.shared.todayWeather
                 }
@@ -69,8 +70,8 @@ class CityViewController: UIViewController {
                 print("error")
             }
         }
-        RequestManager.shared.fetchToday(string: CityURL.portland.rawValue) { (success, err) in
-            if success {
+        RequestManager.shared.fetchToday(string: CityURL.portland.rawValue) { (isSucess, err) in
+            if isSucess {
                 DispatchQueue.main.async {
                     self.portlandWeather = WeatherData.shared.todayWeather
                 }
