@@ -44,7 +44,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         Location.shared.latitude = currentLocation?.coordinate.latitude
         Location.shared.longitude = currentLocation?.coordinate.longitude
         
-        RequestManager.shared.fetchToday(string: locationURL, completion: { [unowned self] (isSucess, err) in
+        RequestManager.shared.fetchToday(string: locationURL, completion: { [unowned self] (isSucess, data, err) in
             if isSucess {
                 self.todayWeather = WeatherData.shared.todayWeather
                 DispatchQueue.main.async {

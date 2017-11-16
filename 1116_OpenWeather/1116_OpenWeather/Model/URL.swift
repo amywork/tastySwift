@@ -24,8 +24,8 @@ public class Location {
     var longitude: Double?
 }
 
-public var latitude: Double = Location.shared.latitude!
-public var longitude: Double = Location.shared.longitude!
+private var latitude: Double = Location.shared.latitude!
+private var longitude: Double = Location.shared.longitude!
 
 // MARK : - CityURL (RawValue for enum must be a literal)
 public enum CityURL: String {

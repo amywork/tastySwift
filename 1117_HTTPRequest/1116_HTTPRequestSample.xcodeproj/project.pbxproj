@@ -47,6 +47,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B20B4381FBDA8A70088324F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDCFF7121FBD5C8500204853 /* NetworkManger.swift */,
+				DDEB96291FBD79DD00B8DFBA /* DataCenter.swift */,
+				DD66E7241FBD791400FE7DAC /* CardData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B20B4391FBDA8B50088324F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDCFF7021FBD5ACB00204853 /* LoginViewController.swift */,
+				DDCFF7141FBD678C00204853 /* MyCardController.swift */,
+				DDCFF7161FBD695C00204853 /* AddCardController.swift */,
+				DD66E7221FBD786900FE7DAC /* CustomCardCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		DDCFF6F41FBD5ACB00204853 = {
 			isa = PBXGroup;
 			children = (
@@ -68,13 +89,8 @@
 			children = (
 				DDCFF70C1FBD5ACB00204853 /* Info.plist */,
 				DDEB96281FBD799200B8DFBA /* Resources */,
-				DD66E7241FBD791400FE7DAC /* CardData.swift */,
-				DDEB96291FBD79DD00B8DFBA /* DataCenter.swift */,
-				DDCFF7121FBD5C8500204853 /* NetworkManger.swift */,
-				DDCFF7021FBD5ACB00204853 /* LoginViewController.swift */,
-				DDCFF7141FBD678C00204853 /* MyCardController.swift */,
-				DDCFF7161FBD695C00204853 /* AddCardController.swift */,
-				DD66E7221FBD786900FE7DAC /* CustomCardCell.swift */,
+				4B20B4381FBDA8A70088324F /* Model */,
+				4B20B4391FBDA8B50088324F /* Controller */,
 				DDCFF7041FBD5ACB00204853 /* Main.storyboard */,
 			);
 			path = 1116_HTTPRequestSample;

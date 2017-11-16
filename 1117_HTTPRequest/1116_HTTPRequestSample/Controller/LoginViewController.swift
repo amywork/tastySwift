@@ -14,12 +14,10 @@ class LoginViewController: UIViewController {
     @IBOutlet var pwTF: UITextField!
 
     @IBAction func signupHandler(_ sender: UIButton) {
-        
         if checkData() {
-            let userID = "woozicodn92"
-            let userPW = "wooZico9@2@$@"
-            
-            NetworkManger.shared.requestSingup(id: userID, pw: userPW, completion: { [unowned self] (isSucess, data, err) in
+            let userID = "zico920914"
+            let userPW = "wooZico9!2@4!"
+            NetworkManger.shared.requestSingup(id: userID, pw: userPW) { [unowned self] (isSucess, data, err) in
                 if isSucess{
                     NetworkManger.shared.saveToken()
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -28,8 +26,7 @@ class LoginViewController: UIViewController {
                 }else {
                     print("error")
                 }
-            })
-            
+            }
         }
     }
     

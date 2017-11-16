@@ -16,7 +16,6 @@ internal class WeatherData {
     
     public var forecasts: [Forecast] = []
     public var todayWeather: TodayWeather?
-    
 }
 
 //  For Request
@@ -26,9 +25,10 @@ internal class RequestManager {
     private init() {}
     
     private let session = URLSession.shared
-    typealias FetchCompletion = (_ isSucess: Bool, _ error: Error?) -> Void
+    typealias FetchTodayCompletion = (_ isSucess: Bool, _ data: Any?, _ error: Error?) -> Void
+    typealias FetchForecastCompletion = (_ isSucess: Bool, _ error: Error?) -> Void
     
-    func fetchToday(string: String, completion: @escaping FetchCompletion) {
+    public func fetchToday(string: String, completion: @escaping FetchTodayCompletion) {
         
         var request = URLRequest(url: URL(string: string)!)
         request.httpMethod = "GET"
@@ -42,29 +42,28 @@ internal class RequestManager {
                 // 02. Response까지는 왔을 경우
             else if let data = data, let response = response as? HTTPURLResponse  {
                 let codeLevel = response.statusCode / 100
+               
                 switch codeLevel {
                 case 1:
-                    completion(false, nil)
+                    completion(false, data, nil)
                     print("100 에러")
                 case 2:
                     do {
                         let jsonDic = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, AnyObject>
-                        DispatchQueue.main.sync {
-                            WeatherData.shared.todayWeather = TodayWeather(dic: jsonDic)
-                            completion(true, nil)
-                        }
+                        WeatherData.shared.todayWeather = TodayWeather(dic: jsonDic)
+                        completion(true, jsonDic, nil)
                     } catch let err {
                         // JSONSerialization 에러
                         print("\(err.localizedDescription)")
                     }
                 case 3:
-                    completion(false, nil)
+                    completion(false, data, nil)
                     print("300 에러")
                 case 4:
-                    completion(false, nil)
+                    completion(false, data, nil)
                     print("400 에러")
                 case 5:
-                    completion(false, nil)
+                    completion(false, data, nil)
                     print("500 에러")
                 default:
                     break
@@ -72,16 +71,17 @@ internal class RequestManager {
                 
             }
                 
-                // 03. server error도 없고, response도 없고!
+                // 03. server error도 없고, response도 없는 경우
             else {
-                completion(false, nil)
+                completion(false, nil, nil)
+                print("Unknowned error")
             }
             
             // 04. dataTask 실행
             }.resume()
     }
     
-    public func fetchForecast(string: String, completion: @escaping FetchCompletion) {
+    public func fetchForecast(string: String, completion: @escaping FetchForecastCompletion) {
         var request = URLRequest(url: URL(string: string)!)
         request.httpMethod = "GET"
         
@@ -136,7 +136,6 @@ internal class RequestManager {
             
             // 04. dataTask 실행
             }.resume()
-        
     }
     
 }

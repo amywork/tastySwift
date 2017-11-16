@@ -52,28 +52,31 @@ class CityViewController: UIViewController {
     }
 
     private func FetchAllCity() {
-        RequestManager.shared.fetchToday(string: CityURL.copenhagen.rawValue) { (isSucess, err) in
+        RequestManager.shared.fetchToday(string: CityURL.copenhagen.rawValue) { (isSucess, data, err) in
             if isSucess {
+                let dic = data as! Dictionary<String, AnyObject>
                 DispatchQueue.main.async {
-                    self.copenhagenWeather = WeatherData.shared.todayWeather
+                    self.copenhagenWeather = TodayWeather(dic: dic)
                 }
             }else {
                 print("error")
             }
         }
-        RequestManager.shared.fetchToday(string: CityURL.melbourne.rawValue) { (isSucess, err) in
+        RequestManager.shared.fetchToday(string: CityURL.melbourne.rawValue) { (isSucess, data, err) in
             if isSucess {
+                let dic = data as! Dictionary<String, AnyObject>
                 DispatchQueue.main.async {
-                    self.melbourneWeather = WeatherData.shared.todayWeather
+                    self.melbourneWeather = TodayWeather(dic: dic)
                 }
             }else {
                 print("error")
             }
         }
-        RequestManager.shared.fetchToday(string: CityURL.portland.rawValue) { (isSucess, err) in
+        RequestManager.shared.fetchToday(string: CityURL.portland.rawValue) { (isSucess, data, err) in
             if isSucess {
+                let dic = data as! Dictionary<String, AnyObject>
                 DispatchQueue.main.async {
-                    self.portlandWeather = WeatherData.shared.todayWeather
+                    self.portlandWeather = TodayWeather(dic: dic)
                 }
             }else {
                 print("error")

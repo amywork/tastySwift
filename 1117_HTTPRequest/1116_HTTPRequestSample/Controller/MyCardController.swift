@@ -37,7 +37,7 @@ extension MyCardController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CustomCardCell
-        cell.data = DataCenter.shared.cardList[indexPath.row]
+        //cell.data = DataCenter.shared.cardList[indexPath.row]
         return cell
     }
     
