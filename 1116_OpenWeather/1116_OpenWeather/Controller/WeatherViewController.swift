@@ -1,10 +1,10 @@
-	//
 //  WeatherViewController.swift
 //  1116_URL
 //
 //  Created by 김기윤 on 15/11/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
+//  WeatherViewController (Tab 01)
 
 import UIKit
 import CoreLocation
@@ -17,7 +17,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var currentWeatherImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    // MARK : - Data property (request를 통해 얻어올 정보)
+    // MARK : - Data property
     private var forecasts: [Forecast] = []
     private var todayWeather: TodayWeather?
     
@@ -30,75 +30,41 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startMonitoringSignificantLocationChanges()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        requestWhenInUseAuth()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
-    private func requestWhenInUseAuth() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            currentLocation = locationManager.location
-            Location.shared.latitude = currentLocation?.coordinate.latitude
-            Location.shared.longitude = currentLocation?.coordinate.longitude
-            fetchToday(string: locationURL)
-            fetchForecast(string: locationForecastURL)
-        } else {
-            locationManager.requestWhenInUseAuthorization()
-            requestWhenInUseAuth()
-        }
-    }
-
-}
-
-/*Request Data*/
-extension WeatherViewController {
-
-    private func fetchForecast(string: String) {
-        var request = URLRequest(url: URL(string: string)!)
-        request.httpMethod = "GET"
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let data = data {
-                do {
-                    let mainDic = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, AnyObject>
-                    if let list = mainDic["list"] as? [Dictionary<String, AnyObject>] {
-                        self.forecasts = []
-                        for dic in list {
-                            if let forecast = Forecast(weatherDict: dic) {
-                                self.forecasts.append(forecast)
-                            }
-                        }
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    }
-                } catch let err {
-                    print("\(err.localizedDescription)")
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+        currentLocation = locations.last!
+        Location.shared.latitude = currentLocation?.coordinate.latitude
+        Location.shared.longitude = currentLocation?.coordinate.longitude
+        
+        RequestManager.shared.fetchToday(string: locationURL, completion: { [unowned self] (isSucess, data, err) in
+            if isSucess {
+                self.todayWeather = WeatherData.shared.todayWeather
+                DispatchQueue.main.async {
+                    self.updateUI()
                 }
+            }else {
+                print("error")
             }
-            }.resume()
-    }
-    
-    private func fetchToday(string: String) {
-        var request = URLRequest(url: URL(string: string)!)
-        request.httpMethod = "GET"
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let data = data {
-                do {
-                    let mainDic = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, AnyObject>
-                    self.todayWeather = TodayWeather(dic: mainDic)
-                    DispatchQueue.main.async {
-                        self.updateUI()
-                    }
-                } catch let err {
-                    print("\(err.localizedDescription)")
+        })
+        
+        RequestManager.shared.fetchForecast(string: locationForecastURL, completion: { [unowned self] (isSucess, data, err) in
+            if isSucess {
+                self.forecasts = WeatherData.shared.forecasts
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
+            }else {
+                print("error")
             }
-            }.resume()
+        })
     }
     
     private func updateUI() {
@@ -110,6 +76,8 @@ extension WeatherViewController {
     }
     
 }
+
+    
 
 extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     

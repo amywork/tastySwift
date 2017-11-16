@@ -5,6 +5,7 @@
 //  Created by Kimkeeyun on 15/11/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
+//  TodayWeather Data Model
 
 import Foundation
 import UIKit

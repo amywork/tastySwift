@@ -5,6 +5,7 @@
 //  Created by 김기윤 on 15/11/2017.
 //  Copyright © 2017 younari. All rights reserved.
 //
+//  Forecast Data Model
 
 import UIKit
 import Foundation
