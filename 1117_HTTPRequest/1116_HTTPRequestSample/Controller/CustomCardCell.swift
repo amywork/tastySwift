@@ -19,10 +19,33 @@ class CustomCardCell: UITableViewCell {
             nameLabel.text = newValue?.title
             postTextView.text = newValue?.content
             if let url = newValue?.imgCoverUrl {
-                imgView.loadImgData(url)
+                DispatchQueue.main.async {
+                    self.imgView.loadImgData(url)
+                }
             }
         }
     }
     
 }
 
+var cache: [String:Data] = [:]
+
+extension UIImageView {
+    
+    func loadImgData(_ urlString: String) {
+        if cache.keys.contains(urlString) {
+            let data = cache[urlString]!
+            self.image = UIImage(data: data)
+        }else {
+            DispatchQueue.global().sync {
+                if let data = try? Data(contentsOf: URL(string: urlString)!) {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.image = UIImage(data: data)
+                    }
+                    cache.updateValue(data, forKey: urlString)
+                }
+            }
+        }
+    }
+    
+}

@@ -8,28 +8,17 @@
 
 import Foundation
 
-class DataCenter {
+// Token 저장용으로 임시로 만든 데이터센터 입니다.
+open class DataCenter {
     
     static var shared: DataCenter = DataCenter()
-    var cardList: [CardData]?
-    var token: String = ""
+    public var token: String = ""
     
     private init() {
-        self.loadCard()
-        print(self.token)
-        print(cardList)
     }
     
-    private func loadCard() {
-        NetworkManger.shared.requestGetPosts { (isSucess, data, err) in
-            if isSucess {
-                self.cardList = data as? [CardData]
-            }
-        }
-    }
-    
-    func saveCards() {
-        // Post Cards
+    public func saveCards(token: String) {
+        self.token = token
     }
     
 }

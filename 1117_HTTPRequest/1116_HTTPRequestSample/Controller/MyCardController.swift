@@ -17,13 +17,12 @@ class MyCardController: UIViewController {
         super.viewDidLoad()
         print("Token: \(NetworkManger.shared.token!)")
 
-        // Add -- First Requesting
+        // First Request
         requestPostData()
         
         NotificationCenter.default.addObserver(forName: Notification.Name.AddCardDataNotification, object: nil, queue: nil) { (noti) in
-            // Add -- Request cardList
+            // Request cardList
             self.requestPostData()
-            // self.tableView.reloadData()
         }
     }
     
@@ -32,6 +31,7 @@ class MyCardController: UIViewController {
             if isSucess {
                 print("뷰컨트롤러에서 데이터를 잘 받았습니다.")
                 self.cardList = data as? [CardData]
+                print("뷰컨트롤러에서 서버에서 받은 데이터를 리스트에 모두 넣었습니다.")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

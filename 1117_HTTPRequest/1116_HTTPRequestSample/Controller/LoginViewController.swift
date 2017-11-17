@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if NetworkManger.shared.token != nil {
-            print(NetworkManger.shared.token!)
+            print("토큰 넘버: " + NetworkManger.shared.token!)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainVC = storyboard.instantiateViewController(withIdentifier: "MainNavi") as! UINavigationController
             self.present(mainVC, animated: false, completion: nil)
