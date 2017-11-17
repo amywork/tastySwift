@@ -15,12 +15,17 @@ class AddCardController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cardImageView: UIImageView!
    
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
-        guard let name = nameTF.text, !name.isEmpty, let _ = selectedImageData else { return }
+        guard let name = nameTF.text, !name.isEmpty, let data = selectedImageData else { return } // else -> name을 입력하세요 등의 얼럿 띄우기
         
+        let newCard = CardData(title: name, imgData: data, content: "no content")
         // POST to server
-        
-        
-        NotificationCenter.default.post(name: Notification.Name.AddCardDataNotification, object: nil)
+        NetworkManger.shared.requestToPosting(model: newCard) { (isSuccess, data, error) in
+            if isSuccess {
+                NotificationCenter.default.post(name: Notification.Name.AddCardDataNotification, object: nil)
+            }else {
+                print("포스팅 실패")
+            }
+        }
         self.navigationController?.popViewController(animated: true)
     }
     

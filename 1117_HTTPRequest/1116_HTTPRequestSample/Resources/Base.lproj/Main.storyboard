@@ -216,7 +216,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ems-CX-qtI">
-                                                    <rect key="frame" x="144" y="45" width="213" height="64"/>
+                                                    <rect key="frame" x="141" y="45" width="216" height="64"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Thank you for joining the Apple Developer Program. You can now take advantage of membership benefits to create and distribute innovative apps.</string>
                                                     <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -226,7 +226,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ems-CX-qtI" firstAttribute="top" secondItem="M87-5H-jOz" secondAttribute="bottom" constant="3" id="3CQ-JR-CAi"/>
-                                                <constraint firstItem="M87-5H-jOz" firstAttribute="leading" secondItem="Ems-CX-qtI" secondAttribute="leading" id="7g1-T7-EHb"/>
+                                                <constraint firstItem="M87-5H-jOz" firstAttribute="leading" secondItem="Ems-CX-qtI" secondAttribute="leading" constant="3" id="7g1-T7-EHb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ems-CX-qtI" secondAttribute="trailing" constant="3" id="Aaj-hQ-JGd"/>
                                                 <constraint firstItem="M87-5H-jOz" firstAttribute="top" secondItem="Xmk-N2-wBR" secondAttribute="top" id="HPq-Pj-DHi"/>
                                                 <constraint firstItem="M87-5H-jOz" firstAttribute="leading" secondItem="Xmk-N2-wBR" secondAttribute="trailing" constant="8" symbolic="YES" id="J1z-Yo-NR8"/>
@@ -242,6 +242,7 @@
                                         <connections>
                                             <outlet property="imgView" destination="Xmk-N2-wBR" id="gQF-tr-Axe"/>
                                             <outlet property="nameLabel" destination="M87-5H-jOz" id="AhO-62-eM8"/>
+                                            <outlet property="postTextView" destination="Ems-CX-qtI" id="PXM-zM-esB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

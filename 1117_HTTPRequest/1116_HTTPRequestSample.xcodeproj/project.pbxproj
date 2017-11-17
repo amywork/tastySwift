@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DD66E7231FBD786900FE7DAC /* CustomCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66E7221FBD786900FE7DAC /* CustomCardCell.swift */; };
-		DD66E7251FBD791400FE7DAC /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD66E7241FBD791400FE7DAC /* CardData.swift */; };
 		DDCFF7011FBD5ACB00204853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFF7001FBD5ACB00204853 /* AppDelegate.swift */; };
 		DDCFF7031FBD5ACB00204853 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFF7021FBD5ACB00204853 /* LoginViewController.swift */; };
 		DDCFF7061FBD5ACB00204853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCFF7041FBD5ACB00204853 /* Main.storyboard */; };
@@ -18,11 +17,11 @@
 		DDCFF7151FBD678C00204853 /* MyCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFF7141FBD678C00204853 /* MyCardController.swift */; };
 		DDCFF7171FBD695C00204853 /* AddCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFF7161FBD695C00204853 /* AddCardController.swift */; };
 		DDEB962A1FBD79DD00B8DFBA /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB96291FBD79DD00B8DFBA /* DataCenter.swift */; };
+		DDFE6FB31FBEB2D30087B68F /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFE6FB21FBEB2D30087B68F /* CardData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD66E7221FBD786900FE7DAC /* CustomCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardCell.swift; sourceTree = "<group>"; };
-		DD66E7241FBD791400FE7DAC /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		DDCFF6FD1FBD5ACB00204853 /* 1116_HTTPRequestSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1116_HTTPRequestSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFF7001FBD5ACB00204853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCFF7021FBD5ACB00204853 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		DDCFF7141FBD678C00204853 /* MyCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardController.swift; sourceTree = "<group>"; };
 		DDCFF7161FBD695C00204853 /* AddCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardController.swift; sourceTree = "<group>"; };
 		DDEB96291FBD79DD00B8DFBA /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		DDFE6FB21FBEB2D30087B68F /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,23 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B20B4381FBDA8A70088324F /* Model */ = {
+		4B20B4381FBDA8A70088324F /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				DDCFF7121FBD5C8500204853 /* NetworkManger.swift */,
 				DDEB96291FBD79DD00B8DFBA /* DataCenter.swift */,
-				DD66E7241FBD791400FE7DAC /* CardData.swift */,
 			);
-			path = Model;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		4B20B4391FBDA8B50088324F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				DDCFF7021FBD5ACB00204853 /* LoginViewController.swift */,
+				DD66E7221FBD786900FE7DAC /* CustomCardCell.swift */,
 				DDCFF7141FBD678C00204853 /* MyCardController.swift */,
 				DDCFF7161FBD695C00204853 /* AddCardController.swift */,
-				DD66E7221FBD786900FE7DAC /* CustomCardCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -89,9 +88,9 @@
 			children = (
 				DDCFF70C1FBD5ACB00204853 /* Info.plist */,
 				DDEB96281FBD799200B8DFBA /* Resources */,
-				4B20B4381FBDA8A70088324F /* Model */,
+				4B20B4381FBDA8A70088324F /* Util */,
 				4B20B4391FBDA8B50088324F /* Controller */,
-				DDCFF7041FBD5ACB00204853 /* Main.storyboard */,
+				DDFE6FB41FBEB2FE0087B68F /* Model */,
 			);
 			path = 1116_HTTPRequestSample;
 			sourceTree = "<group>";
@@ -102,8 +101,17 @@
 				DDCFF7071FBD5ACB00204853 /* Assets.xcassets */,
 				DDCFF7001FBD5ACB00204853 /* AppDelegate.swift */,
 				DDCFF7091FBD5ACB00204853 /* LaunchScreen.storyboard */,
+				DDCFF7041FBD5ACB00204853 /* Main.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DDFE6FB41FBEB2FE0087B68F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDFE6FB21FBEB2D30087B68F /* CardData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +189,9 @@
 				DDCFF7131FBD5C8500204853 /* NetworkManger.swift in Sources */,
 				DDCFF7031FBD5ACB00204853 /* LoginViewController.swift in Sources */,
 				DDCFF7171FBD695C00204853 /* AddCardController.swift in Sources */,
-				DD66E7251FBD791400FE7DAC /* CardData.swift in Sources */,
 				DDCFF7011FBD5ACB00204853 /* AppDelegate.swift in Sources */,
 				DD66E7231FBD786900FE7DAC /* CustomCardCell.swift in Sources */,
+				DDFE6FB31FBEB2D30087B68F /* CardData.swift in Sources */,
 				DDEB962A1FBD79DD00B8DFBA /* DataCenter.swift in Sources */,
 				DDCFF7151FBD678C00204853 /* MyCardController.swift in Sources */,
 			);

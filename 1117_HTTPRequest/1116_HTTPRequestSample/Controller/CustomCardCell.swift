@@ -11,13 +11,15 @@ import UIKit
 class CustomCardCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var imgView: UIImageView!
     
     var data: CardData? {
         willSet {
-            if let newValue = newValue {
-                nameLabel.text = newValue.name
-                imgView.image = newValue.image
+            nameLabel.text = newValue?.title
+            postTextView.text = newValue?.content
+            if let url = newValue?.imgCoverUrl {
+                imgView.loadImgData(url)
             }
         }
     }

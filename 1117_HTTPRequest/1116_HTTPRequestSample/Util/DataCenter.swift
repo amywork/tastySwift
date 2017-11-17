@@ -11,15 +11,21 @@ import Foundation
 class DataCenter {
     
     static var shared: DataCenter = DataCenter()
-    var cardList: [CardData] = []
+    var cardList: [CardData]?
+    var token: String = ""
     
     private init() {
-        loadCard()
+        self.loadCard()
+        print(self.token)
+        print(cardList)
     }
     
     private func loadCard() {
-        // Request Cards
-
+        NetworkManger.shared.requestGetPosts { (isSucess, data, err) in
+            if isSucess {
+                self.cardList = data as? [CardData]
+            }
+        }
     }
     
     func saveCards() {
