@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Token 저장용으로 임시로 만든 데이터센터 입니다.
+// Token 저장용으로 임시로 만든 데이터 센터 입니다.
 open class DataCenter {
     
     static var shared: DataCenter = DataCenter()

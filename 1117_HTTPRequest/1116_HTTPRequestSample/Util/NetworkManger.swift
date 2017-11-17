@@ -34,10 +34,10 @@ class NetworkManger {
     
     
     typealias Completion = (_ isSucess: Bool, _ data: Any?, _ error: Error?) -> Void
-    public var token: String? // (리팩토링 요소) DataCenter로 옮기는게 좋을까?
+    public var token: String?
     private let session = URLSession.shared
     
-    // Token 저장 - Appdelegate Background에서 실행
+    // Token 저장 : 보통 Appdelegate Background에서 실행
     func saveToken() {
         if let token = token {
             UserDefaults.standard.set(token, forKey: "TokenKey")
@@ -52,20 +52,21 @@ class NetworkManger {
     }
     
     func requestSingup(id: String, pw: String, completion: @escaping Completion) {
-        let url = URL(string: URLName.base.signup) // 여기서 throw 가능?
+        let url = URL(string: URLName.base.signup)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         // POST 방식일 때는 헤더에 콘텐트 타입을 넣어야 합니다.
-        // 아무것도 넣지 않는다면? Default Content Type: key=value&key=value
-        // Default: Application/x-www-form-urlencode
-        // 넣어햐 할 것이 JSON 타입이라면?
+        // 아무것도 넣지 않는다면?
+        // Default: Application/x-www-form-urlencode (key=value&key=value)
+        // 바디에 넣어햐 할 것이 JSON 타입이라면?
         // "{username:\(id),password1:\(pw),password2:\(pw)}"
         
         // httpBody는 Data 타입으로 전환하여 보내야 합니다.
         // 때문에 String을 utf8로 data 타입으로 전환해서 body에 넣습니다.
         let httpBodyDataStr = "username=\(id)&password1=\(pw)&password2=\(pw)"
         request.httpBody = httpBodyDataStr.data(using: .utf8)
-            
+        
+        // Request를 만들었으니 테스크를 요청합니다.
         session.dataTask(with: request) { [unowned self] (data, response, serverError) in
         
             // 01. 서버 에러
@@ -73,7 +74,7 @@ class NetworkManger {
                 print(err.localizedDescription)
             }
             
-            // 02. 리스폰스까지 오는 경우
+            // 02. 리스폰스까지는 오는 경우
             else if let data = data, let response = response {
                 let codeLevel = (response as! HTTPURLResponse).statusCode
                 switch codeLevel {
@@ -81,13 +82,14 @@ class NetworkManger {
                     let dic = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
                     self.token = dic["key"]
                     print("token이 발급되었습니다.")
-                    completion(true, nil, nil)
+                    completion(true, dic, nil)
                 default:
-                    completion(false, nil, nil)
+                    completion(false, data, nil)
                     print("response failed - code is not 201")
                 }
             }
             
+            // 03. 서버 에러도 아니고, 리스폰스도 없을 경우
             else {
                 print("unknowned error")
             }
@@ -99,8 +101,8 @@ class NetworkManger {
     
     
     // MARK : request to get all posts (to reload tableView)
-    func requestGetPosts(completion: @escaping Completion) {
-        print("requestGetPosts 실행은 성공했습니다.")
+    func requestPosts(completion: @escaping Completion) {
+        print("requestPosts 실행 성공")
         let url = URL(string: URLName.base.post)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -115,12 +117,11 @@ class NetworkManger {
                 let codeLevel = (response as! HTTPURLResponse).statusCode / 100
                 switch codeLevel {
                 case 2:
-                    print("데이터 요청 또한 성공했습니다.")
+                    print("데이터 리스폰스 또한 성공")
                     let decoder = JSONDecoder()
                     let modelList = try! decoder.decode([CardData].self, from: data)
-                    print(modelList)
+                    // 디버깅 : print(modelList)
                     completion(true, modelList, nil)
-                    // print(DataCenter.shared.cardList)
                     // 이전 방식: JSONSerialization
                     // let list = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String:Any]]
                 default:

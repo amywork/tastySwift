@@ -19,8 +19,8 @@ class CustomCardCell: UITableViewCell {
             nameLabel.text = newValue?.title
             postTextView.text = newValue?.content
             if let url = newValue?.imgCoverUrl {
-                DispatchQueue.main.async {
-                    self.imgView.loadImgData(url)
+                DispatchQueue.main.async {  [weak self] in
+                    self?.imgView.loadImgData(url)
                 }
             }
         }
@@ -39,8 +39,8 @@ extension UIImageView {
         }else {
             DispatchQueue.global().sync {
                 if let data = try? Data(contentsOf: URL(string: urlString)!) {
-                    DispatchQueue.main.async { [unowned self] in
-                        self.image = UIImage(data: data)
+                    DispatchQueue.main.async { [weak self] in
+                        self？.image = UIImage(data: data)
                     }
                     cache.updateValue(data, forKey: urlString)
                 }

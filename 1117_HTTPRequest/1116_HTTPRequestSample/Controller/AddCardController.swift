@@ -45,6 +45,8 @@ extension AddCardController: UIImagePickerControllerDelegate, UINavigationContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("imagaePicker가 가지고 있는 info: \(info)")
+        // "UIImagePickerControllerOriginalImage": <UIImage: 0x6040000ad380> size {300, 168} orientation 0 scale 1.000000]
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             cardImageView.image = image
             selectedImageData = UIImageJPEGRepresentation(image, 0.5)
