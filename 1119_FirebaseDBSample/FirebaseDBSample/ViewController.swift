@@ -12,7 +12,7 @@ import Firebase
 
 class ViewController: UIViewController {
     
-    var ref: DatabaseReference!
+    
     
     // Firebase testing
     @IBOutlet weak var TF1: UITextField!
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var TF3: UITextField!
     @IBOutlet weak var TF4: UITextField!
     
+    var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -51,6 +52,4 @@ class ViewController: UIViewController {
             let name = snapshot.value as? [String]
             print(name)
         }
-        
-        let verison = Bundle.main.bundleIdentifier
 }
