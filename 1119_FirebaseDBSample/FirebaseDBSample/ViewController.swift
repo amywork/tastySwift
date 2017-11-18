@@ -12,8 +12,6 @@ import Firebase
 
 class ViewController: UIViewController {
     
-    
-    
     // Firebase testing
     @IBOutlet weak var TF1: UITextField!
     @IBOutlet weak var TF2: UITextField!
@@ -52,4 +50,6 @@ class ViewController: UIViewController {
             let name = snapshot.value as? [String]
             print(name)
         }
+    }
+    
 }
