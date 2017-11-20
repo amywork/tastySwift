@@ -9,17 +9,4 @@ target 'Onstagram' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
-
-  target 'OnstagramTests' do
-    inherit! :search_paths
-    # Pods for testing
-
-	
-  end
-
-  target 'OnstagramUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
