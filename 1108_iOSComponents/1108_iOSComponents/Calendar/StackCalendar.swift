@@ -322,6 +322,8 @@ class CustomDateCell: UICollectionViewCell {
 
 // AutoLayout
 extension UIView {
+    
+    
   
     func autolayout(targetView: UIView, topConstant: CGFloat?, rightConstant: CGFloat?, bottomConstant: CGFloat?, leftConstant: CGFloat?) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -329,6 +331,7 @@ extension UIView {
         if let constant = topConstant{
             self.topAnchor.constraint(equalTo: targetView.topAnchor, constant: constant).isActive = true
         }
+    
         
         if let constant = rightConstant{
             self.rightAnchor.constraint(equalTo: targetView.rightAnchor, constant: constant).isActive = true

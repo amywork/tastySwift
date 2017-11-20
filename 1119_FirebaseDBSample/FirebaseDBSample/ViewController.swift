@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var ref: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         ref = Database.database().reference()
         ref.observe(DataEventType.childAdded) { (DataSnapshot) in
             print("Item Addeds")
