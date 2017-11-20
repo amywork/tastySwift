@@ -1,0 +1,14 @@
+target 'FriendlyEats' do
+  use_frameworks!
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
+  pod 'Firebase/Firestore'
+  pod 'SDWebImage'
+
+  target 'FriendlyEatsTests' do
+    inherit! :search_paths
+  end
+end
