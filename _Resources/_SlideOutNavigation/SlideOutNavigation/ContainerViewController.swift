@@ -59,7 +59,6 @@ class ContainerViewController: UIViewController {
     centerNavigationController = UINavigationController(rootViewController: centerViewController)
     view.addSubview(centerNavigationController.view)
     addChildViewController(centerNavigationController)
-    
     centerNavigationController.didMove(toParentViewController: self)
     
     let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
