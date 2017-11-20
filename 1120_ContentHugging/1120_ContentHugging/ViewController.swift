@@ -11,11 +11,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var subView:UIView {
+    var subView:UIView = {
         let v = UIView()
         v.backgroundColor = .red
         return v
-    }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
