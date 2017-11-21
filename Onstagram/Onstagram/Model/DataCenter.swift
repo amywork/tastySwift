@@ -72,27 +72,3 @@ class DataCenter {
         }
     }
 }
-
-
-struct UserModel {
-    var email: String
-    var uid: String
-    
-    var profileImg : UIImage?
-    var profileImgData : Data? {
-        if let img = self.profileImg {
-            return UIImageJPEGRepresentation(img, 0.5)!
-        }
-        return nil
-    }
-    
-    var profileImgUrl: String?
-    var nickName: String?
-    var status: String?
-    
-    init(email: String, uid: String){
-        self.email = email
-        self.uid = uid
-    }
-}
-

@@ -6,7 +6,6 @@ protocol ImagePickerDelegate {
     func photoselectorDidSelectedImage(_ selectedImgae:UIImage)
 }
 
-
 class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
    
     // MARK: - ImagePickerDelegate
@@ -19,9 +18,9 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchPhotos()
         setUpCollectionView()
         setupNavigationButtons()
-        fetchPhotos()
     }
     
     // PHFetchOptions
@@ -51,8 +50,6 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
                         if self.selectedImage == nil {
                             self.selectedImage = image
                         }
-                    }
-                    if count == allPhotos.count - 1 {
                         DispatchQueue.main.async {
                             self.collectionView?.reloadData()
                         }
@@ -135,22 +132,24 @@ extension ImagePickerVC {
     }
     
     fileprivate func setupNavigationButtons() {
-        navigationController?.navigationBar.tintColor = .black
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleNext))
+        navigationItem.title = "Select Photo"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
     }
     
     @objc func handleNext() {
         if let selectedImage = selectedImage {
             self.delegate?.photoselectorDidSelectedImage(selectedImage)
-            dismiss(animated: true, completion: nil)
+            let postVC = PostVC()
+            postVC.selectedImage = selectedImage
+            self.navigationController?.pushViewController(postVC, animated: true)
         }else {
-            // alert
+            // 사진을 선택하라는 alert
         }
     }
     
     @objc func handleCancel() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
 }

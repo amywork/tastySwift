@@ -50,7 +50,7 @@ class MainVC: UIViewController, ImagePickerDelegate {
     var profileImgView: UIImageView = {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "profile") // default image
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         return iv
     }()
@@ -58,7 +58,7 @@ class MainVC: UIViewController, ImagePickerDelegate {
     var imgEditBtn : UIButton = {
         let btn = UIButton()
         btn.setTitle("📷Edit", for: .normal)
-        btn.setTitleColor(.blue, for: .normal)
+        btn.setTitleColor(UIColor.lightGray, for: .normal)
         btn.backgroundColor = .white
         btn.addTarget(self, action: #selector(imgEditAction(_:)), for: .touchUpInside)
         return btn
@@ -74,7 +74,7 @@ class MainVC: UIViewController, ImagePickerDelegate {
     
     var nickNameLB: UILabel = {
         let lb = UILabel()
-        lb.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        lb.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         lb.text = "Your Nickname"
         lb.textAlignment = .center
         lb.textColor = UIColor.lightGray
@@ -83,7 +83,7 @@ class MainVC: UIViewController, ImagePickerDelegate {
     
     var statusLB: UILabel = {
         let lb = UILabel()
-        lb.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        lb.font = UIFont.systemFont(ofSize: 15, weight: .light)
         lb.text = "your status message"
         lb.textAlignment = .center
         lb.textColor = UIColor.lightGray
@@ -92,9 +92,10 @@ class MainVC: UIViewController, ImagePickerDelegate {
     
     var editProfileBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Edit profile", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        let str = NSAttributedString(string: "프로필 수정하기",
+                                     attributes: [.font : UIFont.systemFont(ofSize: 13, weight: .regular),
+                                                  NSAttributedStringKey.foregroundColor : #colorLiteral(red: 1, green: 0.1607843137, blue: 0.4078431373, alpha: 1)])
+        btn.setAttributedTitle(str, for: .normal)
         btn.addTarget(self, action: #selector(editBtnHandler(_:)), for: .touchUpInside)
         return btn
     }()
@@ -140,7 +141,7 @@ class MainVC: UIViewController, ImagePickerDelegate {
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Posts"
+        return "All Posts"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -149,12 +150,17 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        cell.textLabel?.text = "TEXT"
+        cell.textLabel?.text = "여기에 유저가 입력한 내용이 출력됩니다."
+        cell.imageView?.image = #imageLiteral(resourceName: "Camera_On")
+        cell.imageView?.contentMode = .scaleAspectFit
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
+    
 }
-
 
 
 // MARK: - Extension ** Auto Layout Constraints
@@ -177,6 +183,7 @@ extension MainVC {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         labelStackView.alignment = .fill
         labelStackView.distribution = .equalSpacing
+        labelStackView.spacing = 2
         labelStackView.axis = .vertical
         labelStackView.topAnchor.constraint(equalTo: profileImgStackView.bottomAnchor, constant: 24).isActive = true
         labelStackView.centerXAnchor.constraint(equalTo: profileImgStackView.centerXAnchor).isActive = true
@@ -192,7 +199,7 @@ extension MainVC {
         
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: lineView.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 16).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
