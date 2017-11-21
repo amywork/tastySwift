@@ -39,35 +39,16 @@ class LoginVC: UIViewController  {
     var signUpBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("회원가입", for: .normal)
-        btn.setTitleColor(UIColor.lightGray, for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.8470588235, blue: 0.8352941176, alpha: 1)
         btn.addTarget(self, action: #selector(signUpBtnHandler(_:)), for: .touchUpInside)
         return btn
     }()
     
-    // MARK: - LifeCycle
-    // Auto LogIn
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            if let user = user {
-                let uid = user.uid
-                let email = user.email
-                let newUser = UserModel(email!, uid)
-                DataCenter.shared.currentUser = newUser
-                DispatchQueue.main.async {
-                    let mainNavi = UINavigationController()
-                    let mainVC = MainVC()
-                    mainNavi.addChildViewController(mainVC)
-                    self.present(mainNavi, animated: true, completion: nil)
-                }
-            }
-        }
-    }
-    
     // setupLayout
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         setupLayout()
     }
     
@@ -105,39 +86,33 @@ extension LoginVC : UITextFieldDelegate {
         }
         
         Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
-            print(error.debugDescription)
             if error == nil {
-                guard let user = user else { return }
-                let uid = user.uid
-                let email = user.email
-                let newUser = UserModel(email!, uid)
-                print(newUser)
-                DataCenter.shared.currentUser = newUser
                 DispatchQueue.main.async {
-                    let mainNavi = UINavigationController()
-                    let mainVC = MainVC()
-                    mainNavi.addChildViewController(mainVC)
-                    self.present(mainNavi, animated: true, completion: nil)
+                   self.navigationController?.dismiss(animated: true, completion: nil)
                 }
+            }else {
+                print(error.debugDescription)
             }
         }
     }
     
     @objc func signUpBtnHandler(_ sender: UIButton) {
-        let next = UIStoryboard.main().makeSignupVC()
-        self.present(next, animated: true, completion: nil)
+        let signupVC = UIStoryboard.main.makeSignupVC()
+        signupVC.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.pushViewController(signupVC, animated: true)
     }
 
 }
 
 extension UIStoryboard {
     
-    static func main() -> UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
-    }
-    
+    static var main: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     func makeSignupVC() -> SignupVC {
         return self.instantiateViewController(withIdentifier: "SignUpVC") as! SignupVC
+    }
+    
+    func makeLoginVC() -> LoginVC {
+        return self.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
     }
     
 }

@@ -19,9 +19,7 @@ class PhotoCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addSubview(photoImageView)
-        
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         photoImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         photoImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true

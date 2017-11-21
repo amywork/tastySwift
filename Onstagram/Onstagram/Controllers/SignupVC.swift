@@ -45,6 +45,7 @@ class SignupVC: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         setupLayout()
     }
 
@@ -73,17 +74,8 @@ extension SignupVC {
                 Auth.auth().signIn(withEmail: id, password: pw1) { (user, error) in
                     print(error.debugDescription)
                     if error == nil {
-                        guard let user = user else { return }
-                        let uid = user.uid
-                        let email = user.email
-                        let newUser = UserModel(email!, uid)
-                        print(newUser)
-                        DataCenter.shared.currentUser = newUser
                         DispatchQueue.main.async {
-                            let mainNavi = UINavigationController()
-                            let mainVC = MainVC()
-                            mainNavi.addChildViewController(mainVC)
-                            self.present(mainNavi, animated: true, completion: nil)
+                            self.navigationController?.dismiss(animated: true, completion: nil)
                         }
                     }
                 }

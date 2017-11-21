@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     @IBAction func inserting(_ sender: UIButton) {
         let itemsRef = ref.child("FANXY")
         itemsRef.setValue( ["ZICO","ZIACO","DEAN","MILLIC"])
+        itemsRef.addval
     }
     
     @IBAction func deleteing(_ sender: UIButton) {

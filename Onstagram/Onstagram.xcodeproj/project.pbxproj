@@ -19,6 +19,8 @@
 		4B5F76B01FC37B51002CA676 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76AF1FC37B51002CA676 /* DataCenter.swift */; };
 		4B5F76B31FC37B95002CA676 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F76B21FC37B95002CA676 /* GoogleService-Info.plist */; };
 		87B36A922A609A48B6D59BF8 /* Pods_Onstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701850EDFC15A5A86FC89687 /* Pods_Onstagram.framework */; };
+		DDF575731FC3BBA0004393D0 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF575721FC3BBA0004393D0 /* MainTabVC.swift */; };
+		DDF575751FC3C05A004393D0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF575741FC3C05A004393D0 /* SettingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		4B5F76AF1FC37B51002CA676 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		4B5F76B21FC37B95002CA676 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		701850EDFC15A5A86FC89687 /* Pods_Onstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDF575721FC3BBA0004393D0 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		DDF575741FC3C05A004393D0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		E3CBE3BDC4BA94BBA236BD03 /* Pods-Onstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onstagram/Pods-Onstagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +103,9 @@
 			children = (
 				4B5F76A41FC37AA0002CA676 /* LoginVC.swift */,
 				4B5F76A21FC37AA0002CA676 /* SignupVC.swift */,
+				DDF575721FC3BBA0004393D0 /* MainTabVC.swift */,
 				4B5F76A31FC37AA0002CA676 /* MainVC.swift */,
+				DDF575741FC3C05A004393D0 /* SettingVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,12 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B5F76A61FC37AA0002CA676 /* SignupVC.swift in Sources */,
+				DDF575751FC3C05A004393D0 /* SettingVC.swift in Sources */,
 				4B5F76A71FC37AA0002CA676 /* MainVC.swift in Sources */,
 				4B5F76A81FC37AA0002CA676 /* LoginVC.swift in Sources */,
 				4B5F76B01FC37B51002CA676 /* DataCenter.swift in Sources */,
 				4B06885D1FC3791F004C121A /* AppDelegate.swift in Sources */,
 				4B5F76AB1FC37ABE002CA676 /* PhotoCell.swift in Sources */,
 				4B5F76A51FC37AA0002CA676 /* ImagePickerVC.swift in Sources */,
+				DDF575731FC3BBA0004393D0 /* MainTabVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
