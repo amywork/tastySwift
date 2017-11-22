@@ -104,15 +104,3 @@ extension LoginVC : UITextFieldDelegate {
 
 }
 
-extension UIStoryboard {
-    
-    static var main: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    func makeSignupVC() -> SignupVC {
-        return self.instantiateViewController(withIdentifier: "SignUpVC") as! SignupVC
-    }
-    
-    func makeLoginVC() -> LoginVC {
-        return self.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-    }
-    
-}

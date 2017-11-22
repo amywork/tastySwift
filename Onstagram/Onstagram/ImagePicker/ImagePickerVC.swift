@@ -7,18 +7,25 @@ protocol ImagePickerDelegate {
     var seperator : Bool {get set}
 }
 
+enum ImagePickerLoadType {
+    case ProfileImagePicker
+    case NewPostPicker
+}
+
 class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
    
-    // MARK: - ImagePickerDelegate
-    var delegate : ImagePickerDelegate?
-
-//    var imagePickerLoadType:Int = 0
-    
     // MARK: - Property
     var selectedImage: UIImage?
     var images = [UIImage]()
     var assets = [PHAsset]()
     
+    // MARK: - ImagePickerDelegate
+    var delegate: ImagePickerDelegate?
+    
+    // ImagePickerLoadType으로 PickerVC 가 생성될 때 우측 상단 버튼 분기
+    var pickerType: ImagePickerLoadType?
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPhotos()

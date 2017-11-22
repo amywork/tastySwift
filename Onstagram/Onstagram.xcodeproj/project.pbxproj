@@ -13,7 +13,7 @@
 		4B0688671FC3791F004C121A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0688651FC3791F004C121A /* LaunchScreen.storyboard */; };
 		4B5F76A51FC37AA0002CA676 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76A11FC37A9F002CA676 /* ImagePickerVC.swift */; };
 		4B5F76A61FC37AA0002CA676 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76A21FC37AA0002CA676 /* SignupVC.swift */; };
-		4B5F76A71FC37AA0002CA676 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76A31FC37AA0002CA676 /* MainVC.swift */; };
+		4B5F76A71FC37AA0002CA676 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76A31FC37AA0002CA676 /* ExploreVC.swift */; };
 		4B5F76A81FC37AA0002CA676 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76A41FC37AA0002CA676 /* LoginVC.swift */; };
 		4B5F76AB1FC37ABE002CA676 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76AA1FC37ABE002CA676 /* PhotoCell.swift */; };
 		4B5F76B01FC37B51002CA676 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76AF1FC37B51002CA676 /* DataCenter.swift */; };
@@ -21,10 +21,11 @@
 		4B9753EA1FC4597B003EE0CB /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9753E91FC4597B003EE0CB /* PostVC.swift */; };
 		4B9753EC1FC45BA6003EE0CB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9753EB1FC45BA6003EE0CB /* PostModel.swift */; };
 		4B9753EE1FC45BC2003EE0CB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9753ED1FC45BC2003EE0CB /* UserModel.swift */; };
-		621A27DA1FC54D54004A819A /* OSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A27D91FC54D54004A819A /* OSViewController.swift */; };
 		87B36A922A609A48B6D59BF8 /* Pods_Onstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701850EDFC15A5A86FC89687 /* Pods_Onstagram.framework */; };
 		DD0740611FC5631700B274E2 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0740601FC5631700B274E2 /* PostCell.swift */; };
 		DD0740631FC5633D00B274E2 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0740621FC5633D00B274E2 /* PostCell.xib */; };
+		DDC89AFC1FC58076009610DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC89AFB1FC58076009610DF /* Extensions.swift */; };
+		DDC89B001FC58265009610DF /* OnstagramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC89AFF1FC58265009610DF /* OnstagramVC.swift */; };
 		DDF575731FC3BBA0004393D0 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF575721FC3BBA0004393D0 /* MainTabVC.swift */; };
 		DDF575751FC3C05A004393D0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF575741FC3C05A004393D0 /* SettingVC.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +40,7 @@
 		4B0688681FC3791F004C121A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B5F76A11FC37A9F002CA676 /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		4B5F76A21FC37AA0002CA676 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
-		4B5F76A31FC37AA0002CA676 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		4B5F76A31FC37AA0002CA676 /* ExploreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		4B5F76A41FC37AA0002CA676 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4B5F76AA1FC37ABE002CA676 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		4B5F76AF1FC37B51002CA676 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
@@ -47,10 +48,11 @@
 		4B9753E91FC4597B003EE0CB /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		4B9753EB1FC45BA6003EE0CB /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		4B9753ED1FC45BC2003EE0CB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		621A27D91FC54D54004A819A /* OSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSViewController.swift; sourceTree = "<group>"; };
 		701850EDFC15A5A86FC89687 /* Pods_Onstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0740601FC5631700B274E2 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		DD0740621FC5633D00B274E2 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		DDC89AFB1FC58076009610DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DDC89AFF1FC58265009610DF /* OnstagramVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnstagramVC.swift; sourceTree = "<group>"; };
 		DDF575721FC3BBA0004393D0 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 		DDF575741FC3C05A004393D0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		E3CBE3BDC4BA94BBA236BD03 /* Pods-Onstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onstagram/Pods-Onstagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				4B5F76A01FC37A8E002CA676 /* Resources */,
+				DDC89AFD1FC580AC009610DF /* Utilities */,
 				4B5F76B11FC37B5D002CA676 /* Model */,
+				DDC89AFE1FC5816B009610DF /* View */,
 				4B5F76A91FC37AB1002CA676 /* Controllers */,
 				4B5F76AC1FC37AC2002CA676 /* ImagePicker */,
 				4B9753EF1FC45D17003EE0CB /* LoginFlow */,
@@ -114,8 +118,9 @@
 		4B5F76A91FC37AB1002CA676 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DDC89AFF1FC58265009610DF /* OnstagramVC.swift */,
 				DDF575721FC3BBA0004393D0 /* MainTabVC.swift */,
-				4B5F76A31FC37AA0002CA676 /* MainVC.swift */,
+				4B5F76A31FC37AA0002CA676 /* ExploreVC.swift */,
 				4B9753E91FC4597B003EE0CB /* PostVC.swift */,
 			);
 			path = Controllers;
@@ -125,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				4B5F76A11FC37A9F002CA676 /* ImagePickerVC.swift */,
-				4B5F76AA1FC37ABE002CA676 /* PhotoCell.swift */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -133,12 +137,8 @@
 		4B5F76B11FC37B5D002CA676 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4B5F76AF1FC37B51002CA676 /* DataCenter.swift */,
-				621A27D91FC54D54004A819A /* OSViewController.swift */,
 				4B9753ED1FC45BC2003EE0CB /* UserModel.swift */,
 				4B9753EB1FC45BA6003EE0CB /* PostModel.swift */,
-				DD0740601FC5631700B274E2 /* PostCell.swift */,
-				DD0740621FC5633D00B274E2 /* PostCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +168,25 @@
 				701850EDFC15A5A86FC89687 /* Pods_Onstagram.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDC89AFD1FC580AC009610DF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4B5F76AF1FC37B51002CA676 /* DataCenter.swift */,
+				DDC89AFB1FC58076009610DF /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DDC89AFE1FC5816B009610DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B5F76AA1FC37ABE002CA676 /* PhotoCell.swift */,
+				DD0740601FC5631700B274E2 /* PostCell.swift */,
+				DD0740621FC5633D00B274E2 /* PostCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,14 +328,15 @@
 			files = (
 				4B5F76A61FC37AA0002CA676 /* SignupVC.swift in Sources */,
 				DDF575751FC3C05A004393D0 /* SettingVC.swift in Sources */,
-				621A27DA1FC54D54004A819A /* OSViewController.swift in Sources */,
-				4B5F76A71FC37AA0002CA676 /* MainVC.swift in Sources */,
+				DDC89B001FC58265009610DF /* OnstagramVC.swift in Sources */,
+				4B5F76A71FC37AA0002CA676 /* ExploreVC.swift in Sources */,
 				4B5F76A81FC37AA0002CA676 /* LoginVC.swift in Sources */,
 				4B9753EA1FC4597B003EE0CB /* PostVC.swift in Sources */,
 				4B5F76B01FC37B51002CA676 /* DataCenter.swift in Sources */,
 				DD0740611FC5631700B274E2 /* PostCell.swift in Sources */,
 				4B06885D1FC3791F004C121A /* AppDelegate.swift in Sources */,
 				4B5F76AB1FC37ABE002CA676 /* PhotoCell.swift in Sources */,
+				DDC89AFC1FC58076009610DF /* Extensions.swift in Sources */,
 				4B5F76A51FC37AA0002CA676 /* ImagePickerVC.swift in Sources */,
 				DDF575731FC3BBA0004393D0 /* MainTabVC.swift in Sources */,
 				4B9753EE1FC45BC2003EE0CB /* UserModel.swift in Sources */,

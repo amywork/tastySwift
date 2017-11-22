@@ -30,6 +30,7 @@ class PostCell: UITableViewCell {
         }
     }
     
+    // 나중에 Estimated Cell Size 만들 때 필요
     static var cellFromNib: PostCell {
         guard let cell = Bundle.main.loadNibNamed("PostCell", owner: nil, options: nil)?.first as? PostCell else {
             return PostCell()

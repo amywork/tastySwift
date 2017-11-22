@@ -14,7 +14,9 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !checkLogin() // Login Check
+        // Login Check
+        // if false -> present LoginVC
+        if !checkLogin()
         {
             DispatchQueue.main.async {
                 let loginVC = UIStoryboard.main.makeLoginVC()
@@ -24,41 +26,49 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
         }
 
         self.delegate = self // UITabBarControllerDelegate
-        setupVCs() // Make 3Tabs
+        setupVCs() // setup 3Tabs
     }
 
     private func setupVCs() {
-        let mainTab = MainVC()
+        // 01. "Explore" tab
+        let mainTab = ExploreVC()
         mainTab.tabBarItem = UITabBarItem(title: "explore", image: #imageLiteral(resourceName: "Feed_Off"), selectedImage: #imageLiteral(resourceName: "Feed_On"))
-        mainTab.tabIndexNum = .Explore
-        let imagePickTab = OSViewController()
+        mainTab.tabIndexType = .Explore
+        
+        // 02. "Post" tab
+        let imagePickTab = OnstagramVC()
         imagePickTab.tabBarItem = UITabBarItem(title: "post", image: #imageLiteral(resourceName: "Camera_Off"), selectedImage: #imageLiteral(resourceName: "Camera_On"))
-        imagePickTab.tabIndexNum = .Post
+        imagePickTab.tabIndexType = .Post
+        
+        // 03. "Setting" tab
         let settingTab = SettingVC()
         settingTab.tabBarItem = UITabBarItem(title: "setting", image: #imageLiteral(resourceName: "Setting_Off"), selectedImage: #imageLiteral(resourceName: "Setting_On"))
+        settingTab.tabIndexType = .Setting
+        
         self.viewControllers = [mainTab, imagePickTab, settingTab]
     }
 
-    // MARK: - imagePickTab present modally
+    // MARK: - should select view controller?
+    // Present imagePickTab modally
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        let index = self.viewControllers?.index(of: viewController)
-        let type = (viewController as! OSViewController).tabIndexNum
-        //1 : 이미지픽커탭 index값
-        if type == .Post {
+        let type = (viewController as! OnstagramVC).tabIndexType
+        switch type {
+        case .Post?:
             let imagePickTab = ImagePickerVC(collectionViewLayout: UICollectionViewFlowLayout())
-            
             let navi = UINavigationController(rootViewController: imagePickTab)
             self.present(navi, animated: true, completion: nil)
             return false
+        default:
+            break
         }
         return true
     }
     
+    // MARK: - imagePickTab present modally
     private func checkLogin() -> Bool {
         if Auth.auth().currentUser == nil {
             return false
-        }else
-        {
+        }else {
            return true
         }
     }

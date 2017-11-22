@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostVC: OSViewController {
+class PostVC: OnstagramVC {
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -48,7 +48,6 @@ class PostVC: OSViewController {
     @objc func handleDone() {
         guard let contents = contentsTextView.text, !contents.isEmpty else {return}
         guard let image = selectedImage else {return}
-              
         let newPost = PostModel(img: image, contents: contents)
         NotificationCenter.default.post(name: Notification.Name.newPost, object: newPost)
         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -78,12 +77,3 @@ extension PostVC {
     }
 }
 
-extension UIImage {
-    func makeImgDate() -> Data {
-        return UIImageJPEGRepresentation(self, 0.5)!
-    }
-}
-
-extension Notification.Name {
-    static let newPost : Notification.Name = Notification.Name("newPost")
-}

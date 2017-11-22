@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingVC: OSViewController {
+class SettingVC: OnstagramVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()

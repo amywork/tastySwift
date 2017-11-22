@@ -73,8 +73,9 @@ extension SignupVC {
             if error == nil {
                 Auth.auth().signIn(withEmail: id, password: pw1) { (user, error) in
                     print(error.debugDescription)
-                    if error == nil {
+                    if error == nil, let user = user {
                         DispatchQueue.main.async {
+                            DataCenter.shared.currentUser = UserModel(email: user.email!, uid: user.uid)
                             self.navigationController?.dismiss(animated: true, completion: nil)
                         }
                     }

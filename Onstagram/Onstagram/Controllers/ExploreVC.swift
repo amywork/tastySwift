@@ -1,12 +1,6 @@
-//
-//  MainVC.swift
-//  01. 테이블뷰 추가 (포스팅 완료 후 Cell에 정보 전송)
-//  02. DB 연동 작업
-
 import UIKit
-
-class MainVC: OSViewController, ImagePickerDelegate {
-  
+class ExploreVC: OnstagramVC, ImagePickerDelegate {
+    
     var currentUser: UserModel?
     var postData = [PostModel]()
     var seperator: Bool = false
@@ -15,13 +9,14 @@ class MainVC: OSViewController, ImagePickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        NotificationCenter.default.addObserver(forName: Notification.Name.newPost, object: nil, queue: nil) {[weak self] (noti) in
+        NotificationCenter.default.addObserver(forName: Notification.Name.newPost, object: nil, queue: nil) { [weak self] (noti) in
             let filename = NSUUID().uuidString
             let newPost = noti.object as! PostModel
-            guard let index = self?.postData.count else {return}
-            DataCenter.shared.uploadPost(img: newPost.imageData!, contents: newPost.contents, filename : filename, index : index) //global
+            guard let index = self?.postData.count else { return }
             self?.postData.append(newPost)
             self?.tableView.reloadData()
+            guard let data = newPost.imageData else { return }
+            DataCenter.shared.uploadPost(img: data, contents: newPost.contents, filename : filename, index : index)
         }
     }
     
@@ -31,9 +26,9 @@ class MainVC: OSViewController, ImagePickerDelegate {
         self.navigationItem.title = "Explore"
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
-        setConstraints()
-        fetchUserData()
+        tableView.register(UINib(nibName: "PostCell", bundle: Bundle.main), forCellReuseIdentifier: "PostCell")
+        setConstraints() // Auto Layout
+        fetchUserData() // First load user
     }
     
     // MARK: - Fetch User
@@ -44,10 +39,10 @@ class MainVC: OSViewController, ImagePickerDelegate {
             self?.nickNameLB.text = self?.currentUser?.nickName
             self?.statusLB.text = self?.currentUser?.status
             self?.profileImgView.loadImage(URLstring: (self?.currentUser?.profileImgUrl)!, completion: { (data) in
-                print("프로필 이미지 로드 성공")
             })
             if let posts = self?.currentUser?.posts {
                 self?.postData = posts
+                self?.tableView.reloadData()
             }
         }
     }
@@ -70,7 +65,7 @@ class MainVC: OSViewController, ImagePickerDelegate {
     
     var profileImgView: UIImageView = {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "profile") // default image
+        iv.image = #imageLiteral(resourceName: "NoImage") // default image
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         return iv
@@ -78,15 +73,15 @@ class MainVC: OSViewController, ImagePickerDelegate {
     
     var imgEditBtn : UIButton = {
         let btn = UIButton()
-        btn.setTitle("📷Edit", for: .normal)
-        btn.setTitleColor(UIColor.lightGray, for: .normal)
-        btn.backgroundColor = .white
+        let str = NSAttributedString(string: "edit",
+                                     attributes: [.font : UIFont.systemFont(ofSize: 13, weight: .regular),
+                                                  NSAttributedStringKey.foregroundColor : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
+        btn.setAttributedTitle(str, for: .normal)
         btn.addTarget(self, action: #selector(imgEditAction(_:)), for: .touchUpInside)
         return btn
     }()
     
     @objc func imgEditAction(_ sender: UIButton) {
-        
         let imagePicker = ImagePickerVC(collectionViewLayout: UICollectionViewFlowLayout())
         let navi = UINavigationController(rootViewController: imagePicker)
         imagePicker.delegate = self
@@ -126,23 +121,23 @@ class MainVC: OSViewController, ImagePickerDelegate {
         btn.addTarget(self, action: #selector(editBtnHandler(_:)), for: .touchUpInside)
         return btn
     }()
-
+    
     // MARK: - Btn Handlers
     @objc func editBtnHandler(_ sender : UIButton) {
         let alertController = UIAlertController(title: "프로필 설정",
-                                                message: "닉네임과 상태 메시지를 입력하세요",
+                                                message: "나의 프로필 메시지 설정하기",
                                                 preferredStyle: .alert)
         
         alertController.addTextField { (tf) in
-            tf.placeholder = "나의 닉네임 입력"
+            tf.placeholder = "닉네임을 입력하세요"
         }
         
         alertController.addTextField { (tf) in
-            tf.placeholder = "나의 상태 입력"
+            tf.placeholder = "상태 메시지를 입력하세요"
         }
         
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self](action) in
-            guard let nickName = alertController.textFields![0].text, !nickName.isEmpty else { return }
+            guard let nickName = alertController.textFields![0].text, !nickName.isEmpty else { return } // 알럿을 좌우로 흔들어주면 좋을듯
             guard let statusText = alertController.textFields![1].text, !statusText.isEmpty else {return}
             self?.nickNameLB.text = nickName
             self?.statusLB.text = statusText
@@ -159,7 +154,7 @@ class MainVC: OSViewController, ImagePickerDelegate {
 }
 
 /* Extension : TableView */
-extension MainVC: UITableViewDelegate, UITableViewDataSource {
+extension ExploreVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "All Posts"
@@ -167,43 +162,34 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postData.count
-     }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        
-        if let url = postData[indexPath.row].imgUrl {
-            cell.imageView?.loadImage(URLstring: url, completion: { (data) in
-                cell.reloadInputViews()
-            })
-        }
-        
-        cell.textLabel?.text = postData[indexPath.row].contents
-        cell.imageView?.image = postData[indexPath.row].image
-        cell.imageView?.contentMode = .scaleAspectFit
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        cell.postData = postData[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64
+        return 120
     }
     
 }
 
 /* Extension : Auto Layout Constraints */
 // 나중에 UIView의 extension 메소드로 정리
-extension MainVC {
+extension ExploreVC {
     
     private func setConstraints() {
         let profileImgStackView = UIStackView(arrangedSubviews: [profileImgView, imgEditBtn])
         self.view.addSubview(profileImgStackView)
         profileImgStackView.translatesAutoresizingMaskIntoConstraints = false
         profileImgStackView.alignment = .fill
-        profileImgStackView.distribution = .fillProportionally
-        profileImgStackView.axis = .vertical
+        profileImgStackView.distribution = .fillEqually
+        profileImgStackView.axis = .horizontal
         profileImgStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         profileImgStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        profileImgStackView.widthAnchor.constraint(equalToConstant: 64).isActive = true
+        profileImgStackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         profileImgStackView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
         let labelStackView = UIStackView(arrangedSubviews: [nickNameLB, statusLB, editProfileBtn])
@@ -217,7 +203,7 @@ extension MainVC {
         labelStackView.centerXAnchor.constraint(equalTo: profileImgStackView.centerXAnchor).isActive = true
         labelStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
         labelStackView.heightAnchor.constraint(equalTo: profileImgStackView.heightAnchor, multiplier: 1).isActive = true
-       
+        
         self.view.addSubview(lineView)
         lineView.translatesAutoresizingMaskIntoConstraints = false
         lineView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true

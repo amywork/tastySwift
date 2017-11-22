@@ -48,10 +48,11 @@ struct UserModel {
         self.nickName = nickName
         let status = snapshot["status"] as? String
         self.status = status
-        let postArr = snapshot["POST"] as! [[String:String]]
-        for post in postArr {
-            guard let newPost = PostModel(with: post) else { return }
-            self.posts.append(newPost)
+        if let postArr = snapshot["POST"] as? [[String:String]] {
+            for post in postArr {
+                guard let newPost = PostModel(with: post) else { return }
+                self.posts.append(newPost)
+            }
         }
     }
     
