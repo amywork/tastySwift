@@ -11,17 +11,28 @@ import UIKit
 
 struct PostModel {
     
-    var image: UIImage
-    var imageData: Data {
-        return UIImageJPEGRepresentation(image, 0.5)!
+    /* Required */
+    var contents: String
+    var imgUrl: String?
+    var image: UIImage?
+    var imageData: Data? {
+        if let image = image
+        {
+            return UIImageJPEGRepresentation(image, 0.5)!
+        }
+        return nil
     }
     
-    var title: String
-    var contents: String
-    
-    init(img: UIImage, title: String, contents: String) {
+    /* Initialize */
+    init(img: UIImage, contents: String) {
         self.image = img
-        self.title = title
+        self.contents = contents
+    }
+    
+    init?(with dic: [String:String]) {
+        guard let imgUrl = dic["post_img_url"] else { return nil }
+        self.imgUrl = imgUrl
+        guard let contents = dic["contents"]  else { return nil }
         self.contents = contents
     }
   

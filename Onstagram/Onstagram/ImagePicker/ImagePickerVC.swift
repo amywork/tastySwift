@@ -4,6 +4,7 @@ import Photos
 // MARK: - Protocol
 protocol ImagePickerDelegate {
     func photoselectorDidSelectedImage(_ selectedImgae:UIImage)
+    var seperator : Bool {get set}
 }
 
 class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -11,6 +12,8 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     // MARK: - ImagePickerDelegate
     var delegate : ImagePickerDelegate?
 
+//    var imagePickerLoadType:Int = 0
+    
     // MARK: - Property
     var selectedImage: UIImage?
     var images = [UIImage]()
@@ -27,7 +30,7 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     fileprivate func assetsFetchOptions() -> PHFetchOptions {
         let fetchOptions = PHFetchOptions()
         fetchOptions.fetchLimit = 20
-        /*날짜별로 정렬
+        /*날짜별로 정렬 가능
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
         fetchOptions.sortDescriptors = [sortDescriptor]
          */
@@ -79,9 +82,9 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         if let selectedImage = selectedImage {
             if let index = self.images.index(of: selectedImage) {
                 let selectedAsset = self.assets[index]
-                let imageManager = PHImageManager.default()
                 let targetSize = CGSize(width: 600, height: 600)
-                imageManager.requestImage(for: selectedAsset, targetSize: targetSize, contentMode: .aspectFit, options: nil, resultHandler: { (image, info) in
+                
+                PHImageManager.default().requestImage(for: selectedAsset, targetSize: targetSize, contentMode: .aspectFit, options: nil, resultHandler: { (image, info) in
                     header.photoImageView.image = image
                     self.selectedImage = image
                 })
@@ -132,14 +135,28 @@ extension ImagePickerVC {
     }
     
     fileprivate func setupNavigationButtons() {
+        if let delegate = delegate, delegate.seperator {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
-        navigationItem.title = "Select Photo"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
+        navigationItem.title = "Edit Profile"
+             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
+            return
+        }
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+            navigationItem.title = "Select Photo"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
+        
     }
     
-    @objc func handleNext() {
+    @objc func handleDone() {
         if let selectedImage = selectedImage {
             self.delegate?.photoselectorDidSelectedImage(selectedImage)
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }else {
+            // 사진을 선택하라는 alert
+        }
+    }
+    @objc func handleNext() {
+        if let selectedImage = selectedImage {
             let postVC = PostVC()
             postVC.selectedImage = selectedImage
             self.navigationController?.pushViewController(postVC, animated: true)

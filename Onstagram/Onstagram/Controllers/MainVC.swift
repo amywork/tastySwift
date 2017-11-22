@@ -5,23 +5,27 @@
 
 import UIKit
 
-class MainVC: UIViewController, ImagePickerDelegate {
+class MainVC: OSViewController, ImagePickerDelegate {
   
     var currentUser: UserModel?
-  
+    var postData = [PostModel]()
+    var seperator: Bool = false
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        currentUser = DataCenter.shared.currentUser
-        if let user = currentUser {
-            if let img = user.profileImg {
-                self.profileImgView.image = img
-            }
+        NotificationCenter.default.addObserver(forName: Notification.Name.newPost, object: nil, queue: nil) {[weak self] (noti) in
+            let filename = NSUUID().uuidString
+            let newPost = noti.object as! PostModel
+            guard let index = self?.postData.count else {return}
+            DataCenter.shared.uploadPost(img: newPost.imageData!, contents: newPost.contents, filename : filename, index : index) //global
+            self?.postData.append(newPost)
+            self?.tableView.reloadData()
         }
-
     }
     
+    // MARK: - Setup UI
     private func updateUI() {
         self.view.backgroundColor = .white
         self.navigationItem.title = "Explore"
@@ -29,9 +33,26 @@ class MainVC: UIViewController, ImagePickerDelegate {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
         setConstraints()
+        fetchUserData()
     }
     
-    // MARK: - CustomImagePickerDelegate
+    // MARK: - Fetch User
+    private func fetchUserData() {
+        DataCenter.shared.loadCurrentUser { [weak self] (user, snapshot) in
+            self?.currentUser = user
+            self?.currentUser?.addUserInfo(with: snapshot as! [String : Any])
+            self?.nickNameLB.text = self?.currentUser?.nickName
+            self?.statusLB.text = self?.currentUser?.status
+            self?.profileImgView.loadImage(URLstring: (self?.currentUser?.profileImgUrl)!, completion: { (data) in
+                print("프로필 이미지 로드 성공")
+            })
+            if let posts = self?.currentUser?.posts {
+                self?.postData = posts
+            }
+        }
+    }
+    
+    // MARK: - ImagePickerDelegate
     func photoselectorDidSelectedImage(_ selectedImgae: UIImage) {
         self.profileImgView.image = selectedImgae
         DataCenter.shared.currentUser?.profileImg = selectedImgae
@@ -65,29 +86,35 @@ class MainVC: UIViewController, ImagePickerDelegate {
     }()
     
     @objc func imgEditAction(_ sender: UIButton) {
-        let layout = UICollectionViewFlowLayout()
-        let imagePicker = ImagePickerVC(collectionViewLayout: layout)
+        
+        let imagePicker = ImagePickerVC(collectionViewLayout: UICollectionViewFlowLayout())
         let navi = UINavigationController(rootViewController: imagePicker)
         imagePicker.delegate = self
+        seperator = true
         self.present(navi, animated: true, completion: nil)
     }
     
     var nickNameLB: UILabel = {
         let lb = UILabel()
         lb.font = UIFont.systemFont(ofSize: 22, weight: .medium)
-        lb.text = "Your Nickname"
         lb.textAlignment = .center
-        lb.textColor = UIColor.lightGray
+        lb.textColor = .black
         return lb
     }()
     
     var statusLB: UILabel = {
         let lb = UILabel()
         lb.font = UIFont.systemFont(ofSize: 15, weight: .light)
-        lb.text = "your status message"
         lb.textAlignment = .center
-        lb.textColor = UIColor.lightGray
+        lb.textColor = .black
         return lb
+    }()
+    
+    var lineView: UIView = {
+        let line = UIView()
+        line.layer.borderWidth = 1
+        line.backgroundColor = UIColor.lightGray
+        return line
     }()
     
     var editProfileBtn: UIButton = {
@@ -100,6 +127,7 @@ class MainVC: UIViewController, ImagePickerDelegate {
         return btn
     }()
 
+    // MARK: - Btn Handlers
     @objc func editBtnHandler(_ sender : UIButton) {
         let alertController = UIAlertController(title: "프로필 설정",
                                                 message: "닉네임과 상태 메시지를 입력하세요",
@@ -128,16 +156,9 @@ class MainVC: UIViewController, ImagePickerDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    var lineView: UIView = {
-        let line = UIView()
-        line.layer.borderWidth = 1
-        line.backgroundColor = UIColor.lightGray
-        return line
-    }()
-
 }
 
-// MARK: - Extension ** TableView Sources
+/* Extension : TableView */
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -145,13 +166,20 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
+        return postData.count
+     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        cell.textLabel?.text = "여기에 유저가 입력한 내용이 출력됩니다."
-        cell.imageView?.image = #imageLiteral(resourceName: "Camera_On")
+        
+        if let url = postData[indexPath.row].imgUrl {
+            cell.imageView?.loadImage(URLstring: url, completion: { (data) in
+                cell.reloadInputViews()
+            })
+        }
+        
+        cell.textLabel?.text = postData[indexPath.row].contents
+        cell.imageView?.image = postData[indexPath.row].image
         cell.imageView?.contentMode = .scaleAspectFit
         return cell
     }
@@ -162,8 +190,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
-// MARK: - Extension ** Auto Layout Constraints
+/* Extension : Auto Layout Constraints */
+// 나중에 UIView의 extension 메소드로 정리
 extension MainVC {
     
     private func setConstraints() {

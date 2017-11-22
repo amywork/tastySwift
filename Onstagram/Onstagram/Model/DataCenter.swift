@@ -8,39 +8,36 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
+/*Signleton DataCenter*/
 class DataCenter {
     
     static var shared: DataCenter = DataCenter()
     var currentUser: UserModel?
- 
-    private init() {
-        loadCurrentUser()
-    }
+    private init() { }
     
-    // MARK: - Load User Info
-    private func loadCurrentUser() {
+    /*Firebase Manager : Load User*/
+    
+    typealias completion = (_ user: UserModel?, _ snapshot: Any?) -> Void
+    // MARK: - Download current user from server
+    func loadCurrentUser(completion: @escaping completion) {
         if let user = Auth.auth().currentUser {
-            let email = user.email!
+            guard let email = user.email else  { return }
             let uid = user.uid
-            currentUser = UserModel(email: email, uid: uid)
             let ref = Database.database().reference().child(uid)
-            ref.observe(.value, with: { [weak self] snapshot in
+            ref.observeSingleEvent(of: .value, with: { snapshot in
                 if let value = snapshot.value as? [String:Any] {
-                    let imgUrl: String? = value["profile_img_url"] as? String
-                    let nickName: String? = value["nickname"] as? String
-                    let status: String? = value["status"] as? String
-                    self?.currentUser?.profileImgUrl = imgUrl
-                    self?.currentUser?.nickName = nickName
-                    self?.currentUser?.status = status
-                    if let _ = self?.currentUser, let url = self?.currentUser?.profileImgUrl {
-                        self?.loadProfile(imgUrl: url)
+                    DispatchQueue.main.async {
+                        let user = UserModel(email: email, uid: uid)
+                        completion(user, value)
                     }
                 }
             })
         }
     }
     
-    // MARK: - Firebase Manager
+    /*Firebase Manager : Upload*/
+    
+    // MARK: - upload profile img to server
     func uploadImg(selectedImgData : Data, filename : String ) {
         Storage.storage().reference().child("profile_imgs").child(filename).putData(selectedImgData, metadata: nil) { (metadata, error) in
             guard let profileImgUrl = metadata?.downloadURL()?.absoluteString else {return}
@@ -52,6 +49,7 @@ class DataCenter {
         }
     }
     
+    // MARK: - upload user info(name&status) to server
     func uploadUserInfo(nickName : String, status : String) {
         guard let uid = self.currentUser?.uid else {return}
         let dic = ["nickname" : nickName, "status" : status]
@@ -60,15 +58,38 @@ class DataCenter {
         }
     }
     
-    func loadProfile(imgUrl: String) {
-        let ref = Storage.storage().reference(forURL: imgUrl)
-        ref.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
-            if error != nil {
-                print("Uh-oh, an error occurred!")
-            } else {
-                let image = UIImage(data: data!)
-                self?.currentUser?.profileImg = image
-            }
+    // MARK: - upload posting to server
+    func uploadPost(img: Data, contents: String, filename : String, index : Int) {
+        Storage.storage().reference().child("post_imgs").child(filename).putData(img, metadata: nil) { (metadata, error) in
+            guard let postImgUrl = metadata?.downloadURL()?.absoluteString else {return}
+            guard let uid = self.currentUser?.uid else {return}
+            let postdic = ["post_img_url" : postImgUrl, "contents" : contents]
+            let postNode = Database.database().reference().child(uid).child("POST").child("\(index)")
+            postNode.updateChildValues(postdic, withCompletionBlock: { (error, ref) in
+                print("postupload 성공")
+            })
         }
     }
+
+}
+
+extension UIImageView {
+   
+    func loadImage(URLstring : String, completion: @escaping (_ data: Data)->Void) {
+        let url = URL(string : URLstring)!
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("해당 url에 이미지없음")
+                print(error)
+            }
+            if let data = data {
+                DispatchQueue.main.async {
+                    self.image = UIImage(data: data)
+                    completion(data)
+                }
+            }
+        }.resume()
+    }
+    
 }
