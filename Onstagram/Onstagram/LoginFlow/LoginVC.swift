@@ -57,23 +57,6 @@ class LoginVC: UIViewController  {
 // MARK: - UI methods
 extension LoginVC : UITextFieldDelegate {
 
-    private func setupLayout() {
-        let btnStackView = UIStackView(arrangedSubviews: [signUpBtn,doneBtn])
-        btnStackView.alignment = .fill
-        btnStackView.distribution = .fillEqually
-        btnStackView.axis = .horizontal
-        let stackView = UIStackView(arrangedSubviews: [emailTextField,pw1TextField,btnStackView])
-        self.view.addSubview(stackView)
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 56).isActive = true
-        stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
-        stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
-    }
-    
     @objc func doneBtnHandler(_ sender: UIButton) {
         guard let id = emailTextField.text, let pw = pw1TextField.text else {
             let alert = UIAlertController(title: "로그인 실패",
@@ -102,5 +85,22 @@ extension LoginVC : UITextFieldDelegate {
         self.navigationController?.pushViewController(signupVC, animated: true)
     }
 
+    private func setupLayout() {
+        let btnStackView = UIStackView(arrangedSubviews: [signUpBtn,doneBtn])
+        btnStackView.alignment = .fill
+        btnStackView.distribution = .fillEqually
+        btnStackView.axis = .horizontal
+        let stackView = UIStackView(arrangedSubviews: [emailTextField,pw1TextField,btnStackView])
+        self.view.addSubview(stackView)
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 56).isActive = true
+        stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
+        stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+    }
+    
 }
 

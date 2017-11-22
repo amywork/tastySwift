@@ -11,7 +11,7 @@ import UIKit
 
 extension UIImageView {
     
-    func loadImage(URLstring : String, completion: @escaping (_ data: Data)->Void) {
+    func loadImage(URLstring : String, completion: @escaping (_ isSuccess: Bool)->Void) {
         let url = URL(string : URLstring)!
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
@@ -22,7 +22,7 @@ extension UIImageView {
             if let data = data {
                 DispatchQueue.main.async {
                     self.image = UIImage(data: data)
-                    completion(data)
+                    completion(true)
                 }
             }
             }.resume()
@@ -32,7 +32,7 @@ extension UIImageView {
 
 
 extension UIImage {
-    func makeImgDate() -> Data {
+    func generateJPEGData() -> Data {
         return UIImageJPEGRepresentation(self, 0.5)!
     }
 }

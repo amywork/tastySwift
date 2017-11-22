@@ -1,34 +1,45 @@
+//
+//  FirebaseManager.swift
+//  Onstagram
+//
+//  Created by ilhan won on 2017. 11. 22..
+//  Copyright © 2017년 yunari.me. All rights reserved.
+//  Signleton FirebaseManager
+//
+
 import Foundation
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-/*Signleton DataCenter*/
-// 01. Managing connection with Firebase
-// 02. Store currentUser
-
-class DataCenter {
+/*Signleton FirebaseManager*/
+class FirebaseManager {
     
-    static var shared: DataCenter = DataCenter()
+    // MARK: - Property
+    static var shared: FirebaseManager = FirebaseManager()
     var currentUser: UserModel?
-    private init() { }
+    private init() {
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            if let user = user {
+                self?.currentUser = UserModel(email: user.email!, uid: user.uid)
+            }
+        }
+    }
     
-    /*Firebase Manager*/
     typealias completion = (_ user: UserModel?, _ snapshot: Any?) -> Void
    
     // MARK: - Download current user from server
     func loadCurrentUser(completion: @escaping completion) {
         if let user = Auth.auth().currentUser {
-            guard let email = user.email else  { return }
             let uid = user.uid
+            guard let email = user.email else  { return }
+            self.currentUser = UserModel(email: email, uid: uid)
             let ref = Database.database().reference().child(uid)
             ref.observeSingleEvent(of: .value, with: { [ weak self ] snapshot in
                 if let value = snapshot.value as? [String:Any] {
                     DispatchQueue.main.async {
-                        let user = UserModel(email: email, uid: uid)
-                        self?.currentUser = user
-                        completion(user, value)
+                        completion(self?.currentUser, value)
                     }
                 }
             })
@@ -38,27 +49,35 @@ class DataCenter {
     /*Firebase Upload*/
     
     // MARK: - upload profile image to server
-    func uploadImg(selectedImgData : Data, filename : String ) {
+    func uploadImg(selectedImgData : Data) {
+        let filename = NSUUID().uuidString
         Storage.storage().reference().child("profile_imgs").child(filename).putData(selectedImgData, metadata: nil) { (metadata, error) in
             guard let profileImgUrl = metadata?.downloadURL()?.absoluteString else {return}
             guard let uid = self.currentUser?.uid else {return}
             let dic = ["profile_img_url" : profileImgUrl]
             Database.database().reference().child(uid).updateChildValues(dic, withCompletionBlock: { (error, ref) in
-                print("uploadImg 성공")
+                if error == nil {
+                    print("uploadImg 성공")
+                }else {
+                    print(error!.localizedDescription)
+                }
             })
         }
     }
     
     // MARK: - upload posting to server
-    func uploadPost(img: Data, contents: String, filename : String, index : Int) {
-        Storage.storage().reference().child("post_imgs").child(filename).putData(img, metadata: nil) { (metadata, error) in
+    func uploadPost(imgData: Data, contents: String, index : Int) {
+        let filename = NSUUID().uuidString
+        Storage.storage().reference().child("post_imgs").child(filename).putData(imgData, metadata: nil) { (metadata, error) in
             guard let uid = self.currentUser?.uid else { return }
             guard let postImgUrl = metadata?.downloadURL()?.absoluteString else { return }
             let postdic = ["post_img_url" : postImgUrl, "contents" : contents]
-            print("포스트딕셔너리")
-            print(postdic)
             Database.database().reference().child(uid).child("POST").child("\(index)").updateChildValues(postdic, withCompletionBlock: { (error, ref) in
-                print("postupload 성공")
+                if error == nil {
+                    print("postupload 성공")
+                }else {
+                    print(error!.localizedDescription)
+                }
             })
         }
     }

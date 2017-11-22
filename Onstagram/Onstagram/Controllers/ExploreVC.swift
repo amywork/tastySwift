@@ -1,45 +1,67 @@
+//
+//  ExploreVC.swift
+//  Onstagram
+//
+//  Copyright © 2017년 yunari.me. All rights reserved.
+//  Tab01. Main - Explore
+//
+
 import UIKit
+import FirebaseAuth
+
 class ExploreVC: OnstagramVC, ImagePickerDelegate {
     
     var currentUser: UserModel?
     var postData = [PostModel]()
-    var seperator: Bool = false
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        setUp()
+        
+        // Observe New Post
         NotificationCenter.default.addObserver(forName: Notification.Name.newPost, object: nil, queue: nil) { [weak self] (noti) in
-            let filename = NSUUID().uuidString
             let newPost = noti.object as! PostModel
             guard let index = self?.postData.count else { return }
             self?.postData.append(newPost)
             self?.tableView.reloadData()
             guard let data = newPost.imageData else { return }
-            DataCenter.shared.uploadPost(img: data, contents: newPost.contents, filename : filename, index : index)
+            FirebaseManager.shared.uploadPost(imgData: data, contents: newPost.contents, index : index)
+        }
+        
+        // Observe User change
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            self?.fetchUserData()
         }
     }
     
-    // MARK: - Setup UI
-    private func updateUI() {
+    // MARK: - Setup
+    private func setUp() {
         self.view.backgroundColor = .white
         self.navigationItem.title = "Explore"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PostCell", bundle: Bundle.main), forCellReuseIdentifier: "PostCell")
         setConstraints() // Auto Layout
-        fetchUserData() // First load user
+        fetchUserData() // load user data
     }
     
     // MARK: - Fetch User
     private func fetchUserData() {
-        DataCenter.shared.loadCurrentUser { [weak self] (user, snapshot) in
+        FirebaseManager.shared.loadCurrentUser { [weak self] (user, snapshot) in
             self?.currentUser = user
             self?.currentUser?.addUserInfo(with: snapshot as! [String : Any])
             self?.nickNameLB.text = self?.currentUser?.nickName
-            self?.statusLB.text = self?.currentUser?.status
-            self?.profileImgView.loadImage(URLstring: (self?.currentUser?.profileImgUrl)!, completion: { (data) in
-            })
+            self?.statusLB.text = self?.currentUser?.statusMessage
+            if let url = self?.currentUser?.profileImgUrl {
+                self?.profileImgView.loadImage(URLstring: url, completion: { (isSuccess) in
+                    if isSuccess {
+                        print("프로필 이미지 업로드 성공")
+                    }else {
+                        print("프로필 이미지 업로드 실패")
+                    }
+                })
+            }
             if let posts = self?.currentUser?.posts {
                 self?.postData = posts
                 self?.tableView.reloadData()
@@ -50,10 +72,9 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
     // MARK: - ImagePickerDelegate
     func photoselectorDidSelectedImage(_ selectedImgae: UIImage) {
         self.profileImgView.image = selectedImgae
-        DataCenter.shared.currentUser?.profileImg = selectedImgae
-        if let data = DataCenter.shared.currentUser?.profileImgData {
-            let filename = NSUUID().uuidString
-            DataCenter.shared.uploadImg(selectedImgData: data , filename: filename)
+        FirebaseManager.shared.currentUser?.profileImg = selectedImgae
+        if let data = FirebaseManager.shared.currentUser?.profileImgData {
+            FirebaseManager.shared.uploadImg(selectedImgData: data)
         }
     }
     
@@ -66,7 +87,7 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
     var profileImgView: UIImageView = {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "NoImage") // default image
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
     }()
@@ -75,7 +96,7 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
         let btn = UIButton()
         let str = NSAttributedString(string: "edit",
                                      attributes: [.font : UIFont.systemFont(ofSize: 13, weight: .regular),
-                                                  NSAttributedStringKey.foregroundColor : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
+                                                  .foregroundColor : #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
         btn.setAttributedTitle(str, for: .normal)
         btn.addTarget(self, action: #selector(imgEditAction(_:)), for: .touchUpInside)
         return btn
@@ -85,7 +106,7 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
         let imagePicker = ImagePickerVC(collectionViewLayout: UICollectionViewFlowLayout())
         let navi = UINavigationController(rootViewController: imagePicker)
         imagePicker.delegate = self
-        seperator = true
+        imagePicker.pickerType = ImagePickerLoadType.ProfileImagePicker
         self.present(navi, animated: true, completion: nil)
     }
     
@@ -116,7 +137,7 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
         let btn = UIButton()
         let str = NSAttributedString(string: "프로필 수정하기",
                                      attributes: [.font : UIFont.systemFont(ofSize: 13, weight: .regular),
-                                                  NSAttributedStringKey.foregroundColor : #colorLiteral(red: 1, green: 0.1607843137, blue: 0.4078431373, alpha: 1)])
+                                                  .foregroundColor : #colorLiteral(red: 1, green: 0.1607843137, blue: 0.4078431373, alpha: 1)])
         btn.setAttributedTitle(str, for: .normal)
         btn.addTarget(self, action: #selector(editBtnHandler(_:)), for: .touchUpInside)
         return btn
@@ -141,7 +162,7 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
             guard let statusText = alertController.textFields![1].text, !statusText.isEmpty else {return}
             self?.nickNameLB.text = nickName
             self?.statusLB.text = statusText
-            DataCenter.shared.uploadUserInfo(nickName: nickName, status: statusText)
+            FirebaseManager.shared.uploadUserInfo(nickName: nickName, status: statusText)
         }
         
         let cancelActoin = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
@@ -186,11 +207,11 @@ extension ExploreVC {
         profileImgStackView.translatesAutoresizingMaskIntoConstraints = false
         profileImgStackView.alignment = .fill
         profileImgStackView.distribution = .fillEqually
-        profileImgStackView.axis = .horizontal
+        profileImgStackView.axis = .vertical
         profileImgStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         profileImgStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        profileImgStackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        profileImgStackView.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        profileImgStackView.widthAnchor.constraint(equalToConstant: 96).isActive = true
+        profileImgStackView.heightAnchor.constraint(equalToConstant: 96).isActive = true
         
         let labelStackView = UIStackView(arrangedSubviews: [nickNameLB, statusLB, editProfileBtn])
         self.view.addSubview(labelStackView)
@@ -199,7 +220,7 @@ extension ExploreVC {
         labelStackView.distribution = .equalSpacing
         labelStackView.spacing = 2
         labelStackView.axis = .vertical
-        labelStackView.topAnchor.constraint(equalTo: profileImgStackView.bottomAnchor, constant: 24).isActive = true
+        labelStackView.topAnchor.constraint(equalTo: profileImgStackView.bottomAnchor).isActive = true
         labelStackView.centerXAnchor.constraint(equalTo: profileImgStackView.centerXAnchor).isActive = true
         labelStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
         labelStackView.heightAnchor.constraint(equalTo: profileImgStackView.heightAnchor, multiplier: 1).isActive = true
@@ -219,8 +240,6 @@ extension ExploreVC {
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         
         view.layoutIfNeeded()
-        profileImgView.layer.cornerRadius = 16
-        
     }
 }
 

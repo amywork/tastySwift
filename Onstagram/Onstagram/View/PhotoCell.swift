@@ -2,8 +2,8 @@
 //  PhotoCell.swift
 //  Onstagram
 //
-//  Created by Kimkeeyun on 21/11/2017.
-//  Copyright © 2017 Kyuhan Shin. All rights reserved.
+//  Created by 김기윤 on 22/11/2017.
+//  Copyright © 2017 yunari.me. All rights reserved.
 //
 
 import UIKit

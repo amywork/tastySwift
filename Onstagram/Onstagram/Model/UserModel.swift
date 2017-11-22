@@ -17,18 +17,18 @@ struct UserModel {
     
     /* Optional */
     // 01. Profile Image
-    var profileImg : UIImage?
     var profileImgUrl: String?
+    var profileImg : UIImage?
     var profileImgData : Data? {
         if let img = self.profileImg {
-            return UIImageJPEGRepresentation(img, 0.5)!
+            return img.generateJPEGData()
         }
         return nil
     }
     
     // 02. User Info
     var nickName: String?
-    var status: String?
+    var statusMessage: String?
     
     // 03. User posts
     var posts = [PostModel]()
@@ -47,7 +47,7 @@ struct UserModel {
         let nickName = snapshot["nickname"] as? String
         self.nickName = nickName
         let status = snapshot["status"] as? String
-        self.status = status
+        self.statusMessage = status
         if let postArr = snapshot["POST"] as? [[String:String]] {
             for post in postArr {
                 guard let newPost = PostModel(with: post) else { return }

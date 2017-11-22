@@ -1,10 +1,16 @@
+//
+//  ImagePickerVC.swift
+//  Onstagram
+//
+//  Copyright © 2017년 yunari.me. All rights reserved.
+//
+
 import UIKit
 import Photos
 
 // MARK: - Protocol
 protocol ImagePickerDelegate {
     func photoselectorDidSelectedImage(_ selectedImgae:UIImage)
-    var seperator : Bool {get set}
 }
 
 enum ImagePickerLoadType {
@@ -22,8 +28,8 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     // MARK: - ImagePickerDelegate
     var delegate: ImagePickerDelegate?
     
-    // ImagePickerLoadType으로 PickerVC 가 생성될 때 우측 상단 버튼 분기
-    var pickerType: ImagePickerLoadType?
+    // PickerVC 가 생성될 때 우측 상단 버튼 분기
+    var pickerType: ImagePickerLoadType = .NewPostPicker
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -135,6 +141,7 @@ class ImagePickerVC: UICollectionViewController, UICollectionViewDelegateFlowLay
 }
 
 extension ImagePickerVC {
+    
     private func setUpCollectionView() {
         collectionView?.backgroundColor = .white
         collectionView?.register(PhotoCell.self, forCellWithReuseIdentifier: cellId)
@@ -142,16 +149,16 @@ extension ImagePickerVC {
     }
     
     fileprivate func setupNavigationButtons() {
-        if let delegate = delegate, delegate.seperator {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
-        navigationItem.title = "Edit Profile"
-             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
-            return
-        }
+        switch self.pickerType {
+        case .NewPostPicker:
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
             navigationItem.title = "Select Photo"
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(handleNext))
-        
+        case .ProfileImagePicker:
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+            navigationItem.title = "Edit Profile"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
+        }
     }
     
     @objc func handleDone() {
@@ -159,16 +166,27 @@ extension ImagePickerVC {
             self.delegate?.photoselectorDidSelectedImage(selectedImage)
             self.navigationController?.dismiss(animated: true, completion: nil)
         }else {
-            // 사진을 선택하라는 alert
+            let alertController = UIAlertController(title: "사진을 선택하세요",
+                                                    message: "선택된 사진이 없습니다",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
+    
     @objc func handleNext() {
         if let selectedImage = selectedImage {
             let postVC = PostVC()
             postVC.selectedImage = selectedImage
             self.navigationController?.pushViewController(postVC, animated: true)
         }else {
-            // 사진을 선택하라는 alert
+            let alertController = UIAlertController(title: "사진을 선택하세요",
+                                                    message: "선택된 사진이 없습니다",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     

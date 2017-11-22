@@ -2,19 +2,17 @@
 //  PostVC.swift
 //  Onstagram
 //
-//  Created by Kimkeeyun on 21/11/2017.
-//  Copyright © 2017 yunari.me. All rights reserved.
+//  Copyright © 2017년 yunari.me. All rights reserved.
 //
 
 import UIKit
 
-class PostVC: OnstagramVC {
+class PostVC: OnstagramVC, UITextViewDelegate {
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationButtons()
-        setupUI()
+        setUp()
     }
     
     // MARK: - Data Property
@@ -23,31 +21,46 @@ class PostVC: OnstagramVC {
     // MARK: - UI Property
     var postImageView : UIImageView = {
         let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
         return iv
     }()
     
     var contentsTextView: UITextView = {
         let tv = UITextView()
+        tv.text = "새로운 포스트를 작성하세요"
+        tv.textColor = .lightGray
         return tv
     }()
     
     // MARK: - setup UI
-    private func setupUI() {
+    private func setUp() {
         view.backgroundColor = .white
+        setupNavigationButtons()
+        contentsTextView.delegate = self
         postImageView.image = selectedImage
         setConstraints()
     }
     
     fileprivate func setupNavigationButtons() {
-        navigationItem.title = "New Post"
+        navigationItem.title = "Add New Post"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Post", style: .plain, target: self, action: #selector(handleDone))
     }
     
     // MARK: - Handler method
     @objc func handleDone() {
-        guard let contents = contentsTextView.text, !contents.isEmpty else {return}
-        guard let image = selectedImage else {return}
+        guard let image = selectedImage else { return }
+        guard let contents = contentsTextView.text, !contents.isEmpty else {
+            let alertController = UIAlertController(title: "포스트 내용을 입력하세요",
+                                                    message: "입력된 내용이 없습니다",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         let newPost = PostModel(img: image, contents: contents)
         NotificationCenter.default.post(name: Notification.Name.newPost, object: newPost)
         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -57,6 +70,9 @@ class PostVC: OnstagramVC {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.contentsTextView.text = ""
+    }
 }
 
 /* Extension : Auto Layout Constraints */

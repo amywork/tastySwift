@@ -28,7 +28,7 @@ class SignupVC: UIViewController {
     var pw2TextField: UITextField = {
         let tf = UITextField()
         tf.layer.borderWidth = 1
-        tf.placeholder = "  password를 확인 해 주세요"
+        tf.placeholder = "  password를 확인해 주세요"
         tf.backgroundColor = #colorLiteral(red: 0.7510083914, green: 0.8462013602, blue: 0.8357997537, alpha: 1)
         return tf
     }()
@@ -75,7 +75,6 @@ extension SignupVC {
                     print(error.debugDescription)
                     if error == nil, let user = user {
                         DispatchQueue.main.async {
-                            DataCenter.shared.currentUser = UserModel(email: user.email!, uid: user.uid)
                             self.navigationController?.dismiss(animated: true, completion: nil)
                         }
                     }

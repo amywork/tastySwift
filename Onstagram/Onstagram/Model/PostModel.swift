@@ -13,22 +13,23 @@ struct PostModel {
     
     /* Required */
     var contents: String
+    
     var imgUrl: String?
     var image: UIImage?
     var imageData: Data? {
-        if let image = image
-        {
-            return UIImageJPEGRepresentation(image, 0.5)!
+        if let img = self.image {
+            return img.generateJPEGData()
         }
         return nil
     }
     
-    /* Initialize */
+    /* Initialize when you post */
     init(img: UIImage, contents: String) {
         self.image = img
         self.contents = contents
     }
     
+    /* Initialize when you get posts from server */
     init?(with dic: [String:String]) {
         guard let imgUrl = dic["post_img_url"] else { return nil }
         self.imgUrl = imgUrl

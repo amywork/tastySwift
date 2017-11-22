@@ -2,8 +2,8 @@
 //  OSViewController.swift
 //  Onstagram
 //
-//  Created by ilhan won on 2017. 11. 22..
 //  Copyright © 2017년 yunari.me. All rights reserved.
+//  UIViewController 추상화
 //
 
 import UIKit
@@ -20,7 +20,6 @@ class OnstagramVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
 }

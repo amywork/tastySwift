@@ -14,19 +14,16 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Login Check
-        // if false -> present LoginVC
-        if !checkLogin()
-        {
+        // Login Check : if false -> present LoginVC
+        if !checkLogin() {
             DispatchQueue.main.async {
                 let loginVC = UIStoryboard.main.makeLoginVC()
                 let loginNavi = UINavigationController(rootViewController: loginVC)
                 self.present(loginNavi, animated: true, completion: nil)
             }
         }
-
         self.delegate = self // UITabBarControllerDelegate
-        setupVCs() // setup 3Tabs
+        setupVCs()
     }
 
     private func setupVCs() {
@@ -48,7 +45,7 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
         self.viewControllers = [mainTab, imagePickTab, settingTab]
     }
 
-    // MARK: - should select view controller?
+    // MARK: - should select viewController?
     // Present imagePickTab modally
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let type = (viewController as! OnstagramVC).tabIndexType
@@ -64,7 +61,7 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
         return true
     }
     
-    // MARK: - imagePickTab present modally
+    // MARK: - checkLogin
     private func checkLogin() -> Bool {
         if Auth.auth().currentUser == nil {
             return false
