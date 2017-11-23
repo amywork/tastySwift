@@ -53,4 +53,8 @@ extension UIStoryboard {
         return self.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
     }
     
+    func makeCommentVC() -> CommentVC {
+        return self.instantiateViewController(withIdentifier: "CommentVC") as! CommentVC
+    }
+    
 }

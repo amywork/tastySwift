@@ -26,6 +26,8 @@
 		DD0740631FC5633D00B274E2 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0740621FC5633D00B274E2 /* PostCell.xib */; };
 		DDC89AFC1FC58076009610DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC89AFB1FC58076009610DF /* Extensions.swift */; };
 		DDC89B001FC58265009610DF /* OnstagramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC89AFF1FC58265009610DF /* OnstagramVC.swift */; };
+		DDE6A2961FC69B1100B51BFC /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE6A2951FC69B1100B51BFC /* CommentVC.swift */; };
+		DDE6A2981FC69EF900B51BFC /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE6A2971FC69EF900B51BFC /* CommentModel.swift */; };
 		DDF575731FC3BBA0004393D0 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF575721FC3BBA0004393D0 /* MainTabVC.swift */; };
 		DDF575751FC3C05A004393D0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF575741FC3C05A004393D0 /* SettingVC.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		DD0740621FC5633D00B274E2 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		DDC89AFB1FC58076009610DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DDC89AFF1FC58265009610DF /* OnstagramVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnstagramVC.swift; sourceTree = "<group>"; };
+		DDE6A2951FC69B1100B51BFC /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
+		DDE6A2971FC69EF900B51BFC /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		DDF575721FC3BBA0004393D0 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 		DDF575741FC3C05A004393D0 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		E3CBE3BDC4BA94BBA236BD03 /* Pods-Onstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onstagram/Pods-Onstagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				DDC89AFF1FC58265009610DF /* OnstagramVC.swift */,
 				4B5F76A31FC37AA0002CA676 /* ExploreVC.swift */,
 				4B9753E91FC4597B003EE0CB /* PostVC.swift */,
+				DDE6A2951FC69B1100B51BFC /* CommentVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				4B9753ED1FC45BC2003EE0CB /* UserModel.swift */,
 				4B9753EB1FC45BA6003EE0CB /* PostModel.swift */,
+				DDE6A2971FC69EF900B51BFC /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,9 +338,11 @@
 				4B5F76A71FC37AA0002CA676 /* ExploreVC.swift in Sources */,
 				4B5F76A81FC37AA0002CA676 /* LoginVC.swift in Sources */,
 				4B9753EA1FC4597B003EE0CB /* PostVC.swift in Sources */,
+				DDE6A2961FC69B1100B51BFC /* CommentVC.swift in Sources */,
 				4B5F76B01FC37B51002CA676 /* FirebaseManager.swift in Sources */,
 				DD0740611FC5631700B274E2 /* PostCell.swift in Sources */,
 				4B06885D1FC3791F004C121A /* AppDelegate.swift in Sources */,
+				DDE6A2981FC69EF900B51BFC /* CommentModel.swift in Sources */,
 				4B5F76AB1FC37ABE002CA676 /* PhotoCell.swift in Sources */,
 				DDC89AFC1FC58076009610DF /* Extensions.swift in Sources */,
 				4B5F76A51FC37AA0002CA676 /* ImagePickerVC.swift in Sources */,

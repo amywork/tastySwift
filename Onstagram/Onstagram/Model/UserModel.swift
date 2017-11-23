@@ -12,7 +12,6 @@ import UIKit
 struct UserModel {
    
     /* Required */
-    var email: String
     var uid: String
     
     /* Optional */
@@ -34,8 +33,7 @@ struct UserModel {
     var posts = [PostModel]()
     
     /* Initialize */
-    init(email: String, uid: String){
-        self.email = email
+    init(uid: String){
         self.uid = uid
     }
     
@@ -48,10 +46,12 @@ struct UserModel {
         self.nickName = nickName
         let status = snapshot["status"] as? String
         self.statusMessage = status
-        if let postArr = snapshot["POST"] as? [[String:String]] {
+       
+        if let postArr = snapshot["POST"] as? [[String:[String:String]]] {
             for post in postArr {
-                guard let newPost = PostModel(with: post) else { return }
-                self.posts.append(newPost)
+                var newPost = PostModel(with: post.values.first!)
+                newPost?.postKey = post.keys.first ?? ""
+                self.posts.append(newPost!)
             }
         }
     }

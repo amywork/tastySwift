@@ -29,7 +29,8 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
     private func setupVCs() {
         // 01. "Explore" tab
         let mainTab = ExploreVC()
-        mainTab.tabBarItem = UITabBarItem(title: "explore", image: #imageLiteral(resourceName: "Feed_Off"), selectedImage: #imageLiteral(resourceName: "Feed_On"))
+        let exploreNavi = UINavigationController(rootViewController: mainTab)
+        exploreNavi.tabBarItem = UITabBarItem(title: "explore", image: #imageLiteral(resourceName: "Feed_Off"), selectedImage: #imageLiteral(resourceName: "Feed_On"))
         mainTab.tabIndexType = .Explore
         
         // 02. "Post" tab
@@ -42,13 +43,13 @@ class MainTabVC: UITabBarController, UITabBarControllerDelegate {
         settingTab.tabBarItem = UITabBarItem(title: "setting", image: #imageLiteral(resourceName: "Setting_Off"), selectedImage: #imageLiteral(resourceName: "Setting_On"))
         settingTab.tabIndexType = .Setting
         
-        self.viewControllers = [mainTab, imagePickTab, settingTab]
+        self.viewControllers = [exploreNavi, imagePickTab, settingTab]
     }
 
     // MARK: - should select viewController?
     // Present imagePickTab modally
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        let type = (viewController as! OnstagramVC).tabIndexType
+        let type = (viewController as? OnstagramVC)?.tabIndexType
         switch type {
         case .Post?:
             let imagePickTab = ImagePickerVC(collectionViewLayout: UICollectionViewFlowLayout())

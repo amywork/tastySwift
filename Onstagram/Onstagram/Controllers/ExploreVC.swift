@@ -21,18 +21,21 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
         
         // Observe New Post
         NotificationCenter.default.addObserver(forName: Notification.Name.newPost, object: nil, queue: nil) { [weak self] (noti) in
-            let newPost = noti.object as! PostModel
-            guard let index = self?.postData.count else { return }
+            var newPost = noti.object as! PostModel
             self?.postData.append(newPost)
             self?.tableView.reloadData()
             guard let data = newPost.imageData else { return }
-            FirebaseManager.shared.uploadPost(imgData: data, contents: newPost.contents, index : index)
+            FirebaseManager.shared.uploadPost(imgData: data, contents: newPost.contents, completion: { (isSuccess, key) in
+                if isSuccess {
+                    newPost.postKey = key
+                }
+            })
         }
         
-        // Observe User change
+        /* Observe User change
         Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             self?.fetchUserData()
-        }
+        }*/
     }
     
     // MARK: - Setup
@@ -42,8 +45,9 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PostCell", bundle: Bundle.main), forCellReuseIdentifier: "PostCell")
+        fetchUserData() // Load first user data
         setConstraints() // Auto Layout
-        fetchUserData() // load user data
+        
     }
     
     // MARK: - Fetch User
@@ -63,16 +67,17 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
             }
             if let posts = self?.currentUser?.posts {
                 self?.postData = posts
-                self?.tableView.reloadData()
             }
+            self?.tableView.reloadData()
         }
+        
     }
     
     // MARK: - ImagePickerDelegate
     func photoselectorDidSelectedImage(_ selectedImgae: UIImage) {
         self.profileImgView.image = selectedImgae
-        FirebaseManager.shared.currentUser?.profileImg = selectedImgae
-        if let data = FirebaseManager.shared.currentUser?.profileImgData {
+        FirebaseManager.shared.currentUser.profileImg = selectedImgae
+        if let data = FirebaseManager.shared.currentUser.profileImgData {
             FirebaseManager.shared.uploadImg(selectedImgData: data)
         }
     }
@@ -186,6 +191,8 @@ extension ExploreVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        cell.postImageView.image = #imageLiteral(resourceName: "NoImage")
+        cell.delegate = self
         cell.postData = postData[indexPath.row]
         return cell
     }
@@ -194,7 +201,39 @@ extension ExploreVC: UITableViewDelegate, UITableViewDataSource {
         return 120
     }
     
+    // Remove cell
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let index = indexPath.row
+            postData.remove(at: index)
+            tableView.reloadData()
+            FirebaseManager.shared.removeSinglePost(key: postData[index].postKey!, completion: { (isSuccess) in
+                if isSuccess {
+                    print("REMOVE 성공")
+                }
+            })
+        default:
+            break
+        }
+    }
+ 
 }
+
+
+/* Extension : CommentDelegate */
+extension ExploreVC: CommentDelegate {
+    func postCellDidSelectedCommentBtn(_ data: PostModel) {
+        let commentVC = UIStoryboard.main.makeCommentVC()
+        commentVC.parentPost = data
+        self.navigationController?.pushViewController(commentVC, animated: true)
+    }
+}
+
 
 /* Extension : Auto Layout Constraints */
 extension ExploreVC {
@@ -205,13 +244,13 @@ extension ExploreVC {
         self.view.addSubview(profileImgStackView)
         profileImgStackView.translatesAutoresizingMaskIntoConstraints = false
         imgEditBtn.translatesAutoresizingMaskIntoConstraints = false
-        imgEditBtn.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        imgEditBtn.heightAnchor.constraint(equalToConstant: 24).isActive = true
         profileImgStackView.alignment = .fill
         profileImgStackView.axis = .vertical
         profileImgStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         profileImgStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
         profileImgStackView.widthAnchor.constraint(equalToConstant: 96).isActive = true
-        profileImgStackView.heightAnchor.constraint(equalToConstant: 96).isActive = true
+        profileImgStackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         let labelStackView = UIStackView(arrangedSubviews: [nickNameLB, statusLB, editProfileBtn])
         self.view.addSubview(labelStackView)
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -222,7 +261,7 @@ extension ExploreVC {
         labelStackView.topAnchor.constraint(equalTo: profileImgStackView.bottomAnchor).isActive = true
         labelStackView.centerXAnchor.constraint(equalTo: profileImgStackView.centerXAnchor).isActive = true
         labelStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-        labelStackView.heightAnchor.constraint(equalTo: profileImgStackView.heightAnchor, multiplier: 1).isActive = true
+        labelStackView.heightAnchor.constraint(equalTo: profileImgStackView.heightAnchor, multiplier: 0.6).isActive = true
         
         self.view.addSubview(lineView)
         lineView.translatesAutoresizingMaskIntoConstraints = false
@@ -233,7 +272,7 @@ extension ExploreVC {
         
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 16).isActive = true
+        tableView.topAnchor.constraint(equalTo: lineView.bottomAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true

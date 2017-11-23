@@ -8,12 +8,22 @@
 
 import UIKit
 
+protocol CommentDelegate {
+    func postCellDidSelectedCommentBtn(_ data: PostModel)
+}
+
 class PostCell: UITableViewCell {
     
     // cellFromNib
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var contentsTextView: UITextView!
-    @IBOutlet weak var contentsTextView2: UITextView!
+
+    var delegate: CommentDelegate?
+    @IBAction func didTapCommentBtn(_ sender: UIButton) {
+        guard let postData = self.postData else { return }
+        delegate?.postCellDidSelectedCommentBtn(postData)
+    }
+
     var postData: PostModel? {
         didSet {
             self.contentsTextView.text = postData?.contents
