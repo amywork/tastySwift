@@ -26,7 +26,7 @@ class PostCell: UITableViewCell {
 
     var postData: PostModel? {
         didSet {
-            self.contentsTextView.text = postData?.contents
+            self.contentsTextView.text = postData?.postKey
             
             // Image from URL
             if let url = postData?.imgUrl {

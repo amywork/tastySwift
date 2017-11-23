@@ -22,12 +22,15 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
         // Observe New Post
         NotificationCenter.default.addObserver(forName: Notification.Name.newPost, object: nil, queue: nil) { [weak self] (noti) in
             var newPost = noti.object as! PostModel
-            self?.postData.append(newPost)
-            self?.tableView.reloadData()
             guard let data = newPost.imageData else { return }
             FirebaseManager.shared.uploadPost(imgData: data, contents: newPost.contents, completion: { (isSuccess, key) in
                 if isSuccess {
-                    newPost.postKey = key
+                    if let key = key {
+                        newPost.postKey = key
+                        self?.postData.append(newPost)
+                        self?.tableView.reloadData()
+                        print(key)
+                    }
                 }
             })
         }

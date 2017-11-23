@@ -24,8 +24,9 @@ class CommentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func didTapSendBtn(_ sender: UIButton) {
         guard let body = commentTF.text else { return }
         var newComment = CommentModel(contents: body)
-        self.parentPost?.comments.append(newComment)
-        FirebaseManager.shared.uploadComment(postKey: parentPost!.postKey!, body: body) { (isSuccess, key) in
+        parentPost?.comments.append(newComment)
+        guard let key = parentPost?.postKey else { return }
+        FirebaseManager.shared.uploadComment(postKey: key, body: body) { (isSuccess, key) in
             if isSuccess {
                 newComment.key = key
                 print("FirebaseManager.shared.uploadComment")
