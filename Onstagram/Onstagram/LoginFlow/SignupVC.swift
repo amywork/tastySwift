@@ -73,7 +73,7 @@ extension SignupVC {
             if error == nil {
                 Auth.auth().signIn(withEmail: id, password: pw1) { (user, error) in
                     print(error.debugDescription)
-                    if error == nil, let user = user {
+                    if error == nil, let _ = user {
                         DispatchQueue.main.async {
                             self.navigationController?.dismiss(animated: true, completion: nil)
                         }

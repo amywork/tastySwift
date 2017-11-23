@@ -27,7 +27,7 @@ class FirebaseManager {
         }
     }
     
-    typealias completion = (_ user: UserModel?, _ snapshot: Any?) -> Void
+    typealias completion = (_ snapshot: Any?) -> Void
    
     // MARK: - Download current user from server
     func loadCurrentUser(completion: @escaping completion) {
@@ -36,10 +36,10 @@ class FirebaseManager {
             guard let email = user.email else  { return }
             self.currentUser = UserModel(email: email, uid: uid)
             let ref = Database.database().reference().child(uid)
-            ref.observeSingleEvent(of: .value, with: { [ weak self ] snapshot in
-                if let value = snapshot.value as? [String:Any] {
+            ref.observeSingleEvent(of: .value, with: { snapshot in
+                if let snapshotDictionary = snapshot.value as? [String:Any] {
                     DispatchQueue.main.async {
-                        completion(self?.currentUser, value)
+                        completion(snapshotDictionary)
                     }
                 }
             })

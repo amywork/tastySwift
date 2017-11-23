@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class ExploreVC: OnstagramVC, ImagePickerDelegate {
     
-    var currentUser: UserModel?
+    private lazy var currentUser: UserModel? = FirebaseManager.shared.currentUser
     var postData = [PostModel]()
     
     // MARK: - LifeCycle
@@ -48,8 +48,7 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
     
     // MARK: - Fetch User
     private func fetchUserData() {
-        FirebaseManager.shared.loadCurrentUser { [weak self] (user, snapshot) in
-            self?.currentUser = user
+        FirebaseManager.shared.loadCurrentUser { [weak self] (snapshot) in
             self?.currentUser?.addUserInfo(with: snapshot as! [String : Any])
             self?.nickNameLB.text = self?.currentUser?.nickName
             self?.statusLB.text = self?.currentUser?.statusMessage
@@ -198,21 +197,21 @@ extension ExploreVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 /* Extension : Auto Layout Constraints */
-// 나중에 UIView의 extension 메소드로 정리
 extension ExploreVC {
     
     private func setConstraints() {
         let profileImgStackView = UIStackView(arrangedSubviews: [profileImgView, imgEditBtn])
+        
         self.view.addSubview(profileImgStackView)
         profileImgStackView.translatesAutoresizingMaskIntoConstraints = false
+        imgEditBtn.translatesAutoresizingMaskIntoConstraints = false
+        imgEditBtn.heightAnchor.constraint(equalToConstant: 32).isActive = true
         profileImgStackView.alignment = .fill
-        profileImgStackView.distribution = .fillEqually
         profileImgStackView.axis = .vertical
         profileImgStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         profileImgStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
         profileImgStackView.widthAnchor.constraint(equalToConstant: 96).isActive = true
         profileImgStackView.heightAnchor.constraint(equalToConstant: 96).isActive = true
-        
         let labelStackView = UIStackView(arrangedSubviews: [nickNameLB, statusLB, editProfileBtn])
         self.view.addSubview(labelStackView)
         labelStackView.translatesAutoresizingMaskIntoConstraints = false

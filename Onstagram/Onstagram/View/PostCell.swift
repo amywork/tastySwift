@@ -13,7 +13,7 @@ class PostCell: UITableViewCell {
     // cellFromNib
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var contentsTextView: UITextView!
-    
+    @IBOutlet weak var contentsTextView2: UITextView!
     var postData: PostModel? {
         didSet {
             self.contentsTextView.text = postData?.contents
