@@ -44,13 +44,8 @@ struct PostModel {
         self.contents = contents
     }
     
-    // Post Key -> Comments
-    func loadComments(key: String) {
-        let ref = Database.database().reference().child("Comment").child(key)
-        ref.observeSingleEvent(of: .value) { (snapshot) in
-            let dic = snapshot.value
-            print(dic ?? "loadComments 실패")
-        }
+    mutating func addKey(key: String) {
+        self.postKey = key
     }
   
 }

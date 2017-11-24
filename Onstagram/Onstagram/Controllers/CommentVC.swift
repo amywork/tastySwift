@@ -15,9 +15,20 @@ class CommentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var commentTF: UITextField!
     
     var parentPost: PostModel?
+    var comments = [CommentModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let key = parentPost?.postKey {
+            FirebaseManager.shared.loadComments(postKey: key, completion: { (isSuccess, comments) in
+                if isSuccess {
+                    self.comments = comments as! [CommentModel]
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            })
+        }
         commentTF.placeholder = "댓글을 입력하세요"
     }
 
@@ -36,24 +47,18 @@ class CommentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let post = parentPost {
-            return post.comments.count
+        if let _ = parentPost {
+            return comments.count
         }
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath)
-        if let post = parentPost {
-            cell.textLabel?.text = post.comments[indexPath.row].body
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) 
+        if let _ = parentPost {
+            cell.textLabel?.text = comments[indexPath.row].body
         }
         return cell
     }
     
-}
-
-extension CommentVC: CommentDelegate {
-    func postCellDidSelectedCommentBtn(_ data: PostModel) {
-        self.parentPost = data
-    }
 }

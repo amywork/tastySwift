@@ -47,11 +47,14 @@ struct UserModel {
         let status = snapshot["status"] as? String
         self.statusMessage = status
        
-        if let postArr = snapshot["POST"] as? [[String:[String:String]]] {
-            for post in postArr {
-                var newPost = PostModel(with: post.values.first!)
-                newPost?.postKey = post.keys.first ?? ""
-                self.posts.append(newPost!)
+        if let postSnapshot = snapshot["POST"] as? [String:[String:String]] {
+            for (key,value) in postSnapshot {
+                if let newpost = PostModel(with: value) {
+                    var post = newpost
+                    post.addKey(key: key)
+                    self.posts.append(post)
+                }
+                
             }
         }
     }

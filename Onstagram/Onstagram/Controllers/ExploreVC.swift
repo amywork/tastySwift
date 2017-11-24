@@ -70,8 +70,8 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
             }
             if let posts = self?.currentUser?.posts {
                 self?.postData = posts
+                self?.tableView.reloadData()
             }
-            self?.tableView.reloadData()
         }
         
     }

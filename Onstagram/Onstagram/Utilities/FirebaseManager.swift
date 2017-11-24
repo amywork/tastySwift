@@ -41,14 +41,11 @@ class FirebaseManager {
             let ref = Database.database().reference().child(uid)
             ref.observeSingleEvent(of: .value, with: { snapshot in
                 if let dic = snapshot.value as? [String:Any] {
-                    DispatchQueue.main.async {
                         completion(dic)
-                    }
                 }
             })
         }
     }
-    
     
     /*Firebase Upload*/
     
@@ -122,6 +119,25 @@ class FirebaseManager {
             }
             completion(false, nil)
         }
+    }
+    
+    typealias downloadComments = (_ isSuccess: Bool, _ value: Any?) -> Void
+    // MARK: - download comments from server
+    func loadComments(postKey: String, completion: @escaping downloadComments) {
+        let ref = Database.database().reference().child(self.uid).child("Comment").child(postKey)
+        var comments = [CommentModel]()
+        ref.observeSingleEvent(of: DataEventType.value) { (snapshot) in
+            print(snapshot.value)
+            guard let value = snapshot.value as? [String:[String:String]] else { return }
+                for (key,value) in value {
+                    var comment = CommentModel(dic: value)
+                    comment?.key = key
+                    print("COMMENT 로드까지는 잘 왔음")
+                    comments.append(comment!)
+                }
+            completion(true,comments)
+        }
+        
     }
 
 }

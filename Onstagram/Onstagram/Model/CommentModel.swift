@@ -9,9 +9,17 @@
 import Foundation
 
 struct CommentModel {
+   
     var body: String
     var key: String?
+    
     init(contents: String) {
         self.body = contents
     }
+    
+    init?(dic: [String:String]) {
+        guard let body = dic["body"] else { return nil }
+        self.body = body
+    }
+    
 }
