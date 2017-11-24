@@ -77,12 +77,9 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
     }
     
     // MARK: - ImagePickerDelegate
-    func photoselectorDidSelectedImage(_ selectedImgae: UIImage) {
-        self.profileImgView.image = selectedImgae
-        FirebaseManager.shared.currentUser.profileImg = selectedImgae
-        if let data = FirebaseManager.shared.currentUser.profileImgData {
-            FirebaseManager.shared.uploadImg(selectedImgData: data)
-        }
+    func photoselectorDidSelectedImage(_ selectedImage: UIImage) {
+        self.profileImgView.image = selectedImage
+        FirebaseManager.shared.uploadImg(selectedImgData: selectedImage.generateJPEGData())
     }
     
     // MARK: - UI Property
@@ -213,13 +210,13 @@ extension ExploreVC: UITableViewDelegate, UITableViewDataSource {
         switch editingStyle {
         case .delete:
             let index = indexPath.row
-            postData.remove(at: index)
-            tableView.reloadData()
             FirebaseManager.shared.removeSinglePost(key: postData[index].postKey!, completion: { (isSuccess) in
                 if isSuccess {
                     print("REMOVE 성공")
                 }
             })
+            postData.remove(at: index)
+            tableView.reloadData()
         default:
             break
         }
@@ -229,12 +226,14 @@ extension ExploreVC: UITableViewDelegate, UITableViewDataSource {
 
 
 /* Extension : CommentDelegate */
-extension ExploreVC: CommentDelegate {
+extension ExploreVC: CommentCellDelegate {
+  
     func postCellDidSelectedCommentBtn(_ data: PostModel) {
         let commentVC = UIStoryboard.main.makeCommentVC()
         commentVC.parentPost = data
         self.navigationController?.pushViewController(commentVC, animated: true)
     }
+    
 }
 
 

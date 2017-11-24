@@ -13,7 +13,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-/*Signleton FirebaseManager*/
+/*Singleton FirebaseManager*/
 class FirebaseManager {
     
     // MARK: - Property
@@ -32,8 +32,6 @@ class FirebaseManager {
     }
     
     typealias completion = (_ snapshot: Any?) -> Void
-    typealias removeCompletion = (_ isSuccess: Bool) -> Void
-    
     // MARK: - Download current user from server
     func loadCurrentUser(completion: @escaping completion) {
         if let user = Auth.auth().currentUser {
@@ -96,6 +94,7 @@ class FirebaseManager {
     
     
     // MARK: - remove post from server
+    typealias removeCompletion = (_ isSuccess: Bool) -> Void
     func removeSinglePost(key: String, completion: @escaping removeCompletion) {
         let postRef = Database.database().reference().child(self.uid).child("POST")
         postRef.child(key).removeValue { (error, ref) in
@@ -121,13 +120,12 @@ class FirebaseManager {
         }
     }
     
-    typealias downloadComments = (_ isSuccess: Bool, _ value: Any?) -> Void
     // MARK: - download comments from server
+    typealias downloadComments = (_ isSuccess: Bool, _ comments: Any?) -> Void
     func loadComments(postKey: String, completion: @escaping downloadComments) {
         let ref = Database.database().reference().child(self.uid).child("Comment").child(postKey)
         var comments = [CommentModel]()
         ref.observeSingleEvent(of: DataEventType.value) { (snapshot) in
-            print(snapshot.value)
             guard let value = snapshot.value as? [String:[String:String]] else { return }
                 for (key,value) in value {
                     var comment = CommentModel(dic: value)

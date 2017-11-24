@@ -41,7 +41,6 @@ extension Notification.Name {
     static let newPost : Notification.Name = Notification.Name("newPost")
 }
 
-
 extension UIStoryboard {
     
     static var main: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

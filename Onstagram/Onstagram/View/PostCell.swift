@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CommentDelegate {
+protocol CommentCellDelegate {
     func postCellDidSelectedCommentBtn(_ data: PostModel)
 }
 
@@ -18,7 +18,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var contentsTextView: UITextView!
 
-    var delegate: CommentDelegate?
+    var delegate: CommentCellDelegate?
+    
     @IBAction func didTapCommentBtn(_ sender: UIButton) {
         guard let postData = self.postData else { return }
         delegate?.postCellDidSelectedCommentBtn(postData)
@@ -26,7 +27,7 @@ class PostCell: UITableViewCell {
 
     var postData: PostModel? {
         didSet {
-            self.contentsTextView.text = postData?.postKey
+            self.contentsTextView.text = postData?.contents
             
             // Image from URL
             if let url = postData?.imgUrl {

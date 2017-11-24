@@ -10,7 +10,7 @@ import Photos
 
 // MARK: - Protocol
 protocol ImagePickerDelegate {
-    func photoselectorDidSelectedImage(_ selectedImgae:UIImage)
+    func photoselectorDidSelectedImage(_ selectedImage:UIImage)
 }
 
 enum ImagePickerLoadType {

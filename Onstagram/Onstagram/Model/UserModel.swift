@@ -37,17 +37,18 @@ struct UserModel {
         self.uid = uid
     }
     
-    /* Method */
-    // addUserInfo
+    /* UserModel Method */
+    // 01. addUserInfo
     mutating func addUserInfo(with snapshot: [String:Any]) {
         let imgUrl = snapshot["profile_img_url"] as? String
         self.profileImgUrl = imgUrl
-        let nickName = snapshot["nickname"] as? String
+        let nickName = snapshot["nickname"] as? String ?? "닉네임을 입력하세요"
         self.nickName = nickName
-        let status = snapshot["status"] as? String
+        let status = snapshot["status"] as? String ?? "상태 메시지를 입력하세요"
         self.statusMessage = status
        
         if let postSnapshot = snapshot["POST"] as? [String:[String:String]] {
+            // tuple을 통한 PostModel 생성
             for (key,value) in postSnapshot {
                 if let newpost = PostModel(with: value) {
                     var post = newpost
