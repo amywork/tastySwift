@@ -33,14 +33,14 @@
                     </textView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLc-U5-V5n">
                         <rect key="frame" x="299" y="85" width="95" height="28"/>
-                        <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="95" id="sLG-1R-O11"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Comment">
-                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="댓글 남기기">
+                            <color key="titleColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
                         </state>
                         <connections>
                             <action selector="didTapCommentBtn:" destination="ZEL-jL-eV9" eventType="touchUpInside" id="Vsf-Jg-JFp"/>

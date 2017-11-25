@@ -27,18 +27,15 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
                 if isSuccess {
                     if let key = key {
                         newPost.postKey = key
-                        self?.postData.append(newPost)
-                        self?.tableView.reloadData()
-                        print(key)
+                        self?.postData.insert(newPost, at: 0)
+                        DispatchQueue.main.async {
+                            self?.tableView.reloadData()
+                            self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+                        }
                     }
                 }
             })
         }
-        
-        /* Observe User change
-        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-            self?.fetchUserData()
-        }*/
     }
     
     // MARK: - Setup
@@ -162,7 +159,7 @@ class ExploreVC: OnstagramVC, ImagePickerDelegate {
         }
         
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self](action) in
-            guard let nickName = alertController.textFields![0].text, !nickName.isEmpty else { return } // 알럿을 좌우로 흔들어주면 좋을듯
+            guard let nickName = alertController.textFields![0].text, !nickName.isEmpty else { return } 
             guard let statusText = alertController.textFields![1].text, !statusText.isEmpty else {return}
             self?.nickNameLB.text = nickName
             self?.statusLB.text = statusText

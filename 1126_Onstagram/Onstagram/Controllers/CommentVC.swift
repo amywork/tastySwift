@@ -34,16 +34,16 @@ class CommentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBAction func didTapSendBtn(_ sender: UIButton) {
         guard let body = commentTF.text else { return }
-        var newComment = CommentModel(contents: body)
-        parentPost?.comments.append(newComment)
+        let newComment = CommentModel(contents: body)
+        self.comments.append(newComment)
+        tableView.reloadData()
+        commentTF.text = ""
         guard let key = parentPost?.postKey else { return }
         FirebaseManager.shared.uploadComment(postKey: key, body: body) { (isSuccess, key) in
             if isSuccess {
-                newComment.key = key
                 print("FirebaseManager.shared.uploadComment")
             }
         }
-        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +54,7 @@ class CommentVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath)
         if let _ = parentPost {
             cell.textLabel?.text = comments[indexPath.row].body
         }
