@@ -1,2 +1,0 @@
-struct MappingError: Error {
-}
