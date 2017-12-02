@@ -9,19 +9,30 @@
 import Foundation
 import UIKit
 
+var imageCache = [String:UIImage]()
 extension UIImageView {
     
     func loadImage(URLstring : String, completion: @escaping (_ isSuccess: Bool)->Void) {
-        let url = URL(string : URLstring)!
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, response, error) in
+        
+        self.image = nil
+        
+        if let cachedImage = imageCache[URLstring] {
+            self.image = cachedImage
+            completion(true)
+            return
+        }
+        
+        guard let url = URL(string : URLstring) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("해당 image url에 이미지가 없습니다.")
                 print(error.localizedDescription)
+                return
             }
             if let data = data {
+                let photoImage = UIImage(data: data)
+                imageCache[url.absoluteString] = photoImage
                 DispatchQueue.main.async {
-                    self.image = UIImage(data: data)
+                    self.image = photoImage
                     completion(true)
                 }
             }
@@ -29,7 +40,6 @@ extension UIImageView {
     }
     
 }
-
 
 extension UIImage {
     func generateJPEGData() -> Data {
