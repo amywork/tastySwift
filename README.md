@@ -84,10 +84,10 @@
 
 # 04. Demo Projects
 ## Instagram Copied
-- [3일만에 인스타그램 핵심기능 구현하기, 파이어베이스 서버 활용](https://github.com/younari/tastySwift/tree/master/1126_Onstagram)
+- [인스타그램 핵심기능 구현하기, 파이어베이스 서버](https://github.com/younari/tastySwift/tree/master/1205_Onstagram)
 
 ## Music Player
-- [Music Player : Custom Cover Flow Layout & Collection View](https://github.com/younari/tastySwift/tree/master/1201_MusicPlayer)
+- [Music Player : Custom Cover Flow Layout & Collection View](https://github.com/younari/tastySwift/tree/master/1126_CoverFlowLayout)
 
 ## Open Weather API
 - [Open Weather API를 적용한 2페이지 앱 만들기](https://github.com/younari/tastySwift/tree/master/1116_OpenWeather)
@@ -122,3 +122,4 @@
 - [2017년 9월, Apple Events](https://younari.github.io/2017-09-12/AppleEvents2017)
 - [2017년 11월, 페이스북 밋업 참가 기록](https://younari.github.io/2017-11-05/FacebookPlatform)
 - 2017년 12월, Swift Meetup Seoul
+
