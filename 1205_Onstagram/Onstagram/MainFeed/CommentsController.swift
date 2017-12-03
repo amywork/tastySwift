@@ -20,14 +20,11 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
         super.viewDidLoad()
         
         navigationItem.title = "Comments"
-        
         collectionView?.backgroundColor = .white
         collectionView?.alwaysBounceVertical = true
         collectionView?.keyboardDismissMode = .interactive
-        
         collectionView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -50, right: 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: -50, right: 0)
-        
         collectionView?.register(CommentCell.self, forCellWithReuseIdentifier: cellId)
         
         fetchComments()
@@ -36,18 +33,23 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
     fileprivate func fetchComments() {
         guard let postId = self.post?.id else { return }
         let ref = Database.database().reference().child("comments").child(postId)
-        ref.observe(.childAdded, with: { (snapshot) in
-            
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let dictionary = snapshot.value as? [String: Any] else { return }
-            guard let uid = dictionary["uid"] as? String else { return }
-            
-            Database.fetchUserWithUID(uid: uid, completion: { (user) in
-                
-                let comment = Comment(user: user, dictionary: dictionary)
-                self.comments.append(comment)
-                self.collectionView?.reloadData()
+            dictionary.forEach({ (key,value) in
+                guard let valueDic = value as? [String: Any] else { return }
+                guard let uid = valueDic["uid"] as? String else { return }
+                Database.database().reference()
+                    .child("users")
+                    .child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let userDictionary = snapshot.value as? [String: Any] ?? [:]
+                        let user = User(uid: uid, dictionary: userDictionary)
+                        let comment = Comment(user: user, dictionary: valueDic)
+                        DispatchQueue.main.async {
+                            self.comments.append(comment)
+                            self.collectionView?.reloadData()
+                        }
+                    })
             })
-            
         }) { (err) in
             print("Failed to observe comments")
         }
@@ -58,15 +60,12 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         let dummyCell = CommentCell(frame: frame)
         dummyCell.comment = comments[indexPath.item]
         dummyCell.layoutIfNeeded()
-        
         let targetSize = CGSize(width: view.frame.width, height: 1000)
         let estimatedSize = dummyCell.systemLayoutSizeFitting(targetSize)
-        
         let height = max(40 + 8 + 8, estimatedSize.height)
         return CGSize(width: view.frame.width, height: height)
     }
@@ -77,10 +76,12 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CommentCell
-        
         cell.comment = self.comments[indexPath.item]
-        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,15 +130,21 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
         let postId = self.post?.id ?? ""
         let values = ["text": commentTextField.text ?? "", "creationDate": Date().timeIntervalSince1970, "uid": uid] as [String : Any]
         
-        Database.database().reference().child("comments").child(postId).childByAutoId().updateChildValues(values) { (err, ref) in
-            
-            if let err = err {
-                print("Failed to insert comment:", err)
-                return
-            }
-            
-            print("Successfully inserted comment.")
-            self.commentTextField.text = nil
+        Database.database().reference()
+            .child("comments")
+            .child(postId)
+            .childByAutoId()
+            .updateChildValues(values) { (err, ref) in
+                if let err = err {
+                    print("Failed to insert comment:", err)
+                    return
+                }
+                print("Successfully inserted comment.")
+                self.commentTextField.text = nil
+                DispatchQueue.main.async {
+                    self.comments.removeAll()
+                    self.fetchComments()
+                }
         }
     }
     

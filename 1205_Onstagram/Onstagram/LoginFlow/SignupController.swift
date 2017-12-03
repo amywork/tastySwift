@@ -9,38 +9,64 @@ import FirebaseAuth
 class SignupController: UIViewController {
 
     // MARK: - UI Property
-    var emailTextField: UITextField = {
+    let logoContainerView: UIView = {
+        let view = UIView()
+        let label = UILabel()
+        view.addSubview(label)
+        label.text = "Join Onstagram"
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 40)
+        view.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        return view
+    }()
+    
+    let emailTextField: UITextField = {
         let tf = UITextField()
-        tf.layer.borderWidth = 1
-        tf.placeholder = "  id를 입력해주세요"
-        tf.backgroundColor = #colorLiteral(red: 0.7510083914, green: 0.8462013602, blue: 0.8357997537, alpha: 1)
+        tf.placeholder = "Email"
+        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
+        tf.borderStyle = .roundedRect
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
-    var pw1TextField: UITextField = {
+    let passwordTextField: UITextField = {
         let tf = UITextField()
-        tf.layer.borderWidth = 1
-        tf.placeholder = "  password를 입력해주세요"
-        tf.backgroundColor = #colorLiteral(red: 0.7510083914, green: 0.8462013602, blue: 0.8357997537, alpha: 1)
+        tf.placeholder = "Password"
+        tf.isSecureTextEntry = true
+        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
+        tf.borderStyle = .roundedRect
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
-    var pw2TextField: UITextField = {
-        let tf = UITextField()
-        tf.layer.borderWidth = 1
-        tf.placeholder = "  password를 확인해 주세요"
-        tf.backgroundColor = #colorLiteral(red: 0.7510083914, green: 0.8462013602, blue: 0.8357997537, alpha: 1)
-        return tf
-    }()
+    @objc func handleTextInputChange() {
+        if let _ = emailTextField.text, let _ = passwordTextField.text {
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = .blue
+        } else {
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = .lightGray
+        }
+    }
     
-    var doneBtn: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Sign up", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.addTarget(self, action: #selector(doneBtnHandler(_:)), for: .touchUpInside)
-        return btn
+    var signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Signin", for: .normal)
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.isEnabled = false
+        return button
     }()
-    
+
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -53,27 +79,16 @@ class SignupController: UIViewController {
 
 extension SignupController {
     
-    @objc func doneBtnHandler(_ sender: UIButton) {
+    @objc func handleSignUp(_ sender: UIButton) {
         guard let id = emailTextField.text, !id.isEmpty else {return}
-        guard let pw1 = pw1TextField.text else {return}
-        guard let pw2 = pw2TextField.text else {return}
-        guard pw1 == pw2 else {
-            let alert = UIAlertController(title: "패스워드 오류", message: "패스워드 일치 확인 해 주세요", preferredStyle: UIAlertControllerStyle.alert)
-            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alert.addAction(action)
-            alert.addTextField(configurationHandler: { (tf) in
-                tf.placeholder = "password"
-            })
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        Auth.auth().createUser(withEmail: id, password: pw1) { (user, error) in
+        guard let pw = passwordTextField.text else {return}
+        Auth.auth().createUser(withEmail: id, password: pw) { (user, error) in
             print(error.debugDescription)
             if error == nil {
-                Auth.auth().signIn(withEmail: id, password: pw1) { (user, error) in
+                Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
                     print(error.debugDescription)
                     if error == nil, let _ = user {
+                        NotificationCenter.default.post(name: NSNotification.Name.userChanged, object: nil)
                         DispatchQueue.main.async {
                             self.navigationController?.dismiss(animated: true, completion: nil)
                         }
@@ -84,16 +99,14 @@ extension SignupController {
     }
     
     private func setupLayout() {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField,pw1TextField,pw2TextField,doneBtn])
+        view.addSubview(logoContainerView)
+        logoContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 150)
+        let stackView = UIStackView(arrangedSubviews: [emailTextField,passwordTextField,signUpButton])
         self.view.addSubview(stackView)
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
+        stackView.spacing = 4
         stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 56).isActive = true
-        stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
-        stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+        stackView.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
     }
-    
 }

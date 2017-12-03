@@ -46,6 +46,7 @@ class MainPostCell: UICollectionViewCell {
     let userProfileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
+        iv.backgroundColor = .lightGray
         iv.clipsToBounds = true
         return iv
     }()
@@ -110,7 +111,7 @@ class MainPostCell: UICollectionViewCell {
         addSubview(photoImageView)
         
         userProfileImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 40, height: 40)
-        //userProfileImageView.layer.cornerRadius = 40 / 2
+        userProfileImageView.layer.cornerRadius = 40 / 2
         
         usernameLabel.anchor(top: topAnchor, left: userProfileImageView.rightAnchor, bottom: photoImageView.topAnchor, right: optionsButton.leftAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         

@@ -41,9 +41,14 @@ class MainController: OnstagramController, UICollectionViewDelegate, UICollectio
                                                name: Notification.Name.newPost,
                                                object: nil)
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(fetchUser),
+                                               name: Notification.Name.userChanged,
+                                               object: nil)
+        
     }
     
-    fileprivate func fetchUser() {
+    @objc fileprivate func fetchUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         Database.database().reference()
             .child("users")

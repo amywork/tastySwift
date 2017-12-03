@@ -127,7 +127,7 @@ class UserProfileHeader: UICollectionViewCell {
     
     let profileImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "profile")
+        iv.image = #imageLiteral(resourceName: "NoImage")
         iv.contentMode = .scaleAspectFit
         return iv
     }()

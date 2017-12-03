@@ -26,6 +26,9 @@ extension UIImageView {
         guard let url = URL(string : URLstring) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
+                DispatchQueue.main.async {
+                    self.image = #imageLiteral(resourceName: "NoImage")
+                }
                 print(error.localizedDescription)
                 return
             }
@@ -48,7 +51,8 @@ extension UIImage {
 }
 
 extension Notification.Name {
-    static let newPost : Notification.Name = Notification.Name("newPost")
+    static let newPost: Notification.Name = Notification.Name("newPost")
+    static let userChanged: Notification.Name = Notification.Name("userChanged")
 }
 
 extension UIStoryboard {

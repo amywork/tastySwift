@@ -9,40 +9,73 @@ import FirebaseAuth
 class LoginController: UIViewController  {
     
     // MARK: - UI Property
-    var emailTextField: UITextField = {
+    let logoContainerView: UIView = {
+        let view = UIView()
+        let label = UILabel()
+        view.addSubview(label)
+        label.text = "Onstagram"
+        label.font = UIFont.boldSystemFont(ofSize: 36)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 200, height: 40)
+        view.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        return view
+    }()
+    
+    let emailTextField: UITextField = {
         let tf = UITextField()
-        tf.layer.borderWidth = 1
-        tf.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.8470588235, blue: 0.8352941176, alpha: 1)
-        tf.placeholder = "  ID를 입력해주세요"
-        tf.text = "dean0124@naver.com"
+        tf.placeholder = "Email"
+        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
+        tf.borderStyle = .roundedRect
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
    
-    var pw1TextField: UITextField = {
+    let passwordTextField: UITextField = {
         let tf = UITextField()
-        tf.layer.borderWidth = 1
-        tf.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.8470588235, blue: 0.8352941176, alpha: 1)
-        tf.placeholder = "  password를 입력해주세요"
-        tf.text = "so57csd#@!"
+        tf.placeholder = "Password"
+        tf.isSecureTextEntry = true
+        tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
+        tf.borderStyle = .roundedRect
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
         return tf
     }()
     
-    var doneBtn: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("로그인", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.8470588235, blue: 0.8352941176, alpha: 1)
-        btn.addTarget(self, action: #selector(doneBtnHandler(_:)), for: .touchUpInside)
-        return btn
+    @objc func handleTextInputChange() {
+        if let _ = emailTextField.text, let _ = passwordTextField.text {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = .blue
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = .lightGray
+        }
+    }
+    
+    var loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Signin", for: .normal)
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.isEnabled = false
+        return button
     }()
     
-    var signUpBtn: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("회원가입", for: .normal)
-        btn.setTitleColor(UIColor.black, for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.8470588235, blue: 0.8352941176, alpha: 1)
-        btn.addTarget(self, action: #selector(signUpBtnHandler(_:)), for: .touchUpInside)
-        return btn
+    var signupButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Signup", for: .normal)
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
+        return button
     }()
     
     // setupLayout
@@ -57,19 +90,14 @@ class LoginController: UIViewController  {
 // MARK: - UI methods
 extension LoginController : UITextFieldDelegate {
 
-    @objc func doneBtnHandler(_ sender: UIButton) {
-        guard let id = emailTextField.text, let pw = pw1TextField.text else {
-            let alert = UIAlertController(title: "로그인 실패",
-                                          message: "아이디 혹은 패스워드를 확인해주세요",
-                                          preferredStyle: UIAlertControllerStyle.alert)
-            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
+    @objc func handleLogin(_ sender: UIButton) {
+        let id = emailTextField.text
+        let pw = passwordTextField.text
+        Auth.auth().signIn(withEmail: id!, password: pw!) { (user, error) in
             if error == nil {
+                
+                NotificationCenter.default.post(name: NSNotification.Name.userChanged, object: nil)
+                
                 DispatchQueue.main.async {
                    self.navigationController?.dismiss(animated: true, completion: nil)
                 }
@@ -79,27 +107,27 @@ extension LoginController : UITextFieldDelegate {
         }
     }
     
-    @objc func signUpBtnHandler(_ sender: UIButton) {
+    @objc func handleSignup(_ sender: UIButton) {
         let signupVC = UIStoryboard.main.makeSignupVC()
         signupVC.navigationController?.isNavigationBarHidden = true
         self.navigationController?.pushViewController(signupVC, animated: true)
     }
 
     private func setupLayout() {
-        let btnStackView = UIStackView(arrangedSubviews: [signUpBtn,doneBtn])
+        view.addSubview(logoContainerView)
+        logoContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 150)
+        let btnStackView = UIStackView(arrangedSubviews: [signupButton,loginButton])
         btnStackView.alignment = .fill
         btnStackView.distribution = .fillEqually
+        btnStackView.spacing = 4
         btnStackView.axis = .horizontal
-        let stackView = UIStackView(arrangedSubviews: [emailTextField,pw1TextField,btnStackView])
+        let stackView = UIStackView(arrangedSubviews: [emailTextField,passwordTextField,btnStackView])
         self.view.addSubview(stackView)
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
+        stackView.spacing = 4
         stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 56).isActive = true
-        stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2).isActive = true
-        stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+        stackView.anchor(top: logoContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 140)
     }
     
 }
