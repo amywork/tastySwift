@@ -10,15 +10,19 @@ import UIKit
 import Firebase
 
 class MainController: OnstagramController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MainPostCellDelegate {
-
+    
+    
+    var currentUser: User?
+    
+    var collectionView: UICollectionView?
     let cellId = "cellId"
     var posts = [Post]()
     
-    var collectionView: UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        fetchUser()
+        
         // collectionView
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         self.view.addSubview(collectionView!)
@@ -37,50 +41,71 @@ class MainController: OnstagramController, UICollectionViewDelegate, UICollectio
                                                name: Notification.Name.newPost,
                                                object: nil)
         
-        // setupNavigationItems()
-        fetchAllPosts()
+    }
+    
+    fileprivate func fetchUser() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Database.database().reference()
+            .child("users")
+            .child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                let userDictionary = snapshot.value as? [String: Any] ?? [:]
+                self.currentUser = User(uid: uid, dictionary: userDictionary)
+                DispatchQueue.main.async {
+                    self.fetchAllPosts()
+                }
+            })
     }
     
     @objc func handleRefresh() {
         posts.removeAll()
+        self.collectionView?.reloadData()
         fetchAllPosts()
     }
-    
+
     fileprivate func fetchAllPosts() {
         fetchCurrentUserPosts()
         fetchFollowingUserIds()
     }
     
     fileprivate func fetchCurrentUserPosts() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        self.fetchPostsWithUser(uid: uid)
+        guard let user = currentUser else { return }
+        self.fetchPostsWith(user: user)
     }
     
     fileprivate func fetchFollowingUserIds() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let user = currentUser else { return }
         Database.database().reference()
             .child("following")
-            .child(uid)
+            .child(user.uid)
             .observeSingleEvent(of: .value, with: { (snapshot) in
             guard let userIdsDictionary = snapshot.value as? [String: Any] else { return }
             userIdsDictionary.forEach({ (key, value) in
-                self.fetchPostsWithUser(uid: key)
+                Database.database().reference()
+                    .child("users")
+                    .child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let userDictionary = snapshot.value as? [String: Any] ?? [:]
+                        let followingUser = User(uid: key, dictionary: userDictionary)
+                        DispatchQueue.main.async {
+                            self.fetchPostsWith(user: followingUser)
+                        }
+                    })
             })
         }) { (err) in
             print("Failed to fetch following user ids:", err)
         }
     }
     
-    fileprivate func fetchPostsWithUser(uid: String) {
-        let ref = Database.database().reference().child("posts").child(uid)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+    fileprivate func fetchPostsWith(user: User) {
+        Database.database().reference()
+            .child("posts")
+            .child(user.uid)
+            .observeSingleEvent(of: .value, with: { (snapshot) in
             self.collectionView?.refreshControl?.endRefreshing()
             
             guard let dictionaries = snapshot.value as? [String: Any] else { return }
             
             dictionaries.forEach({ (key, value) in
                 guard let dictionary = value as? [String: Any] else { return }
-                let user = User(uid: uid, dictionary: [:])
                 var post = Post(user: user , dictionary: dictionary)
                 post.id = key
                 

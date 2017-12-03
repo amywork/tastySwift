@@ -19,21 +19,24 @@ class MainPostCell: UICollectionViewCell {
     
     var post: Post? {
         didSet {
-            guard let postImageUrl = post?.imageUrl else { return }
+            usernameLabel.text = "UserName"
             likeButton.setImage(post?.hasLiked == true ? #imageLiteral(resourceName: "like_selected").withRenderingMode(.alwaysOriginal) : #imageLiteral(resourceName: "like_unselected").withRenderingMode(.alwaysOriginal), for: .normal)
-            photoImageView.loadImage(URLstring: postImageUrl)
-            usernameLabel.text = post?.user.username
-            guard let profileImageUrl = post?.user.profileImageUrl else { return }
-            userProfileImageView.loadImage(URLstring: profileImageUrl)
+            if let postImageUrl = post?.imageUrl {
+                photoImageView.loadImage(URLstring: postImageUrl)
+            }
+            if let profileImageUrl = post?.user.profileImageUrl {
+                userProfileImageView.loadImage(URLstring: profileImageUrl)
+            }else {
+                userProfileImageView.image = #imageLiteral(resourceName: "ProfileOff")
+            }
             setupAttributedCaption()
         }
     }
     
     fileprivate func setupAttributedCaption() {
         guard let post = self.post else { return }
-        
-        let attributedText = NSMutableAttributedString(string: post.user.username, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
-        attributedText.append(NSAttributedString(string: " \(post.caption)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
+        let attributedText = NSMutableAttributedString(string: "\(post.user.uid)\n", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
+        attributedText.append(NSAttributedString(string: "\(post.caption)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
         attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 4)]))
         let timeAgoDisplay = post.creationDate.timeAgoDisplay()
         attributedText.append(NSAttributedString(string: timeAgoDisplay, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.gray]))
@@ -93,18 +96,6 @@ class MainPostCell: UICollectionViewCell {
         delegate?.didTapComment(post: post)
     }
     
-    let sendMessageButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "comment").withRenderingMode(.alwaysOriginal), for: .normal)
-        return button
-    }()
-    
-    let bookmarkButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "like_unselected").withRenderingMode(.alwaysOriginal), for: .normal)
-        return button
-    }()
-    
     let captionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -119,7 +110,7 @@ class MainPostCell: UICollectionViewCell {
         addSubview(photoImageView)
         
         userProfileImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 40, height: 40)
-        userProfileImageView.layer.cornerRadius = 40 / 2
+        //userProfileImageView.layer.cornerRadius = 40 / 2
         
         usernameLabel.anchor(top: topAnchor, left: userProfileImageView.rightAnchor, bottom: photoImageView.topAnchor, right: optionsButton.leftAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
@@ -135,13 +126,10 @@ class MainPostCell: UICollectionViewCell {
     }
     
     fileprivate func setupActionButtons() {
-        let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, sendMessageButton])
+        let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton])
         stackView.distribution = .fillEqually
         addSubview(stackView)
-        stackView.anchor(top: photoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 4, paddingBottom: 0, paddingRight: 0, width: 120, height: 50)
-        
-        addSubview(bookmarkButton)
-        bookmarkButton.anchor(top: photoImageView.bottomAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 40, height: 50)
+        stackView.anchor(top: photoImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 4, paddingBottom: 0, paddingRight: 0, width: 60, height: 40)
     }
     
     required init?(coder aDecoder: NSCoder) {
