@@ -30,8 +30,8 @@ class MainController: OnstagramController, UICollectionViewDelegate, UICollectio
         collectionView?.register(MainPostCell.self, forCellWithReuseIdentifier: cellId)
         
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         collectionView?.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         
         // newPost
         NotificationCenter.default.addObserver(self,
@@ -91,13 +91,9 @@ class MainController: OnstagramController, UICollectionViewDelegate, UICollectio
     
     func didLike(for cell: MainPostCell) {
         guard let indexPath = collectionView?.indexPath(for: cell) else { return }
-        
         var post = self.posts[indexPath.item]
-        print(post.caption)
-        
         guard let postId = post.id else { return }
-        
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = self.currentUser?.uid else { return }
         
         let values = [uid: post.hasLiked == true ? 0 : 1]
         Database.database().reference().child("likes").child(postId).updateChildValues(values) { (err, _) in
@@ -108,9 +104,7 @@ class MainController: OnstagramController, UICollectionViewDelegate, UICollectio
             }
             
             print("Successfully liked post.")
-            
             post.hasLiked = !post.hasLiked
-            
             self.posts[indexPath.item] = post
             self.collectionView?.reloadItems(at: [indexPath])
             

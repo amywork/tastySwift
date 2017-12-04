@@ -12,13 +12,16 @@ import Firebase
 class UserProfileController: OnstagramController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UserProfileHeaderDelegate {
     
     var currentUser: User?
-   
+    var posts = [Post]()
+    
     var collectionView: UICollectionView?
     let cellId = "cellId"
     let mainPostCellId = "homePostCellId"
     let headerId = "headerId"
     var isGridView = true
-   
+    var isFinishedPaging = false
+    
+    
     func didChangeToGridView() {
         isGridView = true
         collectionView?.reloadData()
@@ -33,7 +36,8 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
         super.viewDidLoad()
         fetchUser()
         paginatePosts()
-      
+        setupLogOutButton()
+       
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         self.view.addSubview(collectionView!)
         collectionView?.delegate = self
@@ -42,16 +46,14 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
         collectionView?.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView?.register(UserProfilePhotoCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(MainPostCell.self, forCellWithReuseIdentifier: mainPostCellId)
+      
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(paginatePosts),
                                                name: Notification.Name.newPost,
                                                object: nil)
-      
-        setupLogOutButton()
     }
 
-    var isFinishedPaging = false
-    var posts = [Post]()
+   
     
     fileprivate func fetchUser() {
         guard let uid = GlobalState.instance.uid, let email = GlobalState.instance.email else { return }
@@ -63,40 +65,31 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
         guard let uid = self.currentUser?.uid else { return }
         let ref = Database.database().reference().child("posts").child(uid)
         var query = ref.queryOrdered(byChild: "creationDate")
-        
         if posts.count > 0 {
             let value = posts.last?.creationDate.timeIntervalSince1970
             query = query.queryEnding(atValue: value)
         }
         
         query.queryLimited(toLast: 4).observeSingleEvent(of: .value, with: { (snapshot) in
-            
             guard var allObjects = snapshot.children.allObjects as? [DataSnapshot] else { return }
-            
             allObjects.reverse()
-            
             if allObjects.count < 4 {
                 self.isFinishedPaging = true
             }
-            
             // For removing repeating images
             if self.posts.count > 0 && allObjects.count > 0 {
                 allObjects.removeFirst()
             }
-            
             guard let user = self.currentUser else { return }
-            
             allObjects.forEach({ (snapshot) in
-                
                 guard let dictionary = snapshot.value as? [String: Any] else { return }
                 var post = Post(uid: user.uid, dictionary: dictionary)
                 post.id = snapshot.key
                 self.posts.append(post)
-                
             })
-            
-            self.collectionView?.reloadData()
-            
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+            }
         }) { (err) in
             print("Failed to paginate for posts:", err)
         }
