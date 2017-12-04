@@ -31,7 +31,7 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     fileprivate func fetchComments() {
-        guard let postId = self.post?.id else { return }
+        guard let postId = self.post?.key else { return }
         let ref = Database.database().reference().child("comments").child(postId)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let dictionary = snapshot.value as? [String: Any] else { return }
@@ -127,7 +127,7 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
     
     @objc func handleSubmit() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let postId = self.post?.id ?? ""
+        let postId = self.post?.key ?? ""
         let values = ["text": commentTextField.text ?? "", "creationDate": Date().timeIntervalSince1970, "uid": uid] as [String : Any]
         
         Database.database().reference()

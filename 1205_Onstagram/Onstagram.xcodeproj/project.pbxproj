@@ -15,7 +15,6 @@
 		4B5F76A61FC37AA0002CA676 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76A21FC37AA0002CA676 /* SignupController.swift */; };
 		4B5F76A81FC37AA0002CA676 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F76A41FC37AA0002CA676 /* LoginController.swift */; };
 		4B5F76B31FC37B95002CA676 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B5F76B21FC37B95002CA676 /* GoogleService-Info.plist */; };
-		4B6A993A1FD3804600B4DB25 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99391FD3804600B4DB25 /* MainController.swift */; };
 		4B6A993C1FD3818500B4DB25 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A993B1FD3818500B4DB25 /* Post.swift */; };
 		4B6A993E1FD3819400B4DB25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A993D1FD3819400B4DB25 /* User.swift */; };
 		4B6A99401FD381A100B4DB25 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A993F1FD381A100B4DB25 /* Comment.swift */; };
@@ -48,7 +47,6 @@
 		4B5F76A21FC37AA0002CA676 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		4B5F76A41FC37AA0002CA676 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4B5F76B21FC37B95002CA676 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4B6A99391FD3804600B4DB25 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		4B6A993B1FD3818500B4DB25 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4B6A993D1FD3819400B4DB25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4B6A993F1FD381A100B4DB25 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -108,9 +106,8 @@
 				DDC89AFF1FC58265009610DF /* OnstagramController.swift */,
 				DDC89AFD1FC580AC009610DF /* Utilities */,
 				4B6A99411FD381AD00B4DB25 /* Models */,
-				4B6A994F1FD385DB00B4DB25 /* MainFeed */,
+				4B6A99481FD3839000B4DB25 /* MyHome */,
 				4B5F76AC1FC37AC2002CA676 /* AddPost */,
-				4B6A99481FD3839000B4DB25 /* Profile */,
 				4B9753EF1FC45D17003EE0CB /* LoginFlow */,
 			);
 			path = Onstagram;
@@ -143,33 +140,25 @@
 		4B6A99411FD381AD00B4DB25 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4B6A993B1FD3818500B4DB25 /* Post.swift */,
 				4B6A993D1FD3819400B4DB25 /* User.swift */,
+				4B6A993B1FD3818500B4DB25 /* Post.swift */,
 				4B6A993F1FD381A100B4DB25 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		4B6A99481FD3839000B4DB25 /* Profile */ = {
+		4B6A99481FD3839000B4DB25 /* MyHome */ = {
 			isa = PBXGroup;
 			children = (
 				4B6A99421FD3833E00B4DB25 /* UserProfileController.swift */,
 				4B6A99441FD3836500B4DB25 /* UserProfileHeader.swift */,
 				4B6A99461FD3838300B4DB25 /* UserProfilePhotoCell.swift */,
-			);
-			name = Profile;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		4B6A994F1FD385DB00B4DB25 /* MainFeed */ = {
-			isa = PBXGroup;
-			children = (
-				4B6A99391FD3804600B4DB25 /* MainController.swift */,
 				4B6A99491FD3853000B4DB25 /* MainPostCell.swift */,
 				4B6A994B1FD385BC00B4DB25 /* CommentsController.swift */,
 				4B6A994D1FD385D300B4DB25 /* CommentCell.swift */,
 			);
-			path = MainFeed;
+			name = MyHome;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		4B9753EF1FC45D17003EE0CB /* LoginFlow */ = {
@@ -349,7 +338,6 @@
 				4B6A99511FD386DE00B4DB25 /* PostController.swift in Sources */,
 				4B5F76A61FC37AA0002CA676 /* SignupController.swift in Sources */,
 				DDC89B001FC58265009610DF /* OnstagramController.swift in Sources */,
-				4B6A993A1FD3804600B4DB25 /* MainController.swift in Sources */,
 				4B5F76A81FC37AA0002CA676 /* LoginController.swift in Sources */,
 				4B6A99571FD4CCC800B4DB25 /* GlobalState.swift in Sources */,
 				4B6A99451FD3836500B4DB25 /* UserProfileHeader.swift in Sources */,

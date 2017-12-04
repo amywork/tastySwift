@@ -25,25 +25,30 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self // UITabBarControllerDelegate
         setupViewControllers()
     }
+    
+    // MARK: - checkLogin
+    private func checkLogin() -> Bool {
+        if Auth.auth().currentUser == nil {
+            return false
+        }else {
+            return true
+        }
+    }
 
     private func setupViewControllers() {
-        // 01. "Main" tab
-        let mainTab = MainController()
-        mainTab.tabIndexType = .Main
-        let mainNavi = templateNaviController(title: "home", unselectedImage: #imageLiteral(resourceName: "Feed_Off"), selectedImage: #imageLiteral(resourceName: "Feed_On"), rootViewController: mainTab)
+        // Tab 01
+        let myHomeTab = UserProfileController()
+        myHomeTab.tabIndexType = .MyHome
+        let myHomeNavi = templateNaviController(title: "My Home", unselectedImage: #imageLiteral(resourceName: "Feed_Off"), selectedImage: #imageLiteral(resourceName: "Feed_On"), rootViewController: myHomeTab)
+        myHomeTab.navigationItem.title = "Onstagram"
         
-        // 02. "AddPost" tab
+        // Tab 02
         let addPostTab = OnstagramController()
-        addPostTab.tabBarItem = UITabBarItem(title: "post", image: #imageLiteral(resourceName: "Camera_Off"), selectedImage: #imageLiteral(resourceName: "Camera_On"))
+        addPostTab.tabBarItem = UITabBarItem(title: "New Post", image: #imageLiteral(resourceName: "Camera_Off"), selectedImage: #imageLiteral(resourceName: "Camera_On"))
         addPostTab.tabIndexType = .AddPost
         
-        // 03. "Profile" tab
-        let profileTab = UserProfileController()
-        profileTab.tabIndexType = .Profile
-        let profileNavi = templateNaviController(title: "profile", unselectedImage: #imageLiteral(resourceName: "ProfileOff"), selectedImage: #imageLiteral(resourceName: "ProfileOn"), rootViewController: profileTab)
-       
         tabBar.tintColor = .black
-        self.viewControllers = [mainNavi, addPostTab, profileNavi]
+        self.viewControllers = [myHomeNavi,addPostTab]
     }
 
     // MARK: - should select viewController?
@@ -61,15 +66,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             break
         }
         return true
-    }
-    
-    // MARK: - checkLogin
-    private func checkLogin() -> Bool {
-        if Auth.auth().currentUser == nil {
-            return false
-        }else {
-           return true
-        }
     }
 
     fileprivate func templateNaviController(title: String, unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {

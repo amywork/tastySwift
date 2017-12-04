@@ -33,7 +33,7 @@ struct FirebaseAPI: API {
                 dictionaries.forEach({ (key, value) in
                     guard let dictionary = value as? [String: Any] else { return }
                     var post = Post(uid: uid , dictionary: dictionary)
-                    post.id = key
+                    post.key = key
                     posts.append(post)
                     self.baseReference.child("likes")
                         .child(key)

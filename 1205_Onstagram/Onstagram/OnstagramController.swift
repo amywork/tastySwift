@@ -9,9 +9,8 @@
 import UIKit
 
 enum TabItemControllerType {
-    case Main
+    case MyHome
     case AddPost
-    case Profile
 }
 
 class OnstagramController: UIViewController {

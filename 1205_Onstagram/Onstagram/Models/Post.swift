@@ -10,9 +10,9 @@ import Foundation
 
 struct Post {
     
-    var id: String?
-    
     let uid: String
+    
+    var key: String?
     let imageUrl: String
     let caption: String
     let creationDate: Date

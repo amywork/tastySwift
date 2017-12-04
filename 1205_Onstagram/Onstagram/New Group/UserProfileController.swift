@@ -84,7 +84,7 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
             allObjects.forEach({ (snapshot) in
                 guard let dictionary = snapshot.value as? [String: Any] else { return }
                 var post = Post(uid: user.uid, dictionary: dictionary)
-                post.id = snapshot.key
+                post.key = snapshot.key
                 self.posts.append(post)
             })
             DispatchQueue.main.async {
@@ -181,7 +181,37 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
     
 }
 
-
+extension UserProfileController: MainPostCellDelegate {
+    
+    func didTapComment(post: Post) {
+        print(post.caption)
+        let commentsController = CommentsController(collectionViewLayout: UICollectionViewFlowLayout())
+        commentsController.post = post
+        navigationController?.pushViewController(commentsController, animated: true)
+    }
+    
+    func didLike(for cell: MainPostCell) {
+        guard let indexPath = collectionView?.indexPath(for: cell) else { return }
+        var post = self.posts[indexPath.item]
+        guard let postId = post.key else { return }
+        guard let uid = self.currentUser?.uid else { return }
+        
+        let values = [uid: post.hasLiked == true ? 0 : 1]
+        Database.database().reference().child("likes").child(postId).updateChildValues(values) { (err, _) in
+            
+            if let err = err {
+                print("Failed to like post:", err)
+                return
+            }
+            
+            print("Successfully liked post.")
+            post.hasLiked = !post.hasLiked
+            self.posts[indexPath.item] = post
+            self.collectionView?.reloadItems(at: [indexPath])
+            
+        }
+    }
+}
 
 
 
