@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     private func setupViewControllers() {
         // Tab 01
-        let myHomeTab = UserProfileController()
+        let myHomeTab = MyHomeController()
         myHomeTab.tabIndexType = .MyHome
         let myHomeNavi = templateNaviController(title: "My Home", unselectedImage: #imageLiteral(resourceName: "Feed_Off"), selectedImage: #imageLiteral(resourceName: "Feed_On"), rootViewController: myHomeTab)
         myHomeTab.navigationItem.title = "Onstagram"

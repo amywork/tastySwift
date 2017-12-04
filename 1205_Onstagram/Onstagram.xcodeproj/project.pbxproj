@@ -18,10 +18,10 @@
 		4B6A993C1FD3818500B4DB25 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A993B1FD3818500B4DB25 /* Post.swift */; };
 		4B6A993E1FD3819400B4DB25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A993D1FD3819400B4DB25 /* User.swift */; };
 		4B6A99401FD381A100B4DB25 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A993F1FD381A100B4DB25 /* Comment.swift */; };
-		4B6A99431FD3833E00B4DB25 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99421FD3833E00B4DB25 /* UserProfileController.swift */; };
-		4B6A99451FD3836500B4DB25 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99441FD3836500B4DB25 /* UserProfileHeader.swift */; };
-		4B6A99471FD3838300B4DB25 /* UserProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99461FD3838300B4DB25 /* UserProfilePhotoCell.swift */; };
-		4B6A994A1FD3853000B4DB25 /* MainPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99491FD3853000B4DB25 /* MainPostCell.swift */; };
+		4B6A99431FD3833E00B4DB25 /* MyHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99421FD3833E00B4DB25 /* MyHomeController.swift */; };
+		4B6A99451FD3836500B4DB25 /* MyHomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99441FD3836500B4DB25 /* MyHomeHeader.swift */; };
+		4B6A99471FD3838300B4DB25 /* PostGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99461FD3838300B4DB25 /* PostGridCell.swift */; };
+		4B6A994A1FD3853000B4DB25 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99491FD3853000B4DB25 /* PostListCell.swift */; };
 		4B6A994C1FD385BC00B4DB25 /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A994B1FD385BC00B4DB25 /* CommentsController.swift */; };
 		4B6A994E1FD385D300B4DB25 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A994D1FD385D300B4DB25 /* CommentCell.swift */; };
 		4B6A99511FD386DE00B4DB25 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99501FD386DE00B4DB25 /* PostController.swift */; };
@@ -50,10 +50,10 @@
 		4B6A993B1FD3818500B4DB25 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4B6A993D1FD3819400B4DB25 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4B6A993F1FD381A100B4DB25 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		4B6A99421FD3833E00B4DB25 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
-		4B6A99441FD3836500B4DB25 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
-		4B6A99461FD3838300B4DB25 /* UserProfilePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoCell.swift; sourceTree = "<group>"; };
-		4B6A99491FD3853000B4DB25 /* MainPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostCell.swift; sourceTree = "<group>"; };
+		4B6A99421FD3833E00B4DB25 /* MyHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeController.swift; sourceTree = "<group>"; };
+		4B6A99441FD3836500B4DB25 /* MyHomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeHeader.swift; sourceTree = "<group>"; };
+		4B6A99461FD3838300B4DB25 /* PostGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridCell.swift; sourceTree = "<group>"; };
+		4B6A99491FD3853000B4DB25 /* PostListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
 		4B6A994B1FD385BC00B4DB25 /* CommentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
 		4B6A994D1FD385D300B4DB25 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		4B6A99501FD386DE00B4DB25 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
@@ -129,9 +129,9 @@
 		4B5F76AC1FC37AC2002CA676 /* AddPost */ = {
 			isa = PBXGroup;
 			children = (
+				4B6A99501FD386DE00B4DB25 /* PostController.swift */,
 				4B5F76A11FC37A9F002CA676 /* PhotoSelectorController.swift */,
 				4B6A99521FD3877800B4DB25 /* PhotoSelectorCell.swift */,
-				4B6A99501FD386DE00B4DB25 /* PostController.swift */,
 			);
 			name = AddPost;
 			path = ImagePicker;
@@ -150,10 +150,10 @@
 		4B6A99481FD3839000B4DB25 /* MyHome */ = {
 			isa = PBXGroup;
 			children = (
-				4B6A99421FD3833E00B4DB25 /* UserProfileController.swift */,
-				4B6A99441FD3836500B4DB25 /* UserProfileHeader.swift */,
-				4B6A99461FD3838300B4DB25 /* UserProfilePhotoCell.swift */,
-				4B6A99491FD3853000B4DB25 /* MainPostCell.swift */,
+				4B6A99421FD3833E00B4DB25 /* MyHomeController.swift */,
+				4B6A99441FD3836500B4DB25 /* MyHomeHeader.swift */,
+				4B6A99461FD3838300B4DB25 /* PostGridCell.swift */,
+				4B6A99491FD3853000B4DB25 /* PostListCell.swift */,
 				4B6A994B1FD385BC00B4DB25 /* CommentsController.swift */,
 				4B6A994D1FD385D300B4DB25 /* CommentCell.swift */,
 			);
@@ -340,17 +340,17 @@
 				DDC89B001FC58265009610DF /* OnstagramController.swift in Sources */,
 				4B5F76A81FC37AA0002CA676 /* LoginController.swift in Sources */,
 				4B6A99571FD4CCC800B4DB25 /* GlobalState.swift in Sources */,
-				4B6A99451FD3836500B4DB25 /* UserProfileHeader.swift in Sources */,
+				4B6A99451FD3836500B4DB25 /* MyHomeHeader.swift in Sources */,
 				4B6A994E1FD385D300B4DB25 /* CommentCell.swift in Sources */,
 				4B6A993E1FD3819400B4DB25 /* User.swift in Sources */,
 				4B6A99531FD3877800B4DB25 /* PhotoSelectorCell.swift in Sources */,
-				4B6A99471FD3838300B4DB25 /* UserProfilePhotoCell.swift in Sources */,
-				4B6A99431FD3833E00B4DB25 /* UserProfileController.swift in Sources */,
+				4B6A99471FD3838300B4DB25 /* PostGridCell.swift in Sources */,
+				4B6A99431FD3833E00B4DB25 /* MyHomeController.swift in Sources */,
 				4B6A994C1FD385BC00B4DB25 /* CommentsController.swift in Sources */,
 				4B6A99401FD381A100B4DB25 /* Comment.swift in Sources */,
 				4B06885D1FC3791F004C121A /* AppDelegate.swift in Sources */,
 				DDC89AFC1FC58076009610DF /* Extensions.swift in Sources */,
-				4B6A994A1FD3853000B4DB25 /* MainPostCell.swift in Sources */,
+				4B6A994A1FD3853000B4DB25 /* PostListCell.swift in Sources */,
 				4B5F76A51FC37AA0002CA676 /* PhotoSelectorController.swift in Sources */,
 				4B6A995B1FD4D46000B4DB25 /* APP.swift in Sources */,
 				DDF575731FC3BBA0004393D0 /* MainTabBarController.swift in Sources */,

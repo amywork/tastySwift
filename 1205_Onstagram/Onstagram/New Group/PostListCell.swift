@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol MainPostCellDelegate {
+protocol PostListCellDelegate {
     func didTapComment(post: Post)
-    func didLike(for cell: MainPostCell)
+    func didLike(for cell: PostListCell)
 }
 
-class MainPostCell: UICollectionViewCell {
+class PostListCell: UICollectionViewCell {
     
-    var delegate: MainPostCellDelegate?
+    var delegate: PostListCellDelegate?
     
     var post: Post? {
         didSet {

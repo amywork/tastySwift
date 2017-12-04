@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserProfileController: OnstagramController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UserProfileHeaderDelegate {
+class MyHomeController: OnstagramController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MyHomeHeaderDelegate {
     
     var currentUser: User?
     var posts = [Post]()
@@ -43,9 +43,9 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.backgroundColor = .white
-        collectionView?.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
-        collectionView?.register(UserProfilePhotoCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView?.register(MainPostCell.self, forCellWithReuseIdentifier: mainPostCellId)
+        collectionView?.register(MyHomeHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView?.register(PostGridCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(PostListCell.self, forCellWithReuseIdentifier: mainPostCellId)
       
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(paginatePosts),
@@ -136,12 +136,13 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
         }
         
         if isGridView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! UserProfilePhotoCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PostGridCell
             cell.post = posts[indexPath.item]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainPostCellId, for: indexPath) as! MainPostCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainPostCellId, for: indexPath) as! PostListCell
             cell.post = posts[indexPath.item]
+            cell.delegate = self
             return cell
         }
     }
@@ -168,7 +169,7 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! UserProfileHeader
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! MyHomeHeader
         header.user = self.currentUser
         header.delegate = self
         return header
@@ -181,7 +182,7 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
     
 }
 
-extension UserProfileController: MainPostCellDelegate {
+extension MyHomeController: PostListCellDelegate {
     
     func didTapComment(post: Post) {
         print(post.caption)
@@ -190,7 +191,7 @@ extension UserProfileController: MainPostCellDelegate {
         navigationController?.pushViewController(commentsController, animated: true)
     }
     
-    func didLike(for cell: MainPostCell) {
+    func didLike(for cell: PostListCell) {
         guard let indexPath = collectionView?.indexPath(for: cell) else { return }
         var post = self.posts[indexPath.item]
         guard let postId = post.key else { return }

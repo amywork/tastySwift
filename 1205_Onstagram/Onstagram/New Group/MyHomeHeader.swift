@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-protocol UserProfileHeaderDelegate {
+protocol MyHomeHeaderDelegate {
     func didChangeToListView()
     func didChangeToGridView()
 }
@@ -23,9 +23,9 @@ enum HeaderBtnType: String {
     case loading = "Now Loading..."
 }
 
-class UserProfileHeader: UICollectionViewCell {
+class MyHomeHeader: UICollectionViewCell {
     
-    var delegate: UserProfileHeaderDelegate?
+    var delegate: MyHomeHeaderDelegate?
    
     var user: User? {
         didSet {

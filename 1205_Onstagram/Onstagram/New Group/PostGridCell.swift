@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProfilePhotoCell: UICollectionViewCell {
+class PostGridCell: UICollectionViewCell {
     
     var post: Post? {
         didSet {
