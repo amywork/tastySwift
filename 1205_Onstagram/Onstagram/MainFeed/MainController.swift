@@ -11,17 +11,15 @@ import Firebase
 
 class MainController: OnstagramController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MainPostCellDelegate {
     
-    
     var currentUser: User?
-    
     var collectionView: UICollectionView?
     let cellId = "cellId"
     var posts = [Post]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
+        fetchCurrentUserPosts()
         
         // collectionView
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
@@ -40,107 +38,29 @@ class MainController: OnstagramController, UICollectionViewDelegate, UICollectio
                                                selector: #selector(handleRefresh),
                                                name: Notification.Name.newPost,
                                                object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(fetchUser),
-                                               name: Notification.Name.userChanged,
-                                               object: nil)
-        
     }
     
-    @objc fileprivate func fetchUser() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference()
-            .child("users")
-            .child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                let userDictionary = snapshot.value as? [String: Any] ?? [:]
-                self.currentUser = User(uid: uid, dictionary: userDictionary)
-                DispatchQueue.main.async {
-                    self.fetchAllPosts()
-                }
-            })
+    fileprivate func fetchUser() {
+        guard let uid = GlobalState.instance.uid, let email = GlobalState.instance.email else { return }
+        self.currentUser = User(uid: uid, email: email)
     }
     
     @objc func handleRefresh() {
         posts.removeAll()
-        self.collectionView?.reloadData()
-        fetchAllPosts()
+        fetchCurrentUserPosts()
     }
 
-    fileprivate func fetchAllPosts() {
-        fetchCurrentUserPosts()
-        fetchFollowingUserIds()
-    }
-    
     fileprivate func fetchCurrentUserPosts() {
-        guard let user = currentUser else { return }
-        self.fetchPostsWith(user: user)
-    }
-    
-    fileprivate func fetchFollowingUserIds() {
-        guard let user = currentUser else { return }
-        Database.database().reference()
-            .child("following")
-            .child(user.uid)
-            .observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let userIdsDictionary = snapshot.value as? [String: Any] else { return }
-            userIdsDictionary.forEach({ (key, value) in
-                Database.database().reference()
-                    .child("users")
-                    .child(key).observeSingleEvent(of: .value, with: { (snapshot) in
-                        let userDictionary = snapshot.value as? [String: Any] ?? [:]
-                        let followingUser = User(uid: key, dictionary: userDictionary)
-                        DispatchQueue.main.async {
-                            self.fetchPostsWith(user: followingUser)
-                        }
-                    })
+        guard let uid = currentUser?.uid else { return }
+        App.api.fetchPosts(uid: uid, handler: { [weak self] (posts) in
+            self?.posts = posts
+            self?.posts.sort(by: { (p1, p2) -> Bool in
+                return p1.creationDate.compare(p2.creationDate) == .orderedDescending
             })
-        }) { (err) in
-            print("Failed to fetch following user ids:", err)
-        }
+            self?.collectionView?.reloadData()
+        })
     }
-    
-    fileprivate func fetchPostsWith(user: User) {
-        Database.database().reference()
-            .child("posts")
-            .child(user.uid)
-            .observeSingleEvent(of: .value, with: { (snapshot) in
-            self.collectionView?.refreshControl?.endRefreshing()
-            
-            guard let dictionaries = snapshot.value as? [String: Any] else { return }
-            
-            dictionaries.forEach({ (key, value) in
-                guard let dictionary = value as? [String: Any] else { return }
-                var post = Post(user: user , dictionary: dictionary)
-                post.id = key
-                
-                guard let uid = Auth.auth().currentUser?.uid else { return }
-                Database.database().reference().child("likes").child(key).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                    
-                    if let value = snapshot.value as? Int, value == 1 {
-                        post.hasLiked = true
-                    } else {
-                        post.hasLiked = false
-                    }
-                    
-                    self.posts.append(post)
-                    self.posts.sort(by: { (p1, p2) -> Bool in
-                        return p1.creationDate.compare(p2.creationDate) == .orderedDescending
-                    })
-                    DispatchQueue.main.async {
-                        self.collectionView?.reloadData()
-                    }
-                }, withCancel: { (err) in
-                    print("Failed to fetch like info for post:", err)
-                })
-            })
-            
-        }) { (err) in
-            print("Failed to fetch posts:", err)
-        }
-    }
-    
-    
+   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         var height: CGFloat = 40 + 8 + 8 //username userprofileimageview

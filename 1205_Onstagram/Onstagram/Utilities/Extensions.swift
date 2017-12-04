@@ -69,23 +69,6 @@ extension UIStoryboard {
     
 }
 
-
-extension Database {
-    
-    static func fetchUserWithUID(uid: String, completion: @escaping (User) -> ()) {
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            guard let userDictionary = snapshot.value as? [String: Any] else { return }
-            let user = User(uid: uid, dictionary: userDictionary)
-            completion(user)
-            
-        }) { (err) in
-            print("Failed to fetch user for posts:", err)
-        }
-    }
-}
-
-
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,  paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
         

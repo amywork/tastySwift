@@ -12,7 +12,6 @@ import Firebase
 class UserProfileController: OnstagramController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UserProfileHeaderDelegate {
     
     var currentUser: User?
-    var userId: String?
    
     var collectionView: UICollectionView?
     let cellId = "cellId"
@@ -20,19 +19,6 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
     let headerId = "headerId"
     var isGridView = true
    
-    @objc fileprivate func fetchUser() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference()
-            .child("users")
-            .child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                let userDictionary = snapshot.value as? [String: Any] ?? [:]
-                self.currentUser = User(uid: uid, dictionary: userDictionary)
-                DispatchQueue.main.async {
-                    self.paginatePosts()
-                }
-            })
-    }
-
     func didChangeToGridView() {
         isGridView = true
         collectionView?.reloadData()
@@ -46,6 +32,7 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
+        paginatePosts()
       
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         self.view.addSubview(collectionView!)
@@ -59,18 +46,17 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
                                                selector: #selector(paginatePosts),
                                                name: Notification.Name.newPost,
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(fetchUser),
-                                               name: Notification.Name.userChanged,
-                                               object: nil)
-        
-        
+      
         setupLogOutButton()
     }
-    
+
     var isFinishedPaging = false
     var posts = [Post]()
     
+    fileprivate func fetchUser() {
+        guard let uid = GlobalState.instance.uid, let email = GlobalState.instance.email else { return }
+        self.currentUser = User(uid: uid, email: email)
+    }
     
     @objc fileprivate func paginatePosts() {
         print("Start paging for more posts")
@@ -103,7 +89,7 @@ class UserProfileController: OnstagramController, UICollectionViewDataSource, UI
             allObjects.forEach({ (snapshot) in
                 
                 guard let dictionary = snapshot.value as? [String: Any] else { return }
-                var post = Post(user: user, dictionary: dictionary)
+                var post = Post(uid: user.uid, dictionary: dictionary)
                 post.id = snapshot.key
                 self.posts.append(post)
                 

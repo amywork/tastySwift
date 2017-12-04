@@ -57,7 +57,7 @@ class SignupController: UIViewController {
     
     var signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Signin", for: .normal)
+        button.setTitle("Sign Up", for: .normal)
         button.backgroundColor = .lightGray
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
@@ -80,20 +80,23 @@ class SignupController: UIViewController {
 extension SignupController {
     
     @objc func handleSignUp(_ sender: UIButton) {
-        guard let id = emailTextField.text, !id.isEmpty else {return}
-        guard let pw = passwordTextField.text else {return}
+        guard let id = emailTextField.text else { return }
+        guard let pw = passwordTextField.text else { return }
         Auth.auth().createUser(withEmail: id, password: pw) { (user, error) in
-            print(error.debugDescription)
             if error == nil {
                 Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
-                    print(error.debugDescription)
-                    if error == nil, let _ = user {
-                        NotificationCenter.default.post(name: NSNotification.Name.userChanged, object: nil)
-                        DispatchQueue.main.async {
-                            self.navigationController?.dismiss(animated: true, completion: nil)
-                        }
+                    if let user = user {
+                        GlobalState.instance.uid = user.uid
+                        GlobalState.instance.email = user.email
+                        self.navigationController?.dismiss(animated: true, completion: nil)
+                    }else if let error = error {
+                        print("Failed to sign in: ", error)
+                    }else {
+                        print("Failed")
                     }
                 }
+            }else {
+                print(error.debugDescription)
             }
         }
     }

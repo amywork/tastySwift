@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="WPhotoExtention" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aTL-gp-Hud">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="7VC-nt-tAR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" metaFont="system" size="35"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aTL-gp-Hud" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="6bB-Pb-xgi"/>
+                            <constraint firstItem="7VC-nt-tAR" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="JkO-qK-0V5"/>
+                            <constraint firstAttribute="trailing" secondItem="aTL-gp-Hud" secondAttribute="trailing" id="QEJ-ih-ldk"/>
+                            <constraint firstItem="aTL-gp-Hud" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="SDd-0u-m33"/>
+                            <constraint firstItem="7VC-nt-tAR" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="SyW-ve-LQD"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="aTL-gp-Hud" secondAttribute="bottom" id="nJm-cY-k8O"/>
+                            <constraint firstAttribute="trailing" secondItem="7VC-nt-tAR" secondAttribute="trailing" id="rLK-6u-87o"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="7VC-nt-tAR" secondAttribute="bottom" id="uaL-G2-fgC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="imgView" destination="aTL-gp-Hud" id="7sQ-yn-6eG"/>
+                        <outlet property="titleLb" destination="7VC-nt-tAR" id="ukd-JQ-iLy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

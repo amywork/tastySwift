@@ -27,6 +27,9 @@
 		4B6A994E1FD385D300B4DB25 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A994D1FD385D300B4DB25 /* CommentCell.swift */; };
 		4B6A99511FD386DE00B4DB25 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99501FD386DE00B4DB25 /* PostController.swift */; };
 		4B6A99531FD3877800B4DB25 /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99521FD3877800B4DB25 /* PhotoSelectorCell.swift */; };
+		4B6A99571FD4CCC800B4DB25 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99561FD4CCC800B4DB25 /* GlobalState.swift */; };
+		4B6A99591FD4D00C00B4DB25 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A99581FD4D00C00B4DB25 /* API.swift */; };
+		4B6A995B1FD4D46000B4DB25 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A995A1FD4D46000B4DB25 /* APP.swift */; };
 		87B36A922A609A48B6D59BF8 /* Pods_Onstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701850EDFC15A5A86FC89687 /* Pods_Onstagram.framework */; };
 		DDC89AFC1FC58076009610DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC89AFB1FC58076009610DF /* Extensions.swift */; };
 		DDC89B001FC58265009610DF /* OnstagramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC89AFF1FC58265009610DF /* OnstagramController.swift */; };
@@ -57,6 +60,9 @@
 		4B6A994D1FD385D300B4DB25 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		4B6A99501FD386DE00B4DB25 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		4B6A99521FD3877800B4DB25 /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
+		4B6A99561FD4CCC800B4DB25 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
+		4B6A99581FD4D00C00B4DB25 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		4B6A995A1FD4D46000B4DB25 /* APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
 		701850EDFC15A5A86FC89687 /* Pods_Onstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC89AFB1FC58076009610DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DDC89AFF1FC58265009610DF /* OnstagramController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnstagramController.swift; sourceTree = "<group>"; };
@@ -196,6 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				DDC89AFB1FC58076009610DF /* Extensions.swift */,
+				4B6A99561FD4CCC800B4DB25 /* GlobalState.swift */,
+				4B6A995A1FD4D46000B4DB25 /* APP.swift */,
+				4B6A99581FD4D00C00B4DB25 /* API.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -336,11 +345,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B6A99591FD4D00C00B4DB25 /* API.swift in Sources */,
 				4B6A99511FD386DE00B4DB25 /* PostController.swift in Sources */,
 				4B5F76A61FC37AA0002CA676 /* SignupController.swift in Sources */,
 				DDC89B001FC58265009610DF /* OnstagramController.swift in Sources */,
 				4B6A993A1FD3804600B4DB25 /* MainController.swift in Sources */,
 				4B5F76A81FC37AA0002CA676 /* LoginController.swift in Sources */,
+				4B6A99571FD4CCC800B4DB25 /* GlobalState.swift in Sources */,
 				4B6A99451FD3836500B4DB25 /* UserProfileHeader.swift in Sources */,
 				4B6A994E1FD385D300B4DB25 /* CommentCell.swift in Sources */,
 				4B6A993E1FD3819400B4DB25 /* User.swift in Sources */,
@@ -353,6 +364,7 @@
 				DDC89AFC1FC58076009610DF /* Extensions.swift in Sources */,
 				4B6A994A1FD3853000B4DB25 /* MainPostCell.swift in Sources */,
 				4B5F76A51FC37AA0002CA676 /* PhotoSelectorController.swift in Sources */,
+				4B6A995B1FD4D46000B4DB25 /* APP.swift in Sources */,
 				DDF575731FC3BBA0004393D0 /* MainTabBarController.swift in Sources */,
 				4B6A993C1FD3818500B4DB25 /* Post.swift in Sources */,
 			);

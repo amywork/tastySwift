@@ -42,7 +42,7 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
                     .child("users")
                     .child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                         let userDictionary = snapshot.value as? [String: Any] ?? [:]
-                        let user = User(uid: uid, dictionary: userDictionary)
+                        let user = User(uid: uid, email: "d")
                         let comment = Comment(user: user, dictionary: valueDic)
                         DispatchQueue.main.async {
                             self.comments.append(comment)

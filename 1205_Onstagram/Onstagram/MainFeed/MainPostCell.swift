@@ -24,18 +24,18 @@ class MainPostCell: UICollectionViewCell {
             if let postImageUrl = post?.imageUrl {
                 photoImageView.loadImage(URLstring: postImageUrl)
             }
-            if let profileImageUrl = post?.user.profileImageUrl {
-                userProfileImageView.loadImage(URLstring: profileImageUrl)
-            }else {
-                userProfileImageView.image = #imageLiteral(resourceName: "ProfileOff")
-            }
+//            if let profileImageUrl = post?.user.profileImageUrl {
+//                userProfileImageView.loadImage(URLstring: profileImageUrl)
+//            }else {
+//                userProfileImageView.image = #imageLiteral(resourceName: "ProfileOff")
+//            }
             setupAttributedCaption()
         }
     }
     
     fileprivate func setupAttributedCaption() {
         guard let post = self.post else { return }
-        let attributedText = NSMutableAttributedString(string: "\(post.user.uid)\n", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
+        let attributedText = NSMutableAttributedString(string: "\(post.uid)\n", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
         attributedText.append(NSAttributedString(string: "\(post.caption)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
         attributedText.append(NSAttributedString(string: "\n\n", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 4)]))
         let timeAgoDisplay = post.creationDate.timeAgoDisplay()

@@ -11,13 +11,16 @@ import Foundation
 struct User {
     
     let uid: String
-    let username: String
-    let profileImageUrl: String
+    let email: String
+    var profileImageUrl: String?
     
-    init(uid: String, dictionary: [String: Any]) {
+    init(uid: String, email: String) {
         self.uid = uid
-        self.username = dictionary["username"] as? String ?? ""
-        self.profileImageUrl = dictionary["profileImageUrl"]  as? String ?? ""
+        self.email = email
+    }
+
+    mutating func addProfileImage(dictionary: [String: Any]) {
+        self.profileImageUrl = dictionary["profileImageUrl"] as? String
     }
 }
 

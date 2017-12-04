@@ -88,21 +88,20 @@ class LoginController: UIViewController  {
 }
 
 // MARK: - UI methods
-extension LoginController : UITextFieldDelegate {
+extension LoginController {
 
     @objc func handleLogin(_ sender: UIButton) {
-        let id = emailTextField.text
-        let pw = passwordTextField.text
-        Auth.auth().signIn(withEmail: id!, password: pw!) { (user, error) in
-            if error == nil {
-                
-                NotificationCenter.default.post(name: NSNotification.Name.userChanged, object: nil)
-                
-                DispatchQueue.main.async {
-                   self.navigationController?.dismiss(animated: true, completion: nil)
-                }
+        let id = emailTextField.text!
+        let pw = passwordTextField.text!
+        Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
+            if let user = user {
+                GlobalState.instance.uid = user.uid
+                GlobalState.instance.email = user.email
+                self.navigationController?.dismiss(animated: true, completion: nil)
+            }else if let error = error {
+                print("Failed to sign in: ", error)
             }else {
-                print(error.debugDescription)
+                print("Failed")
             }
         }
     }

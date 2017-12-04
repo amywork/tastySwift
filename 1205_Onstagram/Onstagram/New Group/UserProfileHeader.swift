@@ -9,11 +9,6 @@
 import UIKit
 import Firebase
 
-extension Auth {
-    static var currentUid: String? {
-        return Auth.auth().currentUser?.uid
-    }
-}
 
 protocol UserProfileHeaderDelegate {
     func didChangeToListView()
@@ -34,7 +29,7 @@ class UserProfileHeader: UICollectionViewCell {
    
     var user: User? {
         didSet {
-            usernameLabel.text = user?.username
+            usernameLabel.text = user?.email
             setupHeaderBtn()
             guard let profileImageUrl = user?.profileImageUrl else { return }
             profileImageView.loadImage(URLstring: profileImageUrl)
