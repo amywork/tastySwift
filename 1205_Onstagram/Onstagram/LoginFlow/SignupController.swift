@@ -88,6 +88,8 @@ extension SignupController {
                     if let user = user {
                         GlobalState.instance.uid = user.uid
                         GlobalState.instance.email = user.email
+                        App.api.saveUser(uid: user.uid, email: user.email!)
+                        NotificationCenter.default.post(name: NSNotification.Name.userLogined, object: nil)
                         self.navigationController?.dismiss(animated: true, completion: nil)
                     }else if let error = error {
                         print("Failed to sign in: ", error)

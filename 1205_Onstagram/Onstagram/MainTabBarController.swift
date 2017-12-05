@@ -14,6 +14,13 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setUpTabBarController),
+                                               name: NSNotification.Name.userLogined,
+                                               object: nil)
+        
+        
         // Login Check : if false -> present LoginVC
         if !checkLogin() {
             DispatchQueue.main.async {
@@ -21,39 +28,46 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 let loginNavi = UINavigationController(rootViewController: loginVC)
                 self.present(loginNavi, animated: true, completion: nil)
             }
+        }else {
+            setUpTabBarController()
         }
-        self.delegate = self // UITabBarControllerDelegate
-        setupViewControllers()
     }
     
-    // MARK: - checkLogin
-    private func checkLogin() -> Bool {
-        if Auth.auth().currentUser == nil {
-            return false
-        }else {
-            return true
-        }
+    @objc private func setUpTabBarController() {
+        App.api.fetchUser(handler: { [weak self] (isSuccess) in
+            if isSuccess {
+                self?.delegate = self // UITabBarControllerDelegate
+                self?.setupViewControllers()
+            }else {
+                print("fail to fetch user")
+            }
+        })
     }
-
+    
     private func setupViewControllers() {
-        // Tab 01
+        // MARK - Tab 01 : myHome
         let myHomeTab = MyHomeController()
         myHomeTab.tabIndexType = .MyHome
-        let myHomeNavi = templateNaviController(title: "My Home", unselectedImage: #imageLiteral(resourceName: "Feed_Off"), selectedImage: #imageLiteral(resourceName: "Feed_On"), rootViewController: myHomeTab)
+        let myHomeNavi = templateNaviController(title: "My Home",
+                                                unselectedImage: #imageLiteral(resourceName: "Feed_Off"),
+                                                selectedImage: #imageLiteral(resourceName: "Feed_On"),
+                                                rootViewController: myHomeTab)
         myHomeTab.navigationItem.title = "Onstagram"
         
-        // Tab 02
+        // MARK - Tab 02 : addPost
         let addPostTab = OnstagramController()
-        addPostTab.tabBarItem = UITabBarItem(title: "New Post", image: #imageLiteral(resourceName: "Camera_Off"), selectedImage: #imageLiteral(resourceName: "Camera_On"))
         addPostTab.tabIndexType = .AddPost
+        addPostTab.tabBarItem = UITabBarItem(title: "New Post",
+                                             image: #imageLiteral(resourceName: "Camera_Off"),
+                                             selectedImage: #imageLiteral(resourceName: "Camera_On"))
         
         tabBar.tintColor = .black
         self.viewControllers = [myHomeNavi,addPostTab]
     }
 
-    // MARK: - should select viewController?
-    // Present imagePickTab modally
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    // MARK: - Present imagePickTab modally
+    func tabBarController(_ tabBarController: UITabBarController,
+                          shouldSelect viewController: UIViewController) -> Bool {
         let type = (viewController as? OnstagramController)?.tabIndexType
         switch type {
         case .AddPost?:
@@ -68,13 +82,26 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         return true
     }
 
-    fileprivate func templateNaviController(title: String, unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
+    // MARK: - templateNaviController
+    fileprivate func templateNaviController(title: String,
+                                            unselectedImage: UIImage,
+                                            selectedImage: UIImage,
+                                            rootViewController: UIViewController) -> UINavigationController {
         let viewController = rootViewController
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = unselectedImage
         navController.tabBarItem.selectedImage = selectedImage
         navController.tabBarItem.title = title
         return navController
+    }
+    
+    // MARK: - checkLogin
+    fileprivate func checkLogin() -> Bool {
+        if Auth.auth().currentUser == nil {
+            return false
+        }else {
+            return true
+        }
     }
     
 }

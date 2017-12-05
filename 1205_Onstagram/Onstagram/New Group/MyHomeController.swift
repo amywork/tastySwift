@@ -9,11 +9,9 @@
 import UIKit
 import Firebase
 
-class MyHomeController: OnstagramController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MyHomeHeaderDelegate {
-    
-    var currentUser: User?
-    var posts = [Post]()
-    
+class MyHomeController: OnstagramController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MyHomeHeaderDelegate, PhotoSelectorControllerDelegate {
+
+    // MARK: - CollectionView Properties
     var collectionView: UICollectionView?
     let cellId = "cellId"
     let mainPostCellId = "homePostCellId"
@@ -21,7 +19,24 @@ class MyHomeController: OnstagramController, UICollectionViewDataSource, UIColle
     var isGridView = true
     var isFinishedPaging = false
     
+    // MARK: - DataSource
+    var currentUser: User?
+    var posts = [Post]()
     
+    @objc fileprivate func fetchUser() {
+        App.api.fetchUser(handler: { [weak self] (isSuccess) in
+            if isSuccess {
+                self?.currentUser = GlobalState.instance.user
+                DispatchQueue.main.async {
+                    self?.paginatePosts()
+                }
+            }else {
+                print("fail to fetch user")
+            }
+        })
+    }
+    
+    // MARK: - MyHomeHeaderDelegate
     func didChangeToGridView() {
         isGridView = true
         collectionView?.reloadData()
@@ -32,6 +47,45 @@ class MyHomeController: OnstagramController, UICollectionViewDataSource, UIColle
         collectionView?.reloadData()
     }
     
+    func didTapEditProfileBtn() {
+        let profileImagePicker = PhotoSelectorController()
+        profileImagePicker.pickerType = .ProfileImagePicker
+        profileImagePicker.delegate = self
+        let pickerNavi = UINavigationController(rootViewController: profileImagePicker)
+        self.present(pickerNavi, animated: true, completion: nil)
+    }
+    
+    func photoselectorDidSelectedImage(_ selectedImage: UIImage) {
+        let uploadData = selectedImage.generateJPEGData()
+        let filename = NSUUID().uuidString
+        Storage.storage().reference()
+            .child(GlobalState.Constants.users.rawValue)
+            .child(filename)
+            .putData(uploadData, metadata: nil) { (metadata, err) in
+                if let err = err {
+                    print("Failed to upload post image:", err)
+                    return
+                }
+                guard let imageUrl = metadata?.downloadURL()?.absoluteString else { return }
+                
+                NotificationCenter.default.post(name: Notification.Name.uploadProfileImage,
+                                                object: imageUrl)
+                
+                let values = ["profileImageUrl": imageUrl]
+                Database.database().reference()
+                    .child(GlobalState.Constants.users.rawValue)
+                    .child(self.currentUser!.uid)
+                    .updateChildValues(values) { (err, ref) in
+                        if let err = err {
+                            print(err)
+                            return
+                        }
+                        print("Successfully saved profile image to DB")
+                }
+        }
+    }
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
@@ -51,19 +105,27 @@ class MyHomeController: OnstagramController, UICollectionViewDataSource, UIColle
                                                selector: #selector(paginatePosts),
                                                name: Notification.Name.newPost,
                                                object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(fetchUser),
+                                               name: NSNotification.Name.userLogined,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(needUpdateHeader),
+                                               name: NSNotification.Name.userUpdatedInfo,
+                                               object: nil)
     }
 
-   
-    
-    fileprivate func fetchUser() {
-        guard let uid = GlobalState.instance.uid, let email = GlobalState.instance.email else { return }
-        self.currentUser = User(uid: uid, email: email)
+    @objc fileprivate func needUpdateHeader() {
+        self.currentUser = GlobalState.instance.user
+        collectionView?.reloadData()
     }
     
     @objc fileprivate func paginatePosts() {
         print("Start paging for more posts")
         guard let uid = self.currentUser?.uid else { return }
-        let ref = Database.database().reference().child("posts").child(uid)
+        let ref = Database.database().reference().child(GlobalState.Constants.posts.rawValue).child(uid)
         var query = ref.queryOrdered(byChild: "creationDate")
         if posts.count > 0 {
             let value = posts.last?.creationDate.timeIntervalSince1970
@@ -170,8 +232,8 @@ class MyHomeController: OnstagramController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! MyHomeHeader
-        header.user = self.currentUser
         header.delegate = self
+        header.user = self.currentUser
         return header
     }
     

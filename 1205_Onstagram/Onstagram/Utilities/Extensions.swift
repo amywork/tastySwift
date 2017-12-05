@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 import Firebase
 
+extension Notification.Name {
+    static let newPost: Notification.Name = Notification.Name("newPost")
+    static let userLogined: Notification.Name = Notification.Name("userLogined")
+    static let userUpdatedInfo: Notification.Name = Notification.Name("userUpdatedInfo")
+    static let uploadProfileImage: Notification.Name = Notification.Name("uploadProfileImage")
+}
+
 var imageCache = [String:UIImage]()
 
 extension UIImageView {
@@ -50,11 +57,6 @@ extension UIImage {
     }
 }
 
-extension Notification.Name {
-    static let newPost: Notification.Name = Notification.Name("newPost")
-    static let userChanged: Notification.Name = Notification.Name("userChanged")
-}
-
 extension UIStoryboard {
     
     static var main: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -70,7 +72,10 @@ extension UIStoryboard {
 }
 
 extension UIView {
-    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,  paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
+    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?,
+                bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,
+                paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat,
+                paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
         
         translatesAutoresizingMaskIntoConstraints = false
         

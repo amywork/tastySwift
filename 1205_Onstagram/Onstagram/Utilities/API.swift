@@ -10,18 +10,21 @@ import Foundation
 import Firebase
 
 protocol API {
+    typealias SuccessHandler = (_ isSuccess: Bool) -> Void
     typealias FetchPostsHandler = ([Post]) -> Void
     typealias FetchCommentsHandler = (User?) -> Void
     typealias FetchFollowersHandler = (User?) -> Void
-    func fetchPosts(uid: String, handler: @escaping FetchPostsHandler)
+    func saveUser(uid: String, email: String) -> Void
+    func fetchUser(handler: @escaping SuccessHandler)
+    func fetchPosts(uid: String, handler: @escaping FetchPostsHandler) -> Void
     //func fetchComments(handler: @escaping FetchCommentsHandler)
     //func fetchFollowers(handler: @escaping FetchFollowersHandler)
 }
 
 
 
-struct FirebaseAPI: API {
-    
+class FirebaseAPI: API {
+
     let baseReference = Database.database().reference()
  
     func fetchPosts(uid: String, handler: @escaping FetchPostsHandler) {
@@ -52,16 +55,35 @@ struct FirebaseAPI: API {
         }
     }
     
-    /*
-    func fetchUser(uid: String) -> User {
+    func saveUser(uid: String, email: String) {
+        let values = ["uid":uid,"email":email]
         baseReference.child(GlobalState.Constants.users.rawValue)
-            .child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        .child(uid)
+        .updateChildValues(values) { (err, ref) in
+            if let err = err {
+                print("Failed to save user to DB", err)
+                return
+            }
+            print("Successfully saved user to DB")
+        }
+    }
+    
+    func fetchUser(handler: @escaping (_ isSuccess: Bool) -> Void) {
+        guard let uid = GlobalState.instance.uid else { return }
+        baseReference.child(GlobalState.Constants.users.rawValue)
+            .child(uid)
+            .observeSingleEvent(of: .value, with: { (snapshot) in
                 let userDictionary = snapshot.value as! [String: Any]
                 let email = userDictionary["email"] as! String
-                return User(uid: uid, email: email)
+                let profileImageUrl = userDictionary["profileImageUrl"] as? String
+                var user = User(uid: uid, email: email)
+                user.profileImageUrl = profileImageUrl
+                GlobalState.instance.user = user
+                handler(true)
             })
     }
     
+    /*
     func fetchFollowers() {
         guard let user = GlobalState.instance.user else { return }
         var followers = [User]()

@@ -13,6 +13,7 @@ import Firebase
 protocol MyHomeHeaderDelegate {
     func didChangeToListView()
     func didChangeToGridView()
+    func didTapEditProfileBtn()
 }
 
 
@@ -24,9 +25,9 @@ enum HeaderBtnType: String {
 }
 
 class MyHomeHeader: UICollectionViewCell {
-    
+
     var delegate: MyHomeHeaderDelegate?
-   
+
     var user: User? {
         didSet {
             usernameLabel.text = user?.email
@@ -79,7 +80,7 @@ class MyHomeHeader: UICollectionViewCell {
         guard let userId = user?.uid else { return }
         switch headerBtnType {
         case .editProfile:
-            break
+            delegate?.didTapEditProfileBtn()
         case .follow:
             updateUnFollowBtn()
             let ref = Database.database().reference().child("following").child(currentLoggedInUserId)
@@ -120,7 +121,7 @@ class MyHomeHeader: UICollectionViewCell {
         self.editProfileFollowButton.setTitleColor(.black, for: .normal)
     }
     
-    let profileImageView: UIImageView = {
+    var profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = #imageLiteral(resourceName: "NoImage")
         iv.contentMode = .scaleAspectFit
@@ -203,6 +204,14 @@ class MyHomeHeader: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        NotificationCenter.default
+            .addObserver(forName: Notification.Name.uploadProfileImage,
+                         object: nil,
+                         queue: nil) { (noti) in
+                            guard let url = noti.object as? String else { return }
+                            self.profileImageView.loadImage(URLstring: url)
+        }
         
         addSubview(profileImageView)
         profileImageView.anchor(top: topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)

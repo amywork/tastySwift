@@ -190,9 +190,9 @@
 		DDC89AFD1FC580AC009610DF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				4B6A995A1FD4D46000B4DB25 /* APP.swift */,
 				DDC89AFB1FC58076009610DF /* Extensions.swift */,
 				4B6A99561FD4CCC800B4DB25 /* GlobalState.swift */,
+				4B6A995A1FD4D46000B4DB25 /* APP.swift */,
 				4B6A99581FD4D00C00B4DB25 /* API.swift */,
 			);
 			path = Utilities;

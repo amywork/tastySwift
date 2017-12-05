@@ -19,8 +19,5 @@ struct User {
         self.email = email
     }
 
-    mutating func addProfileImage(dictionary: [String: Any]) {
-        self.profileImageUrl = dictionary["profileImageUrl"] as? String
-    }
 }
 

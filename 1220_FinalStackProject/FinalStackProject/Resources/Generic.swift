@@ -23,21 +23,6 @@ struct StackInt {
     
 }
 
-/*Generic Stack 구조 만들기*/
-struct Stack<Z> {
-    
-    private var stackTemp: [Z] = []
-    
-    mutating func push(_ data: Z) {
-        stackTemp.append(data)
-    }
-    
-    mutating func pop() -> Z {
-        return stackTemp.removeLast()
-    }
-    
-}
-
 // var stack = Stack<Int>()
 // stack.pop()
 struct Queue<T> {

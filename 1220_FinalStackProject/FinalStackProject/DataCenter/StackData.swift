@@ -9,55 +9,47 @@
 import Foundation
 
 enum PlanType: String {
-    case year
-    case month
+    case yearly = "Every Year"
+    case monthly  = "Every Month"
 }
 
-struct StackData {
+struct Stack {
     
-    var name: String
-    var plan: PlanType
-    var memo: String?
-    var payDay: Date // From yyMMdd
+    var title: String
+    var planType: PlanType
+    var date: Date // From yyMMdd
+    var price: Float
     
-    
-    var stackDataDic: [String:Any] {
-        return ["name":self.name,
-                "plan":self.plan,
-                "memo":self.memo ?? "",
-                "payDay":self.payDay
-        ]
+    var dictionary: [String:String] {
+        return ["title":self.title,
+                "planType":self.planType.rawValue,
+                "date":self.date.string(),
+                "price":String(price)]
     }
     
-    init(name: String, planStr: String, payDay: Date) {
-        self.name = name
-        self.plan = PlanType(rawValue: planStr) ?? .month
-        self.payDay = payDay
+    init(title: String, planType: PlanType, date: Date, price: Float) {
+        self.title = title
+        self.planType = planType
+        self.date = date
+        self.price = price
     }
-    
-    init(name: String, planStr: String, payDay: Date, memo: String) {
-        self.name = name
-        self.plan = PlanType(rawValue: planStr) ?? .month
-        self.payDay = payDay
-        self.memo = memo
-    }
-    
-    init?(with dataDic: [String:Any]) {
+
+    init?(with dic: [String:String]) {
         
-        guard let name = dataDic["name"] as? String else { return nil }
-        self.name = name
+        guard let title = dic["title"] else { return nil }
+        self.title = title
         
-        guard let planStr = dataDic["plan"] as? String else { return nil }
-        self.plan = PlanType(rawValue: planStr) ?? .month
+        guard let planTypeString = dic["planType"]else { return nil }
+        self.planType = PlanType(rawValue: planTypeString) ?? .monthly
         
-        let memo = dataDic["memo"] as? String
-        self.memo = memo
-        
-        guard let payDayStr = dataDic["payDay"] as? String else { return nil }
+        guard let dateString = dic["date"] else { return nil }
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyMMdd"
-        let payDay = formatter.date(from: payDayStr)
-        self.payDay = payDay!
+        formatter.dateStyle = .short
+        let date = formatter.date(from: dateString)
+        self.date = date!
+        
+        guard let price = dic["price"] else { return nil }
+        self.price = Float(price)!
         
     }
 
