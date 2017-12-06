@@ -17,11 +17,10 @@ protocol API {
     func saveUser(uid: String, email: String) -> Void
     func fetchUser(handler: @escaping SuccessHandler)
     func fetchPosts(uid: String, handler: @escaping FetchPostsHandler) -> Void
+    func uploadProfileImage(imageData: Data, handler: @escaping (_ isSuccess: Bool) -> Void )
     //func fetchComments(handler: @escaping FetchCommentsHandler)
     //func fetchFollowers(handler: @escaping FetchFollowersHandler)
 }
-
-
 
 class FirebaseAPI: API {
 
@@ -73,7 +72,7 @@ class FirebaseAPI: API {
         baseReference.child(GlobalState.Constants.users.rawValue)
             .child(uid)
             .observeSingleEvent(of: .value, with: { (snapshot) in
-                let userDictionary = snapshot.value as! [String: Any]
+                guard let userDictionary = snapshot.value as? [String: Any] else { return }
                 let email = userDictionary["email"] as! String
                 let profileImageUrl = userDictionary["profileImageUrl"] as? String
                 var user = User(uid: uid, email: email)
@@ -81,6 +80,42 @@ class FirebaseAPI: API {
                 GlobalState.instance.user = user
                 handler(true)
             })
+    }
+    
+    func uploadProfileImage(imageData: Data, handler: @escaping (_ isSuccess: Bool) -> Void) {
+        let filename = NSUUID().uuidString
+        Storage.storage().reference()
+            .child(GlobalState.Constants.users.rawValue)
+            .child(filename)
+            .putData(imageData, metadata: nil) { (metadata, err) in
+               
+                // Storage Failed
+                if let err = err {
+                    print("Failed to upload post image:", err)
+                    handler(false)
+                    return
+                }
+                
+                // Storage success
+                guard let imageUrl = metadata?.downloadURL()?.absoluteString else { return }
+                guard let uid = GlobalState.instance.uid else { return }
+                NotificationCenter.default.post(name: Notification.Name.uploadProfileImage,
+                                                object: imageUrl)
+                let values = ["profileImageUrl": imageUrl]
+                self.baseReference.child(GlobalState.Constants.users.rawValue)
+                    .child(uid)
+                    .updateChildValues(values) { (err, ref) in
+                        // DB Failed
+                        if let err = err {
+                            print("Failed to saved profile image to DB", err)
+                            handler(false)
+                            return
+                        }
+                        // DB success
+                        handler(true)
+                        print("Successfully saved profile image to DB")
+                }
+        }
     }
     
     /*

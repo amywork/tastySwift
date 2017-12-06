@@ -42,7 +42,8 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
                     .child("users")
                     .child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                         let userDictionary = snapshot.value as? [String: Any] ?? [:]
-                        let user = User(uid: uid, email: "d")
+                        guard let email = userDictionary["email"] as? String else { return }
+                        let user = User(uid: uid, email: email)
                         let comment = Comment(user: user, dictionary: valueDic)
                         DispatchQueue.main.async {
                             self.comments.append(comment)
@@ -128,7 +129,9 @@ class CommentsController: UICollectionViewController, UICollectionViewDelegateFl
     @objc func handleSubmit() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let postId = self.post?.key ?? ""
-        let values = ["text": commentTextField.text ?? "", "creationDate": Date().timeIntervalSince1970, "uid": uid] as [String : Any]
+        let values = ["text": commentTextField.text ?? "",
+                      "creationDate": Date().timeIntervalSince1970,
+                      "uid": uid] as [String : Any]
         
         Database.database().reference()
             .child("comments")
