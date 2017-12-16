@@ -80,7 +80,7 @@ class MyHomeController: OnstagramController {
         collectionView?.reloadData()
     }
     
-    /* paging for more posts
+    /* paging for more posts*/
     @objc fileprivate func paginatePosts() {
         guard let uid = self.currentUser?.uid else { return }
         let ref = Database.database().reference().child(GlobalState.Constants.posts.rawValue).child(uid)
@@ -114,7 +114,7 @@ class MyHomeController: OnstagramController {
             print("Failed to paginate for posts:", err)
         }
     }
-     */
+ 
     
     fileprivate func setupLogOutButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Setting_Off").withRenderingMode(.alwaysOriginal),
