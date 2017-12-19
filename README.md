@@ -1,5 +1,6 @@
 # tastySwift 📝💛
-- **Archiving Xcode projects (written in Swift)**
+- **Let's Swift :: For beginners like me!**
+- **2017.09.01 ~ 2017.12.22**
 - **[Blog](https://younari.github.io/)** : https://younari.github.io/
 
 # 01. Swift
